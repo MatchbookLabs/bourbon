@@ -1,0 +1,1 @@
+export { default } from 'ember-addon/components/bourbon-edit-button-svg';

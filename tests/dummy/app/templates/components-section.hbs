@@ -1,0 +1,29 @@
+{{#freestyle-section name='Components' as |section|}}
+  {{#freestyle-subsection name='Primary Button' section=section}}
+
+    {{#freestyle-usage 'button' title='Button' usageTitle='Usage'}}
+      {{bourbon-button title="Primary Button" class="bourbon-primary-button"}}
+    {{/freestyle-usage}}
+
+  {{/freestyle-subsection}}
+
+  {{#freestyle-subsection name='Button Collection' section=section}}
+
+    {{#freestyle-collection title="Button Component In Every State" defaultKey="default" inline=false as |collection|}}
+      
+      {{#freestyle-variant collection=collection key='default'}}
+        {{#freestyle-usage title="button default state"}}
+          {{bourbon-button title="default" class="bourbon-primary-button"}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    
+      {{#freestyle-variant collection=collection key='disabled'}}
+        {{#freestyle-usage title="disabled"}}
+           {{bourbon-button title="default" class="bourbon-primary-button bourbon-disable-button"}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+
+    {{/freestyle-collection}}
+
+  {{/freestyle-subsection}}
+{{/freestyle-section}}

@@ -2,11 +2,22 @@
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
+// get environment
+const env = EmberAddon.env();
+
+const pluginsToBlacklist = env === 'production' ? ['ember-freestyle'] : [];
+
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     freestyle: {
       snippetSearchPaths: ['tests/dummy/app']
+    },
+    addons: {
+      blacklist: pluginsToBlacklist
+    },
+    sourcemaps: {
+      enabled: true
     }
   });
 
