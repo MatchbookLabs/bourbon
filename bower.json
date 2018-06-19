@@ -1,5 +1,5 @@
 {
-  "name": "ember-addon",
+  "name": "bourbon",
   "dependencies": {
     "ember": "1.13.13",
     "remarkable": "1.6.2",

@@ -1,7 +1,7 @@
 {
-  "name": "ember-addon",
+  "name": "bourbon",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "bourbon is the Getfeedback ember component library",
   "keywords": [
     "ember-addon"
   ],

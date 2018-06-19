@@ -14,13 +14,13 @@ module('Integration | Component | bourbon-edit-button-svg', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), '');
 
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-edit-button-svg}}
-        template block text
-      {{/bourbon-edit-button-svg}}
-    `);
+    // // Template block usage:
+    // await render(hbs`
+    //   {{#bourbon-edit-button-svg}}
+    //     template block text
+    //   {{/bourbon-edit-button-svg}}
+    // `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    // assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

@@ -1,20 +1,23 @@
-ember-addon
+bourbon
 ==============================================================================
 
-[Short description of the addon.]
+bourbon is the ember component library that feeds into [https://github.com/MatchbookLabs/flabongo](flabongo)
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-addon
+ember install bourbon
 ```
 
 
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+Using bourbon in flabongo
+
+- bourbon styles are included by updating the [https://github.com/MatchbookLabs/flabongo/blob/master/bower.json]( bower.json) file in the root directory
+- bourbon components are included in the package.json file for each [https://github.com/MatchbookLabs/flabongo/tree/master/frontend](frontend) folder.
 
 
 Contributing

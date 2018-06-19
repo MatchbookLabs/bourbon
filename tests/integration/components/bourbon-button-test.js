@@ -16,11 +16,9 @@ module('Integration | Component | bourbon-button', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#bourbon-button}}
-        template block text
-      {{/bourbon-button}}
+      {{bourbon-button title="hello world"}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'hello world');
   });
 });
