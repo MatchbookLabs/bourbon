@@ -3,7 +3,7 @@
 module.exports = {
   name: 'ember-addon',
 
-  included(app, parentAddon) {
+  included() {
     this._super.included.apply(this, arguments);
   },
 

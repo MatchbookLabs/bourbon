@@ -3,21 +3,13 @@ bourbon
 
 bourbon is the ember component library that feeds into [https://github.com/MatchbookLabs/flabongo](flabongo)
 
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install bourbon
-```
-
-
 Usage
 ------------------------------------------------------------------------------
 
 Using bourbon in flabongo
 
-- bourbon styles are included by updating the [https://github.com/MatchbookLabs/flabongo/blob/master/bower.json]( bower.json) file in the root directory
-- bourbon components are included in the package.json file for each [https://github.com/MatchbookLabs/flabongo/tree/master/frontend](frontend) folder.
+- bourbon styles are included by updating the [bower.json](https://github.com/MatchbookLabs/flabongo/blob/master/bower.json) file in the root directory
+- bourbon components are included in the package.json file for each [frontend](https://github.com/MatchbookLabs/flabongo/tree/master/frontend) folder.
 
 
 Contributing
@@ -26,8 +18,9 @@ Contributing
 ### Installation
 
 * `git clone <repository-url>`
-* `cd ember-addon`
+* `cd bourbon`
 * `npm install`
+* `bower install`
 
 ### Linting
 

@@ -2,21 +2,29 @@
 
   {{#freestyle-subsection name='Typography' section=section}}
 
-    {{#freestyle-usage 'typography-times' title='Times New Roman'}}
-      {{freestyle-typeface fontFamily='Times New Roman'}}
+    {{#freestyle-usage 'typography-helvetica' title='Helvetica Neue'}}
+      {{freestyle-typeface fontFamily='"Helvetica Neue", Arial, Helvetica, sans-serif'}}
     {{/freestyle-usage}}
 
-    {{#freestyle-usage 'typography-helvetica' title='Helvetica'}}
-      {{freestyle-typeface fontFamily='Helvetica'}}
+    {{#freestyle-usage 'typography-open-sans' title='Open Sans'}}
+      {{freestyle-typeface fontFamily='"Open Sans", Helvetica, Arial, sans-serif'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'typography-menlo' title='Menlo'}}
+      {{freestyle-typeface fontFamily='Menlo, "Andale Mono", AndaleMono, Consolas, monaco, monospace'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'typography-roboto' title='Roboto'}}
+      {{freestyle-typeface fontFamily='Roboto, "Open Sans", Helvetica, Arial, sans-serif'}}
     {{/freestyle-usage}}
 
   {{/freestyle-subsection}}
 
   {{#freestyle-subsection name='Color' section=section}}
-    {{#freestyle-usage 'fp' title='Freestyle Palette' usageTitle='Usage'}}
+    {{#freestyle-usage 'fp' title='Getfeedback Palette' usageTitle='Usage'}}
       {{freestyle-palette
       colorPalette=colorPalette
-      title='Dummy App Color Palette'
+      title='Getfeeback Color Palette'
       description='This component displays the color palette specified in freestyle/palette.json'
       }}
     {{/freestyle-usage}}
