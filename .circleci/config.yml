@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-npm-{{ checksum "package.json" }}
+          - v1-npm-
+
+      - restore_cache:
+          keys:
+          - v1-bower-{{ checksum "bower.json" }}
+          - v1-bower-
+
+      - run: npm install
+      - run: ./node_modules/.bin/bower install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-npm-{{ checksum "package.json" }}
+
+      - save_cache:
+          paths:
+            - bower_components
+          key: v1-bower-{{ checksum "bower.json" }}
+
+      - run: npm test
+
+
