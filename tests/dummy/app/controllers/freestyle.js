@@ -27,7 +27,7 @@ export default FreestyleController.extend({
     })
   },
 
-  emberFreestyle: inject.service(),
+  emberFreestyle: inject.service()
 
   /* BEGIN-FREESTYLE-USAGE fp:notes
 ### A few notes regarding the getfeedback palette

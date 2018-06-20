@@ -9,6 +9,12 @@ module.exports = {
 
   isDevelopingAddon: function () {
     return false;
+  },
+
+  options: {
+    'ember-cli-tailwind': {
+      buildTarget: 'addon'
+    }
   }
 
 };

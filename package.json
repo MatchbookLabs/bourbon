@@ -23,6 +23,7 @@
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
+    "ember-cli-tailwind": "^0.6.0",
     "ember-cli-sass": "^7.1.7"
   },
   "devDependencies": {
