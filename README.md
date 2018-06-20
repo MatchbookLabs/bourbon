@@ -20,7 +20,6 @@ Contributing
 * `git clone <repository-url>`
 * `cd bourbon`
 * `npm install`
-* `bower install`
 
 ### Linting
 
