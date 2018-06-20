@@ -15,8 +15,7 @@ module.exports = {
     browser: true
   },
   rules: {
-    'indent': [2,2],
-    'ember/avoid-leaking-state-in-ember-objects': 'off' // TODO figure out the error in freestyle.js
+    'indent': [2,2]
   },
   overrides: [
     // node files

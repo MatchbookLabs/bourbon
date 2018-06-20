@@ -6,6 +6,25 @@ const { inject } = Ember;
 export default FreestyleController.extend({
   init() {
     this._super(...arguments);
+
+    this.set('colorPalette', {
+      'accent': {
+        'name': 'green',
+        'base': '#48ba70'
+      },
+      'secondary': {
+        'name': 'slate',
+        'base': '#474C4F'
+      },
+      'foreground': {
+        'name': 'black',
+        'base': '#212121'
+      },
+      'background': {
+        'name': 'white',
+        'base': '#ffffff'
+      }
+    })
   },
 
   emberFreestyle: inject.service(),
@@ -38,23 +57,4 @@ export default Ember.Component.extend({
 });
 ```
   END-FREESTYLE-USAGE */
-
-  colorPalette: {
-    'accent': {
-      'name': 'green',
-      'base': '#48ba70'
-    },
-    'secondary': {
-      'name': 'slate',
-      'base': '#474C4F'
-    },
-    'foreground': {
-      'name': 'black',
-      'base': '#212121'
-    },
-    'background': {
-      'name': 'white',
-      'base': '#ffffff'
-    }
-  }
 });
