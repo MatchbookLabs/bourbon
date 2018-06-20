@@ -1,7 +1,6 @@
 module.exports = {
   test_page: 'tests/index.html?hidepassed',
   disable_watching: true,
-  report_file: 'test-results.xml',
   launch_in_ci: [
     'Chrome'
   ],
@@ -23,3 +22,7 @@ module.exports = {
     }
   }
 };
+
+if (process.env['CIRCLECI']) {
+  module.exports['report_file'] = './test-results/qunit/results.xml';
+}

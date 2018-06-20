@@ -20,7 +20,6 @@ jobs:
           - v1-bower-
 
       - run: npm install
-      - run: ./node_modules/.bin/bower install
 
       - save_cache:
           paths:
@@ -35,4 +34,4 @@ jobs:
       - run: npm test
 
       - store_test_results:
-          path: ./test-results.xml
+          path: ./test-results
