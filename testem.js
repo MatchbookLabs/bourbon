@@ -22,3 +22,7 @@ module.exports = {
     }
   }
 };
+
+if (process.env['CIRCLECI']) {
+  module.exports['report_file'] = './test-results/qunit/results.xml';
+}

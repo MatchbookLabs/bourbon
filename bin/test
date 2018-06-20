@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $CIRCLECI ]]; then
+  ./node_modules/.bin/ember test --reporter xunit
+else
+  ./node_modules/.bin/ember test --reporter dot
+fi
