@@ -4,8 +4,8 @@
     {{#freestyle-collection title="All buttons" defaultKey="all" inline=false as |collection|}}
     
       {{#freestyle-variant collection=collection key='primary'}}
-        {{#freestyle-usage 'button' title="primary button" usageTitle='Usage'}}
-          {{bourbon-button title="Primary button" class="bourbon-primary-button"}}
+        {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
+          {{bourbon-button title="Primary button" class="bourbon-primary-button" action="click"}}
         {{/freestyle-usage}}
 
         {{#freestyle-annotation}}
@@ -15,11 +15,11 @@
       {{/freestyle-variant}}
     
       {{#freestyle-variant collection=collection key='Secondary'}}
-        {{#freestyle-usage 'button' title='Secondary Button' usageTitle='Usage'}}
-          {{bourbon-button title="Secondary Button" class="bourbon-secondary-button"}}
+        {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
+          {{bourbon-button title="Secondary Button" class="bourbon-secondary-button" action="click"}}
         {{/freestyle-usage}}
       {{/freestyle-variant}}
-    
+
     {{/freestyle-collection}}
   {{/freestyle-subsection}}
 
@@ -30,13 +30,13 @@
       
       {{#freestyle-variant collection=collection key='default'}}
         {{#freestyle-usage 'button' title="button default state"}}
-          {{bourbon-button title="default" class="bourbon-primary-button"}}
+          {{bourbon-button title="default" class="bourbon-primary-button" action="click"}}
         {{/freestyle-usage}}
       {{/freestyle-variant}}
     
       {{#freestyle-variant collection=collection key='disabled'}}
         {{#freestyle-usage title="disabled"}}
-           {{bourbon-button title="default" class="bourbon-primary-button bourbon-disable-button"}}
+           {{bourbon-button title="disabled" class="bourbon-disable-button"}}
         {{/freestyle-usage}}
       {{/freestyle-variant}}
 

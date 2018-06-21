@@ -8,28 +8,51 @@
   white-space: nowrap;
   font-size: 11px;
   padding: 8px 20px 7px;
-  line-height: 15px;
+  line-height: 18px;
   border-radius: 2px;
   -webkit-font-smoothing: antialiased;
 
   &.bourbon-primary-button {
     color: var(--white);
-    background-color: var(--green);
+    background-color: var(--fern);
+    border: 1px solid var(--fern);
+    &:hover {
+      background-color: var(--emerald);
+      border: 1px solid var(--emerald);
+    }
+    &:active, 
+    &:focus {
+      background-color: var(--fruit-salad);
+      border: 1px solid var(--fruit-salad);
+    }
   }
 
   &.bourbon-secondary-button {
-    background-color: var(--alabastersolid);
+    background-color: var(--alabaster);
     color: var(--mine-shaft);
     border: 1px solid var(--mercury);
+    &:hover {
+      background-color: var(--white);
+    }
+
+    &:active,
+    &:focus {
+      background-color: var(--concrete);
+    }
   }
 
   &.bourbon-disable-button {
+    background-color: var(--mercury);
     pointer-events: none;
     cursor: default;
-    opacity: .7;
+    opacity: .5;
   }
+}
 
-  &:hover {
-    opacity: .95;
-  }
+.bourbon-float-right {
+  float: right;
+}
+
+.bourbon-mr-1 {
+  margin-right: .25rem;
 }
