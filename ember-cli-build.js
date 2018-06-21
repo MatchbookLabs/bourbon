@@ -4,7 +4,6 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 // get environment
 const env = EmberAddon.env();
-
 const pluginsToBlacklist = env === 'production' ? ['ember-freestyle'] : [];
 
 module.exports = function(defaults) {
@@ -31,5 +30,6 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('addon/tailwind/module.css');
   return app.toTree();
 };

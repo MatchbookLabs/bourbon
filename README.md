@@ -12,6 +12,19 @@ Using bourbon in flabongo
 - bourbon components are included in the package.json file for each [frontend](https://github.com/MatchbookLabs/flabongo/tree/master/frontend) folder.
 
 
+Developing locally using bourbon and flabongo
+------------------------------------------------------------------------------
+
+In flabongo run the following commands
+* `npm link`
+* `bower link`
+
+To pick up the changes to the component, you will need to run the following command in the frontend fold you are working in
+* `npm link bourbon`
+
+To pick up the styling changes to the component, you will need to run the following command in the root directory of flabongo fold you are working in
+* `bower link bourbon`
+
 Contributing
 ------------------------------------------------------------------------------
 
