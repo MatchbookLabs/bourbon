@@ -1,17 +1,13 @@
 .bourbon-button {
   @apply .bourbon-inline-block;
-
   @apply .bourbon-m-0;
-  padding: 8px 12px 6px;
-
+  padding: 9px 12px 7px;
   @apply .bourbon-rounded-sm;
-
   @apply .bourbon-text-sm;
   @apply .bourbon-text-center;
   @apply .bourbon-uppercase;
   @apply .bourbon-whitespace-no-wrap;
   -webkit-font-smoothing: antialiased;
-
   @apply .bourbon-cursor-pointer;
 }
 
@@ -19,4 +15,38 @@
   @apply .bourbon-text-white;
   @apply .bourbon-bg-fern;
   border: 1px solid var(--fern);
+}
+
+.bourbon-button.bourbon-primary-button:hover {
+  @apply .bourbon-bg-emerald;
+  border: 1px solid var(--emerald);
+}
+
+.bourbon-button.bourbon-primary-button:active,
+.bourbon-button.bourbon-primary-button:focus {
+  @apply .bourbon-bg-fruit-salad;
+  border: 1px solid var(--fruit-salad);
+}
+
+.bourbon-button.bourbon-secondary-button {
+  @apply .bourbon-text-mine-shaft;
+  @apply .bourbon-bg-alabaster;
+  border: 1px solid var(--mercury);
+}
+
+.bourbon-button.bourbon-secondary-button:hover {
+  @apply .bourbon-bg-white;
+}
+
+.bourbon-button.bourbon-secondary-button:active,
+.bourbon-button.bourbon-secondary-button:focus {
+  @apply .bourbon-bg-fruit-salad;
+  border: 1px solid var(--fruit-salad);
+}
+
+.bourbon-button.bourbon-disable-button {
+  background-color: var(--mercury);
+  pointer-events: none;
+  cursor: default;
+  opacity: .5;
 }
