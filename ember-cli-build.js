@@ -19,7 +19,7 @@ module.exports = function(defaults) {
       enabled: true
     },
     'ember-cli-tailwind': {
-      buildTarget: 'app'
+      buildTarget: 'addon'
     }
   });
 

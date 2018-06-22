@@ -1,0 +1,22 @@
+.bourbon-button {
+  @apply .bourbon-inline-block;
+
+  @apply .bourbon-m-0;
+  padding: 8px 12px 6px;
+
+  @apply .bourbon-rounded-sm;
+
+  @apply .bourbon-text-sm;
+  @apply .bourbon-text-center;
+  @apply .bourbon-uppercase;
+  @apply .bourbon-whitespace-no-wrap;
+  -webkit-font-smoothing: antialiased;
+
+  @apply .bourbon-cursor-pointer;
+}
+
+.bourbon-button.bourbon-primary-button {
+  @apply .bourbon-text-white;
+  @apply .bourbon-bg-fern;
+  border: 1px solid var(--fern);
+}

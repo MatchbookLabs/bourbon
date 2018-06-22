@@ -51,6 +51,8 @@ export default {
   'yellow-lighter': '#fff9c2',
   'yellow-lightest': '#fcfbeb',
 
+  'fern': '#5cb675',
+  
   'green-darkest': '#0f2f21',
   'green-darker': '#1a4731',
   'green-dark': '#1f9d55',
