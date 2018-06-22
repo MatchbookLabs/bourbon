@@ -26,6 +26,12 @@ export default FreestyleController.extend({
       }
     })
   },
+  
+  actions: {
+    alert() {
+      alert('you are clicking a button!')
+    }
+  },
 
   emberFreestyle: inject.service()
 
