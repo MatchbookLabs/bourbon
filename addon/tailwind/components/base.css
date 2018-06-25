@@ -1,0 +1,17 @@
+:root {
+  --black: #000;
+  --white: #FFF;
+  --fern: #5CB675;
+  --emerald: #4CCE6F;
+  --fruit-salad: #4CA465;
+  --slate: #474C4F;
+  --alto: #DCDCDC;
+  --alabaster: #FAFAFA;
+  --concrete: #F3F3F3;
+  --mercury: #E9E9E9;
+  --mine-shaft: #2D2D2D;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}

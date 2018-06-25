@@ -26,8 +26,14 @@ export default FreestyleController.extend({
       }
     })
   },
+  
+  actions: {
+    alert() {
+      alert('you are clicking a button!')
+    }
+  },
 
-  emberFreestyle: inject.service(),
+  emberFreestyle: inject.service()
 
   /* BEGIN-FREESTYLE-USAGE fp:notes
 ### A few notes regarding the getfeedback palette
