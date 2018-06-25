@@ -1,0 +1,20 @@
+{{#freestyle-collection title="All buttons" defaultKey="all" inline=false as |collection|}}
+
+  {{#freestyle-variant collection=collection key='primary'}}
+    {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
+      {{bourbon-button title="Primary button" class="bourbon-primary-button" action="alert"}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-annotation}}
+      <p>The primary button is used on blah blah.</p>
+    {{/freestyle-annotation}}
+
+  {{/freestyle-variant}}
+
+  {{#freestyle-variant collection=collection key='Secondary'}}
+    {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
+      {{bourbon-button title="Secondary Button" class="bourbon-secondary-button" action="alert"}}
+    {{/freestyle-usage}}
+  {{/freestyle-variant}}
+
+{{/freestyle-collection}}

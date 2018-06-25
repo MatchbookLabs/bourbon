@@ -1,0 +1,33 @@
+{{#freestyle-collection title="Button Component In Every State" defaultKey="all" inline=false as |collection|}}
+  {{#freestyle-variant collection=collection key='default'}}
+    {{#freestyle-usage 'default-button' title="primary button default state"}}
+      {{bourbon-button title="default" class="bourbon-primary-button" action="alert"}}
+    {{/freestyle-usage}}
+  {{/freestyle-variant}}
+
+  {{#freestyle-variant collection=collection key='hover'}}
+    <div class="FreestyleUsage-title">
+      primary button hover state
+    </div>
+    <div class="FreestyleUsage-rendered">
+      <button style="background-color: var(--emerald) !important; border-color: var(--emerald) !important;"  class="bourbon-button bourbon-primary-button">Hover</button>
+    </div>
+  {{/freestyle-variant}}
+
+
+    {{#freestyle-variant collection=collection key='pressed'}}
+      <div class="FreestyleUsage-title">
+          primary button pressed state
+      </div>
+      <div class="FreestyleUsage-rendered">
+        <button style="background-color: var(--fruit-salad;) !important; border-color: var(--fruit-salad;) !important;" class="bourbon-button bourbon-primary-button">Pressed</button>
+      </div>
+  {{/freestyle-variant}}
+
+
+  {{#freestyle-variant collection=collection key='disabled'}}
+    {{#freestyle-usage 'button' title="primary button disabled state"}}
+      {{bourbon-button title="disabled" class="bourbon-primary-button bourbon-disable-button" action="alert"}}
+    {{/freestyle-usage}}
+  {{/freestyle-variant}}
+{{/freestyle-collection}}

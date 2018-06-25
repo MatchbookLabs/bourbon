@@ -9,8 +9,8 @@ export default FreestyleController.extend({
 
     this.set('colorPalette', {
       'accent': {
-        'name': 'green',
-        'base': '#48ba70'
+        'name': 'fern',
+        'base': '#5CB675'
       },
       'secondary': {
         'name': 'slate',
@@ -51,8 +51,8 @@ export default Ember.Component.extend({
   // ...
   colorPalette: {
     'accent': {
-      'name': 'green',
-      'base': '#48ba70'
+      'name': 'fern',
+      'base': '#5CB675'
     },
     'secondary': {
       'name': 'slate',
