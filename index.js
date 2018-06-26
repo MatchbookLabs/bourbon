@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-addon',
+  name: 'bourbon',
 
   included() {
     this._super.included.apply(this, arguments);

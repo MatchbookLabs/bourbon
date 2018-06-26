@@ -1,1 +1,1 @@
-export { default } from 'ember-addon/components/bourbon-edit-button-svg';
+export { default } from 'bourbon/components/bourbon-edit-button-svg';
