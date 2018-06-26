@@ -1,7 +1,6 @@
 {
   "name": "bourbon",
   "dependencies": {
-    "ember": "1.13.13",
     "remarkable": "1.6.2",
     "highlightjs": "9.1.0"
   }

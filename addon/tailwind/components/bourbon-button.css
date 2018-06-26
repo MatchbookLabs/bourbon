@@ -45,12 +45,18 @@
 
 .bourbon-button.bourbon-secondary-button:active,
 .bourbon-button.bourbon-secondary-button:focus {
-  @apply .bourbon-bg-fruit-salad;
-  @apply .bourbon-border-fruit-salad;
+  @apply .bourbon-bg-concrete;
+  @apply .bourbon-border-concrete;
 }
 
-.bourbon-button.bourbon-disable-button {
+.bourbon-button.bourbon-primary-button.bourbon-disable-button {
   @apply .bourbon-bg-mercury;
+  @apply .bourbon-border-mercury;
+  @apply .bourbon-cursor-default;
+  @apply .bourbon-pointer-events-none;
+}
+
+.bourbon-button.bourbon-secondary-button.bourbon-disable-button {
   @apply .bourbon-cursor-default;
   @apply .bourbon-pointer-events-none;
   @apply .bourbon-opacity-50;

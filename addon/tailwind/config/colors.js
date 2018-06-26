@@ -38,7 +38,7 @@ export default {
   // 'grey-darker': '#606f7b',
   // 'grey-dark': '#8795a1',
   // grey: '#b8c2cc',
-  // 'grey-light': '#dae1e7',
+  'grey-light': '#D3D3D3',
   // 'grey-lighter': '#f1f5f8',
   // 'grey-lightest': '#f8fafc',
   // white: '#ffffff',
