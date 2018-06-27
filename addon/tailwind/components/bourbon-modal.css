@@ -1,0 +1,65 @@
+.bourbon-modal__overlay  {
+  @apply .bourbon-hidden;
+  @apply .bourbon-justify-center;
+  @apply .bourbon-items-center;
+  @apply .bourbon-fixed;
+  @apply .bourbon-pin-t;
+  @apply .bourbon-pin-r;
+  @apply .bourbon-pin-b;
+  @apply .bourbon-pin-l;
+  @apply .bourbon-bg-shade;
+}
+
+.bourbon-modal {
+  width: 45vw;
+  min-width: 550px;
+  padding: 25px 35px;
+  @apply .bourbon-border-grey-light;
+  @apply .bourbon-bg-white;
+  @apply .bourbon-rounded;
+
+  @apply .bourbon-border;
+  @apply .bourbon-border-solid;
+  @apply .bourbon-border-mercury;
+}
+
+.bourbon-modal__title {
+  @apply .bourbon-text-center;
+  @apply .bourbon-text-xl;
+  @apply .bourbon-capitalize;
+  @apply .bourbon-font-semibold;
+  @apply .bourbon-antialiased;
+
+  @apply .bourbon-mb-8;
+  @apply .bourbon-mt-8;
+}
+
+.bourbon-modal__description {
+  @apply .bourbon-leading-normal;
+  @apply .bourbon-text-center;
+  @apply .bourbon-mb-9;
+}
+
+.bourbon-modal__close-button {
+  @apply .bourbon-float-right;
+  @apply .bourbon-z-10;
+}
+
+.bourbon-modal__close-button svg {
+  @apply .bourbon-text-grey-light;
+  @apply .bourbon-stroke-current;
+}
+
+.bourbon-modal__close-button:hover {
+  @apply .bourbon-cursor-pointer;
+}
+
+.bourbon-buttons__wrapper {
+  @apply .bourbon-flex;
+  @apply .bourbon-justify-end;
+  @apply .bourbon-mt-6;
+}
+
+.bourbon-buttons__wrapper .bourbon-button {
+  @apply .bourbon-m-2;
+}

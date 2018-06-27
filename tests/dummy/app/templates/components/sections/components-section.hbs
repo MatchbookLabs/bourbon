@@ -12,4 +12,20 @@
     {{partial 'components/buttons/secondary-button-states'}}
   {{/freestyle-subsection}}
 
+
+  {{#freestyle-subsection name='modal' section=section}}
+
+    {{#freestyle-usage 'bourbon-modal' title='modal' usageTitle='Usage'}}
+      {{bourbon-modal 
+        openState=true title="modal title" 
+        description="Modal description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+        primaryButtonTitle="primary"
+        secondaryButtonTitle="secondary"
+        primaryButtonAction="alert"
+        secondaryButtonAction="alert"
+      }}
+    {{/freestyle-usage}}
+  {{/freestyle-subsection}}
+
 {{/freestyle-section}}

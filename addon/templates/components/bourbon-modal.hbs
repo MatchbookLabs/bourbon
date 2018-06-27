@@ -1,0 +1,13 @@
+<div class="bourbon-modal__overlay {{if isOpen "bourbon-flex"}}"  onClick={{action 'closeOverlay'}}>
+  <aside class="bourbon-modal">
+    <div class="bourbon-modal__close-button" onClick={{action 'closeModal'}}>
+      {{bourbon-close-button-svg}}
+    </div>
+    <header class="bourbon-modal__title">{{title}}</header>
+    <p class="bourbon-modal__description">{{description}}</p>
+    <div class="bourbon-buttons__wrapper">
+       {{bourbon-button title=secondaryButtonTitle class="bourbon-secondary-button" action=(action secondaryButtonAction)}}
+       {{bourbon-button title=primaryButtonTitle class="bourbon-primary-button" action=(action primaryButtonAction)}}
+    </div>
+  </aside>
+</div>
