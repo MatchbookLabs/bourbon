@@ -1,3 +1,22 @@
+/* this is for styling the freestyle app and 
+making styling changes in the library */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --fern: #5CB675;
+  --emerald: #4CCE6F;
+  --fruit-salad: #4CA465;
+  --slate: #474C4F;
+  --alto: #DCDCDC;
+  --lightgray: #D3D3D3;
+  --alabaster: #FAFAFA;
+  --concrete: #F3F3F3;
+  --mercury: #E9E9E9;
+  --mine-shaft: #2D2D2D;
+  --shade: rgba(0,0,0,0.4);
+
+}
+
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 100%;
 }

@@ -1,13 +1,36 @@
-<div class="bourbon-modal__overlay {{if isOpen "bourbon-flex"}}"  onClick={{action 'closeOverlay'}}>
-  <aside class="bourbon-modal">
-    <div class="bourbon-modal__close-button" onClick={{action 'closeModal'}}>
-      {{bourbon-close-button-svg}}
+
+
+<div class='bourbon-modal__wrapper'>
+  <div class='bourbon-modal__overlay {{if isOpen ' bourbon-flex '}}' onClick={{action 'closeModal'}} />
+  <aside class='bourbon-modal {{if scrollable 'bourbon-modal__scrollable'}}'>
+    <div class='bourbon-modal__header'>
+      {{#if title}}
+      <header class='bourbon-modal__title'>{{title}}</header>
+      {{/if}}
+      <div class='bourbon-modal__close-button' onClick={{action 'closeModal'}}>
+        {{bourbon-close-button-svg}}
+      </div>
     </div>
-    <header class="bourbon-modal__title">{{title}}</header>
-    <p class="bourbon-modal__description">{{description}}</p>
-    <div class="bourbon-buttons__wrapper">
-       {{bourbon-button title=secondaryButtonTitle class="bourbon-secondary-button" action=(action secondaryButtonAction)}}
-       {{bourbon-button title=primaryButtonTitle class="bourbon-primary-button" action=(action primaryButtonAction)}}
+
+    {{#if content}} 
+      <div class='bourbon-modal__content'>
+        {{partial content}} 
+      </div>
+    {{/if}}
+  
+    <div class='bourbon-modal__footer'>
+      {{#if linkTitle}}
+       <a class='bourbon-modal__link' href={{linkHref}}>{{linkTitle}}</a>
+      {{/if}}
+      <div class='bourbon-modal__button-wrapper'>
+        {{#if secondaryButtonTitle}} 
+          {{bourbon-button title=secondaryButtonTitle class='bourbon-secondary-button bourbon-mr-2' action=(action secondaryButtonAction)}} 
+        {{/if}} 
+        {{#if primaryButtonTitle}} 
+          {{bourbon-button title=primaryButtonTitle class='bourbon-primary-button' action=(action primaryButtonAction)}} 
+        {{/if}}
+      </div>
     </div>
   </aside>
 </div>
+

@@ -21952,14 +21952,33 @@ button,
 * override them.
 */
 
+/* this is for styling the freestyle app and 
+making styling changes in the library */
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --fern: #5cb675;
+  --emerald: #4cce6f;
+  --fruit-salad: #4ca465;
+  --slate: #474c4f;
+  --alto: #dcdcdc;
+  --lightgray: #d3d3d3;
+  --alabaster: #fafafa;
+  --concrete: #f3f3f3;
+  --mercury: #e9e9e9;
+  --mine-shaft: #2d2d2d;
+  --shade: rgba(0, 0, 0, .4);
+}
+
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 100%;
 }
 
 .bourbon-button {
   display: inline-block;
   margin: 0;
-  padding: 9px 12px 7px;
+  padding: 8px 12px 7px;
   border-radius: .125rem;
   font-size: .8125rem;
   text-align: center;
@@ -22019,8 +22038,9 @@ body {
   opacity: .5;
 }
 
+.bourbon-modal__wrapper,
 .bourbon-modal__overlay {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -22028,13 +22048,16 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.bourbon-modal__overlay {
   background-color: rgba(0, 0, 0, .4);
 }
 
 .bourbon-modal {
-  width: 45vw;
-  min-width: 550px;
-  padding: 25px 35px;
+  position: fixed;
+  width: 550px;
+  padding: 35px;
   border-color: #d3d3d3;
   background-color: #fff;
   border-radius: .25rem;
@@ -22045,24 +22068,30 @@ body {
 
 .bourbon-modal__title {
   text-align: center;
-  font-size: 1.25rem;
   text-transform: capitalize;
+  font-size: 1.25rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bourbon-modal__content {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 .bourbon-modal__description {
-  line-height: 1.5;
-  text-align: center;
-  margin-bottom: 3rem;
+  font-size: 14px;
+  color: #474c4f;
 }
 
 .bourbon-modal__close-button {
-  float: right;
-  z-index: 10;
+  position: absolute;
+  right: 23px;
+  top: 20px;
 }
 
 .bourbon-modal__close-button svg {
@@ -22074,14 +22103,53 @@ body {
   cursor: pointer;
 }
 
-.bourbon-buttons__wrapper {
+.bourbon-modal__footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
-.bourbon-buttons__wrapper .bourbon-button {
+.bourbon-modal__footer .bourbon-button {
   margin: .5rem;
+}
+
+.bourbon-modal__link {
+  font-size: .8125rem;
+  text-decoration: none;
+  color: #474c4f;
+}
+
+.bourbon-modal__button-wrapper {
+  display: flex;
+}
+
+.bourbon-modal__content-area {
+  padding: 20px 0;
+}
+
+/* scrollable modal styles */
+
+.bourbon-modal__scrollable {
+  position: fixed;
+  padding: 35px 0;
+  display: grid;
+  grid-template-rows: 60px auto 60px;
+  height: 600px;
+}
+
+.bourbon-modal__scrollable .bourbon-modal__content {
+  overflow-y: auto;
+  padding: 0 35px;
+  margin-bottom: 0;
+}
+
+.bourbon-modal__scrollable .bourbon-modal__footer {
+  margin-top: .25rem;
+  padding-top: 2rem;
+  box-shadow: 0 -3px 6px -2px rgba(0, 0, 0, .1);
+  padding-right: 20px;
+  padding-left: 30px;
 }
 
 /**
@@ -24344,6 +24412,10 @@ body {
 
 .bourbon-text-sm {
   font-size: .8125rem;
+}
+
+.bourbon-text-md {
+  font-size: 14px;
 }
 
 .bourbon-text-base {
@@ -26964,6 +27036,10 @@ body {
     font-size: .8125rem;
   }
 
+  .sm\:bourbon-text-md {
+    font-size: 14px;
+  }
+
   .sm\:bourbon-text-base {
     font-size: 1rem;
   }
@@ -29559,6 +29635,10 @@ body {
 
   .md\:bourbon-text-sm {
     font-size: .8125rem;
+  }
+
+  .md\:bourbon-text-md {
+    font-size: 14px;
   }
 
   .md\:bourbon-text-base {
@@ -32158,6 +32238,10 @@ body {
     font-size: .8125rem;
   }
 
+  .lg\:bourbon-text-md {
+    font-size: 14px;
+  }
+
   .lg\:bourbon-text-base {
     font-size: 1rem;
   }
@@ -34753,6 +34837,10 @@ body {
 
   .xl\:bourbon-text-sm {
     font-size: .8125rem;
+  }
+
+  .xl\:bourbon-text-md {
+    font-size: 14px;
   }
 
   .xl\:bourbon-text-base {

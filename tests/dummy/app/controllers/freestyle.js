@@ -26,10 +26,26 @@ export default FreestyleController.extend({
       }
     })
   },
+
+  showModalState: false,
+  showScrollableModalState: false,
+
   
   actions: {
     alert() {
       alert('you are clicking a button!')
+    },
+    showModal() {
+      this.set('showModalState', true);
+    },
+    closeModal() {
+      this.set('showModalState', false);
+    },
+    showScrollableModal() {
+      this.set('showScrollableModalState', true);
+    },
+    closeScrollableModal() {
+      this.set('showScrollableModalState', false);
     }
   },
 

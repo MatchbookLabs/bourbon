@@ -1,19 +1,24 @@
-.bourbon-modal__overlay  {
-  @apply .bourbon-hidden;
-  @apply .bourbon-justify-center;
-  @apply .bourbon-items-center;
-  @apply .bourbon-fixed;
+.bourbon-modal__wrapper,
+.bourbon-modal__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+
   @apply .bourbon-pin-t;
   @apply .bourbon-pin-r;
   @apply .bourbon-pin-b;
   @apply .bourbon-pin-l;
+}
+
+.bourbon-modal__overlay {
   @apply .bourbon-bg-shade;
 }
 
 .bourbon-modal {
-  width: 45vw;
-  min-width: 550px;
-  padding: 25px 35px;
+  position: fixed;
+  width: 550px;
+  padding: 35px;
   @apply .bourbon-border-grey-light;
   @apply .bourbon-bg-white;
   @apply .bourbon-rounded;
@@ -24,25 +29,32 @@
 }
 
 .bourbon-modal__title {
-  @apply .bourbon-text-center;
+  text-align: center;
+  text-transform: capitalize;
   @apply .bourbon-text-xl;
-  @apply .bourbon-capitalize;
   @apply .bourbon-font-semibold;
   @apply .bourbon-antialiased;
 
-  @apply .bourbon-mb-8;
-  @apply .bourbon-mt-8;
+  @apply .bourbon-mt-2;
+  @apply .bourbon-mb-6;
+}
+
+.bourbon-modal__content {
+  text-align: center;
+
+  @apply .bourbon-leading-normal;
+  @apply .bourbon-mb-6;
 }
 
 .bourbon-modal__description {
-  @apply .bourbon-leading-normal;
-  @apply .bourbon-text-center;
-  @apply .bourbon-mb-9;
+  @apply .bourbon-text-md;
+  @apply .bourbon-text-slate;
 }
 
 .bourbon-modal__close-button {
-  @apply .bourbon-float-right;
-  @apply .bourbon-z-10;
+  position: absolute;
+  right: 23px;
+  top: 20px;
 }
 
 .bourbon-modal__close-button svg {
@@ -54,12 +66,51 @@
   @apply .bourbon-cursor-pointer;
 }
 
-.bourbon-buttons__wrapper {
-  @apply .bourbon-flex;
-  @apply .bourbon-justify-end;
+.bourbon-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   @apply .bourbon-mt-6;
 }
 
-.bourbon-buttons__wrapper .bourbon-button {
+.bourbon-modal__footer .bourbon-button {
   @apply .bourbon-m-2;
+}
+
+.bourbon-modal__link {
+  @apply .bourbon-text-sm;
+  @apply .bourbon-no-underline;
+  @apply .bourbon-text-slate;
+}
+
+.bourbon-modal__button-wrapper {
+  @apply .bourbon-flex;
+}
+
+.bourbon-modal__content-area {
+  padding: 20px 0;
+}
+
+/* scrollable modal styles */
+.bourbon-modal__scrollable {
+  position: fixed;
+  padding: 35px 0;
+  display: grid;
+  grid-template-rows: 60px auto 60px;
+  height: 600px;
+}
+
+.bourbon-modal__scrollable .bourbon-modal__content {
+  overflow-y: auto;
+  padding: 0 35px;
+  margin-bottom: 0;
+}
+
+.bourbon-modal__scrollable .bourbon-modal__footer {
+  @apply .bourbon-mt-1;
+  @apply .bourbon-pt-8;
+  box-shadow: 0px -3px 6px -2px rgba(0, 0, 0, .1);
+  padding-right: 20px;
+  padding-left: 30px;
 }
