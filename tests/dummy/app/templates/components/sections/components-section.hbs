@@ -1,19 +1,19 @@
 {{#freestyle-section name='Components' as |section|}}
-  {{#freestyle-subsection name='Buttons' section=section}}
+  {{#section.subsection name='Buttons'}}
     {{partial 'components/buttons/all-buttons'}}
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
 
-  {{#freestyle-subsection name='Primary Button States' section=section}}
+  {{#section.subsection name='Primary Button States'}}
     {{partial 'components/buttons/primary-button-states'}}
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
-  {{#freestyle-subsection name='Secondary Button States' section=section}}
+  {{#section.subsection name='Secondary Button States'}}
     {{partial 'components/buttons/secondary-button-states'}}
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
 
-  {{#freestyle-subsection name='modal' section=section}}
+  {{#section.subsection name='modal'}}
 
     {{#freestyle-usage 'bourbon-scrollable-modal' title='scrollable modal' usageTitle='Usage'}}
       {{#if showScrollableModalState}}
@@ -63,6 +63,6 @@
       <li>bourbon-modal__content-area</li>
     </ul>
     {{/freestyle-annotation}}
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
 {{/freestyle-section}}

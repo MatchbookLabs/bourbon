@@ -1,6 +1,6 @@
 {{#freestyle-section name='Visual Style' as |section|}}
 
-  {{#freestyle-subsection name='Typography' section=section}}
+  {{#section.subsection name='Typography'}}
 
     {{#freestyle-usage 'typography-helvetica' title='Helvetica Neue'}}
       {{freestyle-typeface fontFamily='"Helvetica Neue", Arial, Helvetica, sans-serif'}}
@@ -18,9 +18,9 @@
       {{freestyle-typeface fontFamily='Roboto, "Open Sans", Helvetica, Arial, sans-serif'}}
     {{/freestyle-usage}}
 
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
-  {{#freestyle-subsection name='Color' section=section}}
+  {{#section.subsection name='Color'}}
     {{#freestyle-usage 'fp' title='Getfeedback Palette' usageTitle='Usage'}}
       {{freestyle-palette
       colorPalette=colorPalette
@@ -28,7 +28,7 @@
       description='This component displays the color palette specified in freestyle/palette.json'
       }}
     {{/freestyle-usage}}
-  {{/freestyle-subsection}}
+  {{/section.subsection}}
 
   
 {{/freestyle-section}}
