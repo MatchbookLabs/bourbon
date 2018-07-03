@@ -1,36 +1,35 @@
-
-
-<div class='bourbon-modal__wrapper'>
-  <div class='bourbon-modal__overlay {{if isOpen ' bourbon-flex '}}' onClick={{action 'closeModal'}} />
-  <aside class='bourbon-modal {{if scrollable 'bourbon-modal__scrollable'}}'>
-    <div class='bourbon-modal__header'>
-      {{#if title}}
-      <header class='bourbon-modal__title'>{{title}}</header>
-      {{/if}}
-      <div class='bourbon-modal__close-button' onClick={{action 'closeModal'}}>
-        {{bourbon-close-button-svg}}
-      </div>
-    </div>
-
-    {{#if content}} 
-      <div class='bourbon-modal__content'>
-        {{partial content}} 
-      </div>
-    {{/if}}
-  
-    <div class='bourbon-modal__footer'>
-      {{#if linkTitle}}
-       <a class='bourbon-modal__link' href={{linkHref}}>{{linkTitle}}</a>
-      {{/if}}
-      <div class='bourbon-modal__button-wrapper'>
-        {{#if secondaryButtonTitle}} 
-          {{bourbon-button title=secondaryButtonTitle class='bourbon-secondary-button bourbon-mr-2' action=(action secondaryButtonAction)}} 
-        {{/if}} 
-        {{#if primaryButtonTitle}} 
-          {{bourbon-button title=primaryButtonTitle class='bourbon-primary-button' action=(action primaryButtonAction)}} 
+{{#if modalService.showModalState}}
+  <div class='bourbon-modal__wrapper {{if modalService.showModalState 'bourbon-flex'}}' id='bourbon-modal__wrapper'>
+    <div class='bourbon-modal__overlay' {{action 'closeModal'}} />
+    <aside class='bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}}'>
+      <div class='bourbon-modal__header'>
+        {{#if modalService.title}}
+        <header class='bourbon-modal__title'>{{modalService.title}}</header>
         {{/if}}
+        <div class='bourbon-modal__close-button' {{action 'closeModal'}}>
+          {{bourbon-close-button-svg}}
+        </div>
       </div>
-    </div>
-  </aside>
-</div>
 
+      {{#if modalService.content}} 
+        <div class='bourbon-modal__content'>
+          {{partial modalService.content}} 
+        </div>
+      {{/if}}
+    
+      <div class='bourbon-modal__footer'>
+        {{#if modalService.linkTitle}}
+        <a class='bourbon-modal__link' href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
+        {{/if}}
+        <div class='bourbon-modal__button-wrapper'>
+          {{#if modalService.secondaryButtonTitle}} 
+            {{bourbon-button title=modalService.secondaryButtonTitle class='bourbon-secondary-button bourbon-mr-2' action=(action modalService.secondaryButtonAction)}} 
+          {{/if}} 
+          {{#if modalService.primaryButtonTitle}} 
+            {{bourbon-button title=modalService.primaryButtonTitle class='bourbon-primary-button' action=(action modalService.primaryButtonAction)}} 
+          {{/if}}
+        </div>
+      </div>
+    </aside>
+  </div>
+{{/if}}

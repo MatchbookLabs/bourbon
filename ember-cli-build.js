@@ -10,7 +10,7 @@ module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     freestyle: {
-      snippetSearchPaths: ['tests/dummy/app']
+      snippetSearchPaths: ['addon', 'tests/dummy/app']
     },
     addons: {
       blacklist: pluginsToBlacklist

@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import FreestyleController from 'ember-freestyle/controllers/freestyle';
+import ModalMixin from 'bourbon/mixins/modal';
+
 
 const { inject } = Ember;
 
-export default FreestyleController.extend({
+export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
 
@@ -24,28 +26,39 @@ export default FreestyleController.extend({
         'name': 'white',
         'base': '#ffffff'
       }
+    }),
+
+    this.set('modalParams', {
+      scrollable: false,
+      cancelAction: 'controllerCloseAction',
+      title: 'modal title',
+      content: 'test-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: 'alert',
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
+    }),
+
+    this.set('scrollableModalParams', {
+      scrollable: true,
+      cancelAction: 'controllerCloseAction',
+      title: 'scrolling modal title',
+      content: 'test-scrollable-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: 'alert',
+      secondaryButtonTitle: 'secondary',
+      secondaryButtonAction: 'alert',
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
     })
   },
-
-  showModalState: false,
-  showScrollableModalState: false,
-
   
   actions: {
     alert() {
       alert('you are clicking a button!')
     },
-    showModal() {
-      this.set('showModalState', true);
-    },
-    closeModal() {
-      this.set('showModalState', false);
-    },
-    showScrollableModal() {
-      this.set('showScrollableModalState', true);
-    },
-    closeScrollableModal() {
-      this.set('showScrollableModalState', false);
+    controllerCloseAction() {
+      alert('i am a closing action from the controller')
     }
   },
 
