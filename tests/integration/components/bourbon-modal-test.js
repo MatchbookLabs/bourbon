@@ -21,6 +21,6 @@ module('Integration | Component | bourbon-modal', function(hooks) {
       {{/bourbon-modal}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

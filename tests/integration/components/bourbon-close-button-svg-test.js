@@ -21,6 +21,6 @@ module('Integration | Component | bourbon-close-button-svg', function(hooks) {
       {{/bourbon-close-button-svg}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

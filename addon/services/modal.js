@@ -14,7 +14,6 @@ export default Service.extend({
   linkHref: '#',
 
   showModal(options) {
-    console.log(options)
     this.set('scrollable', options.scrollable);
     this.set('cancelAction', options.cancelAction);
     this.set('title', options.title);

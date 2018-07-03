@@ -11,6 +11,7 @@ export default Component.extend({
     //  allow the user to escape the modal using the ESC key
     document.addEventListener('keydown', function (e) {
       if ((this.get('modalService.showModalState') === true) && e.keyCode === 27) {
+        /* eslint ember/closure-actions: 0 */
         this.sendAction('modalService.cancelAction');
         this.get('modalService').closeModal();
         document.body.classList.remove('bourbon-fixed');
@@ -21,6 +22,7 @@ export default Component.extend({
 
   actions: {
     closeModal() {
+      /* eslint ember/closure-actions: 0 */
       this.sendAction('modalService.cancelAction');
       this.get('modalService').closeModal();
       document.body.classList.remove('bourbon-fixed');
