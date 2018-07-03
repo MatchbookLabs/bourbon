@@ -16,9 +16,7 @@ module('Integration | Component | bourbon-modal', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#bourbon-modal}}
-        template block text
-      {{/bourbon-modal}}
+      {{bourbon-modal}}
     `);
 
     assert.equal(this.element.textContent.trim(), '');

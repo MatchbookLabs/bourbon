@@ -39,11 +39,22 @@ export default FreestyleController.extend(ModalMixin, {
       linkHref: '#'
     }),
 
+    this.set('longModalParams', {
+      scrollable: false,
+      cancelAction: 'controllerCloseAction',
+      title: 'modal title',
+      content: 'test-long-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: 'alert',
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
+    }),
+
     this.set('scrollableModalParams', {
       scrollable: true,
       cancelAction: 'controllerCloseAction',
       title: 'scrolling modal title',
-      content: 'test-scrollable-modal-content',
+      content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
       primaryButtonAction: 'alert',
       secondaryButtonTitle: 'secondary',

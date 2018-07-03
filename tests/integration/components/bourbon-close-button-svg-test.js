@@ -16,9 +16,7 @@ module('Integration | Component | bourbon-close-button-svg', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#bourbon-close-button-svg}}
-        template block text
-      {{/bourbon-close-button-svg}}
+      {{bourbon-close-button-svg}}
     `);
 
     assert.equal(this.element.textContent.trim(), '');

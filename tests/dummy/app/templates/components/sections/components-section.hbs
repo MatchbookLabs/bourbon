@@ -3,7 +3,6 @@
     {{partial 'components/buttons/all-buttons'}}
   {{/section.subsection}}
 
-
   {{#section.subsection name='Primary Button States'}}
     {{partial 'components/buttons/primary-button-states'}}
   {{/section.subsection}}
@@ -28,7 +27,7 @@
           scrollable: true,
           cancelAction: 'controllerCloseAction',
           title: 'scrolling modal title',
-          content: 'test-scrollable-modal-content',
+          content: 'test-long-modal-content',
           primaryButtonTitle: 'primary',
           primaryButtonAction: 'alert',
           secondaryButtonTitle: 'secondary',
@@ -40,23 +39,34 @@
 
     {{/freestyle-note}}
   
-    {{#freestyle-usage 'bourbon-modal' title='regular modal' usageTitle='Usage'}}
+    {{#freestyle-usage 'bourbon-modal' title='modal with short content' usageTitle='Usage'}}
       {{bourbon-modal}}
     {{/freestyle-usage}}
     <div class='FreestyleUsage-rendered'>
       {{bourbon-button title='show regular modal' class='bourbon-primary-button' action=(action 'showModal' modalParams)}}
     </div>
+    
+    {{#freestyle-usage 'bourbon-long-modal' title='modal with long content' usageTitle='Usage'}}
+    {{/freestyle-usage}}
+    <div class='FreestyleUsage-rendered'>
+      {{bourbon-button title='show long modal' class='bourbon-primary-button' action=(action 'showModal' longModalParams)}}
+    </div>
 
-    {{#freestyle-annotation}}
-      <h3>Note on usage</h3>
-      <p>
-        For the content section, use the following classes in your content partial.
-      </p>
-      <ul>
-        <li>bourbon-modal__description</li>
-        <li>bourbon-modal__content-area</li>
-      </ul>
-    {{/freestyle-annotation}}
+    <h3 class='FreestyleUsage-title'>Note on usage</h3>
+    <p class='FreestyleUsage-rendered'>
+      For the content section, use the following classes in your content partial.
+    </p>
+    <ul>
+      <li>bourbon-modal__description</li>
+      <li>bourbon-modal__content-area</li>
+    </ul>
+    <div class='FreestyleUsage-usage'>
+      <h3 class='FreestyleUsage-title'>how flabongo consumes the bourbon modal</h3>
+      <p class='FreestyleUsage-rendered'>diagram created by Lawerence</p>
+      
+      <img src="../images/bourbon-modal-diagram.png" alt="diagram showing connection between flabongo and bourbon for modal">
+    </div>
+
   {{/section.subsection}}
 
 {{/freestyle-section}}

@@ -16,9 +16,10 @@ module('Integration | Component | bourbon-button', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{bourbon-button title="hello world"}}
+      {{bourbon-button title="hello world" class="bourbon-secondary-button" action="alert"}}
     `);
 
+    assert.ok(this.$('div').hasClass('bourbon-secondary-button'), true);
     assert.equal(this.element.textContent.trim(), 'hello world');
   });
 });
