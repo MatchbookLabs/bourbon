@@ -4,7 +4,7 @@
     <aside class='bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}}'>
       <div class='bourbon-modal__header'>
         {{#if modalService.title}}
-        <header class='bourbon-modal__title'>{{modalService.title}}</header>
+          <header class='bourbon-modal__title'>{{modalService.title}}</header>
         {{/if}}
         <div class='bourbon-modal__close-button' {{action 'closeModal'}}>
           {{bourbon-close-button-svg}}
@@ -19,7 +19,7 @@
     
       <div class='bourbon-modal__footer'>
         {{#if modalService.linkTitle}}
-        <a class='bourbon-modal__link' href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
+          <a class='bourbon-modal__link' href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
         {{/if}}
         <div class='bourbon-modal__button-wrapper'>
           {{#if modalService.secondaryButtonTitle}} 

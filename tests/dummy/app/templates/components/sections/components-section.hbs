@@ -39,15 +39,12 @@
 
     {{/freestyle-note}}
   
-    {{#freestyle-usage 'bourbon-modal' title='modal with short content' usageTitle='Usage'}}
-      {{bourbon-modal}}
-    {{/freestyle-usage}}
+    <h4 class='FreestyleUsage-title'>modal with short content</h4>
     <div class='FreestyleUsage-rendered'>
       {{bourbon-button title='show regular modal' class='bourbon-primary-button' action=(action 'showModal' modalParams)}}
     </div>
-    
-    {{#freestyle-usage 'bourbon-long-modal' title='modal with long content' usageTitle='Usage'}}
-    {{/freestyle-usage}}
+
+    <h4 class='FreestyleUsage-title'>modal with long content</h4>
     <div class='FreestyleUsage-rendered'>
       {{bourbon-button title='show long modal' class='bourbon-primary-button' action=(action 'showModal' longModalParams)}}
     </div>
@@ -68,5 +65,4 @@
     </div>
 
   {{/section.subsection}}
-
 {{/freestyle-section}}

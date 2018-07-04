@@ -21118,10 +21118,6 @@ making styling changes in the library */
   --shade: rgba(0, 0, 0, .4);
 }
 
-body {
-  width: 100%;
-}
-
 .bourbon-button {
   display: inline-block;
   margin: 0;

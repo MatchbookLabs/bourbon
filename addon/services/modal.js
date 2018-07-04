@@ -14,17 +14,33 @@ export default Service.extend({
   linkHref: '#',
 
   showModal(options) {
-    this.set('scrollable', options.scrollable);
-    this.set('cancelAction', options.cancelAction);
-    this.set('title', options.title);
-    this.set('content', options.content);
-    this.set('primaryButtonTitle', options.primaryButtonTitle);
-    this.set('primaryButtonAction', options.primaryButtonAction);
-    this.set('secondaryButtonTitle', options.secondaryButtonTitle);
-    this.set('secondaryButtonAction', options.secondaryButtonAction);
-    this.set('linkTitle', options.linkTitle);
-    this.set('linkHref', options.linkHref);
-    this.set('showModalState', true);
+    let {
+      scrollable,
+      cancelAction,
+      title,
+      content,
+      primaryButtonTitle,
+      primaryButtonAction,
+      secondaryButtonTitle,
+      secondaryButtonAction,
+      linkTitle,
+      linkHref
+    } = options;
+
+    this.setProperties({
+      showModalState: true,
+      scrollable,
+      cancelAction,
+      title,
+      content,
+      primaryButtonTitle,
+      primaryButtonAction,
+      secondaryButtonTitle,
+      secondaryButtonAction,
+      linkTitle,
+      linkHref
+    })
+
     document.body.classList.add('bourbon-fixed');
   },
 
