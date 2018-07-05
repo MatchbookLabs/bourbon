@@ -4,8 +4,6 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
   modalService: service('modal'),
-  classNameBindings: ['isShowing:bourbon-flex'],
-  isShowing: 'modalService.showModalState',
   
   init() {
     this._super(...arguments);
