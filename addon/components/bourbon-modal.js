@@ -31,7 +31,7 @@ export default Component.extend({
     },
 
     alert() {
-      alert('testing')
+      alert('you are clicking a modal button!')
     }
   }
 });
