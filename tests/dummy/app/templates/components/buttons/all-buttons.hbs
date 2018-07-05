@@ -2,7 +2,7 @@
 
   {{#collection.variant key='primary'}}
     {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
-      {{bourbon-button title="Primary button" class="bourbon-primary-button" action="alert"}}
+      {{bourbon-button title="Primary button" class="bourbon-primary-button" action=(action 'alert')}}
     {{/freestyle-usage}}
 
     {{#freestyle-annotation}}
@@ -13,7 +13,7 @@
 
   {{#collection.variant key='Secondary'}}
     {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
-      {{bourbon-button title="Secondary Button" class="bourbon-secondary-button" action="alert"}}
+      {{bourbon-button title="Secondary Button" class="bourbon-secondary-button" action=(action 'alert')}}
     {{/freestyle-usage}}
   {{/collection.variant}}
 

@@ -30,7 +30,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('modalParams', {
       scrollable: false,
-      cancelAction: 'controllerCloseAction',
+      cancelAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
       primaryButtonTitle: 'primary',
@@ -41,7 +41,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('longModalParams', {
       scrollable: false,
-      cancelAction: 'controllerCloseAction',
+      cancelAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
@@ -52,7 +52,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('scrollableModalParams', {
       scrollable: true,
-      cancelAction: 'controllerCloseAction',
+      cancelAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
@@ -67,10 +67,11 @@ export default FreestyleController.extend(ModalMixin, {
   actions: {
     alert() {
       alert('you are clicking a button!')
-    },
-    controllerCloseAction() {
-      alert('i am a closing action from the controller')
     }
+  },
+
+  controllerCloseAction() {
+    alert('i am a closing action from the controller')
   },
 
   emberFreestyle: inject.service()

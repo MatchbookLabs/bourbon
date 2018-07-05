@@ -19,14 +19,15 @@ export default Component.extend({
   layout,
 
   _closeModalActions() {
-    /* eslint ember/closure-actions: 0 */
-    this.sendAction('modalService.cancelAction');
+    if (typeof this.get('modalService.cancelAction') === 'function') {
+      this.get('modalService.cancelAction')();
+    }
     this.get('modalService').closeModal();
   },
 
   actions: {
     closeModal() {
-      this.closeModalActions();
+      this._closeModalActions();
     },
 
     alert() {
