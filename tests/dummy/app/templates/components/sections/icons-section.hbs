@@ -1,11 +1,13 @@
 {{#freestyle-section name='Icons' as |section|}}
-
   {{#section.subsection name='SVG'}}
 
     {{#freestyle-usage 'bourbon-edit-button-svg' title='Edit button'}}
-      {{bourbon-edit-button-svg}}
+      {{partial 'bourbon-edit-button-svg'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'bourbon-close-button-svg' title='Close button'}}
+      {{partial 'bourbon-close-button-svg'}}
     {{/freestyle-usage}}
 
   {{/section.subsection}}
-  
 {{/freestyle-section}}
