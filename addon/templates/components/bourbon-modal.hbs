@@ -1,5 +1,5 @@
 {{#if modalService.showModalState}}
-  <section class='bourbon-modal__wrapper'>
+  <div class='bourbon-modal__wrapper'>
     <div class='bourbon-modal__overlay' {{action 'closeModal'}} />
     <aside class='bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}}'>
       <div class='bourbon-modal__header'>
@@ -31,5 +31,5 @@
         </div>
       </div>
     </aside>
-  </section>
+  </div>
 {{/if}}
