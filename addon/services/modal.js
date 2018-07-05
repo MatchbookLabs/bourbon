@@ -14,37 +14,13 @@ export default Service.extend({
   linkHref: '#',
 
   showModal(options) {
-    let {
-      scrollable,
-      cancelAction,
-      title,
-      content,
-      primaryButtonTitle,
-      primaryButtonAction,
-      secondaryButtonTitle,
-      secondaryButtonAction,
-      linkTitle,
-      linkHref
-    } = options;
-
-    this.setProperties({
-      showModalState: true,
-      scrollable,
-      cancelAction,
-      title,
-      content,
-      primaryButtonTitle,
-      primaryButtonAction,
-      secondaryButtonTitle,
-      secondaryButtonAction,
-      linkTitle,
-      linkHref
-    })
-
+    this.setProperties(options);
+    this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
   },
 
   closeModal() {
     this.set('showModalState', false);
+    document.body.classList.remove('bourbon-fixed');
   }
 });
