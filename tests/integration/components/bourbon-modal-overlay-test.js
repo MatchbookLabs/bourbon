@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-modal-overlay', function(hooks) {
     await render(hbs`{{bourbon-modal-overlay}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-modal-overlay}}
-        template block text
-      {{/bourbon-modal-overlay}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

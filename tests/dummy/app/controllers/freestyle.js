@@ -9,6 +9,7 @@ export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
 
+    // this is reflected in the visual style/color section
     this.set('colorPalette', {
       'accent': {
         'name': 'fern',
@@ -41,7 +42,6 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('longModalParams', {
       scrollable: false,
-      closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
@@ -69,8 +69,6 @@ export default FreestyleController.extend(ModalMixin, {
       alert('you are clicking a button!');
     }
   },
-
-
 
   primaryClick() {
     alert('you are clicking a primary freestyle button!');

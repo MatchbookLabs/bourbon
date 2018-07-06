@@ -6,7 +6,11 @@ export default Component.extend({
 
   actions: {
     click() {
-      this.get('action')();
+      if (typeof this.get('action') === 'function') {
+        this.get('action')();
+      } else {
+        console.warn('warning: no button action passed');
+      }
     }
   }
 });

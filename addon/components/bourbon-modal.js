@@ -19,7 +19,11 @@ export default Component.extend({
   layout,
 
   _closeModalActions() {
-    this.get('modalService.closeAction')();
+    if (typeof this.get('modalService.closeAction') === 'function') {
+      this.get('modalService.closeAction')();
+    } else {
+      console.warn('warning: no closing action passed');
+    }
     this.get('modalService').closeModal();
   },
 
