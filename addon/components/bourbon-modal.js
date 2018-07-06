@@ -26,10 +26,6 @@ export default Component.extend({
   actions: {
     closeModal() {
       this._closeModalActions();
-    },
-
-    alert() {
-      alert('you are clicking a modal button!')
     }
   }
 });

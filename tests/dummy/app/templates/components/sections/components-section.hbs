@@ -1,22 +1,14 @@
 {{#freestyle-section name='Components' as |section|}}
-  {{#section.subsection name='Buttons'}}
+  {{#section.subsection name='buttons'}}
     {{partial 'components/buttons/all-buttons'}}
   {{/section.subsection}}
 
-  {{#section.subsection name='Primary Button States'}}
-    {{partial 'components/buttons/primary-button-states'}}
-  {{/section.subsection}}
-
-  {{#section.subsection name='Secondary Button States'}}
-    {{partial 'components/buttons/secondary-button-states'}}
-  {{/section.subsection}}
-
-  {{#section.subsection name='modal'}}
+  {{#section.subsection name='modals'}}
     {{#freestyle-usage 'bourbon-scrollable-modal' title='scrollable modal' usageTitle='Usage'}}
       {{bourbon-modal}}
     {{/freestyle-usage}}
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='show scrollable modal' class='bourbon-primary-button' action=(action 'showModal' scrollableModalParams)}}
+      {{bourbon-button title='show scrollable modal' additionalClasses='bourbon-primary-button' action=(action 'showModal' scrollableModalParams)}}
     </div>
 
     {{#freestyle-note 'bourbon-scrollable-modal--notes'}}
@@ -25,13 +17,13 @@
       ```
         this.set('scrollableModalParams', {
           scrollable: true,
-          cancelAction: 'controllerCloseAction',
+          closeAction: this.controllerCloseAction,
           title: 'scrolling modal title',
           content: 'test-long-modal-content',
           primaryButtonTitle: 'primary',
-          primaryButtonAction: 'alert',
+          primaryButtonAction: this.primaryClick,
           secondaryButtonTitle: 'secondary',
-          secondaryButtonAction: 'alert',
+          secondaryButtonAction: this.secondaryClick,
           linkTitle: 'alternative resource link',
           linkHref: '#'
         })
@@ -40,12 +32,12 @@
   
     <h4 class='FreestyleUsage-title'>modal with short content</h4>
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='show regular modal' class='bourbon-primary-button' action=(action 'showModal' modalParams)}}
+      {{bourbon-button title='show regular modal' additionalClasses='bourbon-primary-button' action=(action 'showModal' modalParams)}}
     </div>
 
     <h4 class='FreestyleUsage-title'>modal with long content</h4>
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='show long modal' class='bourbon-primary-button' action=(action 'showModal' longModalParams)}}
+      {{bourbon-button title='show long modal' additionalClasses='bourbon-primary-button' action=(action 'showModal' longModalParams)}}
     </div>
 
     <h3 class='FreestyleUsage-title'>Note on usage</h3>
@@ -62,6 +54,5 @@
       
       <img src="../images/bourbon-modal-diagram.png" alt="diagram showing connection between flabongo and bourbon for modal">
     </div>
-
   {{/section.subsection}}
 {{/freestyle-section}}

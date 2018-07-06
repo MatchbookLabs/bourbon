@@ -6,12 +6,7 @@
         {{#if modalService.title}}
           <header class='bourbon-modal__title'>{{modalService.title}}</header>
         {{/if}}
-
-        {{bourbon-button icon='close-button' class='bourbon-modal__close-button' action=(action 'closeModal')}}
-
-        {{!-- <div class='bourbon-modal__close-button' {{action 'closeModal'}}>
-          {{partial 'bourbon-close-button-svg'}}
-        </div> --}}
+        {{bourbon-button icon='close-button' additionalClasses='bourbon-modal__close-button' action=(action 'closeModal')}}
       </div>
 
       {{#if modalService.content}}
@@ -26,10 +21,10 @@
         {{/if}}
         <div class='bourbon-modal__button-wrapper'>
           {{#if modalService.secondaryButtonTitle}} 
-            {{bourbon-button title=modalService.secondaryButtonTitle class='bourbon-secondary-button bourbon-mr-2' action=(action modalService.secondaryButtonAction)}} 
+            {{bourbon-button title=modalService.secondaryButtonTitle additionalClasses='bourbon-secondary-button bourbon-mr-2' action=(action modalService.secondaryButtonAction)}} 
           {{/if}} 
           {{#if modalService.primaryButtonTitle}} 
-            {{bourbon-button title=modalService.primaryButtonTitle class='bourbon-primary-button' action=(action modalService.primaryButtonAction)}} 
+            {{bourbon-button title=modalService.primaryButtonTitle additionalClasses='bourbon-primary-button' action=(action modalService.primaryButtonAction)}} 
           {{/if}}
         </div>
       </div>

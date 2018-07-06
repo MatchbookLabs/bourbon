@@ -1,4 +1,4 @@
-  <button {{action 'click'}} class='{{if title 'bourbon-button'}} {{class}}'>
+  <button {{action 'click'}} class='{{if title 'bourbon-button'}} {{additionalClasses}}'>
     {{#if icon}}
       {{partial (concat 'bourbon-' icon '-svg')}}
     {{else}}

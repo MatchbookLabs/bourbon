@@ -1703,8 +1703,8 @@ making styling changes in the library */
 
 .bourbon-modal__close-button {
   position: absolute;
-  right: 18px;
-  top: 13px;
+  right: 24px;
+  top: 24px;
 }
 
 .bourbon-modal__close-button:focus {

@@ -1,19 +1,11 @@
 {{#freestyle-collection title="All buttons" defaultKey="all" inline=false as |collection|}}
 
-  {{#collection.variant key='primary'}}
-    {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
-      {{bourbon-button title="Primary button" class="bourbon-primary-button" action=(action 'buttonClick')}}
-    {{/freestyle-usage}}
+  {{partial 'components/buttons/primary-button-states'}}
+  {{partial 'components/buttons/secondary-button-states'}}
 
-    {{#freestyle-annotation}}
-      <p>The primary button is used on blah blah.</p>
-    {{/freestyle-annotation}}
-
-  {{/collection.variant}}
-
-  {{#collection.variant key='Secondary'}}
-    {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
-      {{bourbon-button title="Secondary Button" class="bourbon-secondary-button" action=(action 'buttonClick')}}
+  {{#collection.variant key='icon'}}
+    {{#freestyle-usage 'icon-button' title='Icon Button' usageTitle='Usage'}}
+      {{bourbon-button icon='edit-button' action=(action 'buttonClick')}}
     {{/freestyle-usage}}
   {{/collection.variant}}
 
