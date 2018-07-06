@@ -1,33 +1,23 @@
-{{#freestyle-collection title="Button Component In Every State" defaultKey="all" inline=false as |collection|}}
-  {{#freestyle-variant collection=collection key='default'}}
-    {{#freestyle-usage 'default-button' title="secondary button default state"}}
-      {{bourbon-button title="default" class="bourbon-secondary-button" action="alert"}}
-    {{/freestyle-usage}}
-  {{/freestyle-variant}}
+{{#collection.variant key='Secondary'}}
+  {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
+    {{bourbon-button title="Secondary Button" additionalClasses="bourbon-secondary-button" action=(action 'buttonClick')}}
+  {{/freestyle-usage}}
 
-  {{#freestyle-variant collection=collection key='hover'}}
     <div class="FreestyleUsage-title">
       secondary button hover state
     </div>
     <div class="FreestyleUsage-rendered">
-      <button style="background-color: var(--white) !important;"  class="bourbon-button bourbon-secondary-button">Hover</button>
+      <button style="background-color: var(--white) !important;" class="bourbon-button bourbon-secondary-button">Hover</button>
     </div>
-  {{/freestyle-variant}}
 
+    <div class="FreestyleUsage-title">
+      secondary button pressed state
+    </div>
+    <div class="FreestyleUsage-rendered">
+      <button style="background-color: var(--concrete) !important; border-color: var(--concrete) !important;" class="bourbon-button bourbon-secondary-button">Pressed</button>
+    </div>
 
-    {{#freestyle-variant collection=collection key='pressed'}}
-      <div class="FreestyleUsage-title">
-          secondary button pressed state
-      </div>
-      <div class="FreestyleUsage-rendered">
-        <button style="background-color: var(--concrete) !important; border-color: var(--concrete) !important;" class="bourbon-button bourbon-secondary-button">Pressed</button>
-      </div>
-  {{/freestyle-variant}}
-
-
-  {{#freestyle-variant collection=collection key='disabled'}}
     {{#freestyle-usage 'button' title="secondary button disabled state"}}
-      {{bourbon-button title="disabled" class="bourbon-secondary-button bourbon-disable-button" action="alert"}}
+      {{bourbon-button title="disabled" additionalClasses="bourbon-secondary-button bourbon-disable-button" action=(action 'buttonClick')}}
     {{/freestyle-usage}}
-  {{/freestyle-variant}}
-{{/freestyle-collection}}
+{{/collection.variant}}

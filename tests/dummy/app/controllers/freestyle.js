@@ -1,12 +1,15 @@
 import Ember from 'ember';
 import FreestyleController from 'ember-freestyle/controllers/freestyle';
+import ModalMixin from 'bourbon/mixins/modal';
+
 
 const { inject } = Ember;
 
-export default FreestyleController.extend({
+export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
 
+    // this is reflected in the visual style/color section
     this.set('colorPalette', {
       'accent': {
         'name': 'fern',
@@ -24,13 +27,61 @@ export default FreestyleController.extend({
         'name': 'white',
         'base': '#ffffff'
       }
+    }),
+
+    this.set('modalParams', {
+      scrollable: false,
+      closeAction: this.controllerCloseAction,
+      title: 'modal title',
+      content: 'test-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: this.primaryClick,
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
+    }),
+
+    this.set('longModalParams', {
+      scrollable: false,
+      title: 'modal title',
+      content: 'test-long-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: this.primaryClick,
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
+    }),
+
+    this.set('scrollableModalParams', {
+      scrollable: true,
+      closeAction: this.controllerCloseAction,
+      title: 'scrolling modal title',
+      content: 'test-long-modal-content',
+      primaryButtonTitle: 'primary',
+      primaryButtonAction: this.primaryClick,
+      secondaryButtonTitle: 'secondary',
+      secondaryButtonAction: this.secondaryClick,
+      linkTitle: 'alternative resource link',
+      linkHref: '#'
     })
   },
-  
+
   actions: {
-    alert() {
-      alert('you are clicking a button!')
+    buttonClick() {
+      alert('you are clicking a button!');
     }
+  },
+
+  primaryClick() {
+    alert('you are clicking a primary freestyle button!');
+    // call this from flabongo to close the modal    
+    this.get('modalService').closeModal();
+  },
+
+  secondaryClick() {
+    alert('you are clicking a secondary freestyle button!')
+  },
+  
+  controllerCloseAction() {
+    alert('i am a closing action from the controller')
   },
 
   emberFreestyle: inject.service()

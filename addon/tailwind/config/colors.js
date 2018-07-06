@@ -30,7 +30,7 @@ export default {
   'concrete': '#F3F3F3',
   'mercury': '#E9E9E9',
   'mine-shaft': '#2D2D2D',
-
+  'shade': 'rgba(0,0,0,0.4)',
 
   /* tailwind colors */
   // black: '#22292f',

@@ -1,0 +1,33 @@
+{{#if modalService.showModalState}}
+  <div class='bourbon-modal__wrapper'>
+    {{bourbon-modal-overlay closeModal=(action 'closeModal')}}
+    <aside class='bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}}'>
+      <div class='bourbon-modal__header'>
+        {{#if modalService.title}}
+          <header class='bourbon-modal__title'>{{modalService.title}}</header>
+        {{/if}}
+        {{bourbon-button icon='close-button' additionalClasses='bourbon-modal__close-button' action=(action 'closeModal')}}
+      </div>
+
+      {{#if modalService.content}}
+        <div class='bourbon-modal__content'>
+          {{partial modalService.content}} 
+        </div>
+      {{/if}}
+    
+      <div class='bourbon-modal__footer'>
+        {{#if modalService.linkTitle}}
+          <a class='bourbon-modal__link' href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
+        {{/if}}
+        <div class='bourbon-modal__button-wrapper'>
+          {{#if modalService.secondaryButtonTitle}} 
+            {{bourbon-button title=modalService.secondaryButtonTitle additionalClasses='bourbon-secondary-button bourbon-mr-2' action=(action modalService.secondaryButtonAction)}} 
+          {{/if}} 
+          {{#if modalService.primaryButtonTitle}} 
+            {{bourbon-button title=modalService.primaryButtonTitle additionalClasses='bourbon-primary-button' action=(action modalService.primaryButtonAction)}} 
+          {{/if}}
+        </div>
+      </div>
+    </aside>
+  </div>
+{{/if}}
