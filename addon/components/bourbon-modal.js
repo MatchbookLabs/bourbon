@@ -19,9 +19,7 @@ export default Component.extend({
   layout,
 
   _closeModalActions() {
-    if (typeof this.get('modalService.cancelAction') === 'function') {
-      this.get('modalService.cancelAction')();
-    }
+    this.get('modalService.closeAction')();
     this.get('modalService').closeModal();
   },
 

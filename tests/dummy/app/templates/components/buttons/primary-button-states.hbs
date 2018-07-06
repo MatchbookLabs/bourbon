@@ -1,7 +1,7 @@
 {{#freestyle-collection title="Button Component In Every State" defaultKey="all" inline=false as |collection|}}
   {{#collection.variant key='default'}}
     {{#freestyle-usage 'default-button' title="primary button default state"}}
-      {{bourbon-button title="default" class="bourbon-primary-button" action="alert"}}
+      {{bourbon-button title="default" class="bourbon-primary-button" action=(action 'buttonClick')}}
     {{/freestyle-usage}}
   {{/collection.variant}}
 
@@ -27,7 +27,7 @@
 
   {{#collection.variant key='disabled'}}
     {{#freestyle-usage 'button' title="primary button disabled state"}}
-      {{bourbon-button title="disabled" class="bourbon-primary-button bourbon-disable-button" action="alert"}}
+      {{bourbon-button title="disabled" class="bourbon-primary-button bourbon-disable-button"  action=(action 'buttonClick')}}
     {{/freestyle-usage}}
   {{/collection.variant}}
 {{/freestyle-collection}}

@@ -30,46 +30,58 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('modalParams', {
       scrollable: false,
-      cancelAction: this.controllerCloseAction,
+      closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
       primaryButtonTitle: 'primary',
-      primaryButtonAction: 'alert',
+      primaryButtonAction: this.primaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     }),
 
     this.set('longModalParams', {
       scrollable: false,
-      cancelAction: this.controllerCloseAction,
+      closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
-      primaryButtonAction: 'alert',
+      primaryButtonAction: this.primaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     }),
 
     this.set('scrollableModalParams', {
       scrollable: true,
-      cancelAction: this.controllerCloseAction,
+      closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'primary',
-      primaryButtonAction: 'alert',
+      primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'secondary',
-      secondaryButtonAction: 'alert',
+      secondaryButtonAction: this.secondaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })
   },
-  
+
   actions: {
-    alert() {
-      alert('you are clicking a button!')
+    buttonClick() {
+      alert('you are clicking a button!');
     }
   },
 
+
+
+  primaryClick() {
+    alert('you are clicking a primary freestyle button!');
+    // call this from flabongo to close the modal    
+    this.get('modalService').closeModal();
+  },
+
+  secondaryClick() {
+    alert('you are clicking a secondary freestyle button!')
+  },
+  
   controllerCloseAction() {
     alert('i am a closing action from the controller')
   },

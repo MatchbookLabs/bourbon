@@ -1,17 +1,20 @@
 {{#if modalService.showModalState}}
   <div class='bourbon-modal__wrapper'>
-    <div class='bourbon-modal__overlay' {{action 'closeModal'}} />
+    {{bourbon-modal-overlay closeModal=(action 'closeModal')}}
     <aside class='bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}}'>
       <div class='bourbon-modal__header'>
         {{#if modalService.title}}
           <header class='bourbon-modal__title'>{{modalService.title}}</header>
         {{/if}}
-        <div class='bourbon-modal__close-button' {{action 'closeModal'}}>
+
+        {{bourbon-button icon='close-button' class='bourbon-modal__close-button' action=(action 'closeModal')}}
+
+        {{!-- <div class='bourbon-modal__close-button' {{action 'closeModal'}}>
           {{partial 'bourbon-close-button-svg'}}
-        </div>
+        </div> --}}
       </div>
 
-      {{#if modalService.content}} 
+      {{#if modalService.content}}
         <div class='bourbon-modal__content'>
           {{partial modalService.content}} 
         </div>

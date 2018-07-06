@@ -1697,14 +1697,18 @@ making styling changes in the library */
 }
 
 .bourbon-modal__description {
-  font-size: 14px;
+  font-size: .875rem;
   color: #474c4f;
 }
 
 .bourbon-modal__close-button {
   position: absolute;
-  right: 23px;
-  top: 20px;
+  right: 18px;
+  top: 13px;
+}
+
+.bourbon-modal__close-button:focus {
+  outline: none;
 }
 
 .bourbon-modal__close-button svg {
@@ -4028,7 +4032,7 @@ making styling changes in the library */
 }
 
 .bourbon-text-md {
-  font-size: 14px;
+  font-size: .875rem;
 }
 
 .bourbon-text-base {
@@ -6650,7 +6654,7 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-text-md {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .sm\:bourbon-text-base {
@@ -9251,7 +9255,7 @@ making styling changes in the library */
   }
 
   .md\:bourbon-text-md {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .md\:bourbon-text-base {
@@ -11852,7 +11856,7 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-text-md {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .lg\:bourbon-text-base {
@@ -14453,7 +14457,7 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-text-md {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .xl\:bourbon-text-base {
