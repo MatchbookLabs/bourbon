@@ -34,7 +34,7 @@ export default FreestyleController.extend(ModalMixin, {
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
-      primaryButtonTitle: 'primary',
+      primaryButtonTitle: 'Primary',
       primaryButtonAction: this.primaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
@@ -44,7 +44,7 @@ export default FreestyleController.extend(ModalMixin, {
       scrollable: false,
       title: 'modal title',
       content: 'test-long-modal-content',
-      primaryButtonTitle: 'primary',
+      primaryButtonTitle: 'Primary',
       primaryButtonAction: this.primaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
@@ -55,9 +55,9 @@ export default FreestyleController.extend(ModalMixin, {
       closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
-      primaryButtonTitle: 'primary',
+      primaryButtonTitle: 'Primary',
       primaryButtonAction: this.primaryClick,
-      secondaryButtonTitle: 'secondary',
+      secondaryButtonTitle: 'Secondary',
       secondaryButtonAction: this.secondaryClick,
       linkTitle: 'alternative resource link',
       linkHref: '#'
@@ -66,7 +66,7 @@ export default FreestyleController.extend(ModalMixin, {
 
   actions: {
     buttonClick() {
-      alert('you are clicking a button!');
+      alert('you are clicking a button: action from freestyle!');
     }
   },
 
