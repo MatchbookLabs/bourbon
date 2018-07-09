@@ -70,6 +70,7 @@ export default FreestyleController.extend(ModalMixin, {
     }
   },
 
+
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
     // call this from flabongo to close the modal    

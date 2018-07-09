@@ -7,6 +7,10 @@
     {{#freestyle-usage 'icon-button' title='Icon Button' usageTitle='Usage'}}
       {{bourbon-button icon='edit-button' action=(action 'buttonClick')}}
     {{/freestyle-usage}}
+
+    {{#freestyle-usage 'icon-loading-button' title='loading' usageTitle='Usage'}}
+      {{bourbon-button icon='loading' additionalClasses="bourbon-disable-button" action=(action 'buttonClick')}}
+    {{/freestyle-usage}}
   {{/collection.variant}}
 
 {{/freestyle-collection}}

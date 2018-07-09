@@ -51,12 +51,13 @@
 .bourbon-button.bourbon-primary-button.bourbon-disable-button {
   @apply .bourbon-bg-mercury;
   @apply .bourbon-border-mercury;
-  @apply .bourbon-cursor-default;
-  @apply .bourbon-pointer-events-none;
 }
 
 .bourbon-button.bourbon-secondary-button.bourbon-disable-button {
+  @apply .bourbon-opacity-50;
+}
+
+.bourbon-disable-button {
   @apply .bourbon-cursor-default;
   @apply .bourbon-pointer-events-none;
-  @apply .bourbon-opacity-50;
 }
