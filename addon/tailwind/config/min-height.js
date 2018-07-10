@@ -15,5 +15,7 @@
 export default {
   '0': '0',
   full: '100%',
+  'button': '32px',
+  'button-icon': '45px',
   screen: '100vh'
 };

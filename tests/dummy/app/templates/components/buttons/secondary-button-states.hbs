@@ -1,6 +1,6 @@
 {{#collection.variant key='Secondary'}}
   {{#freestyle-usage 'secondary-button' title='Secondary Button' usageTitle='Usage'}}
-    {{bourbon-button title="Secondary Button" additionalClasses="bourbon-secondary-button" action=(action 'buttonClick')}}
+    {{bourbon-button title='Secondary button' class='bourbon-secondary-button' action=(action 'buttonClick')}}
   {{/freestyle-usage}}
 
     <div class="FreestyleUsage-title">
@@ -17,7 +17,7 @@
       <button style="background-color: var(--concrete) !important; border-color: var(--concrete) !important;" class="bourbon-button bourbon-secondary-button">Pressed</button>
     </div>
 
-    {{#freestyle-usage 'button' title="secondary button disabled state"}}
-      {{bourbon-button title="disabled" additionalClasses="bourbon-secondary-button bourbon-disable-button" action=(action 'buttonClick')}}
+    {{#freestyle-usage 'button' title='secondary button disabled state'}}
+      {{bourbon-button title='Disabled' class='bourbon-secondary-button bourbon-disable-button'}}
     {{/freestyle-usage}}
 {{/collection.variant}}
