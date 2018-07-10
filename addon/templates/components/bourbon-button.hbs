@@ -1,7 +1,5 @@
-<button {{action 'click'}} class='{{if title 'bourbon-button'}} {{additionalClasses}}' aria-label={{ariaLabel}} data-hint={{dataHint}} data-role={{dataRole}} target={{target}}>
-  {{#if icon}}
-    {{partial (concat 'bourbon-' icon '-svg')}}
-  {{else}}
-    {{title}}
-  {{/if}}
-</button>
+{{#if icon}}
+  {{partial (concat 'bourbon-' icon '-svg')}}
+{{else}}
+  {{title}}
+{{/if}}

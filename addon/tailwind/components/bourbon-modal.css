@@ -3,8 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-
+  
   @apply .bourbon-pin-t;
   @apply .bourbon-pin-r;
   @apply .bourbon-pin-b;
@@ -12,6 +11,7 @@
 }
 
 .bourbon-modal__overlay {
+  position: fixed;
   @apply .bourbon-bg-shade;
 }
 

@@ -1,6 +1,6 @@
 {{#collection.variant key='primary'}}
   {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
-    {{bourbon-button title="Primary button" additionalClasses="bourbon-primary-button" action=(action 'buttonClick')}}
+    {{bourbon-button title="Primary button" class="bourbon-primary-button" action=(action 'buttonClick') dataHint="press the button"}}
   {{/freestyle-usage}}
 
   {{#freestyle-annotation}}
@@ -23,6 +23,6 @@
   </div>
 
   {{#freestyle-usage 'button' title="primary button disabled state"}}
-    {{bourbon-button title="Disabled" additionalClasses="bourbon-primary-button bourbon-disable-button" action=(action 'buttonClick')}}
+    {{bourbon-button title="Disabled" class="bourbon-primary-button bourbon-disable-button" action=(action 'buttonClick')}}
   {{/freestyle-usage}}
 {{/collection.variant}}
