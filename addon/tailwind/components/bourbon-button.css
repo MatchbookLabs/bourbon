@@ -1,9 +1,10 @@
 .bourbon-button {
-  @apply .bourbon-inline-block;
-  @apply .bourbon-m-0;
-  padding: 8px 12px 7px;
-  min-width: 85px;
-  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  @apply .bourbon-min-w-button;
+  @apply .bourbon-min-h-button;
   @apply .bourbon-rounded-sm;
   @apply .bourbon-text-sm;
   @apply .bourbon-text-center;
@@ -16,26 +17,21 @@
   @apply .bourbon-border-transparent;
 }
 
-.bourbon-button--icon {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
 .bourbon-button--icon-only {
-  padding: 5px;
-  min-width: 45px;
+  @apply .bourbon-p-2;
+  @apply .bourbon-min-w-button-icon;
+  @apply .bourbon-min-h-button-icon;
+  @apply .bourbon-border-mercury;
 }
 
-.bourbon-button--icon-text {
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.bourbon-button--icon-only svg {
+  width: 20px;
+  height: 20px;
 }
 
-.bourbon-button--icon-text svg{
-  width: 15px;
+.bourbon-button--icon-text svg {
+  width: 16px;
+  height: 16px;
   @apply .bourbon-mr-2;
 }
 

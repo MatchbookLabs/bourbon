@@ -14,5 +14,7 @@
 
 export default {
   '0': '0',
+  button: '85px',
+  'button-icon': '45px',
   full: '100%'
 };
