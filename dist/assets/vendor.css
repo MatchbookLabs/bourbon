@@ -1000,6 +1000,11 @@ making styling changes in the library */
   justify-content: center;
 }
 
+.bourbon-button--icon-only {
+  padding: 0;
+  min-width: 45px;
+}
+
 .bourbon-button--icon-text {
   padding: 0 15px;
   display: flex;

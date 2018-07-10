@@ -22,6 +22,10 @@
   justify-content: center;
 }
 
+.bourbon-button--icon-only {
+  padding: 5px;
+  min-width: 45px;
+}
 
 .bourbon-button--icon-text {
   padding: 0 15px;
