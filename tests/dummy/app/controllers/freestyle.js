@@ -64,6 +64,7 @@ export default FreestyleController.extend(ModalMixin, {
     })
   },
 
+
   actions: {
     buttonClick() {
       alert('you are clicking a button: action from freestyle!');
