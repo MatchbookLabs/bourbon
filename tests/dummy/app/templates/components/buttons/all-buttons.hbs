@@ -13,4 +13,10 @@
     {{/freestyle-usage}}
   {{/collection.variant}}
 
+  {{#collection.variant key='icon-and-text'}}
+    {{#freestyle-usage 'icon-text-button' title='Icon Text Button' usageTitle='Usage'}}
+      {{bourbon-button icon='edit-button' title="edit me now" class="bourbon-secondary-button bourbon-button--icon-text" action=(action 'buttonClick')}}
+    {{/freestyle-usage}}
+  {{/collection.variant}}
+
 {{/freestyle-collection}}

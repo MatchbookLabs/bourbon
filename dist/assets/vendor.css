@@ -1000,6 +1000,18 @@ making styling changes in the library */
   justify-content: center;
 }
 
+.bourbon-button--icon-text {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bourbon-button--icon-text svg {
+  width: 15px;
+  margin-right: .5rem;
+}
+
 .bourbon-button.bourbon-primary-button {
   color: #fff;
   background-color: #5cb675;
