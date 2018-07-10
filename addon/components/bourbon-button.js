@@ -5,7 +5,7 @@ export default Component.extend({
   layout,
   tagName: 'button',
   classNameBindings: ['title:bourbon-button'],
-  attributeBindings: ['ariaLabel:aria-label', 'dataRole:data-role', 'dataHint:data-hint',  'target'],
+  attributeBindings: ['aria-label', 'data-role', 'data-hint',  'target'],
 
   click() {
     if (typeof this.get('action') === 'function') {
