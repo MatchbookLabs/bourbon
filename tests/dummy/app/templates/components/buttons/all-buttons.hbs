@@ -1,22 +1,38 @@
-{{#freestyle-collection title="All buttons" defaultKey="all" inline=false as |collection|}}
+{{#freestyle-collection title='All buttons' defaultKey='all' inline=false as |collection|}}
 
   {{partial 'components/buttons/primary-button-states'}}
   {{partial 'components/buttons/secondary-button-states'}}
 
   {{#collection.variant key='icon'}}
-    {{#freestyle-usage 'icon-button' title='Icon Button' usageTitle='Usage'}}
-      {{bourbon-button icon='edit-button' class='bourbon-button--icon-only' action=(action 'buttonClick')}}
+    {{#freestyle-usage 'icon-only-button' title='Icon Button' usageTitle='Usage'}}
+      {{bourbon-button icon='edit-button' action=(action 'buttonClick')}}
     {{/freestyle-usage}}
 
-    {{#freestyle-usage 'icon-loading-button' title='loading' usageTitle='Usage'}}
-      {{bourbon-button icon='loading' class="bourbon-disable-button bourbon-primary-button bourbon-button--icon" action=(action 'buttonClick') data-role="icon button"}}
+    {{#freestyle-note 'icon-only-button--notes'}}
+      - requires icon attribute
+      - all icons should live in bourbon
+      <br>
+    {{/freestyle-note}}
+
+    {{#freestyle-usage 'icon-button' title='loading' usageTitle='Usage'}}
+      {{bourbon-button icon='loading' class='bourbon-disable-button bourbon-primary-button' action=(action 'buttonClick') data-role='icon button'}}
     {{/freestyle-usage}}
+
+    {{#freestyle-note 'icon-button--notes'}}
+      - requires icon attribute and class for button ie. bourbon-primary-button
+      <br>
+    {{/freestyle-note}}
   {{/collection.variant}}
 
   {{#collection.variant key='icon-and-text'}}
     {{#freestyle-usage 'icon-text-button' title='Icon Text Button' usageTitle='Usage'}}
-      {{bourbon-button icon='edit-button' title="edit me now" class="bourbon-secondary-button bourbon-button--icon-text" action=(action 'buttonClick')}}
+      {{bourbon-button icon='edit-button' title='edit me now' class='bourbon-secondary-button' action=(action 'buttonClick')}}
     {{/freestyle-usage}}
+    {{#freestyle-note 'icon-button--notes'}}
+      - requires icon, title and class attributes
+      <br>
+    {{/freestyle-note}}
+
   {{/collection.variant}}
 
 {{/freestyle-collection}}

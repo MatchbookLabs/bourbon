@@ -1001,7 +1001,7 @@ making styling changes in the library */
 }
 
 .bourbon-button--icon-only {
-  padding: 0;
+  padding: 5px;
   min-width: 45px;
 }
 

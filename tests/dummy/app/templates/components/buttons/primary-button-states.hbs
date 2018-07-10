@@ -1,13 +1,12 @@
 {{#collection.variant key='primary'}}
-  {{#freestyle-usage 'primary-button' title="primary button" usageTitle='Usage'}}
-    {{bourbon-button title="Primary button" class="bourbon-primary-button" action=(action 'buttonClick') data-hint="press the button"}}
+  {{#freestyle-usage 'primary-button' title='primary button' usageTitle='Usage'}}
+    {{bourbon-button title='Primary button' class='bourbon-primary-button' action=(action 'buttonClick') data-hint='press the button'}}
   {{/freestyle-usage}}
 
   {{#freestyle-annotation}}
     <p>The primary button is used in most situtations to indicate the primary action.</p>
     <p>All titles should be entered in sentence case.</p>
     <p>The attributes that can be added to the button currently include the following:</p>
-    <br>
     <ul>
       <li>aria-label</li>
       <li>data-role</li>
@@ -30,7 +29,7 @@
     <button style="background-color: var(--fruit-salad;) !important; border-color: var(--fruit-salad;) !important;" class="bourbon-button bourbon-primary-button">Pressed</button>
   </div>
 
-  {{#freestyle-usage 'button' title="primary button disabled state"}}
-    {{bourbon-button title="Disabled" class="bourbon-primary-button bourbon-disable-button" action=(action 'buttonClick')}}
+  {{#freestyle-usage 'button' title='primary button disabled state'}}
+    {{bourbon-button title='Disabled' class='bourbon-primary-button bourbon-disable-button' action=(action 'buttonClick')}}
   {{/freestyle-usage}}
 {{/collection.variant}}
