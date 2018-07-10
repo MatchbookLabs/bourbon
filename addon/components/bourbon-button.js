@@ -4,7 +4,7 @@ import layout from '../templates/components/bourbon-button';
 export default Component.extend({
   layout,
   tagName: 'button',
-  classNameBindings: ['title:bourbon-button'],
+  classNames: ['bourbon-button'],
   attributeBindings: ['aria-label', 'data-role', 'data-hint',  'target'],
 
   click() {

@@ -980,6 +980,8 @@ making styling changes in the library */
   display: inline-block;
   margin: 0;
   padding: 8px 12px 7px;
+  min-width: 85px;
+  min-height: 30px;
   border-radius: .125rem;
   font-size: .8125rem;
   text-align: center;
@@ -990,6 +992,12 @@ making styling changes in the library */
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+}
+
+.bourbon-button--icon {
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .bourbon-button.bourbon-primary-button {
