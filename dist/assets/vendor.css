@@ -1019,6 +1019,12 @@ making styling changes in the library */
   border-color: #5cb675;
 }
 
+.bourbon-delete-button {
+  color: #fff;
+  background-color: #e2443e;
+  border-color: #e2443e;
+}
+
 .bourbon-button.bourbon-primary-button:hover {
   background-color: #4cce6f;
   border-color: #4cce6f;
@@ -1171,7 +1177,7 @@ making styling changes in the library */
 }
 
 .bourbon-modal--scrollable .bourbon-modal__footer {
-  margin-top: .25rem;
+  margin-top: .35rem;
   padding-top: 2rem;
   box-shadow: 0 -3px 6px -2px rgba(0, 0, 0, .1);
   padding-right: 20px;
@@ -1260,6 +1266,10 @@ making styling changes in the library */
   background-color: #d3d3d3;
 }
 
+.bourbon-bg-red {
+  background-color: #e2443e;
+}
+
 .hover\:bourbon-bg-transparent:hover {
   background-color: transparent;
 }
@@ -1314,6 +1324,10 @@ making styling changes in the library */
 
 .hover\:bourbon-bg-grey-light:hover {
   background-color: #d3d3d3;
+}
+
+.hover\:bourbon-bg-red:hover {
+  background-color: #e2443e;
 }
 
 .bourbon-bg-bottom {
@@ -1436,6 +1450,10 @@ making styling changes in the library */
   border-color: #d3d3d3;
 }
 
+.bourbon-border-red {
+  border-color: #e2443e;
+}
+
 .hover\:bourbon-border-transparent:hover {
   border-color: transparent;
 }
@@ -1490,6 +1508,10 @@ making styling changes in the library */
 
 .hover\:bourbon-border-grey-light:hover {
   border-color: #d3d3d3;
+}
+
+.hover\:bourbon-border-red:hover {
+  border-color: #e2443e;
 }
 
 .bourbon-rounded-none {
@@ -2199,7 +2221,7 @@ making styling changes in the library */
 }
 
 .bourbon-m-1 {
-  margin: .25rem;
+  margin: .35rem;
 }
 
 .bourbon-m-2 {
@@ -2249,13 +2271,13 @@ making styling changes in the library */
 }
 
 .bourbon-my-1 {
-  margin-top: .25rem;
-  margin-bottom: .25rem;
+  margin-top: .35rem;
+  margin-bottom: .35rem;
 }
 
 .bourbon-mx-1 {
-  margin-left: .25rem;
-  margin-right: .25rem;
+  margin-left: .35rem;
+  margin-right: .35rem;
 }
 
 .bourbon-my-2 {
@@ -2365,19 +2387,19 @@ making styling changes in the library */
 }
 
 .bourbon-mt-1 {
-  margin-top: .25rem;
+  margin-top: .35rem;
 }
 
 .bourbon-mr-1 {
-  margin-right: .25rem;
+  margin-right: .35rem;
 }
 
 .bourbon-mb-1 {
-  margin-bottom: .25rem;
+  margin-bottom: .35rem;
 }
 
 .bourbon-ml-1 {
-  margin-left: .25rem;
+  margin-left: .35rem;
 }
 
 .bourbon-mt-2 {
@@ -3392,6 +3414,10 @@ making styling changes in the library */
   color: #d3d3d3;
 }
 
+.bourbon-text-red {
+  color: #e2443e;
+}
+
 .hover\:bourbon-text-transparent:hover {
   color: transparent;
 }
@@ -3446,6 +3472,10 @@ making styling changes in the library */
 
 .hover\:bourbon-text-grey-light:hover {
   color: #d3d3d3;
+}
+
+.hover\:bourbon-text-red:hover {
+  color: #e2443e;
 }
 
 .bourbon-text-xs {
@@ -3906,6 +3936,10 @@ making styling changes in the library */
     background-color: #d3d3d3;
   }
 
+  .sm\:bourbon-bg-red {
+    background-color: #e2443e;
+  }
+
   .sm\:hover\:bourbon-bg-transparent:hover {
     background-color: transparent;
   }
@@ -3960,6 +3994,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-bg-grey-light:hover {
     background-color: #d3d3d3;
+  }
+
+  .sm\:hover\:bourbon-bg-red:hover {
+    background-color: #e2443e;
   }
 
   .sm\:bourbon-bg-bottom {
@@ -4082,6 +4120,10 @@ making styling changes in the library */
     border-color: #d3d3d3;
   }
 
+  .sm\:bourbon-border-red {
+    border-color: #e2443e;
+  }
+
   .sm\:hover\:bourbon-border-transparent:hover {
     border-color: transparent;
   }
@@ -4136,6 +4178,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-border-grey-light:hover {
     border-color: #d3d3d3;
+  }
+
+  .sm\:hover\:bourbon-border-red:hover {
+    border-color: #e2443e;
   }
 
   .sm\:bourbon-rounded-none {
@@ -4845,7 +4891,7 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-m-1 {
-    margin: .25rem;
+    margin: .35rem;
   }
 
   .sm\:bourbon-m-2 {
@@ -4895,13 +4941,13 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-my-1 {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+    margin-top: .35rem;
+    margin-bottom: .35rem;
   }
 
   .sm\:bourbon-mx-1 {
-    margin-left: .25rem;
-    margin-right: .25rem;
+    margin-left: .35rem;
+    margin-right: .35rem;
   }
 
   .sm\:bourbon-my-2 {
@@ -5011,19 +5057,19 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-mt-1 {
-    margin-top: .25rem;
+    margin-top: .35rem;
   }
 
   .sm\:bourbon-mr-1 {
-    margin-right: .25rem;
+    margin-right: .35rem;
   }
 
   .sm\:bourbon-mb-1 {
-    margin-bottom: .25rem;
+    margin-bottom: .35rem;
   }
 
   .sm\:bourbon-ml-1 {
-    margin-left: .25rem;
+    margin-left: .35rem;
   }
 
   .sm\:bourbon-mt-2 {
@@ -6030,6 +6076,10 @@ making styling changes in the library */
     color: #d3d3d3;
   }
 
+  .sm\:bourbon-text-red {
+    color: #e2443e;
+  }
+
   .sm\:hover\:bourbon-text-transparent:hover {
     color: transparent;
   }
@@ -6084,6 +6134,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-text-grey-light:hover {
     color: #d3d3d3;
+  }
+
+  .sm\:hover\:bourbon-text-red:hover {
+    color: #e2443e;
   }
 
   .sm\:bourbon-text-xs {
@@ -6523,6 +6577,10 @@ making styling changes in the library */
     background-color: #d3d3d3;
   }
 
+  .md\:bourbon-bg-red {
+    background-color: #e2443e;
+  }
+
   .md\:hover\:bourbon-bg-transparent:hover {
     background-color: transparent;
   }
@@ -6577,6 +6635,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-bg-grey-light:hover {
     background-color: #d3d3d3;
+  }
+
+  .md\:hover\:bourbon-bg-red:hover {
+    background-color: #e2443e;
   }
 
   .md\:bourbon-bg-bottom {
@@ -6699,6 +6761,10 @@ making styling changes in the library */
     border-color: #d3d3d3;
   }
 
+  .md\:bourbon-border-red {
+    border-color: #e2443e;
+  }
+
   .md\:hover\:bourbon-border-transparent:hover {
     border-color: transparent;
   }
@@ -6753,6 +6819,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-border-grey-light:hover {
     border-color: #d3d3d3;
+  }
+
+  .md\:hover\:bourbon-border-red:hover {
+    border-color: #e2443e;
   }
 
   .md\:bourbon-rounded-none {
@@ -7462,7 +7532,7 @@ making styling changes in the library */
   }
 
   .md\:bourbon-m-1 {
-    margin: .25rem;
+    margin: .35rem;
   }
 
   .md\:bourbon-m-2 {
@@ -7512,13 +7582,13 @@ making styling changes in the library */
   }
 
   .md\:bourbon-my-1 {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+    margin-top: .35rem;
+    margin-bottom: .35rem;
   }
 
   .md\:bourbon-mx-1 {
-    margin-left: .25rem;
-    margin-right: .25rem;
+    margin-left: .35rem;
+    margin-right: .35rem;
   }
 
   .md\:bourbon-my-2 {
@@ -7628,19 +7698,19 @@ making styling changes in the library */
   }
 
   .md\:bourbon-mt-1 {
-    margin-top: .25rem;
+    margin-top: .35rem;
   }
 
   .md\:bourbon-mr-1 {
-    margin-right: .25rem;
+    margin-right: .35rem;
   }
 
   .md\:bourbon-mb-1 {
-    margin-bottom: .25rem;
+    margin-bottom: .35rem;
   }
 
   .md\:bourbon-ml-1 {
-    margin-left: .25rem;
+    margin-left: .35rem;
   }
 
   .md\:bourbon-mt-2 {
@@ -8647,6 +8717,10 @@ making styling changes in the library */
     color: #d3d3d3;
   }
 
+  .md\:bourbon-text-red {
+    color: #e2443e;
+  }
+
   .md\:hover\:bourbon-text-transparent:hover {
     color: transparent;
   }
@@ -8701,6 +8775,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-text-grey-light:hover {
     color: #d3d3d3;
+  }
+
+  .md\:hover\:bourbon-text-red:hover {
+    color: #e2443e;
   }
 
   .md\:bourbon-text-xs {
@@ -9140,6 +9218,10 @@ making styling changes in the library */
     background-color: #d3d3d3;
   }
 
+  .lg\:bourbon-bg-red {
+    background-color: #e2443e;
+  }
+
   .lg\:hover\:bourbon-bg-transparent:hover {
     background-color: transparent;
   }
@@ -9194,6 +9276,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-bg-grey-light:hover {
     background-color: #d3d3d3;
+  }
+
+  .lg\:hover\:bourbon-bg-red:hover {
+    background-color: #e2443e;
   }
 
   .lg\:bourbon-bg-bottom {
@@ -9316,6 +9402,10 @@ making styling changes in the library */
     border-color: #d3d3d3;
   }
 
+  .lg\:bourbon-border-red {
+    border-color: #e2443e;
+  }
+
   .lg\:hover\:bourbon-border-transparent:hover {
     border-color: transparent;
   }
@@ -9370,6 +9460,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-border-grey-light:hover {
     border-color: #d3d3d3;
+  }
+
+  .lg\:hover\:bourbon-border-red:hover {
+    border-color: #e2443e;
   }
 
   .lg\:bourbon-rounded-none {
@@ -10079,7 +10173,7 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-m-1 {
-    margin: .25rem;
+    margin: .35rem;
   }
 
   .lg\:bourbon-m-2 {
@@ -10129,13 +10223,13 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-my-1 {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+    margin-top: .35rem;
+    margin-bottom: .35rem;
   }
 
   .lg\:bourbon-mx-1 {
-    margin-left: .25rem;
-    margin-right: .25rem;
+    margin-left: .35rem;
+    margin-right: .35rem;
   }
 
   .lg\:bourbon-my-2 {
@@ -10245,19 +10339,19 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-mt-1 {
-    margin-top: .25rem;
+    margin-top: .35rem;
   }
 
   .lg\:bourbon-mr-1 {
-    margin-right: .25rem;
+    margin-right: .35rem;
   }
 
   .lg\:bourbon-mb-1 {
-    margin-bottom: .25rem;
+    margin-bottom: .35rem;
   }
 
   .lg\:bourbon-ml-1 {
-    margin-left: .25rem;
+    margin-left: .35rem;
   }
 
   .lg\:bourbon-mt-2 {
@@ -11264,6 +11358,10 @@ making styling changes in the library */
     color: #d3d3d3;
   }
 
+  .lg\:bourbon-text-red {
+    color: #e2443e;
+  }
+
   .lg\:hover\:bourbon-text-transparent:hover {
     color: transparent;
   }
@@ -11318,6 +11416,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-text-grey-light:hover {
     color: #d3d3d3;
+  }
+
+  .lg\:hover\:bourbon-text-red:hover {
+    color: #e2443e;
   }
 
   .lg\:bourbon-text-xs {
@@ -11757,6 +11859,10 @@ making styling changes in the library */
     background-color: #d3d3d3;
   }
 
+  .xl\:bourbon-bg-red {
+    background-color: #e2443e;
+  }
+
   .xl\:hover\:bourbon-bg-transparent:hover {
     background-color: transparent;
   }
@@ -11811,6 +11917,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-bg-grey-light:hover {
     background-color: #d3d3d3;
+  }
+
+  .xl\:hover\:bourbon-bg-red:hover {
+    background-color: #e2443e;
   }
 
   .xl\:bourbon-bg-bottom {
@@ -11933,6 +12043,10 @@ making styling changes in the library */
     border-color: #d3d3d3;
   }
 
+  .xl\:bourbon-border-red {
+    border-color: #e2443e;
+  }
+
   .xl\:hover\:bourbon-border-transparent:hover {
     border-color: transparent;
   }
@@ -11987,6 +12101,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-border-grey-light:hover {
     border-color: #d3d3d3;
+  }
+
+  .xl\:hover\:bourbon-border-red:hover {
+    border-color: #e2443e;
   }
 
   .xl\:bourbon-rounded-none {
@@ -12696,7 +12814,7 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-m-1 {
-    margin: .25rem;
+    margin: .35rem;
   }
 
   .xl\:bourbon-m-2 {
@@ -12746,13 +12864,13 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-my-1 {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+    margin-top: .35rem;
+    margin-bottom: .35rem;
   }
 
   .xl\:bourbon-mx-1 {
-    margin-left: .25rem;
-    margin-right: .25rem;
+    margin-left: .35rem;
+    margin-right: .35rem;
   }
 
   .xl\:bourbon-my-2 {
@@ -12862,19 +12980,19 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-mt-1 {
-    margin-top: .25rem;
+    margin-top: .35rem;
   }
 
   .xl\:bourbon-mr-1 {
-    margin-right: .25rem;
+    margin-right: .35rem;
   }
 
   .xl\:bourbon-mb-1 {
-    margin-bottom: .25rem;
+    margin-bottom: .35rem;
   }
 
   .xl\:bourbon-ml-1 {
-    margin-left: .25rem;
+    margin-left: .35rem;
   }
 
   .xl\:bourbon-mt-2 {
@@ -13881,6 +13999,10 @@ making styling changes in the library */
     color: #d3d3d3;
   }
 
+  .xl\:bourbon-text-red {
+    color: #e2443e;
+  }
+
   .xl\:hover\:bourbon-text-transparent:hover {
     color: transparent;
   }
@@ -13935,6 +14057,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-text-grey-light:hover {
     color: #d3d3d3;
+  }
+
+  .xl\:hover\:bourbon-text-red:hover {
+    color: #e2443e;
   }
 
   .xl\:bourbon-text-xs {

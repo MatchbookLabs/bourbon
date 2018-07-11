@@ -39,7 +39,12 @@
   @apply .bourbon-text-white;
   @apply .bourbon-bg-fern;
   @apply .bourbon-border-fern;
+}
 
+.bourbon-delete-button {
+  @apply .bourbon-text-white;
+  @apply .bourbon-bg-red;
+  @apply .bourbon-border-red;
 }
 
 .bourbon-button.bourbon-primary-button:hover {
