@@ -1,10 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-import layout from '../templates/components/bourbon-button';
-
 export default Component.extend({
-  layout,
   tagName: 'button',
   classNames: ['bourbon-button'],
   classNameBindings: ['iconTextButton:bourbon-button--icon-text', 'iconOnlyButton:bourbon-button--icon-only'],
