@@ -23,8 +23,7 @@
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
-    "ember-cli-tailwind": "MatchbookLabs/ember-cli-tailwind#master",
-    "ember-cli-sass": "^7.1.7"
+    "ember-cli-tailwind": "MatchbookLabs/ember-cli-tailwind#master"
   },
   "devDependencies": {
     "bower": "^1.8.4",
@@ -44,7 +43,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~3.1.0",
+    "ember-source": "~2.18",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
     "eslint-plugin-ember": "^5.0.0",
