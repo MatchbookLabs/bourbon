@@ -595,8 +595,6 @@ button,
 }
 
 
-
-/*# sourceMappingURL=bourbon.css.map */
 .FreestyleGuide {
   display: flex;
   flex-direction: column;
@@ -1120,6 +1118,9 @@ making styling changes in the library */
   position: absolute;
   right: 24px;
   top: 24px;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
 }
 
 .bourbon-modal__close-button:focus {
