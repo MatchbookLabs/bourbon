@@ -8,6 +8,7 @@
   @apply .bourbon-rounded-sm;
   @apply .bourbon-text-sm;
   @apply .bourbon-text-center;
+  @apply .bourbon-font-normal;
   @apply .bourbon-whitespace-no-wrap;
   @apply .bourbon-antialiased;
   @apply .bourbon-cursor-pointer;
@@ -35,7 +36,7 @@
   @apply .bourbon-mr-2;
 }
 
-.bourbon-button.bourbon-primary-button {
+.bourbon-primary-button {
   @apply .bourbon-text-white;
   @apply .bourbon-bg-fern;
   @apply .bourbon-border-fern;
@@ -47,39 +48,43 @@
   @apply .bourbon-border-red;
 }
 
-.bourbon-button.bourbon-primary-button:hover {
+.bourbon-primary-button:hover {
   @apply .bourbon-bg-emerald;
   @apply .bourbon-border-emerald;
 }
 
-.bourbon-button.bourbon-primary-button:active,
-.bourbon-button.bourbon-primary-button:focus {
+.bourbon-primary-button:active,
+.bourbon-primary-button:focus {
   @apply .bourbon-bg-fruit-salad;
   @apply .bourbon-border-fruit-salad;
+  box-shadow: inset 0 0 0 1px var(--white);
+  outline: none;
 }
 
-.bourbon-button.bourbon-secondary-button {
+.bourbon-secondary-button {
   @apply .bourbon-text-mine-shaft;
   @apply .bourbon-bg-alabaster;
   @apply .bourbon-border-mercury;
 }
 
-.bourbon-button.bourbon-secondary-button:hover {
+.bourbon-secondary-button:hover {
   @apply .bourbon-bg-white;
 }
 
-.bourbon-button.bourbon-secondary-button:active,
-.bourbon-button.bourbon-secondary-button:focus {
+.bourbon-secondary-button:active,
+.bourbon-secondary-button:focus {
   @apply .bourbon-bg-concrete;
   @apply .bourbon-border-concrete;
+  box-shadow: inset 0 0 0 1px var(--dodger-blue);
+  outline: none;
 }
 
-.bourbon-button.bourbon-primary-button.bourbon-disable-button {
+.bourbon-primary-button.bourbon-disable-button {
   @apply .bourbon-bg-mercury;
   @apply .bourbon-border-mercury;
 }
 
-.bourbon-button.bourbon-secondary-button.bourbon-disable-button {
+.bourbon-secondary-button.bourbon-disable-button {
   @apply .bourbon-opacity-50;
 }
 

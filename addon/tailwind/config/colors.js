@@ -19,9 +19,10 @@ export default {
 
   /* getfeedback colors */
 
-  'fern': '#5CB675',
+  'fern': '#48BA70',
   'emerald': '#4CCE6F',
   'fruit-salad': '#4CA465',
+  'dodger-blue': '#2E71FC',
   'black': '#000',
   'white': '#FFF',
   'slate': '#474C4F',

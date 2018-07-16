@@ -595,8 +595,6 @@ button,
 }
 
 
-
-/*# sourceMappingURL=bourbon.css.map */
 .FreestyleGuide {
   display: flex;
   flex-direction: column;
@@ -966,6 +964,7 @@ making styling changes in the library */
   --fern: #5cb675;
   --emerald: #4cce6f;
   --fruit-salad: #4ca465;
+  --dodger-blue: #2e71fc;
   --slate: #474c4f;
   --alto: #dcdcdc;
   --lightgray: #d3d3d3;
@@ -986,6 +985,7 @@ making styling changes in the library */
   border-radius: .125rem;
   font-size: .8125rem;
   text-align: center;
+  font-weight: 400;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1013,10 +1013,10 @@ making styling changes in the library */
   margin-right: .5rem;
 }
 
-.bourbon-button.bourbon-primary-button {
+.bourbon-primary-button {
   color: #fff;
-  background-color: #5cb675;
-  border-color: #5cb675;
+  background-color: #48ba70;
+  border-color: #48ba70;
 }
 
 .bourbon-delete-button {
@@ -1025,39 +1025,43 @@ making styling changes in the library */
   border-color: #e2443e;
 }
 
-.bourbon-button.bourbon-primary-button:hover {
+.bourbon-primary-button:hover {
   background-color: #4cce6f;
   border-color: #4cce6f;
 }
 
-.bourbon-button.bourbon-primary-button:active,
-.bourbon-button.bourbon-primary-button:focus {
+.bourbon-primary-button:active,
+.bourbon-primary-button:focus {
   background-color: #4ca465;
   border-color: #4ca465;
+  box-shadow: inset 0 0 0 1px var(--white);
+  outline: none;
 }
 
-.bourbon-button.bourbon-secondary-button {
+.bourbon-secondary-button {
   color: #2d2d2d;
   background-color: #fafafa;
   border-color: #e9e9e9;
 }
 
-.bourbon-button.bourbon-secondary-button:hover {
+.bourbon-secondary-button:hover {
   background-color: #fff;
 }
 
-.bourbon-button.bourbon-secondary-button:active,
-.bourbon-button.bourbon-secondary-button:focus {
+.bourbon-secondary-button:active,
+.bourbon-secondary-button:focus {
   background-color: #f3f3f3;
   border-color: #f3f3f3;
+  box-shadow: inset 0 0 0 1px var(--dodger-blue);
+  outline: none;
 }
 
-.bourbon-button.bourbon-primary-button.bourbon-disable-button {
+.bourbon-primary-button.bourbon-disable-button {
   background-color: #e9e9e9;
   border-color: #e9e9e9;
 }
 
-.bourbon-button.bourbon-secondary-button.bourbon-disable-button {
+.bourbon-secondary-button.bourbon-disable-button {
   opacity: .5;
 }
 
@@ -1120,6 +1124,8 @@ making styling changes in the library */
   position: absolute;
   right: 24px;
   top: 24px;
+  min-width: 0;
+  padding: 0;
 }
 
 .bourbon-modal__close-button:focus {
@@ -1215,7 +1221,7 @@ making styling changes in the library */
 }
 
 .bourbon-bg-fern {
-  background-color: #5cb675;
+  background-color: #48ba70;
 }
 
 .bourbon-bg-emerald {
@@ -1224,6 +1230,10 @@ making styling changes in the library */
 
 .bourbon-bg-fruit-salad {
   background-color: #4ca465;
+}
+
+.bourbon-bg-dodger-blue {
+  background-color: #2e71fc;
 }
 
 .bourbon-bg-black {
@@ -1275,7 +1285,7 @@ making styling changes in the library */
 }
 
 .hover\:bourbon-bg-fern:hover {
-  background-color: #5cb675;
+  background-color: #48ba70;
 }
 
 .hover\:bourbon-bg-emerald:hover {
@@ -1284,6 +1294,10 @@ making styling changes in the library */
 
 .hover\:bourbon-bg-fruit-salad:hover {
   background-color: #4ca465;
+}
+
+.hover\:bourbon-bg-dodger-blue:hover {
+  background-color: #2e71fc;
 }
 
 .hover\:bourbon-bg-black:hover {
@@ -1399,7 +1413,7 @@ making styling changes in the library */
 }
 
 .bourbon-border-fern {
-  border-color: #5cb675;
+  border-color: #48ba70;
 }
 
 .bourbon-border-emerald {
@@ -1408,6 +1422,10 @@ making styling changes in the library */
 
 .bourbon-border-fruit-salad {
   border-color: #4ca465;
+}
+
+.bourbon-border-dodger-blue {
+  border-color: #2e71fc;
 }
 
 .bourbon-border-black {
@@ -1459,7 +1477,7 @@ making styling changes in the library */
 }
 
 .hover\:bourbon-border-fern:hover {
-  border-color: #5cb675;
+  border-color: #48ba70;
 }
 
 .hover\:bourbon-border-emerald:hover {
@@ -1468,6 +1486,10 @@ making styling changes in the library */
 
 .hover\:bourbon-border-fruit-salad:hover {
   border-color: #4ca465;
+}
+
+.hover\:bourbon-border-dodger-blue:hover {
+  border-color: #2e71fc;
 }
 
 .hover\:bourbon-border-black:hover {
@@ -3363,7 +3385,7 @@ making styling changes in the library */
 }
 
 .bourbon-text-fern {
-  color: #5cb675;
+  color: #48ba70;
 }
 
 .bourbon-text-emerald {
@@ -3372,6 +3394,10 @@ making styling changes in the library */
 
 .bourbon-text-fruit-salad {
   color: #4ca465;
+}
+
+.bourbon-text-dodger-blue {
+  color: #2e71fc;
 }
 
 .bourbon-text-black {
@@ -3423,7 +3449,7 @@ making styling changes in the library */
 }
 
 .hover\:bourbon-text-fern:hover {
-  color: #5cb675;
+  color: #48ba70;
 }
 
 .hover\:bourbon-text-emerald:hover {
@@ -3432,6 +3458,10 @@ making styling changes in the library */
 
 .hover\:bourbon-text-fruit-salad:hover {
   color: #4ca465;
+}
+
+.hover\:bourbon-text-dodger-blue:hover {
+  color: #2e71fc;
 }
 
 .hover\:bourbon-text-black:hover {
@@ -3885,7 +3915,7 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-bg-fern {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .sm\:bourbon-bg-emerald {
@@ -3894,6 +3924,10 @@ making styling changes in the library */
 
   .sm\:bourbon-bg-fruit-salad {
     background-color: #4ca465;
+  }
+
+  .sm\:bourbon-bg-dodger-blue {
+    background-color: #2e71fc;
   }
 
   .sm\:bourbon-bg-black {
@@ -3945,7 +3979,7 @@ making styling changes in the library */
   }
 
   .sm\:hover\:bourbon-bg-fern:hover {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .sm\:hover\:bourbon-bg-emerald:hover {
@@ -3954,6 +3988,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-bg-fruit-salad:hover {
     background-color: #4ca465;
+  }
+
+  .sm\:hover\:bourbon-bg-dodger-blue:hover {
+    background-color: #2e71fc;
   }
 
   .sm\:hover\:bourbon-bg-black:hover {
@@ -4069,7 +4107,7 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-border-fern {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .sm\:bourbon-border-emerald {
@@ -4078,6 +4116,10 @@ making styling changes in the library */
 
   .sm\:bourbon-border-fruit-salad {
     border-color: #4ca465;
+  }
+
+  .sm\:bourbon-border-dodger-blue {
+    border-color: #2e71fc;
   }
 
   .sm\:bourbon-border-black {
@@ -4129,7 +4171,7 @@ making styling changes in the library */
   }
 
   .sm\:hover\:bourbon-border-fern:hover {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .sm\:hover\:bourbon-border-emerald:hover {
@@ -4138,6 +4180,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-border-fruit-salad:hover {
     border-color: #4ca465;
+  }
+
+  .sm\:hover\:bourbon-border-dodger-blue:hover {
+    border-color: #2e71fc;
   }
 
   .sm\:hover\:bourbon-border-black:hover {
@@ -6025,7 +6071,7 @@ making styling changes in the library */
   }
 
   .sm\:bourbon-text-fern {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .sm\:bourbon-text-emerald {
@@ -6034,6 +6080,10 @@ making styling changes in the library */
 
   .sm\:bourbon-text-fruit-salad {
     color: #4ca465;
+  }
+
+  .sm\:bourbon-text-dodger-blue {
+    color: #2e71fc;
   }
 
   .sm\:bourbon-text-black {
@@ -6085,7 +6135,7 @@ making styling changes in the library */
   }
 
   .sm\:hover\:bourbon-text-fern:hover {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .sm\:hover\:bourbon-text-emerald:hover {
@@ -6094,6 +6144,10 @@ making styling changes in the library */
 
   .sm\:hover\:bourbon-text-fruit-salad:hover {
     color: #4ca465;
+  }
+
+  .sm\:hover\:bourbon-text-dodger-blue:hover {
+    color: #2e71fc;
   }
 
   .sm\:hover\:bourbon-text-black:hover {
@@ -6526,7 +6580,7 @@ making styling changes in the library */
   }
 
   .md\:bourbon-bg-fern {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .md\:bourbon-bg-emerald {
@@ -6535,6 +6589,10 @@ making styling changes in the library */
 
   .md\:bourbon-bg-fruit-salad {
     background-color: #4ca465;
+  }
+
+  .md\:bourbon-bg-dodger-blue {
+    background-color: #2e71fc;
   }
 
   .md\:bourbon-bg-black {
@@ -6586,7 +6644,7 @@ making styling changes in the library */
   }
 
   .md\:hover\:bourbon-bg-fern:hover {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .md\:hover\:bourbon-bg-emerald:hover {
@@ -6595,6 +6653,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-bg-fruit-salad:hover {
     background-color: #4ca465;
+  }
+
+  .md\:hover\:bourbon-bg-dodger-blue:hover {
+    background-color: #2e71fc;
   }
 
   .md\:hover\:bourbon-bg-black:hover {
@@ -6710,7 +6772,7 @@ making styling changes in the library */
   }
 
   .md\:bourbon-border-fern {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .md\:bourbon-border-emerald {
@@ -6719,6 +6781,10 @@ making styling changes in the library */
 
   .md\:bourbon-border-fruit-salad {
     border-color: #4ca465;
+  }
+
+  .md\:bourbon-border-dodger-blue {
+    border-color: #2e71fc;
   }
 
   .md\:bourbon-border-black {
@@ -6770,7 +6836,7 @@ making styling changes in the library */
   }
 
   .md\:hover\:bourbon-border-fern:hover {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .md\:hover\:bourbon-border-emerald:hover {
@@ -6779,6 +6845,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-border-fruit-salad:hover {
     border-color: #4ca465;
+  }
+
+  .md\:hover\:bourbon-border-dodger-blue:hover {
+    border-color: #2e71fc;
   }
 
   .md\:hover\:bourbon-border-black:hover {
@@ -8666,7 +8736,7 @@ making styling changes in the library */
   }
 
   .md\:bourbon-text-fern {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .md\:bourbon-text-emerald {
@@ -8675,6 +8745,10 @@ making styling changes in the library */
 
   .md\:bourbon-text-fruit-salad {
     color: #4ca465;
+  }
+
+  .md\:bourbon-text-dodger-blue {
+    color: #2e71fc;
   }
 
   .md\:bourbon-text-black {
@@ -8726,7 +8800,7 @@ making styling changes in the library */
   }
 
   .md\:hover\:bourbon-text-fern:hover {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .md\:hover\:bourbon-text-emerald:hover {
@@ -8735,6 +8809,10 @@ making styling changes in the library */
 
   .md\:hover\:bourbon-text-fruit-salad:hover {
     color: #4ca465;
+  }
+
+  .md\:hover\:bourbon-text-dodger-blue:hover {
+    color: #2e71fc;
   }
 
   .md\:hover\:bourbon-text-black:hover {
@@ -9167,7 +9245,7 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-bg-fern {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .lg\:bourbon-bg-emerald {
@@ -9176,6 +9254,10 @@ making styling changes in the library */
 
   .lg\:bourbon-bg-fruit-salad {
     background-color: #4ca465;
+  }
+
+  .lg\:bourbon-bg-dodger-blue {
+    background-color: #2e71fc;
   }
 
   .lg\:bourbon-bg-black {
@@ -9227,7 +9309,7 @@ making styling changes in the library */
   }
 
   .lg\:hover\:bourbon-bg-fern:hover {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .lg\:hover\:bourbon-bg-emerald:hover {
@@ -9236,6 +9318,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-bg-fruit-salad:hover {
     background-color: #4ca465;
+  }
+
+  .lg\:hover\:bourbon-bg-dodger-blue:hover {
+    background-color: #2e71fc;
   }
 
   .lg\:hover\:bourbon-bg-black:hover {
@@ -9351,7 +9437,7 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-border-fern {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .lg\:bourbon-border-emerald {
@@ -9360,6 +9446,10 @@ making styling changes in the library */
 
   .lg\:bourbon-border-fruit-salad {
     border-color: #4ca465;
+  }
+
+  .lg\:bourbon-border-dodger-blue {
+    border-color: #2e71fc;
   }
 
   .lg\:bourbon-border-black {
@@ -9411,7 +9501,7 @@ making styling changes in the library */
   }
 
   .lg\:hover\:bourbon-border-fern:hover {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .lg\:hover\:bourbon-border-emerald:hover {
@@ -9420,6 +9510,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-border-fruit-salad:hover {
     border-color: #4ca465;
+  }
+
+  .lg\:hover\:bourbon-border-dodger-blue:hover {
+    border-color: #2e71fc;
   }
 
   .lg\:hover\:bourbon-border-black:hover {
@@ -11307,7 +11401,7 @@ making styling changes in the library */
   }
 
   .lg\:bourbon-text-fern {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .lg\:bourbon-text-emerald {
@@ -11316,6 +11410,10 @@ making styling changes in the library */
 
   .lg\:bourbon-text-fruit-salad {
     color: #4ca465;
+  }
+
+  .lg\:bourbon-text-dodger-blue {
+    color: #2e71fc;
   }
 
   .lg\:bourbon-text-black {
@@ -11367,7 +11465,7 @@ making styling changes in the library */
   }
 
   .lg\:hover\:bourbon-text-fern:hover {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .lg\:hover\:bourbon-text-emerald:hover {
@@ -11376,6 +11474,10 @@ making styling changes in the library */
 
   .lg\:hover\:bourbon-text-fruit-salad:hover {
     color: #4ca465;
+  }
+
+  .lg\:hover\:bourbon-text-dodger-blue:hover {
+    color: #2e71fc;
   }
 
   .lg\:hover\:bourbon-text-black:hover {
@@ -11808,7 +11910,7 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-bg-fern {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .xl\:bourbon-bg-emerald {
@@ -11817,6 +11919,10 @@ making styling changes in the library */
 
   .xl\:bourbon-bg-fruit-salad {
     background-color: #4ca465;
+  }
+
+  .xl\:bourbon-bg-dodger-blue {
+    background-color: #2e71fc;
   }
 
   .xl\:bourbon-bg-black {
@@ -11868,7 +11974,7 @@ making styling changes in the library */
   }
 
   .xl\:hover\:bourbon-bg-fern:hover {
-    background-color: #5cb675;
+    background-color: #48ba70;
   }
 
   .xl\:hover\:bourbon-bg-emerald:hover {
@@ -11877,6 +11983,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-bg-fruit-salad:hover {
     background-color: #4ca465;
+  }
+
+  .xl\:hover\:bourbon-bg-dodger-blue:hover {
+    background-color: #2e71fc;
   }
 
   .xl\:hover\:bourbon-bg-black:hover {
@@ -11992,7 +12102,7 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-border-fern {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .xl\:bourbon-border-emerald {
@@ -12001,6 +12111,10 @@ making styling changes in the library */
 
   .xl\:bourbon-border-fruit-salad {
     border-color: #4ca465;
+  }
+
+  .xl\:bourbon-border-dodger-blue {
+    border-color: #2e71fc;
   }
 
   .xl\:bourbon-border-black {
@@ -12052,7 +12166,7 @@ making styling changes in the library */
   }
 
   .xl\:hover\:bourbon-border-fern:hover {
-    border-color: #5cb675;
+    border-color: #48ba70;
   }
 
   .xl\:hover\:bourbon-border-emerald:hover {
@@ -12061,6 +12175,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-border-fruit-salad:hover {
     border-color: #4ca465;
+  }
+
+  .xl\:hover\:bourbon-border-dodger-blue:hover {
+    border-color: #2e71fc;
   }
 
   .xl\:hover\:bourbon-border-black:hover {
@@ -13948,7 +14066,7 @@ making styling changes in the library */
   }
 
   .xl\:bourbon-text-fern {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .xl\:bourbon-text-emerald {
@@ -13957,6 +14075,10 @@ making styling changes in the library */
 
   .xl\:bourbon-text-fruit-salad {
     color: #4ca465;
+  }
+
+  .xl\:bourbon-text-dodger-blue {
+    color: #2e71fc;
   }
 
   .xl\:bourbon-text-black {
@@ -14008,7 +14130,7 @@ making styling changes in the library */
   }
 
   .xl\:hover\:bourbon-text-fern:hover {
-    color: #5cb675;
+    color: #48ba70;
   }
 
   .xl\:hover\:bourbon-text-emerald:hover {
@@ -14017,6 +14139,10 @@ making styling changes in the library */
 
   .xl\:hover\:bourbon-text-fruit-salad:hover {
     color: #4ca465;
+  }
+
+  .xl\:hover\:bourbon-text-dodger-blue:hover {
+    color: #2e71fc;
   }
 
   .xl\:hover\:bourbon-text-black:hover {
