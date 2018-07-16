@@ -8,6 +8,7 @@
   @apply .bourbon-rounded-sm;
   @apply .bourbon-text-sm;
   @apply .bourbon-text-center;
+  @apply .bourbon-font-normal;
   @apply .bourbon-whitespace-no-wrap;
   @apply .bourbon-antialiased;
   @apply .bourbon-cursor-pointer;
