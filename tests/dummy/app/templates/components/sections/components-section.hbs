@@ -29,7 +29,7 @@
           primaryButtonTitle: 'primary',
           primaryButtonAction: this.primaryClick,
           secondaryButtonTitle: 'secondary',
-          secondaryButtonAction: this.secondaryClick,
+          secondaryButtonAction: () => this.secondaryClick('anonymous'),
           linkTitle: 'alternative resource link',
           linkHref: '#'
         })
