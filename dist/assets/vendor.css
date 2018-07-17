@@ -1075,6 +1075,7 @@ making styling changes in the library */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1090,6 +1091,7 @@ making styling changes in the library */
   position: fixed;
   width: 550px;
   padding: 35px;
+  z-index: 5;
   border-color: #d3d3d3;
   background-color: #fff;
   border-radius: .25rem;
@@ -1156,10 +1158,13 @@ making styling changes in the library */
   font-size: .8125rem;
   text-decoration: none;
   color: #474c4f;
+  width: 100%;
 }
 
 .bourbon-modal__button-wrapper {
   display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .bourbon-modal__content-area {

@@ -58,7 +58,7 @@ export default FreestyleController.extend(ModalMixin, {
       primaryButtonTitle: 'Primary',
       primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'Secondary',
-      secondaryButtonAction: this.secondaryClick,
+      secondaryButtonAction: () => this.secondaryClick('anonymous'),
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })
@@ -71,15 +71,14 @@ export default FreestyleController.extend(ModalMixin, {
     }
   },
 
-
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
     // call this from flabongo to close the modal    
-    this.get('modalService').closeModal();
+    this.get('modalService').closeBourbonModal();
   },
 
-  secondaryClick() {
-    alert('you are clicking a secondary freestyle button!')
+  secondaryClick(name) {
+    alert(`you are clicking a secondary freestyle button! via an ${name} function`)
   },
   
   controllerCloseAction() {

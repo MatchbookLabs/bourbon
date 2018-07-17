@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  z-index: 1;
+
   @apply .bourbon-pin-t;
   @apply .bourbon-pin-r;
   @apply .bourbon-pin-b;
@@ -19,6 +20,8 @@
   position: fixed;
   width: 550px;
   padding: 35px;
+  z-index: 5;
+  
   @apply .bourbon-border-grey-light;
   @apply .bourbon-bg-white;
   @apply .bourbon-rounded;
@@ -88,10 +91,13 @@
   @apply .bourbon-text-sm;
   @apply .bourbon-no-underline;
   @apply .bourbon-text-slate;
+  @apply .bourbon-w-full;
 }
 
 .bourbon-modal__button-wrapper {
-  @apply .bourbon-flex;
+  display: flex;
+  justify-content: flex-end;
+  @apply .bourbon-w-full;
 }
 
 .bourbon-modal__content-area {

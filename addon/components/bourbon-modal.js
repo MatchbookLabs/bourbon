@@ -26,11 +26,11 @@ export default Component.extend({
     } else {
       console.warn('warning: no closing action passed');
     }
-    this.get('modalService').closeModal();
+    this.get('modalService').closeBourbonModal();
   },
 
   actions: {
-    closeModal() {
+    closeBourbonModal() {
       this._closeModalActions();
     }
   }

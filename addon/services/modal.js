@@ -13,13 +13,13 @@ export default Service.extend({
   linkTitle: null,
   linkHref: '#',
 
-  showModal(options) {
+  showBourbonModal(options) {
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
   },
 
-  closeModal() {
+  closeBourbonModal() {
     this.set('showModalState', false);
     document.body.classList.remove('bourbon-fixed');
   }
