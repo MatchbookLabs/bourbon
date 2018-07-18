@@ -31,6 +31,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('modalParams', {
       scrollable: false,
+      wideModal: false,
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
@@ -40,8 +41,19 @@ export default FreestyleController.extend(ModalMixin, {
       linkHref: '#'
     }),
 
+    this.set('modalWideParams', {
+      scrollable: false,
+      wideModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'modal title',
+      content: 'test-modal-content',
+      primaryButtonTitle: 'Primary',
+      primaryButtonAction: this.primaryClick,
+    }),
+
     this.set('longModalParams', {
       scrollable: false,
+      wideModal: false,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'Primary',
@@ -52,6 +64,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('scrollableModalParams', {
       scrollable: true,
+      wideModal: false,
       closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',

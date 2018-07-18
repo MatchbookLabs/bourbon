@@ -21,7 +21,7 @@
   width: 550px;
   padding: 35px;
   z-index: 5;
-  
+
   @apply .bourbon-border-grey-light;
   @apply .bourbon-bg-white;
   @apply .bourbon-rounded;
@@ -29,6 +29,10 @@
   @apply .bourbon-border;
   @apply .bourbon-border-solid;
   @apply .bourbon-border-mercury;
+}
+
+.bourbon-modal--large {
+  width: 850px;
 }
 
 .bourbon-modal__title {
@@ -39,7 +43,7 @@
   @apply .bourbon-antialiased;
 
   @apply .bourbon-mt-2;
-  @apply .bourbon-mb-6;
+  @apply .bourbon-mb-8;
 }
 
 .bourbon-modal__content {
@@ -84,7 +88,7 @@
 }
 
 .bourbon-modal__footer .bourbon-button {
-  @apply .bourbon-m-2;
+  @apply .bourbon-m-3;
 }
 
 .bourbon-modal__link {

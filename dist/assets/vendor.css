@@ -1100,6 +1100,10 @@ making styling changes in the library */
   border-color: #e9e9e9;
 }
 
+.bourbon-modal--large {
+  width: 850px;
+}
+
 .bourbon-modal__title {
   text-align: center;
   text-transform: capitalize;
@@ -1108,7 +1112,7 @@ making styling changes in the library */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: .5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .bourbon-modal__content {
@@ -1151,7 +1155,7 @@ making styling changes in the library */
 }
 
 .bourbon-modal__footer .bourbon-button {
-  margin: .5rem;
+  margin: .75rem;
 }
 
 .bourbon-modal__link {
