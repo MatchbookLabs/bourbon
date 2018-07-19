@@ -1,4 +1,6 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
+
 import layout from '../templates/components/bourbon-modal';
 import { inject as service } from '@ember/service';
 
@@ -6,7 +8,7 @@ export default Component.extend({
   modalService: service('modal'),
   classNames: ['bourbon-modal__wrapper'],
   classNameBindings: ['modalService.showModalState:bourbon-fixed'],
-  
+
   init() {
     this._super(...arguments);
 

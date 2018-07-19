@@ -47,8 +47,21 @@ export default FreestyleController.extend(ModalMixin, {
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
-      primaryButtonTitle: 'Primary',
+      secondaryButtonTitle: 'Secondary',
+      secondaryButtonAction: this.primaryClick,
+    }),
+
+    this.set('confirmationModalParams', {
+      scrollable: false,
+      wideModal: false,
+      confirmationModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'Unsaved Changes',
+      content: 'test-warning-message',
+      primaryButtonTitle: 'Save',
       primaryButtonAction: this.primaryClick,
+      secondaryButtonTitle: 'Continue without saving',
+      secondaryButtonAction: () => this.secondaryClick('anonymous'),
     }),
 
     this.set('longModalParams', {

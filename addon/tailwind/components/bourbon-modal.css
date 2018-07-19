@@ -46,6 +46,18 @@
   @apply .bourbon-mb-8;
 }
 
+.bourbon-modal--confirmation .bourbon-modal__title {
+  text-align: left;
+  @apply .bourbon-text-lg;
+  @apply .bourbon-mb-4;
+}
+
+.bourbon-modal__dialog {
+  text-align: left;
+  @apply .bourbon-text-lg;
+  @apply .bourbon-mb-9;
+}
+
 .bourbon-modal__content {
   text-align: center;
 
@@ -60,8 +72,8 @@
 
 .bourbon-modal__close-button {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 10px;
+  top: 10px;
   min-width: 0;
   padding: 0;
 }
@@ -85,10 +97,6 @@
   align-items: center;
 
   @apply .bourbon-mt-6;
-}
-
-.bourbon-modal__footer .bourbon-button {
-  @apply .bourbon-m-3;
 }
 
 .bourbon-modal__link {

@@ -1115,6 +1115,18 @@ making styling changes in the library */
   margin-bottom: 2rem;
 }
 
+.bourbon-modal--confirmation .bourbon-modal__title {
+  text-align: left;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.bourbon-modal__dialog {
+  text-align: left;
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+}
+
 .bourbon-modal__content {
   text-align: center;
   line-height: 1.5;
@@ -1128,8 +1140,8 @@ making styling changes in the library */
 
 .bourbon-modal__close-button {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 10px;
+  top: 10px;
   min-width: 0;
   padding: 0;
 }
@@ -1152,10 +1164,6 @@ making styling changes in the library */
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
-}
-
-.bourbon-modal__footer .bourbon-button {
-  margin: .75rem;
 }
 
 .bourbon-modal__link {
