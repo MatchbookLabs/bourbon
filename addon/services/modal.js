@@ -26,6 +26,10 @@ export default Service.extend({
   },
 
   showBourbonModal(options) {
+    // need to reset properties in case modal
+    // is open and just switching content
+    this.setProperties(this.defaultParams);
+
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
