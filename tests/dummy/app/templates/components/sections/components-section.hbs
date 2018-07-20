@@ -23,9 +23,11 @@
       ```
         this.set('scrollableModalParams', {
           scrollable: true,
+          wideModal: false,
           closeAction: this.controllerCloseAction,
           title: 'scrolling modal title',
           content: 'test-long-modal-content',
+          context: this,
           primaryButtonTitle: 'primary',
           primaryButtonAction: this.primaryClick,
           secondaryButtonTitle: 'secondary',
@@ -45,7 +47,10 @@
       <br>
 
       <p class='FreestyleUsage-rendered'>
-        For the content section, use the following classes in your content partial.
+        For the content section, you can pass in a string or a partial.
+      </p>
+      <p class='FreestyleUsage-rendered'>
+        For a partial, use the following classes for your content.
       </p>
       <ul>
         <li>bourbon-modal__description</li>

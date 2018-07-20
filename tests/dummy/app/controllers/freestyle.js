@@ -30,8 +30,6 @@ export default FreestyleController.extend(ModalMixin, {
     }),
 
     this.set('modalParams', {
-      scrollable: false,
-      wideModal: false,
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
@@ -42,7 +40,6 @@ export default FreestyleController.extend(ModalMixin, {
     }),
 
     this.set('modalWideParams', {
-      scrollable: false,
       wideModal: true,
       closeAction: this.controllerCloseAction,
       title: 'modal title',
@@ -52,12 +49,10 @@ export default FreestyleController.extend(ModalMixin, {
     }),
 
     this.set('confirmationModalParams', {
-      scrollable: false,
-      wideModal: false,
       confirmationModal: true,
       closeAction: this.controllerCloseAction,
       title: 'Unsaved Changes',
-      content: 'test-warning-message',
+      textContent: 'Would you like to save your work before leaving?',
       primaryButtonTitle: 'Save',
       primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'Continue without saving',
@@ -65,8 +60,6 @@ export default FreestyleController.extend(ModalMixin, {
     }),
 
     this.set('longModalParams', {
-      scrollable: false,
-      wideModal: false,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'Primary',

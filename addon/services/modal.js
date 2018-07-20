@@ -13,6 +13,7 @@ export default Service.extend({
       cancelAction: null,
       title: null,
       content: null,
+      context: null,
       primaryButtonTitle: null,
       primaryButtonAction: null,
       secondaryButtonTitle: null,
@@ -33,7 +34,7 @@ export default Service.extend({
   closeBourbonModal() {
     // need to reset the properties for the next modal call
     this.setProperties(this.defaultParams);
-    
+
     document.body.classList.remove('bourbon-fixed');
   }
 });
