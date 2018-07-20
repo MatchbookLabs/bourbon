@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-modal-content', function(hooks) {
     await render(hbs`{{bourbon-modal-content}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-modal-content}}
-        template block text
-      {{/bourbon-modal-content}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
