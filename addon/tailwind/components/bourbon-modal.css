@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  z-index: 1;
+
   @apply .bourbon-pin-t;
   @apply .bourbon-pin-r;
   @apply .bourbon-pin-b;
@@ -19,6 +20,8 @@
   position: fixed;
   width: 550px;
   padding: 35px;
+  z-index: 5;
+
   @apply .bourbon-border-grey-light;
   @apply .bourbon-bg-white;
   @apply .bourbon-rounded;
@@ -26,6 +29,10 @@
   @apply .bourbon-border;
   @apply .bourbon-border-solid;
   @apply .bourbon-border-mercury;
+}
+
+.bourbon-modal--large {
+  width: 850px;
 }
 
 .bourbon-modal__title {
@@ -36,7 +43,19 @@
   @apply .bourbon-antialiased;
 
   @apply .bourbon-mt-2;
-  @apply .bourbon-mb-6;
+  @apply .bourbon-mb-8;
+}
+
+.bourbon-modal--confirmation .bourbon-modal__title {
+  text-align: left;
+  @apply .bourbon-text-lg;
+  @apply .bourbon-mb-4;
+}
+
+.bourbon-modal__dialog {
+  text-align: left;
+  @apply .bourbon-text-lg;
+  @apply .bourbon-mb-9;
 }
 
 .bourbon-modal__content {
@@ -53,8 +72,8 @@
 
 .bourbon-modal__close-button {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 10px;
+  top: 10px;
   min-width: 0;
   padding: 0;
 }
@@ -80,18 +99,17 @@
   @apply .bourbon-mt-6;
 }
 
-.bourbon-modal__footer .bourbon-button {
-  @apply .bourbon-m-2;
-}
-
 .bourbon-modal__link {
   @apply .bourbon-text-sm;
   @apply .bourbon-no-underline;
   @apply .bourbon-text-slate;
+  @apply .bourbon-w-full;
 }
 
 .bourbon-modal__button-wrapper {
-  @apply .bourbon-flex;
+  display: flex;
+  justify-content: flex-end;
+  @apply .bourbon-w-full;
 }
 
 .bourbon-modal__content-area {

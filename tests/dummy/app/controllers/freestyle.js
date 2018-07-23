@@ -30,7 +30,6 @@ export default FreestyleController.extend(ModalMixin, {
     }),
 
     this.set('modalParams', {
-      scrollable: false,
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
@@ -40,8 +39,27 @@ export default FreestyleController.extend(ModalMixin, {
       linkHref: '#'
     }),
 
+    this.set('modalWideParams', {
+      wideModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'modal title',
+      content: 'test-modal-content',
+      secondaryButtonTitle: 'Secondary',
+      secondaryButtonAction: this.primaryClick,
+    }),
+
+    this.set('confirmationModalParams', {
+      confirmationModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'Unsaved Changes',
+      textContent: 'Would you like to save your work before leaving?',
+      primaryButtonTitle: 'Save',
+      primaryButtonAction: this.primaryClick,
+      secondaryButtonTitle: 'Continue without saving',
+      secondaryButtonAction: () => this.secondaryClick('anonymous'),
+    }),
+
     this.set('longModalParams', {
-      scrollable: false,
       title: 'modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'Primary',
@@ -52,13 +70,14 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('scrollableModalParams', {
       scrollable: true,
+      wideModal: false,
       closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
       primaryButtonTitle: 'Primary',
       primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'Secondary',
-      secondaryButtonAction: this.secondaryClick,
+      secondaryButtonAction: () => this.secondaryClick('anonymous'),
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })
@@ -71,15 +90,14 @@ export default FreestyleController.extend(ModalMixin, {
     }
   },
 
-
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
     // call this from flabongo to close the modal    
-    this.get('modalService').closeModal();
+    this.get('modalService').closeBourbonModal();
   },
 
-  secondaryClick() {
-    alert('you are clicking a secondary freestyle button!')
+  secondaryClick(name) {
+    alert(`you are clicking a secondary freestyle button! via an ${name} function`)
   },
   
   controllerCloseAction() {

@@ -8,7 +8,7 @@
       {{bourbon-modal}}
     {{/freestyle-usage}}
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='Show scrollable modal' class='bourbon-primary-button' action=(action 'showModal' scrollableModalParams)}}
+      {{bourbon-button title='Show scrollable modal' class='bourbon-primary-button' action=(action 'showBourbonModal' scrollableModalParams)}}
     </div>
 
     {{#freestyle-note 'bourbon-scrollable-modal--notes'}}
@@ -23,13 +23,15 @@
       ```
         this.set('scrollableModalParams', {
           scrollable: true,
+          wideModal: false,
           closeAction: this.controllerCloseAction,
           title: 'scrolling modal title',
           content: 'test-long-modal-content',
+          context: this,
           primaryButtonTitle: 'primary',
           primaryButtonAction: this.primaryClick,
           secondaryButtonTitle: 'secondary',
-          secondaryButtonAction: this.secondaryClick,
+          secondaryButtonAction: () => this.secondaryClick('anonymous'),
           linkTitle: 'alternative resource link',
           linkHref: '#'
         })
@@ -39,13 +41,16 @@
           # do something
 
           // call this from flabongo to close the modal    
-          this.get('modalService').closeModal();
+          this.get('modalService').closeBourbonModal();
         }
       ```
       <br>
 
       <p class='FreestyleUsage-rendered'>
-        For the content section, use the following classes in your content partial.
+        For the content section, you can pass in a string or a partial.
+      </p>
+      <p class='FreestyleUsage-rendered'>
+        For a partial, use the following classes for your content.
       </p>
       <ul>
         <li>bourbon-modal__description</li>
@@ -53,15 +58,25 @@
       </ul>
     
     {{/freestyle-note}}
+
+    <h4 class='FreestyleUsage-title'>confirmation/warning modal</h4>
+    <div class='FreestyleUsage-rendered'>
+      {{bourbon-button title='Show confirmation modal' class='bourbon-primary-button' action=(action 'showBourbonModal' confirmationModalParams)}}
+    </div>
   
+    <h4 class='FreestyleUsage-title'>wide modal with short content</h4>
+    <div class='FreestyleUsage-rendered'>
+      {{bourbon-button title='Show wide modal' class='bourbon-primary-button' action=(action 'showBourbonModal' modalWideParams)}}
+    </div>
+
     <h4 class='FreestyleUsage-title'>modal with short content</h4>
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='Show regular modal' class='bourbon-primary-button' action=(action 'showModal' modalParams)}}
+      {{bourbon-button title='Show regular modal' class='bourbon-primary-button' action=(action 'showBourbonModal' modalParams)}}
     </div>
 
     <h4 class='FreestyleUsage-title'>modal with long content</h4>
     <div class='FreestyleUsage-rendered'>
-      {{bourbon-button title='Show long modal' class='bourbon-primary-button' action=(action 'showModal' longModalParams)}}
+      {{bourbon-button title='Show long modal' class='bourbon-primary-button' action=(action 'showBourbonModal' longModalParams)}}
     </div>
 
     <div class='FreestyleUsage-usage'>

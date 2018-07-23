@@ -5,8 +5,8 @@ export default Mixin.create({
   modalService: service('modal'),
 
   actions: {
-    showModal(options) {
-      this.get('modalService').showModal(options);
+    showBourbonModal(options) {
+      this.get('modalService').showBourbonModal(options);
     }
   }
 });

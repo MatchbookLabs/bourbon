@@ -1,26 +1,44 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  showModalState: false,
-  scrollable: false,
-  cancelAction: null,
-  title: null,
-  content: null,
-  primaryButtonTitle: null,
-  primaryButtonAction: null,
-  secondaryButtonTitle: null,
-  secondaryButtonAction: null,
-  linkTitle: null,
-  linkHref: '#',
 
-  showModal(options) {
+  init() {
+    this._super(...arguments);
+
+    this.set('defaultParams', {
+      showModalState: false,
+      scrollable: false,
+      wideModal: false,
+      confirmationModal: false,
+      cancelAction: null,
+      title: null,
+      content: null,
+      context: null,
+      primaryButtonTitle: null,
+      primaryButtonAction: null,
+      secondaryButtonTitle: null,
+      secondaryButtonAction: null,
+      linkTitle: null,
+      linkHref: null
+    });
+
+    this.setProperties(this.defaultParams);
+  },
+
+  showBourbonModal(options) {
+    // need to reset properties in case modal
+    // is open and just switching content
+    this.setProperties(this.defaultParams);
+
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
   },
 
-  closeModal() {
-    this.set('showModalState', false);
+  closeBourbonModal() {
+    // need to reset the properties for the next modal call
+    this.setProperties(this.defaultParams);
+
     document.body.classList.remove('bourbon-fixed');
   }
 });
