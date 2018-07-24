@@ -18,7 +18,7 @@ export default Component.extend({
       }
     }.bind(this), true);
   },
-  
+
   layout,
 
   _closeModalActions() {
@@ -35,13 +35,19 @@ export default Component.extend({
       this._closeModalActions();
     },
     primaryButtonAction() {
-      this.get('modalService.primaryButtonAction')();
+      if (this.get('modalService.primaryButtonAction')) {
+        this.get('modalService.primaryButtonAction')();
+      }
+
       if (!this.get('modalService.primaryDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
     },
     secondaryButtonAction() {
-      this.get('modalService.secondaryButtonAction')();
+      if (this.get('modalService.secondaryButtonAction')) {
+        this.get('modalService.secondaryButtonAction')();
+      }
+
       if (!this.get('modalService.secondaryDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
