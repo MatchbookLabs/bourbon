@@ -4,6 +4,7 @@ import { computed } from '@ember/object';
 import layout from '../templates/components/bourbon-button';
 
 export default Component.extend({
+
   layout,
   tagName: 'button',
   classNames: ['bourbon-button'],

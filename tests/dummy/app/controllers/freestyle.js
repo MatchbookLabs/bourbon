@@ -2,7 +2,6 @@ import Ember from 'ember';
 import FreestyleController from 'ember-freestyle/controllers/freestyle';
 import ModalMixin from 'bourbon/mixins/modal';
 
-
 const { inject } = Ember;
 
 export default FreestyleController.extend(ModalMixin, {
@@ -70,7 +69,6 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('scrollableModalParams', {
       scrollable: true,
-      wideModal: false,
       closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
@@ -78,6 +76,7 @@ export default FreestyleController.extend(ModalMixin, {
       primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'Secondary',
       secondaryButtonAction: () => this.secondaryClick('anonymous'),
+      secondaryDontClose: true,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })
@@ -92,10 +91,8 @@ export default FreestyleController.extend(ModalMixin, {
 
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
-    // call this from flabongo to close the modal    
-    this.get('modalService').closeBourbonModal();
   },
-
+  
   secondaryClick(name) {
     alert(`you are clicking a secondary freestyle button! via an ${name} function`)
   },

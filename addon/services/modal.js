@@ -8,9 +8,11 @@ export default Service.extend({
     this.set('defaultParams', {
       showModalState: false,
       scrollable: false,
+      primaryDontClose: false,
+      secondaryDontClose: false,
       wideModal: false,
       confirmationModal: false,
-      cancelAction: null,
+      closeAction: null,
       title: null,
       content: null,
       context: null,
@@ -29,7 +31,7 @@ export default Service.extend({
     // need to reset properties in case modal
     // is open and just switching content
     this.setProperties(this.defaultParams);
-
+    
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
