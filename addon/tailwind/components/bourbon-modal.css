@@ -54,7 +54,7 @@
 
 .bourbon-modal__dialog {
   text-align: left;
-  @apply .bourbon-text-lg;
+  @apply .bourbon-text-base;
   @apply .bourbon-mb-9;
 }
 
