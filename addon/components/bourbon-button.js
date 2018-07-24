@@ -1,10 +1,9 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import ModalMixin from 'bourbon/mixins/modal';
 
 import layout from '../templates/components/bourbon-button';
 
-export default Component.extend(ModalMixin, {
+export default Component.extend({
 
   layout,
   tagName: 'button',
