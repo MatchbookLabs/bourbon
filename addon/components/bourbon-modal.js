@@ -33,6 +33,18 @@ export default Component.extend({
   actions: {
     closeBourbonModal() {
       this._closeModalActions();
+    },
+    primaryButtonAction() {
+      this.get('modalService.primaryButtonAction')();
+      if (!this.get('modalService.primaryDontClose')) {
+        this.get('modalService').closeBourbonModal();
+      }
+    },
+    secondaryButtonAction() {
+      this.get('modalService.secondaryButtonAction')();
+      if (!this.get('modalService.secondaryDontClose')) {
+        this.get('modalService').closeBourbonModal();
+      }
     }
   }
 });

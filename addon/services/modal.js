@@ -8,8 +8,8 @@ export default Service.extend({
     this.set('defaultParams', {
       showModalState: false,
       scrollable: false,
-      modalPrimaryButtonCloseAction: false,
-      modalSecondaryButtonCloseAction: false,
+      primaryDontClose: false,
+      secondaryDontClose: false,
       wideModal: false,
       confirmationModal: false,
       closeAction: null,
@@ -32,19 +32,9 @@ export default Service.extend({
     // is open and just switching content
     this.setProperties(this.defaultParams);
     
-    this.setButtonClosingAction(options);
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
-  },
-
-  setButtonClosingAction(options) {
-    if (options.hasOwnProperty('primaryButtonTitle')) {
-      this.set('modalPrimaryButtonCloseAction', true)
-    }
-    if (options.hasOwnProperty('secondaryButtonTitle')) {
-      this.set('modalSecondaryButtonCloseAction', true)
-    }
   },
 
   closeBourbonModal() {

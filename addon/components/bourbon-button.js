@@ -17,15 +17,8 @@ export default Component.extend(ModalMixin, {
   click() {
     if (typeof this.get('action') === 'function') {
       this.get('action')();
-      this.addClosingAction();
     } else {
       console.warn('warning: no button action passed');
-    }
-  },
-
-  addClosingAction() {
-    if (this.get('modalPrimaryButtonCloseAction') || (this.get('modalSecondaryButtonCloseAction'))) {
-      this.get('modalService').closeBourbonModal();
     }
   }
 });

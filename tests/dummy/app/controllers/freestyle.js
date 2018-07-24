@@ -76,7 +76,7 @@ export default FreestyleController.extend(ModalMixin, {
       primaryButtonAction: this.primaryClick,
       secondaryButtonTitle: 'Secondary',
       secondaryButtonAction: () => this.secondaryClick('anonymous'),
-      modalSecondaryButtonCloseAction: false,
+      secondaryDontClose: true,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })
@@ -92,7 +92,7 @@ export default FreestyleController.extend(ModalMixin, {
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
   },
-
+  
   secondaryClick(name) {
     alert(`you are clicking a secondary freestyle button! via an ${name} function`)
   },
