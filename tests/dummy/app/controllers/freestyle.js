@@ -35,8 +35,8 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneTitle: 'Primary',
       buttonOneAction: this.primaryClick,
       buttonOneType: 'primary',
-      buttonTwoTitle: 'Delete',
-      buttonTwoType: 'delete',
+      buttonTwoTitle: 'secondary button',
+      buttonTwoType: 'secondary',
       linkTitle: 'alternative resource link',
       linkHref: '#'
     }),
@@ -44,7 +44,7 @@ export default FreestyleController.extend(ModalMixin, {
     this.set('modalWideParams', {
       wideModal: true,
       closeAction: this.controllerCloseAction,
-      title: 'modal title',
+      title: 'wide modal title',
       content: 'test-modal-content',
       buttonOneTitle: 'Secondary Button',
       buttonOneAction: this.primaryClick,
@@ -54,22 +54,22 @@ export default FreestyleController.extend(ModalMixin, {
     this.set('confirmationModalParams', {
       confirmationModal: true,
       closeAction: this.controllerCloseAction,
-      title: 'Unsaved Changes',
-      textContent: 'Would you like to save your work before leaving?',
-      buttonOneTitle: 'Save',
+      title: 'Are you sure?',
+      textContent: 'Would you like to delete your connection?',
+      buttonOneTitle: 'Delete',
       buttonOneAction: this.primaryClick,
-      buttonOneType: 'primary',
-      buttonTwoTitle: 'Continue without saving',
+      buttonOneType: 'delete',
+      buttonTwoTitle: 'Cancel',
       buttonTwoType: 'secondary',
       buttonTwoAction: () => this.secondaryClick('anonymous'),
     }),
 
     this.set('longModalParams', {
-      title: 'Are you sure you want to delete this?',
+      title: 'long modal title',
       content: 'test-long-modal-content',
-      buttonOneTitle: 'Delete',
+      buttonOneTitle: 'Primary Button',
       buttonOneAction: this.primaryClick,
-      buttonOneType: 'delete',
+      buttonOneType: 'primary',
     }),
 
     this.set('scrollableModalParams', {
