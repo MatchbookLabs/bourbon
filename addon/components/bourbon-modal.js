@@ -2,11 +2,21 @@ import Component from '@ember/component';
 
 import layout from '../templates/components/bourbon-modal';
 import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+
 
 export default Component.extend({
   modalService: service('modal'),
   classNames: ['bourbon-modal__wrapper'],
   classNameBindings: ['modalService.showModalState:bourbon-fixed'],
+
+  buttonOneClass: computed('modalService.buttonOneType', function () {
+    return `bourbon-${this.get('modalService.buttonOneType')}-button`;
+  }),
+
+  buttonTwoClass: computed('modalService.buttonTwoType', function () {
+    return `bourbon-${this.get('modalService.buttonTwoType')}-button bourbon-mr-3`;
+  }),
 
   init() {
     this._super(...arguments);
@@ -34,21 +44,23 @@ export default Component.extend({
     closeBourbonModal() {
       this._closeModalActions();
     },
-    primaryButtonAction() {
-      if (this.get('modalService.primaryButtonAction')) {
-        this.get('modalService.primaryButtonAction')();
+
+    buttonOneAction() {
+      if (this.get('modalService.buttonOneAction')) {
+        this.get('modalService.buttonOneAction')();
       }
 
-      if (!this.get('modalService.primaryDontClose')) {
+      if (!this.get('modalService.buttonOneDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
     },
-    secondaryButtonAction() {
-      if (this.get('modalService.secondaryButtonAction')) {
-        this.get('modalService.secondaryButtonAction')();
+
+    buttonTwoAction() {
+      if (this.get('modalService.buttonTwoAction')) {
+        this.get('modalService.buttonTwoAction')();
       }
 
-      if (!this.get('modalService.secondaryDontClose')) {
+      if (!this.get('modalService.buttonTwoDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
     }

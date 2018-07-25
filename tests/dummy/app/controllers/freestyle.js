@@ -32,8 +32,9 @@ export default FreestyleController.extend(ModalMixin, {
       closeAction: this.controllerCloseAction,
       title: 'modal title',
       content: 'test-modal-content',
-      primaryButtonTitle: 'Primary',
-      primaryButtonAction: this.primaryClick,
+      buttonOneTitle: 'Primary',
+      buttonOneAction: this.primaryClick,
+      buttonTwoTitle: 'Secondary button',
       linkTitle: 'alternative resource link',
       linkHref: '#'
     }),
@@ -41,30 +42,30 @@ export default FreestyleController.extend(ModalMixin, {
     this.set('modalWideParams', {
       wideModal: true,
       closeAction: this.controllerCloseAction,
-      title: 'modal title',
+      title: 'wide modal title',
       content: 'test-modal-content',
-      secondaryButtonTitle: 'Secondary',
-      secondaryButtonAction: this.primaryClick,
+      buttonOneTitle: 'Secondary Button',
+      buttonOneAction: this.primaryClick,
+      buttonOneType: 'secondary',
     }),
 
     this.set('confirmationModalParams', {
       confirmationModal: true,
       closeAction: this.controllerCloseAction,
-      title: 'Unsaved Changes',
-      textContent: 'Would you like to save your work before leaving?',
-      primaryButtonTitle: 'Save',
-      primaryButtonAction: this.primaryClick,
-      secondaryButtonTitle: 'Continue without saving',
-      secondaryButtonAction: () => this.secondaryClick('anonymous'),
+      title: 'Are you sure?',
+      textContent: 'Would you like to delete your connection?',
+      buttonOneTitle: 'Delete',
+      buttonOneAction: this.primaryClick,
+      buttonOneType: 'delete',
+      buttonTwoTitle: 'Cancel',
+      buttonTwoAction: () => this.secondaryClick('anonymous'),
     }),
 
     this.set('longModalParams', {
-      title: 'modal title',
+      title: 'long modal title',
       content: 'test-long-modal-content',
-      primaryButtonTitle: 'Primary',
-      primaryButtonAction: this.primaryClick,
-      linkTitle: 'alternative resource link',
-      linkHref: '#'
+      buttonOneTitle: 'Primary Button',
+      buttonOneAction: this.primaryClick,
     }),
 
     this.set('scrollableModalParams', {
@@ -72,11 +73,11 @@ export default FreestyleController.extend(ModalMixin, {
       closeAction: this.controllerCloseAction,
       title: 'scrolling modal title',
       content: 'test-long-modal-content',
-      primaryButtonTitle: 'Primary',
-      primaryButtonAction: this.primaryClick,
-      secondaryButtonTitle: 'Secondary',
-      secondaryButtonAction: () => this.secondaryClick('anonymous'),
-      secondaryDontClose: true,
+      buttonOneTitle: 'Primary Button',
+      buttonOneAction: this.primaryClick,
+      buttonTwoTitle: 'Secondary',
+      buttonTwoAction: () => this.secondaryClick('anonymous'),
+      buttonTwoDontClose: true,
       linkTitle: 'alternative resource link',
       linkHref: '#'
     })

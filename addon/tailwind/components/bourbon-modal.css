@@ -37,7 +37,6 @@
 
 .bourbon-modal__title {
   text-align: center;
-  text-transform: capitalize;
   @apply .bourbon-text-xl;
   @apply .bourbon-font-semibold;
   @apply .bourbon-antialiased;

@@ -1106,7 +1106,6 @@ making styling changes in the library */
 
 .bourbon-modal__title {
   text-align: center;
-  text-transform: capitalize;
   font-size: 1.25rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
