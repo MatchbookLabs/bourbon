@@ -19,11 +19,11 @@
         <a class="bourbon-modal__link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
       {{/if}}
       <div class="bourbon-modal__button-wrapper">
-        {{#if modalService.buttonTwoType}} 
+        {{#if modalService.buttonTwoTitle}} 
           {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}} 
         {{/if}}
 
-        {{#if modalService.buttonOneType}} 
+        {{#if modalService.buttonOneTitle}} 
           {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}} 
         {{/if}}
       </div>

@@ -18,10 +18,10 @@ export default Service.extend({
       context: null,
       buttonOneTitle: null,
       buttonOneAction: null,
-      buttonOneType: null,
+      buttonOneType: 'primary',
       buttonTwoTitle: null,
       buttonTwoAction: null,
-      buttonTwoType: null,
+      buttonTwoType: 'secondary',
       linkTitle: null,
       linkHref: null
     });

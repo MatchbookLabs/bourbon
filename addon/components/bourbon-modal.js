@@ -11,11 +11,11 @@ export default Component.extend({
   classNameBindings: ['modalService.showModalState:bourbon-fixed'],
 
   buttonOneClass: computed('modalService.buttonOneType', function () {
-    return `bourbon-${this.get('modalService.buttonOneType')}-button`
+    return `bourbon-${this.get('modalService.buttonOneType')}-button`;
   }),
 
   buttonTwoClass: computed('modalService.buttonTwoType', function () {
-    return `bourbon-${this.get('modalService.buttonTwoType')}-button  bourbon-mr-3`
+    return `bourbon-${this.get('modalService.buttonTwoType')}-button bourbon-mr-3`;
   }),
 
   init() {

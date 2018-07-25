@@ -34,9 +34,7 @@ export default FreestyleController.extend(ModalMixin, {
       content: 'test-modal-content',
       buttonOneTitle: 'Primary',
       buttonOneAction: this.primaryClick,
-      buttonOneType: 'primary',
-      buttonTwoTitle: 'secondary button',
-      buttonTwoType: 'secondary',
+      buttonTwoTitle: 'Secondary button',
       linkTitle: 'alternative resource link',
       linkHref: '#'
     }),
@@ -60,7 +58,6 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneAction: this.primaryClick,
       buttonOneType: 'delete',
       buttonTwoTitle: 'Cancel',
-      buttonTwoType: 'secondary',
       buttonTwoAction: () => this.secondaryClick('anonymous'),
     }),
 
@@ -69,7 +66,6 @@ export default FreestyleController.extend(ModalMixin, {
       content: 'test-long-modal-content',
       buttonOneTitle: 'Primary Button',
       buttonOneAction: this.primaryClick,
-      buttonOneType: 'primary',
     }),
 
     this.set('scrollableModalParams', {
@@ -79,9 +75,7 @@ export default FreestyleController.extend(ModalMixin, {
       content: 'test-long-modal-content',
       buttonOneTitle: 'Primary Button',
       buttonOneAction: this.primaryClick,
-      buttonOneType: 'primary',
       buttonTwoTitle: 'Secondary',
-      buttonTwoType: 'secondary',
       buttonTwoAction: () => this.secondaryClick('anonymous'),
       buttonTwoDontClose: true,
       linkTitle: 'alternative resource link',
