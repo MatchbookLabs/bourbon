@@ -19,11 +19,12 @@
         <a class="bourbon-modal__link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
       {{/if}}
       <div class="bourbon-modal__button-wrapper">
-        {{#if modalService.secondaryButtonTitle}} 
-          {{bourbon-button title=modalService.secondaryButtonTitle class='bourbon-secondary-button bourbon-mr-3' action=(action 'secondaryButtonAction')}} 
-        {{/if}} 
-        {{#if modalService.primaryButtonTitle}} 
-          {{bourbon-button title=modalService.primaryButtonTitle class='bourbon-primary-button' action=(action 'primaryButtonAction')}} 
+        {{#if modalService.buttonTwoType}} 
+          {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}} 
+        {{/if}}
+
+        {{#if modalService.buttonOneType}} 
+          {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}} 
         {{/if}}
       </div>
     </div>
