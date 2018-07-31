@@ -46,31 +46,27 @@ export default Component.extend({
     },
 
     buttonOneAction() {
+      // buttonAction might change the options so need to set a new variable
+      const originalButtonOneDontClose = this.get('modalService.buttonOneDontClose');
+      
       if (this.get('modalService.buttonOneAction')) {
         this.get('modalService.buttonOneAction')();
       }
 
-      if (this.get('modalService.updateBourbonModalParam')) {
-        this.get('modalService').resetupdateBourbonModalParam();
-        return false;
-      }
-
-      if (!this.get('modalService.buttonOneDontClose')) {
+      if (!originalButtonOneDontClose) {
         this.get('modalService').closeBourbonModal();
       }
     },
 
     buttonTwoAction() {
+      // buttonAction might change the options so need to set a new variable
+      const originalButtonTwoDontClose = this.get('modalService.buttonTwoDontClose');
+
       if (this.get('modalService.buttonTwoAction')) {
         this.get('modalService.buttonTwoAction')();
       }
 
-      if (this.get('modalService.updateBourbonModalParam')) {
-        this.get('modalService').resetupdateBourbonModalParam();
-        return false;
-      }
-
-      if (!this.get('modalService.buttonTwoDontClose')) {
+      if (!originalButtonTwoDontClose) {
         this.get('modalService').closeBourbonModal();
       }
     }

@@ -46,6 +46,7 @@ export default FreestyleController.extend(ModalMixin, {
       content: 'test-modal-content',
       buttonOneTitle: 'Secondary Button',
       buttonOneAction: this.primaryClick,
+      buttonOneDontClose: true,
       buttonOneType: 'secondary',
     }),
 
@@ -65,7 +66,8 @@ export default FreestyleController.extend(ModalMixin, {
       title: 'long modal title',
       content: 'test-long-modal-content',
       buttonOneTitle: 'Primary Button',
-      buttonOneAction: () => this.get('modalService').updateBourbonModal(this.get('confirmationModalParams'))
+      buttonOneDontClose: true,
+      buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
     }),
 
     this.set('scrollableModalParams', {
