@@ -1,12 +1,12 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-
   init() {
     this._super(...arguments);
 
     this.set('defaultParams', {
       showModalState: false,
+      updateBourbonModalParam: false,
       scrollable: false,
       buttonOneDontClose: false,
       buttonTwoDontClose: false,
@@ -33,10 +33,20 @@ export default Service.extend({
     // need to reset properties in case modal
     // is open and just switching content
     this.setProperties(this.defaultParams);
-    
+
     this.setProperties(options);
     this.set('showModalState', true);
     document.body.classList.add('bourbon-fixed');
+  },
+
+  resetupdateBourbonModalParam() {
+    this.set('updateBourbonModalParam', false);
+  },
+
+  updateBourbonModal(options) {
+    this.closeBourbonModal();
+    this.showBourbonModal(options);
+    this.set('updateBourbonModalParam', true);
   },
 
   closeBourbonModal() {

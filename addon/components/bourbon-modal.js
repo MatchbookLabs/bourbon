@@ -50,6 +50,11 @@ export default Component.extend({
         this.get('modalService.buttonOneAction')();
       }
 
+      if (this.get('modalService.updateBourbonModalParam')) {
+        this.get('modalService').resetupdateBourbonModalParam();
+        return;
+      }
+      
       if (!this.get('modalService.buttonOneDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
@@ -58,6 +63,11 @@ export default Component.extend({
     buttonTwoAction() {
       if (this.get('modalService.buttonTwoAction')) {
         this.get('modalService.buttonTwoAction')();
+      }
+
+      if (this.get('modalService.updateBourbonModalParam')) {
+        this.get('modalService').resetupdateBourbonModalParam();
+        return;
       }
 
       if (!this.get('modalService.buttonTwoDontClose')) {
