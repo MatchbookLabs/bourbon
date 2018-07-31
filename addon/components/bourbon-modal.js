@@ -52,9 +52,9 @@ export default Component.extend({
 
       if (this.get('modalService.updateBourbonModalParam')) {
         this.get('modalService').resetupdateBourbonModalParam();
-        return;
+        return false;
       }
-      
+
       if (!this.get('modalService.buttonOneDontClose')) {
         this.get('modalService').closeBourbonModal();
       }
@@ -67,7 +67,7 @@ export default Component.extend({
 
       if (this.get('modalService.updateBourbonModalParam')) {
         this.get('modalService').resetupdateBourbonModalParam();
-        return;
+        return false;
       }
 
       if (!this.get('modalService.buttonTwoDontClose')) {
