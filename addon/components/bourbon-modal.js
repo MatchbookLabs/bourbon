@@ -23,7 +23,7 @@ export default Component.extend({
 
     //  allow the user to escape the modal using the ESC key
     document.addEventListener('keydown', function (e) {
-      if ((this.get('modalService.showModalState') === true) && e.keyCode === 27) {
+      if ((this.get('modalService.showModalState') === true) && e.keyCode === 27 && (this.get('modalService.dismissable') === true)) {
         this._closeModalActions();
       }
     }.bind(this), true);
@@ -37,7 +37,10 @@ export default Component.extend({
     } else {
       console.warn('warning: no closing action passed');
     }
-    this.get('modalService').closeBourbonModal();
+    
+    if (this.get('modalService.dismissable') === true) {
+      this.get('modalService').closeBourbonModal();
+    }
   },
 
   actions: {

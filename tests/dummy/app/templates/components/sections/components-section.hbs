@@ -13,12 +13,12 @@
 
     {{#freestyle-note 'bourbon-scrollable-modal--notes'}}
       <br>
-      - You will need to add the paramaters for each modal to your controller. 
-      - If you want to close the modal after close action. Your controller will have to call the closeModal function.  
+      - You will need to add the paramaters for each modal to your controller.
+      - If you want to close the modal after close action. Your controller will have to call the closeModal function.
       <br>
 
       See examples below.
-      
+
       <br>
       ```
         this.set('scrollableModalParams', {
@@ -37,19 +37,49 @@
           buttonTwoAction: () => this.secondaryClick('anonymous'),
           buttonTwoDontClose: true,
           linkTitle: 'alternative resource link',
-          linkHref: '#'
+          linkHref: '#',
+          dismissable: true
         })
 
 
         controllerActionToBePassed() {
           # do something
 
-          // call this from flabongo to close the modal    
+          // call this from flabongo to close the modal
           this.get('modalService').closeBourbonModal();
         }
       ```
       <br>
 
+      <h4>Modal Options</h4>
+      <ul>
+        <li>title: modal title</li>
+        <li>content: partial name for modal content</li>
+        <li>textContent: string for modal content</li>
+        <li>
+           title is required if you need a button. action is only needed if you have a flabongo action, otherwise, the button will default to having action for closing the
+          modal
+          <ul>
+            <li>buttonOneTitle: text to display on the right button</li>
+            <li>buttonOneAction: function for the right button action</li>
+            <li>buttonOneType: the type defaults to 'primary' but can be changed to 'secondary' or 'delete'</li>
+            <li>buttonTwoTitle: text to display on the left button</li>
+            <li>buttonTwoAction: function for the left button action</li>
+            <li>buttonTwoType: the type defaults to 'secondary' but can be changed to 'primary' or 'delete'</li>
+          </ul>
+        </li>
+        <li>scrollable: Optional to make content in the modal scrollable (good for long content, height: 600px)</li>
+        <li>wideModal: Optional to make the modal wider (width: 850px)</li>
+        <li>closeAction: function to run in addition to the default closing actions of the modal (closeBourbonModal)</li>
+        <li>context: Optional if you need to know the controller context inside the modal</li>
+        <li>buttonOneDontClose: Optional set to true if you don't want the button in the modal to trigger a close action</li>
+        <li>buttonTwoDontClose: Optional set to true if you don't want the button in the modal to trigger a close action</li>
+        <li>linkTitle: text to display on the footer link</li>
+        <li>linkHref: link for the footer link</li>
+        <li>dismissable: Optional, modal set to true and dismissable by default.  Pass in false to change this.</li>
+      </ul>
+
+      <h4>Please Note</h4>
       <p class='FreestyleUsage-rendered'>
         For the content section, you can pass in a string or a partial.
       </p>
@@ -60,14 +90,14 @@
         <li>bourbon-modal__description</li>
         <li>bourbon-modal__content-area</li>
       </ul>
-    
+
     {{/freestyle-note}}
 
     <h4 class='FreestyleUsage-title'>confirmation/warning modal</h4>
     <div class='FreestyleUsage-rendered'>
       {{bourbon-button title='Show confirmation modal' class='bourbon-primary-button' action=(action 'showBourbonModal' confirmationModalParams)}}
     </div>
-  
+
     <h4 class='FreestyleUsage-title'>wide modal with short content</h4>
     <div class='FreestyleUsage-rendered'>
       {{bourbon-button title='Show wide modal' class='bourbon-primary-button' action=(action 'showBourbonModal' modalWideParams)}}
@@ -86,7 +116,7 @@
     <div class='FreestyleUsage-usage'>
       <h3 class='FreestyleUsage-title'>diagram: how flabongo consumes the bourbon modal </h3>
       <p class='FreestyleUsage-rendered'>created by Lawerence</p>
-      
+
       <img src="../images/bourbon-modal-diagram.png" alt="diagram showing connection between flabongo and bourbon for modal">
     </div>
   {{/section.subsection}}

@@ -22,7 +22,8 @@ export default Service.extend({
       buttonTwoAction: null,
       buttonTwoType: 'secondary',
       linkTitle: null,
-      linkHref: null
+      linkHref: null,
+      dismissable: true
     });
 
     this.setProperties(this.defaultParams);
