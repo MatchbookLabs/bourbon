@@ -36,7 +36,8 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneAction: this.primaryClick,
       buttonTwoTitle: 'Secondary button',
       linkTitle: 'alternative resource link',
-      linkHref: '#'
+      linkHref: '#',
+      dismissable: false
     }),
 
     this.set('modalWideParams', {

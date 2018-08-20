@@ -5,7 +5,9 @@
       {{#if modalService.title}}
         <header class="bourbon-modal__title">{{modalService.title}}</header>
       {{/if}}
-      {{bourbon-button icon='close-button' class='bourbon-modal__close-button' action=(action 'closeBourbonModal') aria-label='Close'}}
+      {{#if modalService.dismissable}}
+        {{bourbon-button icon='close-button' class='bourbon-modal__close-button' action=(action 'closeBourbonModal') aria-label='Close'}}
+      {{/if}}
     </div>
 
     {{#if modalService.content}}
@@ -18,6 +20,7 @@
       {{#if modalService.linkTitle}}
         <a class="bourbon-modal__link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
       {{/if}}
+      
       <div class="bourbon-modal__button-wrapper">
         {{#if modalService.buttonTwoTitle}} 
           {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}} 
