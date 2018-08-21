@@ -6,7 +6,7 @@ module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     freestyle: {
-      snippetSearchPaths: ['addon', 'tests/dummy/app']
+      snippetSearchPaths: ['addon', 'tests/dummy/app', 'dist/assets']
     },
     sourcemaps: {
       enabled: true
