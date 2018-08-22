@@ -15,50 +15,61 @@
 blockquote, dl, dd, h1, h2,
 h3, h4, h5, h6, figure, p, pre */
 
+.bourbon-blockquote,
 blockquote {
   margin: 1em 40px;
 }
-
+.bourbon-dd,
 dd {
   margin-left: 0 40px 0 0;
 }
 
+.bourbon-dl,
 dl {
   margin: 1em 0;
 }
 
+.bourbon-h1,
 h1 {
   margin: 0.67em 0;
 }
 
+.bourbon-h2,
 h2 {
   margin: 0.83em 0;
 }
 
+.bourbon-h3,
 h3 {
   margin: 1em 0;
 }
 
+.bourbon-h4,
 h4 {
   margin: 1.33em 0;
 }
 
+.bourbon-h5,
 h5 {
   margin: 1.67em 0;
 }
 
+.bourbon-h6,
 h6 {
   margin: 2.33em 0;
 }
 
+.bourbon-figure,
 figure {
   margin: 1em 40px;
 }
 
+.bourbon-p,
 p {
   margin: 1em 0;
 }
 
+.bourbon-pre,
 pre {
   margin: 1em 0;
 }
