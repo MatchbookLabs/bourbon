@@ -24050,8 +24050,8 @@ blockquote {
   margin: 1em 40px;
 }
 
-dl {
-  margin-left: 40px;
+dd {
+  margin-left: 0 40px 0 0;
 }
 
 dl {
