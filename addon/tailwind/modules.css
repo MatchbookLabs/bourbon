@@ -6,7 +6,7 @@
 * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
 */
 
-/* @import "tailwindcss/preflight"; */
+@import "tailwindcss/preflight";
 
 /**
 * This injects any component classes registered by plugins.

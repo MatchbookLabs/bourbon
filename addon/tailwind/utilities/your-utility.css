@@ -11,7 +11,54 @@
   transform: skewY(45deg);
 } */
 
+/* resetting browser defaults for
+blockquote, dl, dd, h1, h2,
+h3, h4, h5, h6, figure, p, pre */
 
-.bold {
-  font-weight: bold;
+blockquote {
+  margin: 1em 40px;
+}
+
+dl {
+  margin-left: 40px;
+}
+
+dl {
+  margin: 1em 0;
+}
+
+h1 {
+  margin: 0.67em 0;
+}
+
+h2 {
+  margin: 0.83em 0;
+}
+
+h3 {
+  margin: 1em 0;
+}
+
+h4 {
+  margin: 1.33em 0;
+}
+
+h5 {
+  margin: 1.67em 0;
+}
+
+h6 {
+  margin: 2.33em 0;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+p {
+  margin: 1em 0;
+}
+
+pre {
+  margin: 1em 0;
 }
