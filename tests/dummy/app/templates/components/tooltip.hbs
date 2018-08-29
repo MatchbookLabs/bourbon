@@ -5,7 +5,7 @@
       {{bourbon-tooltip text="hover text"}}
     {{/freestyle-usage}}
     {{#freestyle-note 'tooltip-default--notes'}}
-      <h4>Tool Options</h4>
+      <h4>Tooltip Options</h4>
       <ul>
         <li>* content: required
           <ul>
@@ -16,7 +16,6 @@
         <li>event: hover (default), click</li>
         <li>background: #474C4F aka slate (default), white, transparent</li>
         <li>side: top (default), right, bottom, left</li>
-        <li>duration: 0 (default)</li>
         <li>spacing (padding from the target element): 10 (default)</li>
       </ul>
     {{/freestyle-note}}
@@ -48,7 +47,7 @@
 
     {{#freestyle-usage 'tooltip-background-transparent' title='transparent background'}}
       {{bourbon-button title='Transparent tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
-      {{bourbon-tooltip text='I am a transparent tooltip' background='transparent'}}
+      {{bourbon-tooltip text='I am a transparent tooltip' background='transparent' position='right'}}
     {{/freestyle-usage}}
 
     {{#freestyle-note 'tooltip-background--notes'}}
@@ -97,6 +96,4 @@
       </ul>
     {{/freestyle-note}}
    {{/collection.variant}}
-
-
 {{/freestyle-collection}}

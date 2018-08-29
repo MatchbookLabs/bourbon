@@ -11,17 +11,12 @@ export default Component.extend({
     this.setProperties({
       tooltipClass: 'bourbon-tooltip__bg-default',
       tooltipPosition: (this.get('position') || 'top'),
+      tooltipSpacing: (this.get('spacing') || 10),
       tooltipEvent: (this.get('event') || 'hover'),
       tooltipBackgroundColor: (this.get('background') || 'default')
     })
 
     this.set('tooltipBackgroundClass', `bourbon-tooltip__bg-${this.get('tooltipBackgroundColor')} bourbon-tooltip__${this.get('tooltipPosition')} bourbon-tooltip`)
 
-    // if (this.get('position')) {
-    //   return this.set('tooltipPosition', this.get('position'))
-    // }
-
   },
-
-
 });
