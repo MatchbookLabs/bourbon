@@ -17,6 +17,5 @@ export default Component.extend({
     })
 
     this.set('tooltipBackgroundClass', `bourbon-tooltip__bg-${this.get('tooltipBackgroundColor')} bourbon-tooltip__${this.get('tooltipPosition')} bourbon-tooltip`)
-
-  },
+  }
 });

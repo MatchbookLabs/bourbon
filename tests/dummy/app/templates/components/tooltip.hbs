@@ -7,10 +7,10 @@
     {{#freestyle-note 'tooltip-default--notes'}}
       <h4>Tooltip Options</h4>
       <ul>
-        <li>* content: required
+        <li>content: required
           <ul>
             <li>text: string</li>
-            <li>component</li>
+            <li>component/partial</li>
           </ul>
         </li>
         <li>event: hover (default), click</li>
@@ -21,17 +21,29 @@
     {{/freestyle-note}}
    {{/collection.variant}}
 
+   {{#collection.variant key='content'}}
+    {{#freestyle-usage 'tooltip-content' title='popver: passing in a component or partial'}}
+      {{bourbon-button title='show partial' class='bourbon-primary-button'}}
+      {{bourbon-tooltip partial='test-popover-content' background='white' position='right'}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-event--notes'}}
+      <ul>
+        <li>You have the option to pass in a component/partial for a popover</li>
+      </ul>
+    {{/freestyle-note}}
+
+   {{/collection.variant}}
+
    {{#collection.variant key='event'}}
-    {{#freestyle-usage 'tooltip-event' title='event'}}
+    {{#freestyle-usage 'tooltip-event' title='trigger event'}}
       {{bourbon-button title='Click me' class='bourbon-primary-button'}}
-      {{bourbon-tooltip text='tooltip for click event' event='click' duration=10000}}
+      {{bourbon-tooltip text='tooltip for click event' event='click'}}
     {{/freestyle-usage}}
     {{#freestyle-note 'tooltip-event--notes'}}
       <ul>
         <li>event: hover (default), click</li>
       </ul>
     {{/freestyle-note}}
-
    {{/collection.variant}}
 
    {{#collection.variant key='background'}}

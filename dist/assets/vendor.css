@@ -1332,14 +1332,35 @@ making styling changes in the library */
   color: var(--black);
 }
 
-.bourbon-tooltip__bg-default {
-  background-color: var(--slate);
-}
-
 .bourbon-tooltip {
   text-shadow: none;
   border: 1px solid var(--alto);
   padding: .75rem;
+}
+
+.bourbon-tooltip__bg-default {
+  background-color: var(--slate);
+  border: 1px solid var(--slate);
+}
+
+.bourbon-tooltip__bg-default.bourbon-tooltip__right:after {
+  border-left: 1px solid var(--slate);
+  border-bottom: 1px solid var(--slate);
+}
+
+.bourbon-tooltip__bg-default.bourbon-tooltip__left:after {
+  border-right: 1px solid var(--slate);
+  border-top: 1px solid var(--slate);
+}
+
+.bourbon-tooltip__bg-default.bourbon-tooltip__top:after {
+  border-right: 1px solid var(--slate);
+  border-bottom: 1px solid var(--slate);
+}
+
+.bourbon-tooltip__bg-default.bourbon-tooltip__bottom:after {
+  border-left: 1px solid var(--slate);
+  border-top: 1px solid var(--slate);
 }
 
 .bourbon-tooltip__right:after {
