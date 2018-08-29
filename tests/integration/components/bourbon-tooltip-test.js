@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-tooltip', function(hooks) {
     await render(hbs`{{bourbon-tooltip}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-tooltip}}
-        template block text
-      {{/bourbon-tooltip}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
