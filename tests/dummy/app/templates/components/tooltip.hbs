@@ -1,0 +1,102 @@
+{{#freestyle-collection title='All tooltips' defaultKey='all' inline=false as |collection|}}
+   {{#collection.variant key='default'}}
+    {{#freestyle-usage 'tooltip-default' title='default'}}
+      {{bourbon-button title='Hover me' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{bourbon-tooltip text="hover text"}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-default--notes'}}
+      <h4>Tool Options</h4>
+      <ul>
+        <li>* content: required
+          <ul>
+            <li>text: string</li>
+            <li>component</li>
+          </ul>
+        </li>
+        <li>event: hover (default), click</li>
+        <li>background: #474C4F aka slate (default), white, transparent</li>
+        <li>side: top (default), right, bottom, left</li>
+        <li>duration: 0 (default)</li>
+        <li>spacing (padding from the target element): 10 (default)</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='event'}}
+    {{#freestyle-usage 'tooltip-event' title='event'}}
+      {{bourbon-button title='Click me' class='bourbon-primary-button'}}
+      {{bourbon-tooltip text='tooltip for click event' event='click' duration=10000}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-event--notes'}}
+      <ul>
+        <li>event: hover (default), click</li>
+      </ul>
+    {{/freestyle-note}}
+
+   {{/collection.variant}}
+
+   {{#collection.variant key='background'}}
+    {{#freestyle-usage 'tooltip-background' title='default background'}}
+      {{bourbon-button title='default tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I am a slate tooltip' background='default'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-background-white' title='white background'}}
+      {{bourbon-button title='White tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I am a white tooltip' background='white'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-background-transparent' title='transparent background'}}
+      {{bourbon-button title='Transparent tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I am a transparent tooltip' background='transparent'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'tooltip-background--notes'}}
+      <ul>
+        <li>background: #474C4F aka slate (default), white, transparent</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='position'}}
+    {{#freestyle-usage 'tooltip-position' title='position top'}}
+      {{bourbon-button title='Default tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I should be on the top' position='top' background='white'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-right' title='position right'}}
+      {{bourbon-button title='Right tooltip position' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I should be on the right hand side' position='right' background='white'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-left' title='position left'}}
+      {{bourbon-button title='Left tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I should be on the left hand side' position='left' background='white'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-bottom' title='position bottom'}}
+      {{bourbon-button title='Bottom tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{bourbon-tooltip text='I should be on the bottom' position='bottom' background='white'}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'tooltip-position--notes'}}
+      <ul>
+        <li>side: top (default), right, bottom, left</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='spacing'}}
+    {{#freestyle-usage 'tooltip-spacing' title='spacing'}}
+      {{bourbon-button title='More spacing' class='bourbon-primary-button'}}
+      {{bourbon-tooltip text='There is more space for this tooltip' spacing=40}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-spacing--notes'}}
+      <ul>
+        <li>spacing (padding from the target element): 10 (default)</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+
+{{/freestyle-collection}}

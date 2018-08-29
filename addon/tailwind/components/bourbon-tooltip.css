@@ -1,0 +1,52 @@
+.ember-tooltip-or-popover-target,
+.ember-tooltip-or-popover-element-attached-bottom,
+.ember-tooltip-or-popover-element-attached-center,
+.ember-tooltip-or-popover-target-attached-top,
+.ember-tooltip-or-popover-target-attached-center {
+  width: fit-content;
+}
+
+.bourbon-tooltip__bg-white {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+
+.bourbon-tooltip__bg-transparent {
+  background-color: rgba(255, 255, 255, .4);
+  color: var(--black);
+}
+
+
+.bourbon-tooltip__bg-default {
+  background-color: var(--slate);
+}
+
+.bourbon-tooltip {
+  text-shadow:  none;
+  border: 1px solid var(--alto);
+  @apply .bourbon-p-3;
+}
+
+
+.bourbon-tooltip__right:after {
+  border-left: 1px solid var(--alto);
+  border-bottom: 1px solid var(--alto);
+}
+
+
+.bourbon-tooltip__left:after {
+  border-right: 1px solid var(--alto);
+  border-top: 1px solid var(--alto);
+}
+
+.bourbon-tooltip__top:after {
+  border-right: 1px solid var(--alto);
+  border-bottom: 1px solid var(--alto);
+}
+
+
+.bourbon-tooltip__bottom:after {
+  border-left: 1px solid var(--alto);
+  border-top: 1px solid var(--alto);
+}
