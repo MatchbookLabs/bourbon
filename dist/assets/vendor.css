@@ -1335,12 +1335,22 @@ making styling changes in the library */
 .bourbon-tooltip {
   text-shadow: none;
   border: 1px solid var(--alto);
-  padding: .75rem;
+  padding: .5rem .75rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: .8125rem;
 }
 
+.theme-light .bourbon-tooltip__bg-default
 .bourbon-tooltip__bg-default {
   background-color: var(--slate);
   border: 1px solid var(--slate);
+}
+
+.theme-dark .bourbon-tooltip__bg-default {
+  background-color: var(--white);
+  border: 1px solid var(--white);
 }
 
 .bourbon-tooltip__bg-default.bourbon-tooltip__right:after {

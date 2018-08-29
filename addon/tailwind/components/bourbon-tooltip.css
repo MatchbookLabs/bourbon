@@ -19,12 +19,21 @@
 .bourbon-tooltip {
   text-shadow:  none;
   border: 1px solid var(--alto);
-  @apply .bourbon-p-3;
+  padding: .5rem .75rem;
+  @apply .bourbon-font-normal;
+  @apply .bourbon-antialiased;
+  @apply .bourbon-text-sm;
 }
 
+.theme-light .bourbon-tooltip__bg-default
 .bourbon-tooltip__bg-default {
   background-color: var(--slate);
   border: 1px solid var(--slate);
+}
+
+.theme-dark .bourbon-tooltip__bg-default {
+  background-color: var(--white);
+  border: 1px solid var(--white);
 }
 
 .bourbon-tooltip__bg-default.bourbon-tooltip__right:after {
