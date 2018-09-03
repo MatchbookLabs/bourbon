@@ -13,6 +13,7 @@ export default Component.extend({
       tooltipPosition: (this.get('position') || 'top'),
       tooltipSpacing: (this.get('spacing') || 10),
       tooltipEvent: (this.get('event') || 'hover'),
+      tooltipShowOn: (this.get('showOn') || 'none'),
       tooltipBackgroundColor: (this.get('background') || 'default')
     })
 

@@ -56,7 +56,6 @@ export default FreestyleController.extend(ModalMixin, {
         'base': '#E9E9E9'
       },
 
-
       'foreground': {
         'name': 'black',
         'base': '#212121'
