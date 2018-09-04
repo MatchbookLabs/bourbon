@@ -9,7 +9,7 @@ export default Component.extend({
   tagName: 'button',
   classNames: ['bourbon-button'],
   classNameBindings: ['iconTextButton:bourbon-button--icon-text', 'iconOnlyButton:bourbon-button--icon-only', 'fullWidth:bourbon-w-full'],
-  attributeBindings: ['aria-label', 'data-role', 'data-hint',  'target', 'tabindex'],
+  attributeBindings: ['aria-label', 'data-role', 'data-hint',  'target', 'tabindex', 'title'],
   iconTextButton: computed('icon', 'title', function() { return this.get('icon') && this.get('title')}),
   iconOnlyButton: computed('icon', 'title', 'class', function() { return this.get('icon') && !this.get('class')}),
 

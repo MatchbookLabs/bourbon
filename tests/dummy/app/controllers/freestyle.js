@@ -14,10 +14,48 @@ export default FreestyleController.extend(ModalMixin, {
         'name': 'fern',
         'base': '#5CB675'
       },
+      'accentHover': {
+        'name': 'emerald',
+        'base': '#4CCE6F'
+      },
+      'accentActive': {
+        'name': 'fruit-salad',
+        'base': '#4CA465'
+      },
+
+      'mine-shaft': {
+        'name': 'mine-shaft',
+        'base': '#2D2D2D'
+      },
       'secondary': {
         'name': 'slate',
         'base': '#474C4F'
       },
+
+      'shade': {
+        'name': 'shade',
+        'base': 'rgba(0,0,0,0.4)'
+      },
+
+      'alto': {
+        'name': 'alto',
+        'base': '#DCDCDC'
+      },
+      'alabaster': {
+        'name': 'alabaster',
+        'base': '#FAFAFA'
+      },
+
+      'secondaryActive': {
+        'name': 'concrete',
+        'base': '#F3F3F3'
+      },
+
+      'mercury': {
+        'name': 'mercury',
+        'base': '#E9E9E9'
+      },
+
       'foreground': {
         'name': 'black',
         'base': '#212121'
@@ -25,7 +63,11 @@ export default FreestyleController.extend(ModalMixin, {
       'background': {
         'name': 'white',
         'base': '#ffffff'
-      }
+      },
+      'dodger-blue': {
+        'name': 'dodger-blue',
+        'base': '#2E71FC'
+      },
     }),
 
     this.set('modalParams', {
@@ -96,7 +138,7 @@ export default FreestyleController.extend(ModalMixin, {
   primaryClick() {
     alert('you are clicking a primary freestyle button!');
   },
-  
+
   secondaryClick(name) {
     alert(`you are clicking a secondary freestyle button! via an ${name} function`)
   },

@@ -1,0 +1,140 @@
+{{#freestyle-collection title='All tooltips' defaultKey='all' inline=false as |collection|}}
+   {{#collection.variant key='default'}}
+    {{#freestyle-usage 'tooltip-default' title='default'}}
+      {{bourbon-button title='Hover me' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip}}
+         hover text
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-default--notes'}}
+      <h4>Tooltip Options</h4>
+      <ul>
+        <li>content: required
+          <ul>
+            <li>text: string</li>
+            <li>component/partial</li>
+          </ul>
+        </li>
+        <li>event: hover (default), click</li>
+        <li>showOn: none (default), click.  To be used when there is another JS click event in addition to the tooltip.</li>
+        <li>background: #474C4F aka slate (default), white, transparent</li>
+        <li>side: top (default), right, bottom, left</li>
+        <li>spacing (padding from the target element): 10 (default)</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='content'}}
+    {{#freestyle-usage 'tooltip-content' title='popver: passing in a component or partial'}}
+      {{bourbon-button title='show partial' class='bourbon-primary-button'}}
+      {{#bourbon-tooltip background='white'}}
+        {{partial 'test-popover-content'}}
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-event--notes'}}
+      <ul>
+        <li>You have the option to pass in a component/partial for a popover</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='event'}}
+    {{#freestyle-usage 'tooltip-event' title='trigger event'}}
+      {{bourbon-button title='Click me' class='bourbon-primary-button'}}
+      {{#bourbon-tooltip event='click'}}
+         tooltip for click event
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-event--notes'}}
+      <ul>
+        <li>event: hover (default), click</li>
+      </ul>
+    {{/freestyle-note}}
+
+    {{#freestyle-usage 'tooltip-event-click' title='trigger event click'}}
+      {{bourbon-button title='Click me for showOn event' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip showOn='click'}}
+        tooltip for showOn click event
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='background'}}
+    {{#freestyle-usage 'tooltip-background' title='default background'}}
+      {{bourbon-button title='default tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip background='default'}}
+        I am a slate tooltip
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-background-white' title='white background'}}
+      {{bourbon-button title='White tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip background='white'}}
+         I am a white tooltip
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-background-transparent' title='transparent background'}}
+      {{bourbon-button title='Transparent tooltip' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip background='transparent' position='right'}}
+         I am a transparent tooltip
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'tooltip-background--notes'}}
+      <ul>
+        <li>background: #474C4F aka slate (default), white, transparent</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='position'}}
+    {{#freestyle-usage 'tooltip-position' title='position top'}}
+      {{bourbon-button title='Default tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{#bourbon-tooltip position='top' background='white'}}
+         I should be on the top
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-right' title='position right'}}
+      {{bourbon-button title='Right tooltip position' class='bourbon-primary-button' action=(action 'buttonClick')}}
+      {{#bourbon-tooltip position='right' background='white'}}
+         I should be on the right hand side
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-left' title='position left'}}
+      {{bourbon-button title='Left tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{#bourbon-tooltip position='left' background='white'}}
+         I should be on the left hand side
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-usage 'tooltip-position-bottom' title='position bottom'}}
+      {{bourbon-button title='Bottom tooltip position' class='bourbon-primary-button'action=(action 'buttonClick')}}
+      {{#bourbon-tooltip position='bottom' background='white'}}
+         I should be on the bottom
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'tooltip-position--notes'}}
+      <ul>
+        <li>side: top (default), right, bottom, left</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+
+   {{#collection.variant key='spacing'}}
+    {{#freestyle-usage 'tooltip-spacing' title='spacing'}}
+      {{bourbon-button title='More spacing' class='bourbon-primary-button'}}
+      {{#bourbon-tooltip spacing=40}}
+         There is more space for this tooltip
+      {{/bourbon-tooltip}}
+    {{/freestyle-usage}}
+    {{#freestyle-note 'tooltip-spacing--notes'}}
+      <ul>
+        <li>spacing (padding from the target element): 10 (default)</li>
+      </ul>
+    {{/freestyle-note}}
+   {{/collection.variant}}
+{{/freestyle-collection}}
