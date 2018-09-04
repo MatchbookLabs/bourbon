@@ -1314,14 +1314,6 @@ making styling changes in the library */
   padding-left: 30px;
 }
 
-.ember-tooltip-or-popover-target,
-.ember-tooltip-or-popover-element-attached-bottom,
-.ember-tooltip-or-popover-element-attached-center,
-.ember-tooltip-or-popover-target-attached-top,
-.ember-tooltip-or-popover-target-attached-center {
-  width: fit-content;
-}
-
 .bourbon-tooltip__bg-white {
   background-color: var(--white);
   color: var(--black);
@@ -4149,6 +4141,10 @@ p {
 .bourbon-pre,
 pre {
   margin: 1em 0;
+}
+
+.FreestyleUsage-rendered {
+  width: fit-content;
 }
 
 @media (min-width: 576px) {

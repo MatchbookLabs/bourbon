@@ -73,3 +73,7 @@ p {
 pre {
   margin: 1em 0;
 }
+
+.FreestyleUsage-rendered {
+  width: fit-content;
+}
