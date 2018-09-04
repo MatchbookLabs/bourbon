@@ -1328,6 +1328,7 @@ making styling changes in the library */
   text-shadow: none;
   border: 1px solid var(--alto);
   padding: .5rem .75rem;
+  z-index: 101;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
