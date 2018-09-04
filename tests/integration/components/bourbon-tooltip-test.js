@@ -7,11 +7,12 @@ module('Integration | Component | bourbon-tooltip', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`
+      {{#bourbon-tooltip text='text'}}
+        tooltip text
+      {{/bourbon-tooltip}}
+      `);
 
-    await render(hbs`{{bourbon-tooltip}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.classList[1], 'ember-tooltip-or-popover-target');
   });
 });
