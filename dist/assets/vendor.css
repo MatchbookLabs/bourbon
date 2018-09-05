@@ -4144,7 +4144,7 @@ pre {
   margin: 1em 0;
 }
 
-.FreestyleUsage-rendered {
+.FreestyleUsage-rendered.ember-tooltip-or-popover-target {
   width: fit-content;
 }
 
