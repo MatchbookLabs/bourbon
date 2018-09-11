@@ -77,3 +77,7 @@ pre {
 .FreestyleUsage-rendered.ember-tooltip-or-popover-target {
   width: fit-content;
 }
+
+button:focus {
+  outline: none;
+}
