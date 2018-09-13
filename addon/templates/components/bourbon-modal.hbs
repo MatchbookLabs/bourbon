@@ -11,7 +11,7 @@
     </div>
 
     {{#if modalService.content}}
-      {{bourbon-modal-content contentPartial=modalService.content componentController=modalService.context}}
+      {{bourbon-modal-content contentPartial=modalService.content context=modalService.context}}
     {{else}}
       {{bourbon-modal-content textContent=modalService.textContent}}
     {{/if}}
@@ -20,14 +20,14 @@
       {{#if modalService.linkTitle}}
         <a class="bourbon-modal__link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
       {{/if}}
-      
+
       <div class="bourbon-modal__button-wrapper">
-        {{#if modalService.buttonTwoTitle}} 
-          {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}} 
+        {{#if modalService.buttonTwoTitle}}
+          {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}}
         {{/if}}
 
-        {{#if modalService.buttonOneTitle}} 
-          {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}} 
+        {{#if modalService.buttonOneTitle}}
+          {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}}
         {{/if}}
       </div>
     </div>

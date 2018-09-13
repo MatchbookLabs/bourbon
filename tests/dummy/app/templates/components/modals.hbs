@@ -62,10 +62,10 @@
         <li>buttonTwoType: the type defaults to 'secondary' but can be changed to 'primary' or 'delete'</li>
       </ul>
     </li>
+    <li>context: Optional if you need to know the controller context inside the modal.</li>
     <li>scrollable: Optional to make content in the modal scrollable (good for long content, height: 600px)</li>
     <li>wideModal: Optional to make the modal wider (width: 850px)</li>
     <li>closeAction: function to run in addition to the default closing actions of the modal (closeBourbonModal)</li>
-    <li>context: Optional if you need to know the controller context inside the modal</li>
     <li>buttonOneDontClose: Optional set to true if you don't want the button in the modal to trigger a close action</li>
     <li>buttonTwoDontClose: Optional set to true if you don't want the button in the modal to trigger a close action</li>
     <li>linkTitle: text to display on the footer link</li>
@@ -85,27 +85,116 @@
     <li>bourbon-modal__content-area</li>
   </ul>
 
+  <p class='FreestyleUsage-rendered'>
+    When passing in a <strong>context</strong> into a modal, you will need to reference
+    "context" within your partial or component in flabongo.
+  </p>
+  <p>See example below.</p>
+  <p>In the component.coffee file</p>
+  ```
+      @send 'showBourbonModal',
+        content: 'components/custom-dropdowns-container'
+        context: this
+        closeAction: =>
+        surveyReloadPromise = @get('surveyController.model').reloadRecord()
+        @send 'showPending', surveyReloadPromise
+  ```
+
+  <p>In the component.emblem template</p>
+  ```
+      = custom-dropdowns [
+        survey=context.surveyController
+        currentUser=context.currentUser
+        selectedChoice=context.selectedChoice
+        ]
+
+  ```
 {{/freestyle-note}}
 
-<h4 class='FreestyleUsage-title'>confirmation/warning modal</h4>
-<div class='FreestyleUsage-rendered'>
-  {{bourbon-button title='Show confirmation modal' class='bourbon-primary-button' action=(action 'showBourbonModal' confirmationModalParams)}}
-</div>
 
-<h4 class='FreestyleUsage-title'>wide modal with short content</h4>
-<div class='FreestyleUsage-rendered'>
+{{#freestyle-usage 'bourbon-confirmation-modal' title='confirmation modal' usageTitle='Usage'}}
+    {{bourbon-button title='Show confirmation modal' class='bourbon-primary-button' action=(action 'showBourbonModal'
+    confirmationModalParams)}}
+{{/freestyle-usage}}
+
+{{#freestyle-note 'bourbon-confirmation-modal--notes'}}
+  <div class="FreestyleUsage-rendered">Params being passed into the example</div>
+  ```
+    this.set('confirmationModalParams', {
+      confirmationModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'Are you sure?',
+      textContent: 'Would you like to delete your connection?',
+      buttonOneTitle: 'Delete',
+      buttonOneAction: this.primaryClick,
+      buttonOneType: 'delete',
+      buttonTwoTitle: 'Cancel',
+      buttonTwoAction: () => this.secondaryClick('anonymous'),
+    })
+  ```
+{{/freestyle-note}}
+
+
+{{#freestyle-usage 'bourbon-wide-modal' title='wide modal' usageTitle='Usage'}}
   {{bourbon-button title='Show wide modal' class='bourbon-primary-button' action=(action 'showBourbonModal' modalWideParams)}}
-</div>
+{{/freestyle-usage}}
 
-<h4 class='FreestyleUsage-title'>modal with short content</h4>
-<div class='FreestyleUsage-rendered'>
+{{#freestyle-note 'bourbon-wide-modal--notes'}}
+  <div class="FreestyleUsage-rendered">Params being passed into the example</div>
+  ```
+    this.set('modalWideParams', {
+    wideModal: true,
+    closeAction: this.controllerCloseAction,
+    title: 'wide modal title',
+    content: 'test-modal-content',
+    buttonOneTitle: 'Secondary Button',
+    buttonOneAction: this.primaryClick,
+    buttonOneDontClose: true,
+    buttonOneType: 'secondary',
+    })
+  ```
+{{/freestyle-note}}
+
+
+{{#freestyle-usage 'bourbon-short-content-modal' title='short content modal' usageTitle='Usage'}}
   {{bourbon-button title='Show regular modal' class='bourbon-primary-button' action=(action 'showBourbonModal' modalParams)}}
-</div>
+{{/freestyle-usage}}
 
-<h4 class='FreestyleUsage-title'>modal with long content</h4>
-<div class='FreestyleUsage-rendered'>
+{{#freestyle-note 'bourbon-short-content-modal--notes'}}
+  <div class="FreestyleUsage-rendered">Params being passed into the example</div>
+  ```
+      this.set('modalParams', {
+      closeAction: this.controllerCloseAction,
+      title: 'modal title',
+      content: 'test-modal-content',
+      buttonOneTitle: 'Primary',
+      buttonOneAction: this.primaryClick,
+      buttonTwoTitle: 'Secondary button',
+      linkTitle: 'alternative resource link',
+      linkHref: '#',
+      dismissable: false
+      })
+  ```
+{{/freestyle-note}}
+
+
+{{#freestyle-usage 'bourbon-long-modal' title='long content modal' usageTitle='Usage'}}
   {{bourbon-button title='Show long modal' class='bourbon-primary-button' action=(action 'showBourbonModal' longModalParams)}}
-</div>
+{{/freestyle-usage}}
+{{#freestyle-note 'bourbon-long-modal--notes'}}
+  <div class="FreestyleUsage-rendered">Params being passed into the example</div>
+  ```
+    this.set('longModalParams', {
+    title: 'long modal title',
+    content: 'test-long-modal-content',
+    buttonOneTitle: 'Primary Button',
+    buttonOneDontClose: true,
+    buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
+    })
+  ```
+{{/freestyle-note}}
+
+
 
 <div class='FreestyleUsage-usage'>
   <h3 class='FreestyleUsage-title'>diagram: how flabongo consumes the bourbon modal </h3>
