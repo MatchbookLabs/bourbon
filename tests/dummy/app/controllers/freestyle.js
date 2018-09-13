@@ -135,6 +135,7 @@ export default FreestyleController.extend(ModalMixin, {
     },
 
     textFieldClick(text) {
+      /* eslint no-console: 0 */
       console.log(`you are taking a textfield action that has a value of ${text}`);
     },
 
