@@ -30,7 +30,7 @@ export default TextField.extend({
     }
 
     if (this.get('actionOnFocusOut')) {
-      this.get('actionOnFocusOut')();
+      this.get('actionOnFocusOut')(this.get('value'));
     }
   },
 

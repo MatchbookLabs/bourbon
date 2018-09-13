@@ -2,4 +2,9 @@
   padding: 10px;
   @apply bourbon-text-base;
   border: 1px solid var(--alto);
+  width: 100%;
+}
+
+.bourbon-text-field[disabled] {
+  cursor: not-allowed;
 }

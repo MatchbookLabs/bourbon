@@ -78,6 +78,10 @@ pre {
   width: fit-content;
 }
 
+.FreestyleUsage-notes {
+  padding: 1rem 1rem 0;
+}
+
 button:focus {
   outline: none;
 }

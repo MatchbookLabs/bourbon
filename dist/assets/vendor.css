@@ -1318,6 +1318,11 @@ making styling changes in the library */
   padding: 10px;
   font-size: 1rem;
   border: 1px solid var(--alto);
+  width: 100%;
+}
+
+.bourbon-text-field[disabled] {
+  cursor: not-allowed;
 }
 
 .bourbon-tooltip__bg-white {
@@ -4152,6 +4157,10 @@ pre {
 
 .FreestyleUsage-rendered.ember-tooltip-or-popover-target {
   width: fit-content;
+}
+
+.FreestyleUsage-notes {
+  padding: 1rem 1rem 0;
 }
 
 button:focus {
