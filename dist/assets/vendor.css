@@ -1316,17 +1316,18 @@ making styling changes in the library */
 
 .bourbon-tooltip__bg-white {
   background-color: var(--white);
+  border: 1px solid var(--alto);
   color: var(--black);
 }
 
 .bourbon-tooltip__bg-transparent {
   background-color: rgba(255, 255, 255, .4);
+  border: 1px solid var(--alto);
   color: var(--black);
 }
 
 .bourbon-tooltip {
   text-shadow: none;
-  border: 1px solid var(--alto);
   padding: .5rem .75rem;
   z-index: 101;
   font-weight: 400;
