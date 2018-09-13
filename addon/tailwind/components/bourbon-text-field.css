@@ -1,0 +1,5 @@
+.bourbon-text-field {
+  padding: 10px;
+  @apply bourbon-text-base;
+  border: 1px solid var(--alto);
+}

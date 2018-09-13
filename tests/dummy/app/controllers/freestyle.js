@@ -132,6 +132,14 @@ export default FreestyleController.extend(ModalMixin, {
   actions: {
     buttonClick() {
       alert('you are clicking a button: action from freestyle!');
+    },
+
+    textFieldClick(text) {
+      console.log(`you are taking a textfield action that has a value of ${text}`);
+    },
+
+    textFieldEnterAction(text) {
+      alert(`you are taking a textFieldEnterAction that has a value of ${text}`);
     }
   },
 
