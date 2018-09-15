@@ -11,7 +11,7 @@
     </div>
 
     {{#if modalService.content}}
-      {{bourbon-modal-content contentPartial=modalService.content context=modalService.context}}
+      {{bourbon-modal-content contentPartial=modalService.content modalContext=modalService.context}}
     {{else}}
       {{bourbon-modal-content textContent=modalService.textContent}}
     {{/if}}
