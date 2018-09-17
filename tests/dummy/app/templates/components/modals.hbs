@@ -87,7 +87,7 @@
 
   <p class='FreestyleUsage-rendered'>
     When passing in a <strong>context</strong> into a modal, you will need to reference
-    "context" within your partial or component in flabongo.
+    "modalContext" within your partial or component in flabongo.
   </p>
   <p>See example below.</p>
   <p>In the component.coffee file</p>
@@ -103,9 +103,9 @@
   <p>In the component.emblem template</p>
   ```
       = custom-dropdowns [
-        survey=context.surveyController
-        currentUser=context.currentUser
-        selectedChoice=context.selectedChoice
+        survey=modalContext.surveyController
+        currentUser=modalContext.currentUser
+        selectedChoice=modalContext.selectedChoice
         ]
 
   ```
@@ -194,7 +194,21 @@
   ```
 {{/freestyle-note}}
 
-
+{{#freestyle-usage 'bourbon-no-padding-modal' title='no padding modal' usageTitle='Usage'}}
+  {{bourbon-button title='Show no padding modal' class='bourbon-primary-button' action=(action 'showBourbonModal' noPaddingModalParams)}}
+{{/freestyle-usage}}
+{{#freestyle-note 'bourbon-no-padding-modal--notes'}}
+  <div class="FreestyleUsage-rendered">Params being passed into the example</div>
+  ```
+    this.set('noPaddingModalParams', {
+    title: 'long modal title',
+    content: 'test-long-modal-content',
+    buttonOneTitle: 'Primary Button',
+    buttonOneDontClose: true,
+    buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
+    })
+  ```
+{{/freestyle-note}}
 
 <div class='FreestyleUsage-usage'>
   <h3 class='FreestyleUsage-title'>diagram: how flabongo consumes the bourbon modal </h3>
