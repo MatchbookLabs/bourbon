@@ -110,11 +110,6 @@ export default FreestyleController.extend(ModalMixin, {
       noPaddingModal: true,
       title: 'Am I cute?',
       content: 'test-image-content',
-      closeAction: this.controllerCloseAction,
-      buttonOneTitle: 'Yes',
-      buttonOneAction: this.primaryClick,
-      buttonTwoTitle: 'No',
-      buttonTwoAction: () => this.secondaryClick('anonymous'),
     }),
 
     this.set('longModalParams', {
