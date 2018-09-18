@@ -143,14 +143,14 @@
   <div class="FreestyleUsage-rendered">Params being passed into the example</div>
   ```
     this.set('modalWideParams', {
-    wideModal: true,
-    closeAction: this.controllerCloseAction,
-    title: 'wide modal title',
-    content: 'test-modal-content',
-    buttonOneTitle: 'Secondary Button',
-    buttonOneAction: this.primaryClick,
-    buttonOneDontClose: true,
-    buttonOneType: 'secondary',
+      wideModal: true,
+      closeAction: this.controllerCloseAction,
+      title: 'wide modal title',
+      content: 'test-modal-content',
+      buttonOneTitle: 'Secondary Button',
+      buttonOneAction: this.primaryClick,
+      buttonOneDontClose: true,
+      buttonOneType: 'secondary',
     })
   ```
 {{/freestyle-note}}
@@ -164,15 +164,15 @@
   <div class="FreestyleUsage-rendered">Params being passed into the example</div>
   ```
       this.set('modalParams', {
-      closeAction: this.controllerCloseAction,
-      title: 'modal title',
-      content: 'test-modal-content',
-      buttonOneTitle: 'Primary',
-      buttonOneAction: this.primaryClick,
-      buttonTwoTitle: 'Secondary button',
-      linkTitle: 'alternative resource link',
-      linkHref: '#',
-      dismissable: false
+        closeAction: this.controllerCloseAction,
+        title: 'modal title',
+        content: 'test-modal-content',
+        buttonOneTitle: 'Primary',
+        buttonOneAction: this.primaryClick,
+        buttonTwoTitle: 'Secondary button',
+        linkTitle: 'alternative resource link',
+        linkHref: '#',
+        dismissable: false
       })
   ```
 {{/freestyle-note}}
@@ -185,11 +185,11 @@
   <div class="FreestyleUsage-rendered">Params being passed into the example</div>
   ```
     this.set('longModalParams', {
-    title: 'long modal title',
-    content: 'test-long-modal-content',
-    buttonOneTitle: 'Primary Button',
-    buttonOneDontClose: true,
-    buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
+      title: 'long modal title',
+      content: 'test-long-modal-content',
+      buttonOneTitle: 'Primary Button',
+      buttonOneDontClose: true,
+      buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
     })
   ```
 {{/freestyle-note}}
@@ -201,12 +201,11 @@
   <div class="FreestyleUsage-rendered">Params being passed into the example</div>
   ```
     this.set('noPaddingModalParams', {
-    title: 'long modal title',
-    content: 'test-long-modal-content',
-    buttonOneTitle: 'Primary Button',
-    buttonOneDontClose: true,
-    buttonOneAction: () => this.get('modalService').showBourbonModal(this.get('confirmationModalParams'))
-    })
+      confirmationModal: true,
+      noPaddingModal: true,
+      title: 'Am I cute?',
+      content: 'test-image-content',
+    }),
   ```
 {{/freestyle-note}}
 
