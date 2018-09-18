@@ -2466,6 +2466,10 @@ making styling changes in the library */
   margin: 1rem;
 }
 
+.bourbon-m-5 {
+  margin: 1.25rem;
+}
+
 .bourbon-m-6 {
   margin: 1.5rem;
 }
@@ -2538,6 +2542,16 @@ making styling changes in the library */
 .bourbon-mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.bourbon-my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.bourbon-mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .bourbon-my-6 {
@@ -2678,6 +2692,22 @@ making styling changes in the library */
 
 .bourbon-ml-4 {
   margin-left: 1rem;
+}
+
+.bourbon-mt-5 {
+  margin-top: 1.25rem;
+}
+
+.bourbon-mr-5 {
+  margin-right: 1.25rem;
+}
+
+.bourbon-mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.bourbon-ml-5 {
+  margin-left: 1.25rem;
 }
 
 .bourbon-mt-6 {
@@ -5232,6 +5262,10 @@ button:focus {
     margin: 1rem;
   }
 
+  .sm\:bourbon-m-5 {
+    margin: 1.25rem;
+  }
+
   .sm\:bourbon-m-6 {
     margin: 1.5rem;
   }
@@ -5304,6 +5338,16 @@ button:focus {
   .sm\:bourbon-mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .sm\:bourbon-my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:bourbon-mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .sm\:bourbon-my-6 {
@@ -5444,6 +5488,22 @@ button:focus {
 
   .sm\:bourbon-ml-4 {
     margin-left: 1rem;
+  }
+
+  .sm\:bourbon-mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .sm\:bourbon-mr-5 {
+    margin-right: 1.25rem;
+  }
+
+  .sm\:bourbon-mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:bourbon-ml-5 {
+    margin-left: 1.25rem;
   }
 
   .sm\:bourbon-mt-6 {
@@ -7897,6 +7957,10 @@ button:focus {
     margin: 1rem;
   }
 
+  .md\:bourbon-m-5 {
+    margin: 1.25rem;
+  }
+
   .md\:bourbon-m-6 {
     margin: 1.5rem;
   }
@@ -7969,6 +8033,16 @@ button:focus {
   .md\:bourbon-mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .md\:bourbon-my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .md\:bourbon-mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .md\:bourbon-my-6 {
@@ -8109,6 +8183,22 @@ button:focus {
 
   .md\:bourbon-ml-4 {
     margin-left: 1rem;
+  }
+
+  .md\:bourbon-mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .md\:bourbon-mr-5 {
+    margin-right: 1.25rem;
+  }
+
+  .md\:bourbon-mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .md\:bourbon-ml-5 {
+    margin-left: 1.25rem;
   }
 
   .md\:bourbon-mt-6 {
@@ -10562,6 +10652,10 @@ button:focus {
     margin: 1rem;
   }
 
+  .lg\:bourbon-m-5 {
+    margin: 1.25rem;
+  }
+
   .lg\:bourbon-m-6 {
     margin: 1.5rem;
   }
@@ -10634,6 +10728,16 @@ button:focus {
   .lg\:bourbon-mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .lg\:bourbon-my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .lg\:bourbon-mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .lg\:bourbon-my-6 {
@@ -10774,6 +10878,22 @@ button:focus {
 
   .lg\:bourbon-ml-4 {
     margin-left: 1rem;
+  }
+
+  .lg\:bourbon-mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .lg\:bourbon-mr-5 {
+    margin-right: 1.25rem;
+  }
+
+  .lg\:bourbon-mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .lg\:bourbon-ml-5 {
+    margin-left: 1.25rem;
   }
 
   .lg\:bourbon-mt-6 {
@@ -13227,6 +13347,10 @@ button:focus {
     margin: 1rem;
   }
 
+  .xl\:bourbon-m-5 {
+    margin: 1.25rem;
+  }
+
   .xl\:bourbon-m-6 {
     margin: 1.5rem;
   }
@@ -13299,6 +13423,16 @@ button:focus {
   .xl\:bourbon-mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .xl\:bourbon-my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .xl\:bourbon-mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .xl\:bourbon-my-6 {
@@ -13439,6 +13573,22 @@ button:focus {
 
   .xl\:bourbon-ml-4 {
     margin-left: 1rem;
+  }
+
+  .xl\:bourbon-mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .xl\:bourbon-mr-5 {
+    margin-right: 1.25rem;
+  }
+
+  .xl\:bourbon-mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .xl\:bourbon-ml-5 {
+    margin-left: 1.25rem;
   }
 
   .xl\:bourbon-mt-6 {
