@@ -11,6 +11,7 @@ export default Service.extend({
       buttonTwoDontClose: false,
       wideModal: false,
       confirmationModal: false,
+      noPaddingModal: false,
       closeAction: null,
       title: null,
       content: null,
