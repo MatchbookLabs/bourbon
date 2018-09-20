@@ -1,0 +1,9 @@
+{{log selectFieldContext}}
+
+<select name="test" id="" class="bourbon-select-field" onchange={{action "updateSelection"}} role="listbox">
+  <option value={{prompt}}>{{prompt}}</option>
+
+  {{#each content as |option|}}
+    {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem"}}
+  {{/each}}
+</select>

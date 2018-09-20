@@ -1,4 +1,4 @@
-/* this is for styling the freestyle app and 
+/* this is for styling the freestyle app and
 making styling changes in the library */
 :root {
   --black: #000;
@@ -16,4 +16,9 @@ making styling changes in the library */
   --mine-shaft: #2D2D2D;
   --shade: rgba(0,0,0,0.4);
 
+}
+
+*:focus {
+  border-color: var(--dodger-blue);
+  outline-color: var(--dodger-blue);
 }

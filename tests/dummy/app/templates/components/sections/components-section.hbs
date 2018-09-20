@@ -78,4 +78,23 @@
       {{/collection.variant}}
     {{/freestyle-collection}}
   {{/section.subsection}}
+  {{#section.subsection name='select field'}}
+
+    {{#freestyle-collection title='Select field' defaultKey='all' inline=false as |collection|}}
+
+      {{#collection.variant key='default'}}
+        {{#freestyle-usage 'select-field' title='select field' usageTitle='Usage'}}
+          {{bourbon-select-field}}
+        {{/freestyle-usage}}
+
+        {{#freestyle-note 'select-field--notes'}}
+        {{/freestyle-note}}
+
+
+      {{/collection.variant}}
+
+    {{/freestyle-collection}}
+  {{/section.subsection}}
+
+
 {{/freestyle-section}}

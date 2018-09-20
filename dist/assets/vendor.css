@@ -1063,7 +1063,7 @@ button,
 * override them.
 */
 
-/* this is for styling the freestyle app and 
+/* this is for styling the freestyle app and
 making styling changes in the library */
 
 :root {
@@ -1081,6 +1081,11 @@ making styling changes in the library */
   --mercury: #e9e9e9;
   --mine-shaft: #2d2d2d;
   --shade: rgba(0, 0, 0, .4);
+}
+
+*:focus {
+  border-color: var(--dodger-blue);
+  outline-color: var(--dodger-blue);
 }
 
 .bourbon-button {
@@ -1312,6 +1317,16 @@ making styling changes in the library */
   box-shadow: 0 -3px 6px -2px rgba(0, 0, 0, .1);
   padding-right: 20px;
   padding-left: 30px;
+}
+
+.bourbon-select-field {
+  padding: 5px;
+  border: 1px solid var(--alto);
+  background-color: #fff;
+  font-size: .875rem;
+  width: 100%;
+  height: 35px;
+  border-radius: 2px;
 }
 
 .bourbon-text-field {
