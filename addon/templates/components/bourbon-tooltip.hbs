@@ -1,3 +1,11 @@
-{{#tooltip-on-element showOn=tooltipShowOn class=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
+{{log 'here'}}
+{{log yield}}
+{{log tooltipShowOn}}
+{{log tooltipBackgroundClass}}
+{{log tooltipPosition}}
+{{log tooltipEvent}}
+{{log tooltipSpacing}}
+
+{{#ember-tooltip showOn=tooltipShowOn class=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
   {{yield}}
-{{/tooltip-on-element}}
+{{/ember-tooltip}}
