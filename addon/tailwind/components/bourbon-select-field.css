@@ -6,18 +6,20 @@ select.bourbon-select-field {
   height: 40px;
   border-radius: 2px;
   -webkit-appearance: none;
-  padding: 10px;
+  -moz-appearance: none;
+  padding: 10px 50px 10px 10px;
 }
 
 .select {
   position: relative;
+  display: inline-block;
 }
 
 .select:before {
   content: "";
   position: absolute;
   top: 14px;
-  right: 28px;
+  right: 20px;
   border: solid var(--slate);
   border-width: 0 1px 1px 0;
   display: inline-block;

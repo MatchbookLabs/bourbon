@@ -19,7 +19,7 @@ export default Component.extend({
   },
 
   classNames: ['select'],
-  classNameBindings: ['hasValue'],
+  classNameBindings: ['hasValue', 'fullWidth:bourbon-block'],
   content: null,
   optionValuePath: null,
   optionLabelPath: null,
