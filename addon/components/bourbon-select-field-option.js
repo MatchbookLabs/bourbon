@@ -7,11 +7,7 @@ export default Component.extend({
   tagName: 'option',
   attributeBindings: ['selected', 'value', 'disabled'],
 
-  // # Overriding the tabindex set in the Aria mixin, it 's breaking Firefox.#
-  // TODO: Test on screenreaders on Windows and Mac and fix
-  // if needed.
   'tabindex': null,
-
   content: null,
   labelPath: null,
   valuePath: null,

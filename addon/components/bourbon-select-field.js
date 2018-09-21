@@ -12,15 +12,6 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-
-    console.log('what is this here in bourbon?')
-
-    console.log(this.get('selectFieldContext'))
-    console.log(this)
-
-    debugger;
-
-
     let groupByPath;
     if (groupByPath = this.get('groupByPath')) {
       defineProperty(this, 'groupedContent', groupBy('content', groupByPath))
@@ -43,26 +34,22 @@ export default Component.extend({
   hasValue: computed.notEmpty('value'),
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
-    get() {
-      console.log("BOURBON selection get")
-      debugger;
+    get: function() {
       let path;
       if ((path = this.get('_valuePath')) && this.get('value') && this.get('content')) {
-        this.get('content').findBy(path), this.get('value')
+        return this.get('content').findBy(path), this.get('value')
       } else {
-        this.get('value')
+        return this.get('value')
       }
     },
 
-    set(key, value) {
-      console.log("BOURBON selection set")
-
+    set: function(key, value) {
       if (isPresent(value)) {
         let path;
         if (path = this.get('_valuePath')) {
-          (typeof value.get === "function" ? value.get(path) : void 0) || value[path];
+          this.set('value', (typeof value.get === "function" ? value.get(path) : void 0) || value[path]);
         } else {
-          value
+          this.set('value', value);
         }
       } else {
         this.set('value', null)
@@ -75,15 +62,12 @@ export default Component.extend({
   action: null,
 
   _sendAction: observer('selection', function () {
-    console.log('_sendAction')
-    console.log(this.get('selection'))
-    debugger;
-    return this.sendAction('action', this.get('selection'));
+    this.sendAction('action', this.get('selection'));
   }),
 
   _valuePath: computed('optionValuePath', function () {
     if (this.get('optionValuePath') !== null) {
-      this.get('optionValuePath').replace(/^content\.?/, '')
+      return this.get('optionValuePath').replace(/^content\.?/, '')
     }
   }),
 
@@ -100,21 +84,11 @@ export default Component.extend({
     run.end();
   },
 
-  test() {
-    alert('test tammy')
-  },
-
-
   actions: {
     updateSelection() {
-      debugger;
-      console.log("bourbon updateSelection")
       let selectedIndex;
-      selectedIndex = this.$('select')[0].selectedIndex
-
-      console.log(selectedIndex)
+      selectedIndex = this.$('select')[0].selectedIndex - 1
       this.set('selection', this.get('content').objectAt(selectedIndex))
-
     }
   }
 
