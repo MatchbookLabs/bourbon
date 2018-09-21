@@ -18,7 +18,7 @@ export default Component.extend({
     }
   },
 
-  classNames: ['Select'],
+  classNames: ['select'],
   classNameBindings: ['hasValue'],
   content: null,
   optionValuePath: null,
@@ -87,8 +87,8 @@ export default Component.extend({
   actions: {
     updateSelection() {
       let selectedIndex;
-      selectedIndex = this.$('select')[0].selectedIndex - 1
-      this.set('selection', this.get('content').objectAt(selectedIndex))
+      selectedIndex = this.$('select')[0].selectedIndex - 1;
+      this.set('selection', this.get('content').objectAt(selectedIndex));
     }
   }
 

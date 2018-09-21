@@ -43,7 +43,7 @@
 
       {{#collection.variant key='actionOnFocusIn'}}
         {{#freestyle-usage 'text-fields-focus-in' title='actionOnFocusIn'}}
-          {{bourbon-text-field placeholder="i am the placholder" autofocus=true actionOnFocusIn=(action "textFieldClick")}}
+          {{bourbon-text-field placeholder="i am the placholder" actionOnFocusIn=(action "textFieldClick")}}
         {{/freestyle-usage}}
         {{#freestyle-note 'text-fields-focus-in--notes'}}
           <div>Example showing when passing in an action for when user focuses into the text field</div>
@@ -84,13 +84,22 @@
 
       {{#collection.variant key='default'}}
         {{#freestyle-usage 'select-field' title='select field' usageTitle='Usage'}}
-          {{bourbon-select-field}}
+          {{bourbon-select-field content=petsArray}}
         {{/freestyle-usage}}
 
         {{#freestyle-note 'select-field--notes'}}
         {{/freestyle-note}}
+      {{/collection.variant}}
 
 
+
+      {{#collection.variant key='object'}}
+        {{#freestyle-usage 'select-field-object' title='select field - object content' usageTitle='Usage'}}
+          {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+        {{/freestyle-usage}}
+
+        {{#freestyle-note 'select-field-object--notes'}}
+        {{/freestyle-note}}
       {{/collection.variant}}
 
     {{/freestyle-collection}}
