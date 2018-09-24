@@ -7,8 +7,7 @@ export default Component.extend({
   tagName: 'option',
   classNames: ['bourbon-select-field__option'],
   attributeBindings: ['selected', 'value', 'disabled'],
-
-  'tabindex': null,
+  tabindex: null,
   content: null,
   labelPath: null,
   valuePath: null,
@@ -22,10 +21,11 @@ export default Component.extend({
       return
     }
 
-    defineProperty(this, 'disabled');
-    computed(path, function () {
-      !this.get(path)
-    })
+    defineProperty(this, 'disabled',
+      computed(path, function () {
+        !this.get(path)
+      })
+    );
   },
 
   label: computed('content', 'labelPath', function() {

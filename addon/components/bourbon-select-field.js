@@ -4,7 +4,6 @@ import { isPresent } from '@ember/utils';
 import { run, scheduleOnce } from '@ember/runloop';
 import groupBy from 'ember-group-by';
 
-
 import layout from '../templates/components/bourbon-select-field';
 
 export default Component.extend({
@@ -12,8 +11,8 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    let groupByPath;
-    if (groupByPath = this.get('groupByPath')) {
+    let groupByPath = this.get('groupByPath');
+    if (groupByPath) {
       defineProperty(this, 'groupedContent', groupBy('content', groupByPath))
     }
   },
@@ -35,8 +34,8 @@ export default Component.extend({
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
     get: function() {
-      let path;
-      if ((path = this.get('_valuePath')) && this.get('value') && this.get('content')) {
+      let path = this.get('_valuePath');
+      if (path && this.get('value') && this.get('content')) {
         return this.get('content').findBy(path), this.get('value')
       } else {
         return this.get('value')
@@ -45,8 +44,8 @@ export default Component.extend({
 
     set: function(key, value) {
       if (isPresent(value)) {
-        let path;
-        if (path = this.get('_valuePath')) {
+        let path = this.get('_valuePath');
+        if (path) {
           this.set('value', (typeof value.get === "function" ? value.get(path) : void 0) || value[path]);
         } else {
           this.set('value', value);
@@ -62,7 +61,7 @@ export default Component.extend({
   action: null,
 
   _sendAction: observer('selection', function () {
-    this.sendAction('action', this.get('selection'));
+    this.send('action', this.get('selection'));
   }),
 
   _valuePath: computed('optionValuePath', function () {
@@ -71,27 +70,23 @@ export default Component.extend({
     }
   }),
 
-  didInsertElement() {
-    this._super(...arguments);
+  didInsertElement: observer('content', function () {
     run.begin();
-
-    scheduleOnce('afterRender', this, function() {
+    scheduleOnce('afterRender', this, function () {
       if (this.get('content')) {
-        this.send('updateSelection')
+        this.send('updateSelection');
       }
     })
 
     run.end();
-  },
+  }),
 
   actions: {
     updateSelection() {
-      let selectedIndex;
-      selectedIndex = this.$('select')[0].selectedIndex;
+      let selectedIndex = this.$('select')[0].selectedIndex;
       if (this.get('prompt')) {
         selectedIndex -= 1;
       }
-
       this.set('selection', this.get('content').objectAt(selectedIndex));
     }
   }
