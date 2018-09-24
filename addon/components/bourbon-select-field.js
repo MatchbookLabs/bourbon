@@ -61,7 +61,12 @@ export default Component.extend({
   action: null,
 
   _sendAction: observer('selection', function () {
-    this.send('action', this.get('selection'));
+    if (typeof this.get('action') === 'function') {
+      this.send('action', this.get('selection'));
+    } else {
+      /* eslint no-console: 0 */
+      console.warn('warning: no action passed into select field');
+    }
   }),
 
   _valuePath: computed('optionValuePath', function () {
@@ -70,7 +75,7 @@ export default Component.extend({
     }
   }),
 
-  didInsertElement: observer('content', function () {
+  _initSelection: observer('content', function () {
     run.begin();
     scheduleOnce('afterRender', this, function () {
       if (this.get('content')) {
@@ -80,6 +85,10 @@ export default Component.extend({
 
     run.end();
   }),
+
+  didInsertElement() {
+    this._initSelection();
+  },
 
   actions: {
     updateSelection() {

@@ -17,6 +17,7 @@ export default Component.extend({
     if (typeof this.get('action') === 'function') {
       this.get('action')();
     } else {
+      /* eslint no-console: 0 */
       console.warn('warning: no button action passed');
     }
   }
