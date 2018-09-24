@@ -1,5 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
+import { A } from '@ember/array';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -10,17 +11,11 @@ module('Integration | Component | bourbon-select-field', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{bourbon-select-field}}`);
+    this.set('petsArray', A(['cats']));
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`{{bourbon-select-field content=petsArray}}`);
 
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-select-field}}
-        template block text
-      {{/bourbon-select-field}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'cats');
   });
 });
+go

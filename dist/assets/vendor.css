@@ -1334,6 +1334,7 @@ select.bourbon-select-field {
 .select {
   position: relative;
   display: inline-block;
+  margin-right: 5px;
 }
 
 .select:before {
