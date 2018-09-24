@@ -18,4 +18,3 @@ module('Integration | Component | bourbon-select-field', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'cats');
   });
 });
-go
