@@ -87,7 +87,11 @@ export default Component.extend({
   actions: {
     updateSelection() {
       let selectedIndex;
-      selectedIndex = this.$('select')[0].selectedIndex - 1;
+      selectedIndex = this.$('select')[0].selectedIndex;
+      if (this.get('prompt')) {
+        selectedIndex -= 1;
+      }
+
       this.set('selection', this.get('content').objectAt(selectedIndex));
     }
   }
