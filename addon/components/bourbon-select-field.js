@@ -63,10 +63,7 @@ export default Component.extend({
   _sendAction: observer('selection', function () {
     if (typeof this.get('action') === 'function') {
       this.send('action', this.get('selection'));
-    } else {
-      /* eslint no-console: 0 */
-      console.warn('warning: no action passed into select field');
-    }
+    } 
   }),
 
   _valuePath: computed('optionValuePath', function () {
