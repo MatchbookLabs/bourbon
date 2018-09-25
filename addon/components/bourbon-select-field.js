@@ -15,6 +15,10 @@ export default Component.extend({
     if (groupByPath) {
       defineProperty(this, 'groupedContent', groupBy('content', groupByPath))
     }
+
+    if (this.get('prompt')) {
+      this.set('selection', this.get('prompt'))
+    }
   },
 
   classNames: ['select'],
@@ -24,6 +28,7 @@ export default Component.extend({
   optionLabelPath: null,
   optionEnabledPath: null,
   groupByPath: null,
+  showList: false,
   useOptGroup: computed.bool('groupByPath'),
 
   prompt: null,
@@ -31,6 +36,12 @@ export default Component.extend({
 
   value: null,
   hasValue: computed.notEmpty('value'),
+
+
+  click(e) {
+    console.log('click')
+    this.toggleProperty('showList');
+  },
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
     get(key) {
@@ -86,6 +97,7 @@ export default Component.extend({
 
   actions: {
     updateSelection() {
+      console.log(`updateSelection`)
       let selectedIndex = this.$('select')[0].selectedIndex;
       if (this.get('prompt')) {
         selectedIndex -= 1;
