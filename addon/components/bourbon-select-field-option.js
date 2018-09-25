@@ -6,7 +6,7 @@ export default Component.extend({
   layout,
   tagName: 'option',
   classNames: ['bourbon-select-field__option'],
-  attributeBindings: ['selected', 'value', 'disabled'],
+  attributeBindings: ['selected', 'value', 'disabled', 'data-value'],
   tabindex: null,
   content: null,
   labelPath: null,
@@ -26,6 +26,11 @@ export default Component.extend({
         !this.get(path)
       })
     );
+  },
+
+  click() {
+    console.log('bourbon-select-field__option click')
+    this.send('updateSelection');
   },
 
   label: computed('content', 'labelPath', function() {
@@ -48,5 +53,13 @@ export default Component.extend({
 
   selected: computed('content', 'selection', function() {
     return this.get('content') === this.get('selection');
-  })
+  }),
+
+  actions: {
+    updateSelection() {
+      console.log(`bourbon-select-field__option updateSelection`)
+      this.set('selection', this.get('content'));
+    }
+  }
+
 });

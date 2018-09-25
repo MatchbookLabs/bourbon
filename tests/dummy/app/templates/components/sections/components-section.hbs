@@ -18,4 +18,19 @@
   {{#section.subsection name='select field'}}
     {{partial 'components/select-field'}}
   {{/section.subsection}}
+
+
+  {{#section.subsection name='search box'}}
+
+    {{#freestyle-usage 'search-box' title='search box' usageTitle='Usage'}}
+
+    {{bourbon-search-box content=petsArray}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'search-box--notes'}}
+
+    {{/freestyle-note}}
+
+  {{/section.subsection}}
+
 {{/freestyle-section}}
