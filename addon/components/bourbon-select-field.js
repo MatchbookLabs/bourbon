@@ -33,7 +33,7 @@ export default Component.extend({
   hasValue: computed.notEmpty('value'),
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
-    get() {
+    get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
         return this.get('content').findBy(path), this.get('value')
