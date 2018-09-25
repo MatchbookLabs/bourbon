@@ -1,0 +1,18 @@
+<select name="test" id="" class="bourbon-select-field" onchange={{action "updateSelection"}} role="listbox">
+  {{#if prompt}}
+    <option value={{prompt}}>{{prompt}}</option>
+  {{/if}}
+
+  {{#if useOptGroup}}
+    {{#each groupedContent as |group|}}
+      {{#each group.items as |option|}}
+        {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem"}}
+      {{/each}}
+    {{/each}}
+
+  {{else}}
+    {{#each content as |option|}}
+      {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem"}}
+    {{/each}}
+  {{/if}}
+</select>

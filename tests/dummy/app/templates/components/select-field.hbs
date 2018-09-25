@@ -1,0 +1,59 @@
+ {{#freestyle-collection title='Select field' defaultKey='all' inline=false as |collection|}}
+
+  {{#collection.variant key='default'}}
+    {{#freestyle-usage 'select-field' title='select field' usageTitle='Usage'}}
+      {{bourbon-select-field content=petsArray prompt="Select an animal..."}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'select-field--notes'}}\{{#freestyle-note 'text-fields--notes'}}
+      This select field behaves just like the one in Flabongo.
+
+      <h4>Select field possible params</h4>
+      <ul>
+        <li>classNames</li>
+        <li>fullWidth: boolean true or false (default)</li>
+        <li>content: can be an array or an object</li>
+        <li>optionLabelPath: needed if you are passing in an array of objects</li>
+        <li>optionValuePath: needed if you are passing in an array of objects</li>
+        <li>value: selected value</li>
+        <li>prompt: text you want as a prompt before the list for the selections</li>
+        <li>target</li>
+        <li>action</li>
+      </ul>
+    {{/freestyle-note}}
+  {{/collection.variant}}
+
+
+  {{#collection.variant key='full-width'}}
+    {{#freestyle-usage 'select-field-full-width' title='full width select field' usageTitle='Usage'}}
+      {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'select-field-full-width--notes'}}
+      <div class="FreestyleUsage-rendered">An example you find for usage in Flabongo.</div>
+        ```
+            = bourbon-select-field
+              content=mappingTypes
+              optionLabelPath="content.label"
+              optionValuePath="content.value"
+              value=mappingType
+              prompt="Select an action..."
+              selectFieldContext=this
+              target=this
+              fullWidth=true
+        ```
+
+    {{/freestyle-note}}
+  {{/collection.variant}}
+
+  {{#collection.variant key='group'}}
+    {{#freestyle-usage 'select-field-group' title='group of select fields' usageTitle='Usage'}}
+        {{bourbon-select-field content=petsArray}}
+        {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'select-field-group--notes'}}
+    {{/freestyle-note}}
+  {{/collection.variant}}
+
+{{/freestyle-collection}}

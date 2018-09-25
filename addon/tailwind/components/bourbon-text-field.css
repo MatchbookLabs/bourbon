@@ -1,10 +1,15 @@
 .bourbon-text-field {
   padding: 10px;
-  @apply bourbon-text-base;
   border: 1px solid var(--alto);
+  border-radius: 2px;
   width: 100%;
 }
 
+.bourbon-text-field:focus {
+  border-color: var(--dodger-blue);
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  outline: none;
+}
 .bourbon-text-field[disabled] {
   cursor: not-allowed;
 }

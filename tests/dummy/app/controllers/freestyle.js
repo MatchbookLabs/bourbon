@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { A } from '@ember/array';
 import FreestyleController from 'ember-freestyle/controllers/freestyle';
 import ModalMixin from 'bourbon/mixins/modal';
 
@@ -7,6 +8,18 @@ const { inject } = Ember;
 export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
+
+    this.set('petsArray', A(['cats', 'dogs', 'rabbits'])),
+    this.set('petObject', A([
+      {
+        label: 'Chompsky (the Brussels Griffon)',
+        value: 'Brussels Griffon'
+      },
+      {
+        label: 'Macho (the Frenchie)',
+        value: 'Frenchie'
+      }
+    ])),
 
     // this is reflected in the visual style/color section
     this.set('colorPalette', {
