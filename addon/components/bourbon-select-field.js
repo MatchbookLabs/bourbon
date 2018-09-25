@@ -33,7 +33,7 @@ export default Component.extend({
   hasValue: computed.notEmpty('value'),
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
-    get: function() {
+    get() {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
         return this.get('content').findBy(path), this.get('value')
@@ -42,7 +42,7 @@ export default Component.extend({
       }
     },
 
-    set: function(key, value) {
+    set(key, value) {
       if (isPresent(value)) {
         let path = this.get('_valuePath');
         if (path) {
@@ -63,7 +63,7 @@ export default Component.extend({
   _sendAction: observer('selection', function () {
     if (typeof this.get('action') === 'function') {
       this.send('action', this.get('selection'));
-    } 
+    }
   }),
 
   _valuePath: computed('optionValuePath', function () {
@@ -73,14 +73,11 @@ export default Component.extend({
   }),
 
   _initSelection: observer('content', function () {
-    run.begin();
     scheduleOnce('afterRender', this, function () {
       if (this.get('content')) {
         this.send('updateSelection');
       }
     })
-
-    run.end();
   }),
 
   didInsertElement() {
