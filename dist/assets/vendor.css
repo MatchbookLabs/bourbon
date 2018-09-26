@@ -1436,6 +1436,7 @@ select.bourbon-select-field {
   text-shadow: none;
   padding: .5rem .75rem;
   margin: 0 !important;
+  line-height: 1.2;
   z-index: 101;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
