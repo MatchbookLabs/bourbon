@@ -1395,6 +1395,12 @@ select.bourbon-select-field {
   font-size: .8125rem;
 }
 
+.bourbon-tooltip[aria-hidden=true] {
+  position: absolute !important;
+  transform: none !important;
+  visibility: hidden;
+}
+
 .theme-light .bourbon-tooltip__bg-default
 .bourbon-tooltip__bg-default {
   background-color: var(--slate);
