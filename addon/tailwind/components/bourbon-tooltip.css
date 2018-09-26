@@ -14,11 +14,12 @@
   text-shadow:  none;
   padding: .5rem .75rem;
   margin: 0 !important;
-  line-height: 1.2;
   z-index: 101;
   @apply .bourbon-font-normal;
   @apply .bourbon-antialiased;
-  @apply .bourbon-text-sm;
+  @apply .bourbon-text-md;
+  line-height: 1.5;
+  box-shadow: 1px 0 3px 2px var(--shade));
 }
 
 .theme-light .bourbon-tooltip__bg-default,
@@ -32,18 +33,10 @@
   border: 1px solid var(--white);
 }
 
-.ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
-  border-top-color: inherit;
+.ember-tooltip-arrow {
+  display: none;
 }
 
-.ember-tooltip[x-placement^="bottom"] .ember-tooltip-arrow {
-  border-bottom-color: inherit;
-}
-
-.ember-tooltip[x-placement^="right"] .ember-tooltip-arrow {
-  border-right-color: inherit;
-}
-
-.ember-tooltip[x-placement^="left"] .ember-tooltip-arrow {
-  border-left-color: inherit;
+.ember-tooltip-target:hover {
+  cursor: pointer
 }
