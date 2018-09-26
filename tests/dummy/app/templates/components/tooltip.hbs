@@ -2,7 +2,7 @@
    {{#collection.variant key='default'}}
     {{#freestyle-usage 'tooltip-default' title='default'}}
       {{bourbon-button title='Hover me' class='bourbon-primary-button' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip background='white' position="right"}}
+      {{#bourbon-tooltip side="right"}}
          hover text
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
@@ -24,7 +24,7 @@
     {{/freestyle-note}}
    {{/collection.variant}}
 
-   {{!-- {{#collection.variant key='content'}}
+   {{#collection.variant key='content'}}
     {{#freestyle-usage 'tooltip-content' title='popver: passing in a component or partial'}}
       {{bourbon-button title='show partial' class='bourbon-primary-button'}}
       {{#bourbon-tooltip background='white'}}
@@ -136,5 +136,5 @@
         <li>spacing (padding from the target element): 10 (default)</li>
       </ul>
     {{/freestyle-note}}
-   {{/collection.variant}} --}}
+   {{/collection.variant}}
 {{/freestyle-collection}}

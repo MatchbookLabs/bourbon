@@ -1120,6 +1120,7 @@ making styling changes in the library */
   --fruit-salad: #4ca465;
   --dodger-blue: #2e71fc;
   --slate: #474c4f;
+  --tuna: rgba(60, 64, 67, .9);
   --alto: #dcdcdc;
   --lightgray: #d3d3d3;
   --alabaster: #fafafa;
@@ -1434,6 +1435,7 @@ select.bourbon-select-field {
 .bourbon-tooltip {
   text-shadow: none;
   padding: .5rem .75rem;
+  margin: 0 !important;
   z-index: 101;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -1441,10 +1443,10 @@ select.bourbon-select-field {
   font-size: .8125rem;
 }
 
-.theme-light .bourbon-tooltip__bg-default
+.theme-light .bourbon-tooltip__bg-default,
 .bourbon-tooltip__bg-default {
-  background-color: var(--slate);
-  border: 1px solid var(--slate);
+  background-color: var(--tuna);
+  border: 1px solid var(--tuna);
 }
 
 .theme-dark .bourbon-tooltip__bg-default {
@@ -1452,44 +1454,20 @@ select.bourbon-select-field {
   border: 1px solid var(--white);
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__right:after {
-  border-left: 1px solid var(--slate);
-  border-bottom: 1px solid var(--slate);
+.ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
+  border-top-color: inherit;
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__left:after {
-  border-right: 1px solid var(--slate);
-  border-top: 1px solid var(--slate);
+.ember-tooltip[x-placement^="bottom"] .ember-tooltip-arrow {
+  border-bottom-color: inherit;
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__top:after {
-  border-right: 1px solid var(--slate);
-  border-bottom: 1px solid var(--slate);
+.ember-tooltip[x-placement^="right"] .ember-tooltip-arrow {
+  border-right-color: inherit;
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__bottom:after {
-  border-left: 1px solid var(--slate);
-  border-top: 1px solid var(--slate);
-}
-
-.bourbon-tooltip__right:after {
-  border-left: 1px solid var(--alto);
-  border-bottom: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__left:after {
-  border-right: 1px solid var(--alto);
-  border-top: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__top:after {
-  border-right: 1px solid var(--alto);
-  border-bottom: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__bottom:after {
-  border-left: 1px solid var(--alto);
-  border-top: 1px solid var(--alto);
+.ember-tooltip[x-placement^="left"] .ember-tooltip-arrow {
+  border-left-color: inherit;
 }
 
 /**
@@ -1548,6 +1526,10 @@ select.bourbon-select-field {
 
 .bourbon-bg-slate {
   background-color: #474c4f;
+}
+
+.bourbon-bg-tuna {
+  background-color: rgba(60, 64, 67, .9);
 }
 
 .bourbon-bg-alto {
@@ -1612,6 +1594,10 @@ select.bourbon-select-field {
 
 .hover\:bourbon-bg-slate:hover {
   background-color: #474c4f;
+}
+
+.hover\:bourbon-bg-tuna:hover {
+  background-color: rgba(60, 64, 67, .9);
 }
 
 .hover\:bourbon-bg-alto:hover {
@@ -1742,6 +1728,10 @@ select.bourbon-select-field {
   border-color: #474c4f;
 }
 
+.bourbon-border-tuna {
+  border-color: rgba(60, 64, 67, .9);
+}
+
 .bourbon-border-alto {
   border-color: #dcdcdc;
 }
@@ -1804,6 +1794,10 @@ select.bourbon-select-field {
 
 .hover\:bourbon-border-slate:hover {
   border-color: #474c4f;
+}
+
+.hover\:bourbon-border-tuna:hover {
+  border-color: rgba(60, 64, 67, .9);
 }
 
 .hover\:bourbon-border-alto:hover {
@@ -3744,6 +3738,10 @@ select.bourbon-select-field {
   color: #474c4f;
 }
 
+.bourbon-text-tuna {
+  color: rgba(60, 64, 67, .9);
+}
+
 .bourbon-text-alto {
   color: #dcdcdc;
 }
@@ -3806,6 +3804,10 @@ select.bourbon-select-field {
 
 .hover\:bourbon-text-slate:hover {
   color: #474c4f;
+}
+
+.hover\:bourbon-text-tuna:hover {
+  color: rgba(60, 64, 67, .9);
 }
 
 .hover\:bourbon-text-alto:hover {
@@ -4280,7 +4282,7 @@ pre {
   margin: 1em 0;
 }
 
-.FreestyleUsage-rendered.ember-tooltip-or-popover-target {
+.FreestyleUsage-rendered.ember-tooltip-target {
   width: fit-content;
 }
 
@@ -4346,6 +4348,10 @@ button:focus {
     background-color: #474c4f;
   }
 
+  .sm\:bourbon-bg-tuna {
+    background-color: rgba(60, 64, 67, .9);
+  }
+
   .sm\:bourbon-bg-alto {
     background-color: #dcdcdc;
   }
@@ -4408,6 +4414,10 @@ button:focus {
 
   .sm\:hover\:bourbon-bg-slate:hover {
     background-color: #474c4f;
+  }
+
+  .sm\:hover\:bourbon-bg-tuna:hover {
+    background-color: rgba(60, 64, 67, .9);
   }
 
   .sm\:hover\:bourbon-bg-alto:hover {
@@ -4538,6 +4548,10 @@ button:focus {
     border-color: #474c4f;
   }
 
+  .sm\:bourbon-border-tuna {
+    border-color: rgba(60, 64, 67, .9);
+  }
+
   .sm\:bourbon-border-alto {
     border-color: #dcdcdc;
   }
@@ -4600,6 +4614,10 @@ button:focus {
 
   .sm\:hover\:bourbon-border-slate:hover {
     border-color: #474c4f;
+  }
+
+  .sm\:hover\:bourbon-border-tuna:hover {
+    border-color: rgba(60, 64, 67, .9);
   }
 
   .sm\:hover\:bourbon-border-alto:hover {
@@ -6532,6 +6550,10 @@ button:focus {
     color: #474c4f;
   }
 
+  .sm\:bourbon-text-tuna {
+    color: rgba(60, 64, 67, .9);
+  }
+
   .sm\:bourbon-text-alto {
     color: #dcdcdc;
   }
@@ -6594,6 +6616,10 @@ button:focus {
 
   .sm\:hover\:bourbon-text-slate:hover {
     color: #474c4f;
+  }
+
+  .sm\:hover\:bourbon-text-tuna:hover {
+    color: rgba(60, 64, 67, .9);
   }
 
   .sm\:hover\:bourbon-text-alto:hover {
@@ -7041,6 +7067,10 @@ button:focus {
     background-color: #474c4f;
   }
 
+  .md\:bourbon-bg-tuna {
+    background-color: rgba(60, 64, 67, .9);
+  }
+
   .md\:bourbon-bg-alto {
     background-color: #dcdcdc;
   }
@@ -7103,6 +7133,10 @@ button:focus {
 
   .md\:hover\:bourbon-bg-slate:hover {
     background-color: #474c4f;
+  }
+
+  .md\:hover\:bourbon-bg-tuna:hover {
+    background-color: rgba(60, 64, 67, .9);
   }
 
   .md\:hover\:bourbon-bg-alto:hover {
@@ -7233,6 +7267,10 @@ button:focus {
     border-color: #474c4f;
   }
 
+  .md\:bourbon-border-tuna {
+    border-color: rgba(60, 64, 67, .9);
+  }
+
   .md\:bourbon-border-alto {
     border-color: #dcdcdc;
   }
@@ -7295,6 +7333,10 @@ button:focus {
 
   .md\:hover\:bourbon-border-slate:hover {
     border-color: #474c4f;
+  }
+
+  .md\:hover\:bourbon-border-tuna:hover {
+    border-color: rgba(60, 64, 67, .9);
   }
 
   .md\:hover\:bourbon-border-alto:hover {
@@ -9227,6 +9269,10 @@ button:focus {
     color: #474c4f;
   }
 
+  .md\:bourbon-text-tuna {
+    color: rgba(60, 64, 67, .9);
+  }
+
   .md\:bourbon-text-alto {
     color: #dcdcdc;
   }
@@ -9289,6 +9335,10 @@ button:focus {
 
   .md\:hover\:bourbon-text-slate:hover {
     color: #474c4f;
+  }
+
+  .md\:hover\:bourbon-text-tuna:hover {
+    color: rgba(60, 64, 67, .9);
   }
 
   .md\:hover\:bourbon-text-alto:hover {
@@ -9736,6 +9786,10 @@ button:focus {
     background-color: #474c4f;
   }
 
+  .lg\:bourbon-bg-tuna {
+    background-color: rgba(60, 64, 67, .9);
+  }
+
   .lg\:bourbon-bg-alto {
     background-color: #dcdcdc;
   }
@@ -9798,6 +9852,10 @@ button:focus {
 
   .lg\:hover\:bourbon-bg-slate:hover {
     background-color: #474c4f;
+  }
+
+  .lg\:hover\:bourbon-bg-tuna:hover {
+    background-color: rgba(60, 64, 67, .9);
   }
 
   .lg\:hover\:bourbon-bg-alto:hover {
@@ -9928,6 +9986,10 @@ button:focus {
     border-color: #474c4f;
   }
 
+  .lg\:bourbon-border-tuna {
+    border-color: rgba(60, 64, 67, .9);
+  }
+
   .lg\:bourbon-border-alto {
     border-color: #dcdcdc;
   }
@@ -9990,6 +10052,10 @@ button:focus {
 
   .lg\:hover\:bourbon-border-slate:hover {
     border-color: #474c4f;
+  }
+
+  .lg\:hover\:bourbon-border-tuna:hover {
+    border-color: rgba(60, 64, 67, .9);
   }
 
   .lg\:hover\:bourbon-border-alto:hover {
@@ -11922,6 +11988,10 @@ button:focus {
     color: #474c4f;
   }
 
+  .lg\:bourbon-text-tuna {
+    color: rgba(60, 64, 67, .9);
+  }
+
   .lg\:bourbon-text-alto {
     color: #dcdcdc;
   }
@@ -11984,6 +12054,10 @@ button:focus {
 
   .lg\:hover\:bourbon-text-slate:hover {
     color: #474c4f;
+  }
+
+  .lg\:hover\:bourbon-text-tuna:hover {
+    color: rgba(60, 64, 67, .9);
   }
 
   .lg\:hover\:bourbon-text-alto:hover {
@@ -12431,6 +12505,10 @@ button:focus {
     background-color: #474c4f;
   }
 
+  .xl\:bourbon-bg-tuna {
+    background-color: rgba(60, 64, 67, .9);
+  }
+
   .xl\:bourbon-bg-alto {
     background-color: #dcdcdc;
   }
@@ -12493,6 +12571,10 @@ button:focus {
 
   .xl\:hover\:bourbon-bg-slate:hover {
     background-color: #474c4f;
+  }
+
+  .xl\:hover\:bourbon-bg-tuna:hover {
+    background-color: rgba(60, 64, 67, .9);
   }
 
   .xl\:hover\:bourbon-bg-alto:hover {
@@ -12623,6 +12705,10 @@ button:focus {
     border-color: #474c4f;
   }
 
+  .xl\:bourbon-border-tuna {
+    border-color: rgba(60, 64, 67, .9);
+  }
+
   .xl\:bourbon-border-alto {
     border-color: #dcdcdc;
   }
@@ -12685,6 +12771,10 @@ button:focus {
 
   .xl\:hover\:bourbon-border-slate:hover {
     border-color: #474c4f;
+  }
+
+  .xl\:hover\:bourbon-border-tuna:hover {
+    border-color: rgba(60, 64, 67, .9);
   }
 
   .xl\:hover\:bourbon-border-alto:hover {
@@ -14617,6 +14707,10 @@ button:focus {
     color: #474c4f;
   }
 
+  .xl\:bourbon-text-tuna {
+    color: rgba(60, 64, 67, .9);
+  }
+
   .xl\:bourbon-text-alto {
     color: #dcdcdc;
   }
@@ -14679,6 +14773,10 @@ button:focus {
 
   .xl\:hover\:bourbon-text-slate:hover {
     color: #474c4f;
+  }
+
+  .xl\:hover\:bourbon-text-tuna:hover {
+    color: rgba(60, 64, 67, .9);
   }
 
   .xl\:hover\:bourbon-text-alto:hover {
