@@ -19,7 +19,7 @@
   @apply .bourbon-antialiased;
   @apply .bourbon-text-md;
   line-height: 1.5;
-  box-shadow: 1px 0 3px 2px var(--shade));
+  box-shadow: 1px 0 3px 2px var(--shade);
 }
 
 .theme-light .bourbon-tooltip__bg-default,
