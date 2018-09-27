@@ -8,11 +8,11 @@ module('Integration | Component | bourbon-tooltip', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`
-      {{#bourbon-tooltip text='text'}}
+      {{#bourbon-tooltip}}
         tooltip text
       {{/bourbon-tooltip}}
       `);
 
-    assert.equal(this.element.classList[1], 'ember-tooltip-or-popover-target');
+    assert.equal(this.element.classList[1], 'ember-tooltip-target');
   });
 });

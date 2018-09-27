@@ -13,16 +13,19 @@
 .bourbon-tooltip {
   text-shadow:  none;
   padding: .5rem .75rem;
+  margin: 0 !important;
   z-index: 101;
   @apply .bourbon-font-normal;
   @apply .bourbon-antialiased;
-  @apply .bourbon-text-sm;
+  @apply .bourbon-text-md;
+  line-height: 1.5;
+  box-shadow: 1px 0 3px 2px var(--shade));
 }
 
-.theme-light .bourbon-tooltip__bg-default
+.theme-light .bourbon-tooltip__bg-default,
 .bourbon-tooltip__bg-default {
-  background-color: var(--slate);
-  border: 1px solid var(--slate);
+  background-color: var(--tuna);
+  border: 1px solid var(--tuna);
 }
 
 .theme-dark .bourbon-tooltip__bg-default {
@@ -30,42 +33,10 @@
   border: 1px solid var(--white);
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__right:after {
-  border-left: 1px solid var(--slate);
-  border-bottom: 1px solid var(--slate);
+.ember-tooltip-arrow {
+  display: none;
 }
 
-.bourbon-tooltip__bg-default.bourbon-tooltip__left:after {
-  border-right: 1px solid var(--slate);
-  border-top: 1px solid var(--slate);
-}
-
-.bourbon-tooltip__bg-default.bourbon-tooltip__top:after {
-  border-right: 1px solid var(--slate);
-  border-bottom: 1px solid var(--slate);
-}
-
-.bourbon-tooltip__bg-default.bourbon-tooltip__bottom:after {
-  border-left: 1px solid var(--slate);
-  border-top: 1px solid var(--slate);
-}
-
-.bourbon-tooltip__right:after {
-  border-left: 1px solid var(--alto);
-  border-bottom: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__left:after {
-  border-right: 1px solid var(--alto);
-  border-top: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__top:after {
-  border-right: 1px solid var(--alto);
-  border-bottom: 1px solid var(--alto);
-}
-
-.bourbon-tooltip__bottom:after {
-  border-left: 1px solid var(--alto);
-  border-top: 1px solid var(--alto);
+.ember-tooltip-target:hover {
+  cursor: pointer
 }

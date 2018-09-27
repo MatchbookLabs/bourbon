@@ -2,9 +2,7 @@
    {{#collection.variant key='default'}}
     {{#freestyle-usage 'tooltip-default' title='default'}}
       {{bourbon-button title='Hover me' class='bourbon-primary-button' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip}}
-         hover text
-      {{/bourbon-tooltip}}
+      {{bourbon-tooltip text='hover text'}}
     {{/freestyle-usage}}
     {{#freestyle-note 'tooltip-default--notes'}}
       <h4>Tooltip Options</h4>
@@ -21,6 +19,24 @@
         <li>side: top (default), right, bottom, left</li>
         <li>spacing (padding from the target element): 10 (default)</li>
       </ul>
+
+      <br>
+      ```
+      {{bourbon-tooltip text='hover text'}}
+
+      There is an option to use block expression for the tooltip component
+
+        {{#bourbon-tooltip}}
+          hover text
+        {{/bourbon-tooltip}}
+
+        OR
+
+        {{#bourbon-tooltip}}
+          {{partial 'test-popover-content'}}
+        {{/bourbon-tooltip}}
+      ```
+      <br>
     {{/freestyle-note}}
    {{/collection.variant}}
 
@@ -31,7 +47,7 @@
         {{partial 'test-popover-content'}}
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
-    {{#freestyle-note 'tooltip-event--notes'}}
+    {{#freestyle-note 'tooltip-content--notes'}}
       <ul>
         <li>You have the option to pass in a component/partial for a popover</li>
       </ul>
@@ -41,9 +57,7 @@
    {{#collection.variant key='event'}}
     {{#freestyle-usage 'tooltip-event' title='trigger event'}}
       {{bourbon-button title='Click me' class='bourbon-primary-button'}}
-      {{#bourbon-tooltip event='click'}}
-         tooltip for click event
-      {{/bourbon-tooltip}}
+      {{bourbon-tooltip event='click' text="tooltip for click event"}}
     {{/freestyle-usage}}
     {{#freestyle-note 'tooltip-event--notes'}}
       <ul>

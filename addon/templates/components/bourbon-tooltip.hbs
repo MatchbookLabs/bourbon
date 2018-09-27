@@ -1,3 +1,8 @@
-{{#tooltip-on-element showOn=tooltipShowOn class=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
-  {{yield}}
-{{/tooltip-on-element}}
+{{#if hasBlock}}
+  {{#ember-tooltip tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
+    {{yield}}
+  {{/ember-tooltip}}
+{{/if}}
+{{#if text}}
+  {{ember-tooltip text=text tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
+{{/if}}
