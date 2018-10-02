@@ -1441,7 +1441,8 @@ select.bourbon-select-field {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: .875rem;
-  line-height: 1.5;
+  line-height: 1.2;
+  max-width: 220px;
   box-shadow: 1px 0 3px 2px var(--shade);
 }
 
