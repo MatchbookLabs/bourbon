@@ -17,7 +17,7 @@
 }
 
 .bourbon-modal {
-  position: fixed;
+  top: 40%;
   width: 550px;
   padding: 35px;
   z-index: 7;
@@ -69,10 +69,15 @@
   @apply .bourbon-text-slate;
 }
 
+.bourbon-modal__header {
+  position: relative;
+}
+
 .bourbon-modal__close-button {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: -26px;
+  top: -35px;
+  height: auto;
   min-width: 0;
   padding: 0;
 }
@@ -117,11 +122,15 @@
 
 /* scrollable modal styles */
 .bourbon-modal--scrollable {
-  position: fixed;
   padding: 35px 0;
   display: grid;
   grid-template-rows: 60px auto 60px;
   height: 600px;
+}
+
+.bourbon-modal--scrollable .bourbon-modal__close-button {
+  right: 8px;
+  top: -30px;
 }
 
 .bourbon-modal--scrollable .bourbon-modal__content {
