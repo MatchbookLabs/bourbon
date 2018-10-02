@@ -1470,6 +1470,7 @@ select.bourbon-select-field {
 .theme-dark .bourbon-tooltip__bg-default {
   background-color: var(--white);
   border: 1px solid var(--white);
+  color: var(--black);
 }
 
 .ember-tooltip-arrow {
