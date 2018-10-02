@@ -11,6 +11,14 @@
   @apply .bourbon-pin-l;
 }
 
+.bourbon-modal__fixed {
+  @apply .bourbon-fixed;
+  @apply .bourbon-pin-t;
+  @apply .bourbon-pin-r;
+  @apply .bourbon-pin-b;
+  @apply .bourbon-pin-l;
+}
+
 .bourbon-modal__overlay {
   position: fixed;
   @apply .bourbon-bg-shade;
