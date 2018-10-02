@@ -29,7 +29,6 @@ export default Component.extend({
   },
 
   click() {
-    console.log('bourbon-select-field__option click')
     this.send('updateSelection');
   },
 
@@ -57,7 +56,6 @@ export default Component.extend({
 
   actions: {
     updateSelection() {
-      console.log(`bourbon-select-field__option updateSelection`)
       this.set('selection', this.get('content'));
     }
   }

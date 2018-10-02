@@ -32,6 +32,7 @@ export default Component.extend({
   useOptGroup: computed.bool('groupByPath'),
 
   prompt: null,
+  defaultText: null,
   hasPrompt: computed.notEmpty('prompt'),
 
   value: null,
@@ -39,7 +40,6 @@ export default Component.extend({
 
 
   click(e) {
-    console.log('click')
     this.toggleProperty('showList');
   },
 
@@ -55,6 +55,14 @@ export default Component.extend({
 
     set(key, value) {
       if (isPresent(value)) {
+
+        if (value["label"]) {
+          let label = value["label"];
+          this.set('defaultText', label);
+        } else {
+          this.set('defaultText', value);
+        }
+
         let path = this.get('_valuePath');
         if (path) {
           this.set('value', (typeof value.get === "function" ? value.get(path) : void 0) || value[path]);
@@ -97,7 +105,6 @@ export default Component.extend({
 
   actions: {
     updateSelection() {
-      console.log(`updateSelection`)
       let selectedIndex = this.$('select')[0].selectedIndex;
       if (this.get('prompt')) {
         selectedIndex -= 1;
