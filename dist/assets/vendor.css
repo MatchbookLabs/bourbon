@@ -1309,7 +1309,7 @@ making styling changes in the library */
 .bourbon-modal__close-button {
   position: absolute;
   right: -26px;
-  top: -35px;
+  top: -31px;
   height: auto;
   min-width: 0;
   padding: 0;
@@ -1363,7 +1363,6 @@ making styling changes in the library */
 
 .bourbon-modal--scrollable .bourbon-modal__close-button {
   right: 8px;
-  top: -30px;
 }
 
 .bourbon-modal--scrollable .bourbon-modal__content {
