@@ -37,13 +37,13 @@ export default Service.extend({
 
     this.setProperties(options);
     this.set('showModalState', true);
-    document.body.classList.add('bourbon-fixed');
+    document.body.classList.add('bourbon-modal__fixed');
   },
 
   closeBourbonModal() {
     // need to reset the properties for the next modal call
     this.setProperties(this.defaultParams);
 
-    document.body.classList.remove('bourbon-fixed');
+    document.body.classList.remove('bourbon-modal__fixed');
   }
 });

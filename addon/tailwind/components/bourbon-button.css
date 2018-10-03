@@ -1,8 +1,6 @@
 .bourbon-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 15px;
+  height: 100%;
   @apply .bourbon-min-w-button;
   @apply .bourbon-min-h-button;
   @apply .bourbon-rounded-sm;

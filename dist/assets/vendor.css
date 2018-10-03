@@ -1136,10 +1136,8 @@ making styling changes in the library */
 }
 
 .bourbon-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 15px;
+  height: 100%;
   min-width: 85px;
   min-height: 32px;
   border-radius: .125rem;
@@ -1242,13 +1240,21 @@ making styling changes in the library */
   left: 0;
 }
 
+.bourbon-modal__fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .bourbon-modal__overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, .4);
 }
 
 .bourbon-modal {
-  position: fixed;
+  top: 40%;
   width: 550px;
   padding: 35px;
   z-index: 7;
@@ -1297,10 +1303,15 @@ making styling changes in the library */
   color: #474c4f;
 }
 
+.bourbon-modal__header {
+  position: relative;
+}
+
 .bourbon-modal__close-button {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: -26px;
+  top: -35px;
+  height: auto;
   min-width: 0;
   padding: 0;
 }
@@ -1345,11 +1356,15 @@ making styling changes in the library */
 /* scrollable modal styles */
 
 .bourbon-modal--scrollable {
-  position: fixed;
   padding: 35px 0;
   display: grid;
   grid-template-rows: 60px auto 60px;
   height: 600px;
+}
+
+.bourbon-modal--scrollable .bourbon-modal__close-button {
+  right: 8px;
+  top: -30px;
 }
 
 .bourbon-modal--scrollable .bourbon-modal__content {
@@ -1455,6 +1470,7 @@ select.bourbon-select-field {
 .theme-dark .bourbon-tooltip__bg-default {
   background-color: var(--white);
   border: 1px solid var(--white);
+  color: var(--black);
 }
 
 .ember-tooltip-arrow {
