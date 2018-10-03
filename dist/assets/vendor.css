@@ -1385,8 +1385,8 @@ making styling changes in the library */
 }
 
 .bourbon-modal__no-padding .bourbon-modal__close-button {
-  top: 0;
-  right: 6px;
+  top: -24px;
+  right: -18px;
 }
 
 select.bourbon-select-field {

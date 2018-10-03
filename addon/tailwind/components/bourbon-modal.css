@@ -160,6 +160,6 @@
 }
 
 .bourbon-modal__no-padding .bourbon-modal__close-button {
-  top: 0;
-  right: 6px;
+  top: -24px;
+  right: -18px;
 }
