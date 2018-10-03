@@ -1379,6 +1379,16 @@ making styling changes in the library */
   padding-left: 30px;
 }
 
+.bourbon-modal__no-padding {
+  padding: 0;
+  margin: 0;
+}
+
+.bourbon-modal__no-padding .bourbon-modal__close-button {
+  top: 0;
+  right: 6px;
+}
+
 select.bourbon-select-field {
   border: 1px solid var(--alto);
   font-size: 1rem;
@@ -1455,8 +1465,8 @@ select.bourbon-select-field {
   -moz-osx-font-smoothing: grayscale;
   font-size: .875rem;
   line-height: 1.2;
-  max-width: 220px;
   box-shadow: 1px 0 3px 2px var(--shade);
+  width: max-content;
 }
 
 .theme-light .bourbon-tooltip__bg-default,
