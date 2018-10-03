@@ -153,3 +153,13 @@
   padding-right: 20px;
   padding-left: 30px;
 }
+
+.bourbon-modal__no-padding {
+  @apply .bourbon-p-0;
+  @apply .bourbon-m-0;
+}
+
+.bourbon-modal__no-padding .bourbon-modal__close-button {
+  top: -24px;
+  right: -18px;
+}
