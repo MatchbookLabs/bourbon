@@ -15,7 +15,7 @@ Using bourbon in flabongo
 Developing locally using bourbon and flabongo
 ------------------------------------------------------------------------------
 
-In flabongo run the following commands
+In bourbon run the following commands
 * `npm link`
 * `bower link`
 
