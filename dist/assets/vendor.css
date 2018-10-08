@@ -1411,7 +1411,7 @@ making styling changes in the library */
   white-space: normal;
   transform: rotateZ(0);
   min-width: 22em;
-  min-height: 2em;
+  height: 3em;
   background: var(--white);
   color: var(--black);
   border: 1px solid var(--alto);

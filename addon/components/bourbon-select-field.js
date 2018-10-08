@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed, defineProperty, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
-import { run, scheduleOnce } from '@ember/runloop';
+import { scheduleOnce } from '@ember/runloop';
 import groupBy from 'ember-group-by';
 
 import layout from '../templates/components/bourbon-select-field';
