@@ -60,7 +60,6 @@ export default Component.extend({
           this.set('defaultText', label);
         } else if (value.__data) {
           let label = value.__data.label;
-          console.log(label)
           this.set('defaultText', label);
         } else {
           this.set('defaultText', value);
