@@ -16,7 +16,7 @@
   {{/if}}
 </select>
 
-<div class="bourbon-select-field__menu-selected">{{defaultText}}</div>
+<div class="bourbon-select-field__menu-selected {{if showList 'bourbon-select-field__menu-selected--focus'}}">{{defaultText}}</div>
 <div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}">
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}

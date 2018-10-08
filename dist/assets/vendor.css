@@ -1477,6 +1477,11 @@ making styling changes in the library */
   padding-top: 4px;
 }
 
+.bourbon-select-field__menu-selected--focus {
+  padding-bottom: 10px;
+  box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, .5);
+}
+
 .bourbon-text-field {
   padding: 10px;
   border: 1px solid var(--alto);
