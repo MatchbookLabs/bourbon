@@ -85,3 +85,9 @@ pre {
 button:focus {
   outline: none;
 }
+
+.bourbon-group-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+}

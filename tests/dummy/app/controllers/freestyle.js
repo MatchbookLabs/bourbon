@@ -16,7 +16,7 @@ export default FreestyleController.extend(ModalMixin, {
         value: 'Brussels Griffon'
       },
       {
-        label: 'Macho (the Frenchie)',
+        label: 'Macho (the Frenchie who is so Frenchie)',
         value: 'Frenchie'
       }
     ])),

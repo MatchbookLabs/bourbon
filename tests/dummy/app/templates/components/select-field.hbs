@@ -48,8 +48,10 @@
 
   {{#collection.variant key='group'}}
     {{#freestyle-usage 'select-field-group' title='group of select fields' usageTitle='Usage'}}
-        {{bourbon-select-field content=petsArray}}
-        {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+        <div class=".bourbon-group-container">
+          {{bourbon-select-field content=petsArray}}
+          {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+        </div>
     {{/freestyle-usage}}
 
     {{#freestyle-note 'select-field-group--notes'}}

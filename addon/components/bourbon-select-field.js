@@ -22,7 +22,7 @@ export default Component.extend({
   },
 
   classNames: ['select'],
-  classNameBindings: ['hasValue', 'fullWidth:bourbon-block'],
+  classNameBindings: ['hasValue', 'fullWidth:bourbon-block', 'showList:bourbon-select--active'],
   content: null,
   optionValuePath: null,
   optionLabelPath: null,
@@ -55,9 +55,12 @@ export default Component.extend({
 
     set(key, value) {
       if (isPresent(value)) {
-
-        if (value["label"]) {
-          let label = value["label"];
+        if (typeof value.label === 'string') {
+          let label = value.label;
+          this.set('defaultText', label);
+        } else if (value.__data) {
+          let label = value.__data.label;
+          console.log(label)
           this.set('defaultText', label);
         } else {
           this.set('defaultText', value);
