@@ -5,22 +5,6 @@
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
       {{#each group.items as |option|}}
-        <option value={{option.value}}>{{option.label}}</option>
-      {{/each}}
-    {{/each}}
-
-  {{else}}
-    {{#each content as |option|}}
-      <option value={{option.value}}>{{option.label}}</option>
-    {{/each}}
-  {{/if}}
-</select>
-
-<div class="bourbon-select-field__menu-selected {{if showList 'bourbon-select-field__menu-selected--focus'}}">{{defaultText}}</div>
-<div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}">
-  {{#if useOptGroup}}
-    {{#each groupedContent as |group|}}
-      {{#each group.items as |option|}}
         {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList}}
       {{/each}}
     {{/each}}
@@ -28,6 +12,22 @@
   {{else}}
     {{#each content as |option|}}
       {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList}}
+    {{/each}}
+  {{/if}}
+</select>
+
+<div class="bourbon-select-field__menu-selected {{if showList 'bourbon-select-field__menu-selected--focus'}}">{{defaultText}}</div>
+<div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}" onchange={{action "updateSelection"}} >
+  {{#if useOptGroup}}
+    {{#each groupedContent as |group|}}
+      {{#each group.items as |option|}}
+        {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList searchTerm=searchTerm}}
+      {{/each}}
+    {{/each}}
+
+  {{else}}
+    {{#each content as |option|}}
+      {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList searchTerm=searchTerm}}
     {{/each}}
   {{/if}}
 </div>

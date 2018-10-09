@@ -1,8 +1,10 @@
 .bourbon-text-field {
+  @apply .bourbon-text-md;
   padding: 10px;
   border: 1px solid var(--alto);
   border-radius: 2px;
   width: 100%;
+  height: 3em;
 }
 
 .bourbon-text-field:focus {

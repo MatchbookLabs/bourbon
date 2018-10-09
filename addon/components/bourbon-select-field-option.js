@@ -21,6 +21,7 @@ export default Component.extend({
       return
     }
 
+
     defineProperty(this, 'disabled',
       computed(path, function () {
         !this.get(path)
@@ -57,6 +58,7 @@ export default Component.extend({
   actions: {
     updateSelection() {
       this.set('selection', this.get('content'));
+      this.set('searchTerm', this.get('content'));
     }
   }
 

@@ -44,6 +44,7 @@ export default Component.extend({
   },
 
   selection: computed('content.[]', 'value', 'optionValuePath', {
+
     get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
@@ -54,6 +55,7 @@ export default Component.extend({
     },
 
     set(key, value) {
+
       if (isPresent(value)) {
         if (typeof value.label === 'string') {
           let label = value.label;
@@ -74,6 +76,7 @@ export default Component.extend({
       } else {
         this.set('value', null)
       }
+
       return value;
     }
 
@@ -103,6 +106,16 @@ export default Component.extend({
 
   didInsertElement() {
     this._initSelection();
+    if (this.get('showDropdowns')) {
+      this.set('showList', this.get('showDropdown'))
+    }
+  },
+
+  didUpdateAttrs() {
+    this._super(...arguments);
+    if (this.get('showDropdown')) {
+      this.set('showList', this.get('showDropdown'))
+    }
   },
 
   actions: {
@@ -111,6 +124,7 @@ export default Component.extend({
       if (this.get('prompt')) {
         selectedIndex -= 1;
       }
+
       this.set('selection', this.get('content').objectAt(selectedIndex));
     }
   }
