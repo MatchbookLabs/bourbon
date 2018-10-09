@@ -146,6 +146,14 @@
   margin-bottom: 0;
 }
 
+.bourbon-modal__hide-footer .bourbon-modal__content {
+  margin-bottom: 0;
+}
+
+.bourbon-modal__hide-footer .bourbon-modal__footer {
+  display: none;
+}
+
 .bourbon-modal--scrollable .bourbon-modal__footer {
   @apply .bourbon-mt-1;
   @apply .bourbon-pt-8;
@@ -157,6 +165,8 @@
 .bourbon-modal__no-padding {
   @apply .bourbon-p-0;
   @apply .bourbon-m-0;
+  border: none;
+  width: auto;
 }
 
 .bourbon-modal__no-padding .bourbon-modal__close-button {
