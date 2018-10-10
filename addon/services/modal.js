@@ -22,6 +22,9 @@ export default Service.extend({
       buttonTwoTitle: null,
       buttonTwoAction: null,
       buttonTwoType: 'secondary',
+      copyButtonTitle: null,
+      copyText: null,
+      copyButtonAction: null,
       linkTitle: null,
       linkHref: null,
       dismissable: true

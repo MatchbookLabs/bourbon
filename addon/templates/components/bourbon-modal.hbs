@@ -29,6 +29,12 @@
         {{#if modalService.buttonOneTitle}}
           {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}}
         {{/if}}
+
+        {{#if modalService.copyButtonTitle}}
+          {{#copy-button clipboardText=modalService.copyText class="bourbon-button bourbon-primary-button" success=(action 'copyButtonAction')}}
+            {{modalService.copyButtonTitle}}
+          {{/copy-button}}
+        {{/if}}
       </div>
     </div>
   </aside>

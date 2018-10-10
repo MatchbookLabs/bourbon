@@ -70,6 +70,13 @@ export default Component.extend({
       if (!originalButtonTwoDontClose) {
         this.get('modalService').closeBourbonModal();
       }
+    },
+
+    copyButtonAction() {
+      if (this.get('modalService.copyButtonAction')) {
+        this.get('modalService.copyButtonAction')();
+      }
+      this.get('modalService').closeBourbonModal();
     }
   }
 });
