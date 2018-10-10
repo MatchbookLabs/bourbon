@@ -19,16 +19,27 @@ export default Component.extend({
 
   value: '',
   showDropdown: false,
+  searchList: null,
+  optionValuePath: null,
+  optionLabelPath: null,
+
+  optionValue(option) {
+    if (typeof option === 'string') {
+      return option.toLowerCase();
+    } else {
+      return option.label.toLowerCase()
+    }
+  },
 
   searchResults: observer('value', function () {
     let results = this.get('content');
     let searchList = [];
 
     results.filter(option => {
-      if (option.indexOf(this.get('value')) !== -1) {
+      let optionStringValue = this.optionValue(option);
+      if (optionStringValue.indexOf(this.get('value').toLowerCase()) !== -1) {
         searchList.push(option)
       }
-
     })
 
     this.set('searchList', A(searchList))
@@ -43,7 +54,6 @@ export default Component.extend({
 
     hideContent() {
       this.set('showDropdown', false);
-      this.set('searchList', this.get('content'));
     }
   }
 
