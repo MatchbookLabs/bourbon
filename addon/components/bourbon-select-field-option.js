@@ -58,7 +58,6 @@ export default Component.extend({
   actions: {
     updateSelection() {
       this.set('selection', this.get('content'));
-      this.set('searchTerm', this.label);
     }
   }
 

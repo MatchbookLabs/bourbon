@@ -1,8 +1,8 @@
-<div class="bourbon-search-select-field__input-container">
+<div class="bourbon-search-select-field__input-container {{if noShowInput "bourbon-z-0"}}">
   {{bourbon-text-field placeholder=prompt value=value actionOnFocusIn=(action 'showContent') actionOnFocusOut=(action 'hideContent')}}
   {{bourbon-search-icon  hide=showSearchIcon className="bourbon-search-select-field__icon"}}
 </div>
 
 <div class="bourbon-search-select-field__search-container">
-  {{bourbon-select-field content=searchList fullWidth=true showDropdown=showDropdown searchTerm=value optionLabelPath=optionLabelPath optionValuePath=optionValuePath}}
+  {{bourbon-select-field content=searchList prompt=prompt fullWidth=true showDropdown=showDropdown searchTerm=value value=currentValue optionLabelPath=optionLabelPath optionValuePath=optionValuePath selectFieldContext=selectFieldContext noShowInput=noShowInput}}
 </div>

@@ -1,4 +1,5 @@
 import TextField from '@ember/component/text-field';
+import { observer } from '@ember/object';
 
 import layout from '../templates/components/bourbon-text-field';
 
@@ -12,7 +13,7 @@ export default TextField.extend({
   actionOnEnter: '',
   onFocusOutOrEnter: '',
   autofocus: false,
-  value: '',
+  value: null,
 
   focusIn(e) {
     this._super(...arguments);

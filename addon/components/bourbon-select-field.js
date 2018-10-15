@@ -13,11 +13,12 @@ export default Component.extend({
     this._super(...arguments);
     let groupByPath = this.get('groupByPath');
     if (groupByPath) {
-      defineProperty(this, 'groupedContent', groupBy('content', groupByPath))
+      defineProperty(this, 'groupedContent', groupBy('content', groupByPath));
     }
 
-    if (this.get('prompt')) {
-      this.set('selection', this.get('prompt'))
+    if (this.get('hasPrompt')) {
+      this.set('selection', this.get('prompt'));
+      this.set('label', this.get('prompt'));
     }
   },
 
@@ -30,21 +31,17 @@ export default Component.extend({
   groupByPath: null,
   showList: false,
   useOptGroup: computed.bool('groupByPath'),
-
   prompt: null,
-  defaultText: null,
   hasPrompt: computed.notEmpty('prompt'),
-
   value: null,
   hasValue: computed.notEmpty('value'),
 
-
   click(e) {
     this.toggleProperty('showList');
+    this.set('noShowInput', !this.get('noShowInput'));
   },
 
-  selection: computed('content.[]', 'value', 'optionValuePath', {
-
+  selection: computed('content.[]', 'value', 'optionValuePath', 'searchTerm', 'label', {
     get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
@@ -55,16 +52,15 @@ export default Component.extend({
     },
 
     set(key, value) {
-
       if (isPresent(value)) {
         if (typeof value.label === 'string') {
           let label = value.label;
-          this.set('defaultText', label);
+          this.set('label', label);
         } else if (value.__data) {
           let label = value.__data.label;
-          this.set('defaultText', label);
+          this.set('label', label);
         } else {
-          this.set('defaultText', value);
+          this.set('label', value);
         }
 
         let path = this.get('_valuePath');
@@ -74,7 +70,12 @@ export default Component.extend({
           this.set('value', value);
         }
       } else {
-        this.set('value', null)
+
+        if (this.get('prompt') && !this.get('hasValue')) {
+          this.set('label', this.get('prompt'))
+        }
+
+        this.set('value', null);
       }
 
       return value;
@@ -92,7 +93,7 @@ export default Component.extend({
 
   _valuePath: computed('optionValuePath', function () {
     if (this.get('optionValuePath') !== null) {
-      return this.get('optionValuePath').replace(/^content\.?/, '')
+      return this.get('optionValuePath').replace(/^content\.?/, '');
     }
   }),
 
@@ -107,14 +108,14 @@ export default Component.extend({
   didInsertElement() {
     this._initSelection();
     if (this.get('showDropdowns')) {
-      this.set('showList', this.get('showDropdown'))
+      this.set('showList', this.get('showDropdown'));
     }
   },
 
   didUpdateAttrs() {
     this._super(...arguments);
     if (this.get('showDropdown')) {
-      this.set('showList', this.get('showDropdown'))
+      this.set('showList', this.get('showDropdown'));
     }
   },
 

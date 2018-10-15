@@ -71,6 +71,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 10px;
+  line-height: 1.5;
 }
 
 .bourbon-select-field__menu-selected {

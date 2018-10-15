@@ -17,34 +17,51 @@ export default Component.extend({
     this.set('searchList', this.get('content'));
   },
 
-  value: '',
+  value: null,
   showDropdown: false,
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
+  noShowInput: false,
 
   optionValue(option) {
     if (typeof option === 'string') {
       return option.toLowerCase();
+    } else if (option.__data) {
+      return option.__data.label.toLowerCase();
     } else {
       return option.label.toLowerCase()
     }
   },
 
-  searchResults: observer('value', function () {
-    let results = this.get('content');
-    let searchList = [];
+  searchResults: observer('value', 'content', function () {
+    if (this.get('value') === null) {
+      this.set('searchList', this.get('content'));
+      return this.get('content');
+    } else {
+      let results = this.get('content');
+      let searchList = [];
+      results.filter(option => {
+        let optionStringValue = this.optionValue(option);
+        if (optionStringValue.indexOf(this.get('value').toLowerCase()) !== -1) {
+          searchList.push(option)
+        }
+      })
 
-    results.filter(option => {
-      let optionStringValue = this.optionValue(option);
-      if (optionStringValue.indexOf(this.get('value').toLowerCase()) !== -1) {
-        searchList.push(option)
+      let response;
+      if (searchList.length === 0) {
+        if (this.get('optionLabelPath')) {
+          response = A([{label: 'No results found.'}]);
+        } else {
+          response = A(['No results found.']);
+        }
+      } else {
+        response =  A(searchList);
       }
-    })
 
-    this.set('searchList', A(searchList))
+      this.set('searchList', response)
+    }
 
-    return A(searchList);
   }),
 
   actions: {

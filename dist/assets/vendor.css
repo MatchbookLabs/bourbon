@@ -1396,7 +1396,7 @@ making styling changes in the library */
 
 .bourbon-search-select-field__icon {
   position: absolute;
-  top: 8px;
+  top: 6px;
   right: 20px;
   opacity: 0;
   transition: opacity .5s ease-in-out;
@@ -1476,6 +1476,7 @@ making styling changes in the library */
   -webkit-appearance: none;
      -moz-appearance: none;
   padding: 10px;
+  line-height: 1.5;
 }
 
 .bourbon-select-field__menu-selected {

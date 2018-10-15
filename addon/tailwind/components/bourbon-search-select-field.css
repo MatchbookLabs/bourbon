@@ -5,7 +5,7 @@
 
 .bourbon-search-select-field__icon {
   position: absolute;
-  top: 8px;
+  top: 6px;
   right: 20px;
   opacity: 0;
   transition: opacity .5s ease-in-out;
