@@ -6,6 +6,7 @@ export default Component.extend({
   layout,
   tagName: 'option',
   classNames: ['bourbon-select-field__option'],
+  classNameBindings: ['selected:bourbon-bg-concrete'],
   attributeBindings: ['selected', 'value', 'disabled', 'data-value'],
   tabindex: null,
   content: null,

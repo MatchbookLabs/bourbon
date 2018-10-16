@@ -39,6 +39,10 @@ export default Component.extend({
   click(e) {
     this.toggleProperty('showList');
     this.set('noShowInput', !this.get('noShowInput'));
+
+    if (this.get('showList') === false) {
+      this.set('searchTerm', '')
+    }
   },
 
   selection: computed('content.[]', 'value', 'optionValuePath', 'searchTerm', 'label', {
@@ -107,7 +111,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._initSelection();
-    if (this.get('showDropdowns')) {
+    if (this.get('showDropdown')) {
       this.set('showList', this.get('showDropdown'));
     }
   },
