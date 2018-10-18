@@ -1,6 +1,6 @@
 {{#if modalService.showModalState}}
   {{bourbon-modal-overlay closeModal=(action 'closeBourbonModal')}}
-  <aside class="bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}} {{if modalService.wideModal 'bourbon-modal--large'}} {{if modalService.confirmationModal 'bourbon-modal--confirmation'}} {{if modalService.noPaddingModal 'bourbon-modal__no-padding'}}">
+  <aside class="bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}} {{if modalService.wideModal 'bourbon-modal--large'}} {{if modalService.confirmationModal 'bourbon-modal--confirmation'}} {{if modalService.noPaddingModal 'bourbon-modal__no-padding'}} {{if modalService.hideFooter 'bourbon-modal__hide-footer'}}">
     <div class="bourbon-modal__header">
       {{#if modalService.title}}
         <header class="bourbon-modal__title">{{modalService.title}}</header>
@@ -11,7 +11,7 @@
     </div>
 
     {{#if modalService.content}}
-      {{bourbon-modal-content contentPartial=modalService.content modalContext=modalService.context noPadding=modalService.noPaddingModal}}
+      {{bourbon-modal-content contentPartial=modalService.content modalContext=modalService.context noPadding=modalService.noPaddingModal closeBourbonModal=(action 'closeBourbonModal')}}
     {{else}}
       {{bourbon-modal-content textContent=modalService.textContent noPadding=modalService.noPaddingModal}}
     {{/if}}
@@ -28,6 +28,12 @@
 
         {{#if modalService.buttonOneTitle}}
           {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}}
+        {{/if}}
+
+        {{#if modalService.copyButtonTitle}}
+          {{#copy-button clipboardText=modalService.copyText class="bourbon-button bourbon-primary-button" success=(action 'copyButtonAction')}}
+            {{modalService.copyButtonTitle}}
+          {{/copy-button}}
         {{/if}}
       </div>
     </div>

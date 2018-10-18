@@ -34,10 +34,8 @@ export default Component.extend({
   _closeModalActions() {
     if (typeof this.get('modalService.closeAction') === 'function') {
       this.get('modalService.closeAction')();
-    } else {
-      console.warn('warning: no closing action passed');
     }
-    
+
     if (this.get('modalService.dismissable') === true) {
       this.get('modalService').closeBourbonModal();
     }
@@ -51,7 +49,7 @@ export default Component.extend({
     buttonOneAction() {
       // buttonAction might change the options so need to set a new variable
       const originalButtonOneDontClose = this.get('modalService.buttonOneDontClose');
-      
+
       if (this.get('modalService.buttonOneAction')) {
         this.get('modalService.buttonOneAction')();
       }
@@ -72,6 +70,13 @@ export default Component.extend({
       if (!originalButtonTwoDontClose) {
         this.get('modalService').closeBourbonModal();
       }
+    },
+
+    copyButtonAction() {
+      if (this.get('modalService.copyButtonAction')) {
+        this.get('modalService.copyButtonAction')();
+      }
+      this.get('modalService').closeBourbonModal();
     }
   }
 });
