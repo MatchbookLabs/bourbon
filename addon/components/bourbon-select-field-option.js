@@ -30,7 +30,7 @@ export default Component.extend({
     );
   },
 
-  click() {
+  mouseDown() {
     this.send('updateSelection');
   },
 

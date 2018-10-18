@@ -19,10 +19,10 @@ export default Component.extend({
 
   value: null,
   showDropdown: false,
+  noShowInput: false,
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
-  noShowInput: false,
 
   optionValue(option) {
     if (typeof option === 'string') {
@@ -33,6 +33,14 @@ export default Component.extend({
       return option.label.toLowerCase()
     }
   },
+
+  showSelecteFieldOption: observer('currentValue', 'showDropdown', function() {
+    if (this.get('currentValue') && (this.get('showDropdown') === false)) {
+      this.set('noShowInput', true)
+    } else {
+      this.set('noShowInput', false)
+    }
+  }),
 
   searchResults: observer('value', 'content', function () {
     if (this.get('value') === null) {

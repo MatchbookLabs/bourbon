@@ -36,16 +36,17 @@ export default Component.extend({
   value: null,
   hasValue: computed.notEmpty('value'),
 
-  click(e) {
+  mouseDown(e) {
     this.toggleProperty('showList');
-    this.set('noShowInput', !this.get('noShowInput'));
-
-    if (this.get('showList') === false) {
-      this.set('searchTerm', '')
-    }
   },
 
-  selection: computed('content.[]', 'value', 'optionValuePath', 'searchTerm', 'label', {
+  resetPrompt: observer('value', function() {
+    if (this.get('prompt') && !this.get('hasValue')) {
+      this.set('label', this.get('prompt'))
+    }
+  }),
+
+  selection: computed('content.[]', 'value', 'optionValuePath', 'searchTerm', {
     get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
@@ -74,11 +75,6 @@ export default Component.extend({
           this.set('value', value);
         }
       } else {
-
-        if (this.get('prompt') && !this.get('hasValue')) {
-          this.set('label', this.get('prompt'))
-        }
-
         this.set('value', null);
       }
 
@@ -101,7 +97,7 @@ export default Component.extend({
     }
   }),
 
-  _initSelection: observer('content', function () {
+  _initSelection: observer('searchTerm', function () {
     scheduleOnce('afterRender', this, function () {
       if (this.get('content')) {
         this.send('updateSelection');
@@ -111,6 +107,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._initSelection();
+
     if (this.get('showDropdown')) {
       this.set('showList', this.get('showDropdown'));
     }
@@ -124,6 +121,7 @@ export default Component.extend({
   },
 
   actions: {
+    // only used for initial load - rest of changes are coming through the bourbon select field option
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
       if (this.get('prompt')) {

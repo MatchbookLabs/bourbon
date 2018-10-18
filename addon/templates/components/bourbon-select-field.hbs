@@ -1,4 +1,4 @@
-<select name="test" class="bourbon-select-field bourbon-hidden" onchange={{action "updateSelection"}} focusrole="listbox">
+<select name="test" class="bourbon-select-field bourbon-hidden" focusrole="listbox">
   {{#if hasPrompt}}
     <option value={{prompt}}>{{prompt}}</option>
   {{/if}}
@@ -17,7 +17,7 @@
 </select>
 
 <div class="bourbon-select-field__menu-selected {{if showList 'bourbon-select-field__menu-selected--focus'}}">{{label}}</div>
-<div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}" onchange={{action "updateSelection"}}>
+<div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}">
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
       {{#each group.items as |option|}}
