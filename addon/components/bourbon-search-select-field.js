@@ -21,13 +21,11 @@ export default Component.extend({
   label: null,
   inputValue: "",
   showDropdown: false,
-  noShowInput: false,
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
 
   inputValueObserver: observer('value', function() {
-
     this.set('inputValue', this.get('value'))
   }),
 
@@ -41,16 +39,7 @@ export default Component.extend({
     }
   },
 
-  showSelecteFieldOption: observer('value', 'showDropdown', function () {
-    if (this.get('currentValue') && (this.get('showDropdown') === false)) {
-      this.set('noShowInput', true)
-    } else {
-      this.set('noShowInput', false)
-    }
-  }),
-
   searchResults: observer('inputValue', 'content', function () {
-
     if (this.get('inputValue') === "null" || this.get('inputValue') === "") {
       this.set('searchList', this.get('content'));
       return this.get('content');
@@ -86,6 +75,10 @@ export default Component.extend({
     },
 
     hideContent() {
+      if (this.get('value') === null && this.get('currentValue') && this.get('label')) {
+        this.set('inputValue', this.get('label'))
+      }
+
       this.set('showDropdown', false);
     }
   }

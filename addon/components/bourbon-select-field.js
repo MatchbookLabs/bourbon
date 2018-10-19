@@ -41,10 +41,9 @@ export default Component.extend({
   },
 
   resetPrompt: observer('label', function () {
-
     if (this.get('label')) {
       this.set('searchTerm', this.get('label'))
-    } else if (this.get('prompt') && !this.get('hasValue')) {
+    } else if (this.get('prompt') && !this.get('hasValue') && this.get('searchTerm') !== '') {
       this.set('label', this.get('prompt'))
     }
   }),
@@ -60,7 +59,6 @@ export default Component.extend({
     },
 
     set(key, value) {
-
       if (isPresent(value)) {
         if (typeof value.label === 'string') {
           let label = value.label;

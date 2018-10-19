@@ -20,7 +20,8 @@ export default TextField.extend({
     }
   },
 
-  focusIn(e) {q
+  focusIn(e) {
+    this.set('value', '');
     this._super(...arguments);
 
     if (this.get('actionOnFocusIn')) {
