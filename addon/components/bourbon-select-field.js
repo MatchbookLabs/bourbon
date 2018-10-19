@@ -52,7 +52,7 @@ export default Component.extend({
     get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
-        return this.get('content').findBy(path), this.get('value')
+        return this.get('content').findBy(path, this.get('value'))
       } else {
         return this.get('value')
       }
@@ -77,7 +77,6 @@ export default Component.extend({
           this.set('value', value);
         }
       }
-
       return value;
     }
 
@@ -113,7 +112,7 @@ export default Component.extend({
     // only used for initial load - rest of changes are coming through the bourbon select field option
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
-      
+
       if (this.get('prompt')) {
         selectedIndex -= 1;
       }
