@@ -107,23 +107,13 @@ export default Component.extend({
 
   didInsertElement() {
     this._initSelection();
-
-    if (this.get('showDropdown')) {
-      this.set('showList', this.get('showDropdown'));
-    }
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
-    if (this.get('showDropdown')) {
-      this.set('showList', this.get('showDropdown'));
-    }
   },
 
   actions: {
     // only used for initial load - rest of changes are coming through the bourbon select field option
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
+      
       if (this.get('prompt')) {
         selectedIndex -= 1;
       }

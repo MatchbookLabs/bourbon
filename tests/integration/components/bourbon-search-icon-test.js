@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-search-icon', function(hooks) {
     await render(hbs`{{bourbon-search-icon}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-search-icon}}
-        template block text
-      {{/bourbon-search-icon}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

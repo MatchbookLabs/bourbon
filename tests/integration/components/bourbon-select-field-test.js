@@ -11,10 +11,10 @@ module('Integration | Component | bourbon-select-field', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    this.set('petsArray', A(['cats']));
+    this.set('petsArray', A(['']));
 
     await render(hbs`{{bourbon-select-field content=petsArray}}`);
 
-    assert.equal(this.element.textContent.trim(), 'cats');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

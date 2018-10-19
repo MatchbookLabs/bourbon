@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-search-select-field', function(hooks) 
     await render(hbs `{{bourbon-search-select-field}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-search-select-field}}
-        template block text
-      {{/bourbon-search-select-field}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
