@@ -18,11 +18,18 @@ export default Component.extend({
   },
 
   value: null,
+  label: null,
+  inputValue: "",
   showDropdown: false,
   noShowInput: false,
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
+
+  inputValueObserver: observer('value', function() {
+
+    this.set('inputValue', this.get('value'))
+  }),
 
   optionValue(option) {
     if (typeof option === 'string') {
@@ -34,7 +41,7 @@ export default Component.extend({
     }
   },
 
-  showSelecteFieldOption: observer('currentValue', 'showDropdown', function() {
+  showSelecteFieldOption: observer('value', 'showDropdown', function () {
     if (this.get('currentValue') && (this.get('showDropdown') === false)) {
       this.set('noShowInput', true)
     } else {
@@ -42,8 +49,9 @@ export default Component.extend({
     }
   }),
 
-  searchResults: observer('value', 'content', function () {
-    if (this.get('value') === null) {
+  searchResults: observer('inputValue', 'content', function () {
+
+    if (this.get('inputValue') === "null" || this.get('inputValue') === "") {
       this.set('searchList', this.get('content'));
       return this.get('content');
     } else {
@@ -51,7 +59,7 @@ export default Component.extend({
       let searchList = [];
       results.filter(option => {
         let optionStringValue = this.optionValue(option);
-        if (optionStringValue.indexOf(this.get('value').toLowerCase()) !== -1) {
+        if (optionStringValue.indexOf(this.get('inputValue').toLowerCase()) !== -1) {
           searchList.push(option)
         }
       })

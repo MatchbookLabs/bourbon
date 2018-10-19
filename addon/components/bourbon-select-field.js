@@ -40,13 +40,16 @@ export default Component.extend({
     this.toggleProperty('showList');
   },
 
-  resetPrompt: observer('value', function() {
-    if (this.get('prompt') && !this.get('hasValue')) {
+  resetPrompt: observer('label', function () {
+
+    if (this.get('label')) {
+      this.set('searchTerm', this.get('label'))
+    } else if (this.get('prompt') && !this.get('hasValue')) {
       this.set('label', this.get('prompt'))
     }
   }),
 
-  selection: computed('content.[]', 'value', 'optionValuePath', 'searchTerm', {
+  selection: computed('content.[]', 'optionValuePath', 'value', {
     get(key) {
       let path = this.get('_valuePath');
       if (path && this.get('value') && this.get('content')) {
@@ -57,6 +60,7 @@ export default Component.extend({
     },
 
     set(key, value) {
+
       if (isPresent(value)) {
         if (typeof value.label === 'string') {
           let label = value.label;
@@ -74,8 +78,6 @@ export default Component.extend({
         } else {
           this.set('value', value);
         }
-      } else {
-        this.set('value', null);
       }
 
       return value;

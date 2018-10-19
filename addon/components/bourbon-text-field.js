@@ -19,8 +19,8 @@ export default TextField.extend({
       this.$().focus()
     }
   },
-  
-  focusIn(e) {
+
+  focusIn(e) {q
     this._super(...arguments);
 
     if (this.get('actionOnFocusIn')) {
