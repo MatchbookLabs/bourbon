@@ -1389,6 +1389,10 @@ making styling changes in the library */
   right: -18px;
 }
 
+.bourbon-search-select-field {
+  z-index: 1;
+}
+
 .bourbon-search-select-field__input-container {
   position: relative;
   z-index: 1;

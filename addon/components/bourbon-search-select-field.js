@@ -40,31 +40,22 @@ export default Component.extend({
   },
 
   searchResults: observer('inputValue', 'content', function () {
-    if (this.get('inputValue') === "null" || this.get('inputValue') === "") {
+    if (this.get('inputValue') === "") {
       this.set('searchList', this.get('content'));
       return this.get('content');
     } else {
-      let results = this.get('content');
-      let searchList = [];
-      results.filter(option => {
-        let optionStringValue = this.optionValue(option);
-        if (optionStringValue.indexOf(this.get('inputValue').toLowerCase()) !== -1) {
-          searchList.push(option)
-        }
-      })
+      let searchString = this.get('inputValue').toLowerCase();
+      let searchList = this.get('content').filter(option => this.optionValue(option).match(searchString));
 
-      let response;
       if (searchList.length === 0) {
         if (this.get('optionLabelPath')) {
-          response = A([{label: 'No results found.'}]);
+          this.set('searchList', A([{label: 'No results found.'}]));
         } else {
-          response = A(['No results found.']);
+          this.set('searchList', A(['No results found.']));
         }
       } else {
-        response =  A(searchList);
+        this.set('searchList', A(searchList))
       }
-
-      this.set('searchList', response)
     }
 
   }),

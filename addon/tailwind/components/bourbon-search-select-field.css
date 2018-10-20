@@ -1,3 +1,7 @@
+.bourbon-search-select-field {
+  z-index: 1;
+}
+
 .bourbon-search-select-field__input-container {
   position: relative;
   z-index: 1;
