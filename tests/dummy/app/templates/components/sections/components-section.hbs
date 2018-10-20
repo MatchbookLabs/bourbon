@@ -23,7 +23,6 @@
   {{#section.subsection name='search select field'}}
 
     {{#freestyle-usage 'search-select-field' title='search select field (array)' usageTitle='Usage'}}
-
       {{bourbon-search-select-field content=petsArray prompt="Select an animal..."}}
     {{/freestyle-usage}}
 
@@ -39,6 +38,10 @@
     {{#freestyle-note 'search-object-select-field--notes'}}
 
     {{/freestyle-note}}
+
+    {{#freestyle-usage 'search-object-select-field' title='search select field (object with enabled option)' usageTitle='Usage'}}
+      {{bourbon-search-select-field content=somePetObject prompt="Select your favorite dog..." optionEnabledPath="content.enabled" optionLabelPath="content.label" optionValuePath="content.value"}}
+    {{/freestyle-usage}}
 
   {{/section.subsection}}
 

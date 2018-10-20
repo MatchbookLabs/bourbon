@@ -24,6 +24,7 @@ export default Component.extend({
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
+  optionEnabledPath: null,
 
   inputValueObserver: observer('value', function() {
     this.set('inputValue', this.get('value'))

@@ -23,9 +23,9 @@ export default Component.extend({
     }
 
 
-    defineProperty(this, 'disabled',
+    return defineProperty(this, 'disabled',
       computed(path, function () {
-        !this.get(path)
+        return !this.get(path)
       })
     );
   },
