@@ -1,19 +1,21 @@
-select.bourbon-select-field {
-  border: 1px solid var(--alto);
-  @apply .bourbon-text-base;
-  @apply .bourbon-bg-white;
-  width: 100%;
-  height: 40px;
-  border-radius: 2px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 10px 50px 10px 10px;
-}
-
 .select {
+  @apply .bourbon-text-md;
   position: relative;
   display: inline-block;
-  margin-right: 5px;
+  padding: 10px;
+
+
+  cursor: pointer;
+  word-wrap: break-word;
+  line-height: 1em;
+  white-space: normal;
+  transform: rotateZ(0);
+  min-width: 22em;
+  height: 3em;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--alto);
+  border-radius: 2px;
 }
 
 .select:before {
@@ -29,8 +31,56 @@ select.bourbon-select-field {
   -webkit-transform: rotate(45deg);
 }
 
-.bourbon-select-field:focus {
+.bourbon-select--active,
+.bourbon-select-field__menu.bourbon-select--focus {
   border-color: var(--dodger-blue);
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-  outline: none;
+  box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
+}
+
+.bourbon-select-field__menu {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-top-width: 0 !important;
+  min-width: calc(100% + 2px);
+  width: calc(100% + 2px);
+  max-height: 15em;
+  cursor: auto;
+  position: absolute;
+  top: 97%;
+  left: -1px;
+  border-radius: 2px;
+
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  font-size: 1em;
+  text-shadow: none;
+  text-align: left;
+  border: 1px solid var(--alto);
+  z-index: 11;
+}
+
+.bourbon-select-field__option {
+  @apply .bourbon-text-md;
+  @apply .bourbon-bg-white;
+  width: 100%;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.bourbon-select-field__menu-selected {
+  @apply .bourbon-text-md;
+  padding-top: 4px;
+}
+
+
+.bourbon-select-field__menu-selected--focus {
+  padding-bottom: 10px;
+  box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, .5);
 }

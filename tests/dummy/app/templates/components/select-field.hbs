@@ -26,7 +26,7 @@
 
   {{#collection.variant key='full-width'}}
     {{#freestyle-usage 'select-field-full-width' title='full width select field' usageTitle='Usage'}}
-      {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}
+      {{bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}
     {{/freestyle-usage}}
 
     {{#freestyle-note 'select-field-full-width--notes'}}
@@ -48,12 +48,13 @@
 
   {{#collection.variant key='group'}}
     {{#freestyle-usage 'select-field-group' title='group of select fields' usageTitle='Usage'}}
-        {{bourbon-select-field content=petsArray}}
-        {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+        <div class=".bourbon-group-container">
+          {{bourbon-select-field content=petsArray}}
+          {{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}
+        </div>
     {{/freestyle-usage}}
 
     {{#freestyle-note 'select-field-group--notes'}}
     {{/freestyle-note}}
   {{/collection.variant}}
-
 {{/freestyle-collection}}

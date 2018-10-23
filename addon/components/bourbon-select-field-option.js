@@ -6,7 +6,8 @@ export default Component.extend({
   layout,
   tagName: 'option',
   classNames: ['bourbon-select-field__option'],
-  attributeBindings: ['selected', 'value', 'disabled'],
+  classNameBindings: ['selected:bourbon-bg-concrete'],
+  attributeBindings: ['selected', 'value', 'disabled', 'data-value'],
   tabindex: null,
   content: null,
   labelPath: null,
@@ -21,11 +22,16 @@ export default Component.extend({
       return
     }
 
-    defineProperty(this, 'disabled',
+
+    return defineProperty(this, 'disabled',
       computed(path, function () {
-        !this.get(path)
+        return !this.get(path)
       })
     );
+  },
+
+  mouseDown() {
+    this.send('updateSelection');
   },
 
   label: computed('content', 'labelPath', function() {
@@ -48,5 +54,12 @@ export default Component.extend({
 
   selected: computed('content', 'selection', function() {
     return this.get('content') === this.get('selection');
-  })
+  }),
+
+  actions: {
+    updateSelection() {
+      this.set('selection', this.get('content'));
+    }
+  }
+
 });

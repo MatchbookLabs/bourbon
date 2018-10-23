@@ -9,15 +9,38 @@ export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
 
-    this.set('petsArray', A(['cats', 'dogs', 'rabbits'])),
+    this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose'])),
     this.set('petObject', A([
       {
-        label: 'Chompsky (the Brussels Griffon)',
-        value: 'Brussels Griffon'
+        label: 'Chompsky (the only Brussels Griffon)',
+        value: 'the only Brussels Griffon'
       },
       {
-        label: 'Macho (the Frenchie)',
+        label: 'Memphis (the other Brussels Griffon)',
+        value: 'the other Brussels Griffon'
+      },
+      {
+        label: 'Macho (the Frenchie who is so Frenchie)',
         value: 'Frenchie'
+      }
+    ])),
+
+
+    this.set('somePetObject', A([
+      {
+        label: 'Chompsky (the only Brussels Griffon)',
+        value: 'the only Brussels Griffon',
+        enabledPath: null
+      },
+      {
+        label: 'Memphis (the other Brussels Griffon)',
+        value: 'the other Brussels Griffon',
+        enabledPath: 'content.enabled'
+      },
+      {
+        label: 'Macho (the Frenchie who is so Frenchie)',
+        value: 'Frenchie',
+        enabledPath: 'content.enabled'
       }
     ])),
 

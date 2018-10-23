@@ -1,0 +1,20 @@
+.bourbon-search-select-field {
+  z-index: 1;
+}
+
+.bourbon-search-select-field__input-container {
+  position: relative;
+  z-index: 1;
+}
+
+.bourbon-search-select-field__icon {
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.bourbon-search-select-field__search-container .select {
+  top: -42px;
+}

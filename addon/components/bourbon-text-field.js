@@ -12,9 +12,16 @@ export default TextField.extend({
   actionOnEnter: '',
   onFocusOutOrEnter: '',
   autofocus: false,
-  value: '',
+  value: null,
+
+  didInsertElement()  {
+    if (this.get('autofocus')) {
+      this.$().focus()
+    }
+  },
 
   focusIn(e) {
+    this.set('value', '');
     this._super(...arguments);
 
     if (this.get('actionOnFocusIn')) {
