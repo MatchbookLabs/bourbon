@@ -1431,7 +1431,6 @@ making styling changes in the library */
   white-space: normal;
   transform: rotateZ(0);
   min-width: 22em;
-  width: 100%;
   height: 3em;
   background: var(--white);
   color: var(--black);
