@@ -4,13 +4,13 @@
   display: inline-block;
   padding: 10px;
 
-
   cursor: pointer;
   word-wrap: break-word;
   line-height: 1em;
   white-space: normal;
   transform: rotateZ(0);
   min-width: 22em;
+  width: 100%;
   height: 3em;
   background: var(--white);
   color: var(--black);
@@ -46,7 +46,7 @@
   border-top-width: 0 !important;
   min-width: calc(100% + 2px);
   width: calc(100% + 2px);
-  max-height: 15em;
+  max-height: 13em;
   cursor: auto;
   position: absolute;
   top: 97%;
@@ -63,6 +63,10 @@
   z-index: 11;
 }
 
+.bourbon-select-field__menu:hover {
+  cursor: pointer;
+}
+
 .bourbon-select-field__option {
   @apply .bourbon-text-md;
   @apply .bourbon-bg-white;
@@ -77,6 +81,10 @@
 .bourbon-select-field__menu-selected {
   @apply .bourbon-text-md;
   padding-top: 4px;
+  width: 94%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 

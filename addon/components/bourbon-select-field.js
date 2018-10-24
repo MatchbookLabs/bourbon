@@ -60,12 +60,20 @@ export default Component.extend({
 
     set(key, value) {
       if (isPresent(value)) {
+
         if (typeof value.label === 'string') {
           let label = value.label;
           this.set('label', label);
+        } else if (value.formattedTitle) {
+          this.set('label', value.get('formattedTitle'));
         } else if (value.__data) {
-          let label = value.__data.label;
-          this.set('label', label);
+          let data = value.__data;
+
+          if (data.label) {
+            this.set('label', data.label);
+          } else if (data.title) {
+            this.set('label', data.title)
+          }
         } else {
           this.set('label', value);
         }
