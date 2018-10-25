@@ -1495,6 +1495,14 @@ making styling changes in the library */
      -moz-appearance: none;
   padding: 10px;
   line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bourbon-select-field__option[disabled="true"] {
+  pointer-events: none;
+  opacity: .4;
 }
 
 .bourbon-select-field__menu-selected {
