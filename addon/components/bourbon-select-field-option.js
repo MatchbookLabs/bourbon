@@ -4,7 +4,6 @@ import layout from '../templates/components/bourbon-select-field-option';
 
 export default Component.extend({
   layout,
-  tagName: 'option',
   classNames: ['bourbon-select-field__option'],
   classNameBindings: ['selected:bourbon-bg-concrete'],
   attributeBindings: ['selected', 'value', 'disabled', 'data-value'],
@@ -13,7 +12,6 @@ export default Component.extend({
   labelPath: null,
   valuePath: null,
   enabledPath: null,
-  selection: null,
 
   init() {
     this._super(...arguments);

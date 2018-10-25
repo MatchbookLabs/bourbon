@@ -1371,6 +1371,14 @@ making styling changes in the library */
   margin-bottom: 0;
 }
 
+.bourbon-modal__hide-footer .bourbon-modal__content {
+  margin-bottom: 0;
+}
+
+.bourbon-modal__hide-footer .bourbon-modal__footer {
+  display: none;
+}
+
 .bourbon-modal--scrollable .bourbon-modal__footer {
   margin-top: .35rem;
   padding-top: 2rem;
@@ -1458,7 +1466,7 @@ making styling changes in the library */
   border-top-width: 0 !important;
   min-width: calc(100% + 2px);
   width: calc(100% + 2px);
-  max-height: 15em;
+  max-height: 13em;
   cursor: auto;
   position: absolute;
   top: 97%;
@@ -1474,6 +1482,10 @@ making styling changes in the library */
   z-index: 11;
 }
 
+.bourbon-select-field__menu:hover {
+  cursor: pointer;
+}
+
 .bourbon-select-field__option {
   font-size: .875rem;
   background-color: #fff;
@@ -1483,11 +1495,23 @@ making styling changes in the library */
      -moz-appearance: none;
   padding: 10px;
   line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bourbon-select-field__option[disabled="true"] {
+  pointer-events: none;
+  opacity: .4;
 }
 
 .bourbon-select-field__menu-selected {
   font-size: .875rem;
   padding-top: 4px;
+  width: 94%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bourbon-select-field__menu-selected--focus {

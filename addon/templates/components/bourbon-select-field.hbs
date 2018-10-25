@@ -5,13 +5,13 @@
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
       {{#each group.items as |option|}}
-        {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList}}
+        {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
       {{/each}}
     {{/each}}
 
   {{else}}
     {{#each content as |option|}}
-      {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList}}
+      {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
     {{/each}}
   {{/if}}
 </select>
@@ -21,13 +21,13 @@
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
       {{#each group.items as |option|}}
-        {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList searchTerm=searchTerm}}
+        {{bourbon-select-field-option tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
       {{/each}}
     {{/each}}
 
   {{else}}
     {{#each content as |option|}}
-      {{bourbon-select-field-option content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=selectFieldContext role="listitem" showList=showList searchTerm=searchTerm}}
+      {{bourbon-select-field-option tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
     {{/each}}
   {{/if}}
 </div>
