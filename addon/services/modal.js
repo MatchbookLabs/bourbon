@@ -15,6 +15,7 @@ export default Service.extend({
       closeAction: null,
       title: null,
       content: null,
+      textContent: null,
       context: null,
       buttonOneTitle: null,
       buttonOneAction: null,
