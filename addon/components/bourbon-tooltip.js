@@ -13,7 +13,14 @@ export default Component.extend({
       tooltipPosition: (this.get('position') || 'top'),
       tooltipSpacing: (this.get('spacing') || 10),
       tooltipEvent: (this.get('event') || 'hover'),
-      tooltipBackgroundColor: (this.get('background') || 'default')
+      tooltipBackgroundColor: (this.get('background') || 'default'),
+      popperOptions: {
+        "modifiers": {
+          "preventOverflow": {
+            "escapeWithReference": false
+          }
+        }
+      }
     })
 
     this.set('tooltipBackgroundClass', `bourbon-tooltip__bg-${this.get('tooltipBackgroundColor')} bourbon-tooltip__${this.get('tooltipPosition')} bourbon-tooltip ember-tooltip`)

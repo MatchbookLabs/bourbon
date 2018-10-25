@@ -1,8 +1,8 @@
 {{#if hasBlock}}
-  {{#ember-tooltip tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
+  {{#ember-tooltip tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing popperOptions=popperOptions}}
     {{yield}}
   {{/ember-tooltip}}
 {{/if}}
 {{#if text}}
-  {{ember-tooltip text=text tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing}}
+  {{ember-tooltip text=text tooltipClassName=tooltipBackgroundClass side=tooltipPosition event=tooltipEvent spacing=tooltipSpacing popperOptions=popperOptions}}
 {{/if}}
