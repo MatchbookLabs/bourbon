@@ -37,7 +37,7 @@
 }
 
 .bourbon-select--active {
-  z-index: 20;
+  z-index: 30;
 }
 
 .bourbon-select-field__menu {
@@ -91,11 +91,12 @@
 
 .bourbon-select-field__menu-selected {
   @apply .bourbon-text-md;
-  padding-top: 4px;
   width: 94%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  outline: none;
 }
 
 

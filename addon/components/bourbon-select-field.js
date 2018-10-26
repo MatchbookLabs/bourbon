@@ -36,10 +36,14 @@ export default Component.extend({
   value: null,
   hasValue: computed.notEmpty('value'),
 
-  mouseDown(e) {
-    this.toggleProperty('showList');
+  focusOut(e) {
+    this.set('showList', false);
   },
 
+  focusIn() {
+    this.set('showList', true)
+  },
+  
   resetPrompt: observer('label', function () {
     if (this.get('label')) {
       this.set('searchTerm', this.get('label'))

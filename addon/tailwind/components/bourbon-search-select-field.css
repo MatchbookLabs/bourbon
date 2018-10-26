@@ -6,7 +6,7 @@
 
 .bourbon-search-select-field__input-container {
   position: relative;
-  z-index: 21;
+  z-index: 40;
 }
 
 .bourbon-search-select-field__icon {

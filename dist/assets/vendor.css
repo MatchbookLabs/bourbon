@@ -1407,7 +1407,7 @@ making styling changes in the library */
 
 .bourbon-search-select-field__input-container {
   position: relative;
-  z-index: 21;
+  z-index: 40;
 }
 
 .bourbon-search-select-field__icon {
@@ -1460,7 +1460,7 @@ making styling changes in the library */
 }
 
 .bourbon-select--active {
-  z-index: 20;
+  z-index: 30;
 }
 
 .bourbon-select-field__menu {
@@ -1513,11 +1513,12 @@ making styling changes in the library */
 
 .bourbon-select-field__menu-selected {
   font-size: .875rem;
-  padding-top: 4px;
   width: 94%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  outline: none;
 }
 
 .bourbon-select-field__menu-selected--focus {
