@@ -1400,7 +1400,9 @@ making styling changes in the library */
 }
 
 .bourbon-search-select-field {
+  position: relative;
   z-index: 1;
+  padding-right: 10px;
 }
 
 .bourbon-search-select-field__input-container {
@@ -4411,6 +4413,11 @@ button:focus {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 10px;
+}
+
+.bourbon-flex-container {
+  display: flex;
+  display: -ms-flex;
 }
 
 @media (min-width: 576px) {
