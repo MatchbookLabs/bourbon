@@ -43,7 +43,7 @@ export default Component.extend({
   focusIn() {
     this.set('showList', true)
   },
-  
+
   resetPrompt: observer('label', function () {
     if (this.get('label')) {
       this.set('searchTerm', this.get('label'))

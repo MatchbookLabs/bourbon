@@ -1407,7 +1407,7 @@ making styling changes in the library */
 
 .bourbon-search-select-field__input-container {
   position: relative;
-  z-index: 40;
+  z-index: 23;
 }
 
 .bourbon-search-select-field__icon {
@@ -1460,7 +1460,7 @@ making styling changes in the library */
 }
 
 .bourbon-select--active {
-  z-index: 30;
+  z-index: 22;
 }
 
 .bourbon-select-field__menu {

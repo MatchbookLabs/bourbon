@@ -37,7 +37,7 @@
 }
 
 .bourbon-select--active {
-  z-index: 30;
+  z-index: 22;
 }
 
 .bourbon-select-field__menu {
