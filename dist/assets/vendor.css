@@ -1407,7 +1407,7 @@ making styling changes in the library */
 
 .bourbon-search-select-field__input-container {
   position: relative;
-  z-index: 1;
+  z-index: 23;
 }
 
 .bourbon-search-select-field__icon {
@@ -1457,6 +1457,10 @@ making styling changes in the library */
 .bourbon-select-field__menu.bourbon-select--focus {
   border-color: var(--dodger-blue);
   box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
+}
+
+.bourbon-select--active {
+  z-index: 22;
 }
 
 .bourbon-select-field__menu {
@@ -1509,11 +1513,12 @@ making styling changes in the library */
 
 .bourbon-select-field__menu-selected {
   font-size: .875rem;
-  padding-top: 4px;
   width: 94%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  outline: none;
 }
 
 .bourbon-select-field__menu-selected--focus {

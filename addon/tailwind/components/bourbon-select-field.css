@@ -36,6 +36,10 @@
   box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
 }
 
+.bourbon-select--active {
+  z-index: 22;
+}
+
 .bourbon-select-field__menu {
   display: none;
   overflow-x: hidden;
@@ -87,11 +91,12 @@
 
 .bourbon-select-field__menu-selected {
   @apply .bourbon-text-md;
-  padding-top: 4px;
   width: 94%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  outline: none;
 }
 
 
