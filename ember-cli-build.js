@@ -13,6 +13,9 @@ module.exports = function(defaults) {
     },
     'ember-cli-tailwind': {
       buildTarget: 'addon'
+    },
+    'ember-cli-babel': {
+      includePolyfill: true
     }
   });
 
