@@ -13,12 +13,13 @@ module.exports = function(defaults) {
     },
     'ember-cli-tailwind': {
       buildTarget: 'addon'
+    },
+    'ember-cli-babel': {
+      includesPolyfill: true
     }
   });
 
   app.import('node_modules/polyfill-array-includes/array-includes.js');
-  app.import('node_modules/es6-symbol/implement.js');
-  app.import('node_modules/es6-symbol/is-implement.js');
 
   /*
     This build file specifies the options for the dummy test app of this
