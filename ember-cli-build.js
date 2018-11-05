@@ -15,7 +15,7 @@ module.exports = function(defaults) {
       buildTarget: 'addon'
     },
     'ember-cli-babel': {
-      includesPolyfill: true
+      includePolyfill: true
     }
   });
 
