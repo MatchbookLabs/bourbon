@@ -1410,6 +1410,19 @@ making styling changes in the library */
   z-index: 23;
 }
 
+.bourbon-search-select-field__input-container:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  border: solid var(--slate);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 4px;
+          transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 .bourbon-search-select-field__icon {
   position: absolute;
   top: 6px;
