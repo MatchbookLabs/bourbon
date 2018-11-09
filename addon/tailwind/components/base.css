@@ -15,11 +15,15 @@ making styling changes in the library */
   --concrete: #F3F3F3;
   --mercury: #E9E9E9;
   --mine-shaft: #2D2D2D;
-  --shade: rgba(0,0,0,0.4);
+  --shade: rgba(0,0,0,0.5);
 
 }
 
 *:focus {
   border-color: var(--dodger-blue);
   outline-color: var(--dodger-blue);
+}
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif
 }

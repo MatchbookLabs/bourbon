@@ -1,8 +1,10 @@
+{{#if title}}
+  <span class='bourbon-button__title'>
+    {{title}}
+  </span>
+{{/if}}
 {{#if icon}}
   {{partial (concat 'bourbon-' icon '-svg')}}
-{{/if}}
-{{#if title}}
-  {{title}}
 {{/if}}
 
 {{!-- option to use block params for buttons --}}

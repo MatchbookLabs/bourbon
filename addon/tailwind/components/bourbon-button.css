@@ -1,9 +1,11 @@
 .bourbon-button {
   padding: 0 15px;
+  line-height: 17px;
+  text-shadow: 0 2px 4px 0 var(--shade);
   @apply .bourbon-min-w-button;
   @apply .bourbon-min-h-button;
   @apply .bourbon-rounded-sm;
-  @apply .bourbon-text-sm;
+  @apply .bourbon-text-md;
   @apply .bourbon-text-center;
   @apply .bourbon-font-normal;
   @apply .bourbon-whitespace-no-wrap;
@@ -30,7 +32,6 @@
 .bourbon-button--icon-text svg {
   width: 16px;
   height: 16px;
-  @apply .bourbon-mr-2;
 }
 
 .bourbon-primary-button {
@@ -88,4 +89,19 @@
 .bourbon-disable-button {
   @apply .bourbon-cursor-default;
   @apply .bourbon-pointer-events-none;
+}
+
+.bourbon-button__title {
+  padding-right: 10px;
+}
+
+.bourbon-rounded-button {
+  height: 44px;
+  padding: 0 40px;
+  min-width: 180px;
+  border-radius: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

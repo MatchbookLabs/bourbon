@@ -1127,7 +1127,7 @@ making styling changes in the library */
   --concrete: #f3f3f3;
   --mercury: #e9e9e9;
   --mine-shaft: #2d2d2d;
-  --shade: rgba(0, 0, 0, .4);
+  --shade: rgba(0, 0, 0, .5);
 }
 
 *:focus {
@@ -1135,12 +1135,18 @@ making styling changes in the library */
   outline-color: var(--dodger-blue);
 }
 
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
 .bourbon-button {
   padding: 0 15px;
+  line-height: 17px;
+  text-shadow: 0 2px 4px 0 var(--shade);
   min-width: 85px;
   min-height: 32px;
   border-radius: .125rem;
-  font-size: .8125rem;
+  font-size: .875rem;
   text-align: center;
   font-weight: 400;
   white-space: nowrap;
@@ -1167,7 +1173,6 @@ making styling changes in the library */
 .bourbon-button--icon-text svg {
   width: 16px;
   height: 16px;
-  margin-right: .5rem;
 }
 
 .bourbon-primary-button {
@@ -1225,6 +1230,20 @@ making styling changes in the library */
 .bourbon-disable-button {
   cursor: default;
   pointer-events: none;
+}
+
+.bourbon-button__title {
+  padding-right: 10px;
+}
+
+.bourbon-rounded-button {
+  height: 44px;
+  padding: 0 40px;
+  min-width: 180px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bourbon-modal__wrapper,
