@@ -1,0 +1,35 @@
+.bourbon-demo-prompt__container {
+  height: 168px;
+  width: 737px;
+  border: 2px solid #EFEFEF;
+  border-radius: 84.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.bourbon-demo-prompt__text-container {
+  text-align: center;
+  color: #383838;
+  width: 403px;
+}
+
+.bourbon-demo-prompt__header {
+  height: 26px;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.bourbon-demo-prompt__message {
+  height: 52px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.bourbon-demo-prompt__button {
+  float: right;
+}
