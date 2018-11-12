@@ -2,17 +2,17 @@
 
   {{#collection.variant key='default'}}
     {{#freestyle-usage 'feature-overview' title='feature overview' usageTitle='Usage'}}
-      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonTitle="Setup guide" buttonIcon="new-tab"}}
+      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonLinkTo="#" buttonTitle="Setup guide" buttonIcon="new-tab" }}
     {{/freestyle-usage}}
 
     {{#freestyle-note 'feature-overview--notes'}}
-      The feature overview...
       <h4>Feature overview options</h4>
       <ul>
         <li>svg (required)</li>
         <li>header (required)</li>
         <li>message (required)</li>
         <li>buttonTitle (required)</li>
+        <li>buttonAction or buttonLinkTo (required)</li>
         <li>buttonIcon (optional)</li>
       </ul>
 
@@ -21,10 +21,8 @@
 
   {{#collection.variant key='default'}}
     {{#freestyle-usage 'feature-overview-no-icon' title='feature overview - no icon' usageTitle='Usage'}}
-      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonTitle="Setup guide"}}
+      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonTitle="Setup guide" buttonAction=(action "buttonClick")}}
     {{/freestyle-usage}}
 
   {{/collection.variant}}
-
-
 {{/freestyle-collection}}
