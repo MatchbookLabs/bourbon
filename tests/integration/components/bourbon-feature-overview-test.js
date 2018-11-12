@@ -10,17 +10,10 @@ module('Integration | Component | bourbon-feature-overview', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{bourbon-feature-overview}}`);
+    await render(hbs`{{bourbon-feature-overview svg='messaging'}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.firstChild.className, 'bourbon-feature-overview__container ember-view');
 
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-feature-overview}}
-        template block text
-      {{/bourbon-feature-overview}}
-    `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

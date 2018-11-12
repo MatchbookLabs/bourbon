@@ -14,13 +14,5 @@ module('Integration | Component | bourbon-demo-prompt', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), '');
 
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-demo-prompt}}
-        template block text
-      {{/bourbon-demo-prompt}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
