@@ -11,9 +11,6 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: true
     },
-    'ember-cli-tailwind': {
-      buildTarget: 'addon'
-    },
     'ember-cli-babel': {
       includePolyfill: true
     }
