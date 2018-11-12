@@ -1253,7 +1253,7 @@ body {
 .bourbon-demo-prompt__container {
   height: 168px;
   width: 737px;
-  border: 2px solid #efefef;
+  border: 2px solid var(--mercury);
   border-radius: 84.5px;
   display: flex;
   align-items: center;
@@ -1264,7 +1264,7 @@ body {
 
 .bourbon-demo-prompt__text-container {
   text-align: left;
-  color: #383838;
+  color: var(--black);
   width: 403px;
 }
 
@@ -1303,7 +1303,7 @@ body {
 
 .bourbon-feature-overview__text-container {
   text-align: center;
-  color: #383838;
+  color: var(--black);
 }
 
 .bourbon-feature-overview__header {

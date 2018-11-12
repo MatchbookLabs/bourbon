@@ -15,7 +15,7 @@
 
 .bourbon-feature-overview__text-container {
   text-align: center;
-  color: #383838;
+  color: var(--black);
 }
 
 .bourbon-feature-overview__header {
