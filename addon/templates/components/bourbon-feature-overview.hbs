@@ -1,0 +1,12 @@
+<div class="bourbon-feature-overview__svg-container">
+  {{partial (concat 'bourbon-' svg '-svg')}}
+</div>
+<div class="bourbon-feature-overview__text-container">
+  <div class="bourbon-feature-overview__header">
+    {{header}}
+  </div>
+  <div class="bourbon-feature-overview__message">
+    {{message}}
+  </div>
+</div>
+{{bourbon-button title=buttonTitle class='bourbon-primary-button bourbon-rounded-button' icon=buttonIcon linkTo=buttonLinkTo action=(action "buttonAction")}}

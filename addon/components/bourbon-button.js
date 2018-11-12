@@ -12,6 +12,7 @@ export default Component.extend({
   attributeBindings: ['aria-label', 'data-role', 'data-hint',  'target', 'tabindex', 'title'],
   iconTextButton: computed('icon', 'title', function() { return this.get('icon') && this.get('title')}),
   iconOnlyButton: computed('icon', 'title', 'class', function() { return this.get('icon') && !this.get('class')}),
+  textAndIconButton: computed('icon', 'title', 'class', function() { return this.get('icon') && this.get('class')}),
 
   click() {
     if (typeof this.get('action') === 'function') {

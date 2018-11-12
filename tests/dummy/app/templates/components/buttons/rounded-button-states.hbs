@@ -1,0 +1,29 @@
+{{#collection.variant key='rounded'}}
+  {{#freestyle-usage 'rounded-primary-button' title='rounded primary button' usageTitle='Usage'}}
+    {{bourbon-button title='Setup guide' class='bourbon-primary-button bourbon-rounded-button' action=(action 'buttonClick') data-hint='press the button' icon='new-tab'}}
+  {{/freestyle-usage}}
+
+  {{#freestyle-usage 'rounded-primary-full-width-button' title='primary full width button' usageTitle='Usage'}}
+    {{#bourbon-button class='bourbon-primary-button bourbon-rounded-button' action=(action 'buttonClick') data-hint='press the button' fullWidth=true}}
+      Rounded primary button full width
+    {{/bourbon-button}}
+  {{/freestyle-usage}}
+
+  <div class="FreestyleUsage-title">
+    primary button hover state
+  </div>
+  <div class="FreestyleUsage-rendered">
+    <button style="background-color: var(--emerald) !important; border-color: var(--emerald) !important;" class="bourbon-button bourbon-primary-button bourbon-rounded-button">Hover</button>
+  </div>
+
+  <div class="FreestyleUsage-title">
+    primary button pressed state
+  </div>
+  <div class="FreestyleUsage-rendered">
+    <button style="background-color: var(--fruit-salad) !important; border-color: var(--fruit-salad) !important;" class="bourbon-button bourbon-primary-button bourbon-rounded-button">Pressed</button>
+  </div>
+
+  {{#freestyle-usage 'rounded-primary-disabled-button' title='primary rounded button disabled state'}}
+    {{bourbon-button title='Disabled' class='bourbon-primary-button bourbon-disable-button bourbon-rounded-button'}}
+  {{/freestyle-usage}}
+{{/collection.variant}}
