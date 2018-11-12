@@ -7,7 +7,12 @@ export default Component.extend({
 
   actions: {
     buttonAction() {
-      this.get('buttonAction')();
+      if (typeof this.get('buttonAction') === 'function') {
+        this.get('buttonAction')();
+      } else {
+        /* eslint no-console: 0 */
+        console.warn('warning: no button action passed');
+      }
     }
   }
 });
