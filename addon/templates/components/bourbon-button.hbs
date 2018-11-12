@@ -1,11 +1,23 @@
-{{#if title}}
-  <span class='bourbon-button__title'>
-    {{title}}
-  </span>
-{{/if}}
-{{#if icon}}
-  {{partial (concat 'bourbon-' icon '-svg')}}
-{{/if}}
-
+{{#if linkTo}}
+  <a href={{linkTo}} class='bourbon-button__link'>
+    {{#if title}}
+      <span class='bourbon-button__title {{if textAndIconButton 'bourbon-pr-2'}}'>
+        {{title}}
+      </span>
+    {{/if}}
+    {{#if icon}}
+      {{partial (concat 'bourbon-' icon '-svg')}}
+    {{/if}}
+  </a>
+{{else}}
+  {{#if title}}
+    <span class='bourbon-button__title {{if textAndIconButton 'bourbon-pr-2'}}'>
+      {{title}}
+    </span>
+  {{/if}}
+  {{#if icon}}
+    {{partial (concat 'bourbon-' icon '-svg')}}
+  {{/if}}
+{{/if }}
 {{!-- option to use block params for buttons --}}
 {{yield}}

@@ -7,11 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
+  margin: 0 auto;
+  padding: 0 26px; }
 
 
 .bourbon-demo-prompt__text-container {
-  text-align: center;
+  text-align: left;
   color: #383838;
   width: 403px;
 }

@@ -1,9 +1,8 @@
 import Component from '@ember/component';
-import layout from '../templates/components/bourbon-demo-prompt';
+import layout from '../templates/components/bourbon-feature-overview';
 
 export default Component.extend({
-  tagName: 'div',
-  classNames: ['bourbon-demo-prompt__container'],
+  classNames: ['bourbon-feature-overview__container'],
   layout,
 
   actions: {

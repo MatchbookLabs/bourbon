@@ -91,8 +91,12 @@
   @apply .bourbon-pointer-events-none;
 }
 
-.bourbon-button__title {
-  padding-right: 10px;
+.bourbon-button__link {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bourbon-rounded-button {

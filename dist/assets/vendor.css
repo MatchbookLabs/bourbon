@@ -1232,8 +1232,12 @@ body {
   pointer-events: none;
 }
 
-.bourbon-button__title {
-  padding-right: 10px;
+.bourbon-button__link {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bourbon-rounded-button {
@@ -1254,10 +1258,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0 auto;
+  padding: 0 26px;
 }
 
 .bourbon-demo-prompt__text-container {
-  text-align: center;
+  text-align: left;
   color: #383838;
   width: 403px;
 }
@@ -1278,6 +1284,42 @@ body {
 
 .bourbon-demo-prompt__button {
   float: right;
+}
+
+.bourbon-feature-overview__container {
+  height: 496px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px auto;
+}
+
+.bourbon-feature-overview__img-container {
+  height: 242px;
+  margin-bottom: 35px;
+}
+
+.bourbon-feature-overview__text-container {
+  text-align: center;
+  color: #383838;
+}
+
+.bourbon-feature-overview__header {
+  height: 34px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
+  margin-bottom: 25px;
+}
+
+.bourbon-feature-overview__message {
+  height: 104px;
+  width: 420px;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 35px;
 }
 
 .bourbon-modal__wrapper,
