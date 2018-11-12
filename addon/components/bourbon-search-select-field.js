@@ -2,16 +2,13 @@ import Component from '@ember/component';
 import layout from '../templates/components/bourbon-search-select-field';
 import { A } from '@ember/array';
 
-import { computed, observer } from '@ember/object';
+import { observer } from '@ember/object';
 
 export default Component.extend({
   layout,
   classNames: ['bourbon-search-select-field'],
   classNameBindings: ['showDropdown:bourbon-z-20'],
   isOpen: false,
-  showSearchIcon: computed('showDropdown', function () {
-    return !this.get('showDropdown');
-  }),
 
   init() {
     this._super(...arguments);
