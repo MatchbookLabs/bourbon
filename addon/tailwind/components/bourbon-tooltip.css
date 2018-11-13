@@ -1,13 +1,13 @@
 .bourbon-tooltip__bg-white {
-  background-color: var(--white);
-  border: 1px solid var(--alto);
-  color: var(--black);
+  @apply .bourbon-bg-white;
+  @apply .bourbon-border-alto;
+  @apply .bourbon-text-black;
 }
 
 .bourbon-tooltip__bg-transparent {
   background-color: rgba(255, 255, 255, .4);
-  border: 1px solid var(--alto);
-  color: var(--black);
+  @apply .bourbon-border-alto;
+  @apply .bourbon-text-black;
 }
 
 .bourbon-tooltip {
@@ -15,6 +15,7 @@
   padding: .5rem .75rem;
   margin: 0 !important;
   z-index: 101;
+  border: 1px solid;
   @apply .bourbon-font-normal;
   @apply .bourbon-antialiased;
   @apply .bourbon-text-md;
@@ -24,14 +25,14 @@
 
 .theme-light .bourbon-tooltip__bg-default,
 .bourbon-tooltip__bg-default {
-  background-color: var(--tuna);
-  border: 1px solid var(--tuna);
+  @apply .bourbon-bg-tuna;
+  @apply .bourbon-border-tuna;
 }
 
 .theme-dark .bourbon-tooltip__bg-default {
-  background-color: var(--white);
-  border: 1px solid var(--white);
-  color: var(--black);
+  @apply .bourbon-bg-white;
+  @apply .bourbon-border-white;
+  @apply .bourbon-text-black;
 }
 
 .ember-tooltip-arrow {
