@@ -1,7 +1,8 @@
 .bourbon-demo-prompt__container {
   height: 168px;
   width: 737px;
-  border: 2px solid var(--mercury);
+  border: 2px solid;
+  @apply .bourbon-border-mercury;
   border-radius: 84.5px;
 
   display: flex;
@@ -13,7 +14,7 @@
 
 .bourbon-demo-prompt__text-container {
   text-align: left;
-  color: var(--black);
+  @apply .bourbon-text-black;
   width: 403px;
 }
 

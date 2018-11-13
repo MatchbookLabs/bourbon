@@ -11,9 +11,10 @@
   transform: rotateZ(0);
   min-width: 22em;
   height: 3em;
-  background: var(--white);
-  color: var(--black);
-  border: 1px solid var(--alto);
+  @apply .bourbon-bg-white;
+  @apply .bourbon-text-black;
+  border: 1px solid;
+  @apply .bourbon-border-alto;
   border-radius: 2px;
 }
 
@@ -22,7 +23,8 @@
   position: absolute;
   top: 14px;
   right: 20px;
-  border: solid var(--slate);
+  border-style: solid;
+  @apply .bourbon-border-slate;
   border-width: 0 1px 1px 0;
   display: inline-block;
   padding: 4px;
@@ -32,7 +34,7 @@
 
 .bourbon-select--active,
 .bourbon-select-field__menu.bourbon-select--focus {
-  border-color: var(--dodger-blue);
+  @apply .bourbon-border-dodger-blue;
   box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
 }
 
@@ -58,11 +60,12 @@
 
   margin: 0;
   padding: 0;
-  background: var(--white);
+  @apply .bourbon-bg-white;
   font-size: 1em;
   text-shadow: none;
   text-align: left;
-  border: 1px solid var(--alto);
+  border: 1px solid;
+  @apply .bourbon-border-alto;
   z-index: 11;
 }
 

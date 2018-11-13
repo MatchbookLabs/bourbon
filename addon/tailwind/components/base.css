@@ -20,7 +20,7 @@ making styling changes in the library */
 }
 
 *:focus {
-  border-color: var(--dodger-blue);
+  @apply .bourbon-border-dodger-blue;
   outline-color: var(--dodger-blue);
 }
 
