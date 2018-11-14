@@ -1348,6 +1348,26 @@ body {
   margin-bottom: 35px;
 }
 
+.bourbon-feature-overview__button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 450px;
+}
+
+.bourbon-feature-overview__button-container .bourbon-secondary-button .bourbon-button__title {
+  color: #2d2d2d;
+}
+
+.bourbon-feature-overview__button-container .bourbon-secondary-button svg {
+  color: #2d2d2d;
+  fill: currentColor;
+}
+
+.bourbon-feature-overview__button-container .bourbon-primary-button svg {
+  color: #fff;
+  fill: currentColor;
+}
+
 .bourbon-modal__wrapper,
 .bourbon-modal__overlay {
   display: flex;

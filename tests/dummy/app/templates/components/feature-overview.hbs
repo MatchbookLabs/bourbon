@@ -2,7 +2,7 @@
 
   {{#collection.variant key='default'}}
     {{#freestyle-usage 'feature-overview' title='feature overview' usageTitle='Usage'}}
-      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonLinkTo="#" buttonTitle="Setup guide" buttonIcon="new-tab" }}
+      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience."  buttonOneLinkTo="#" buttonOneTitle="Setup guide" buttonOneIcon="new-tab" }}
     {{/freestyle-usage}}
 
     {{#freestyle-note 'feature-overview--notes'}}
@@ -11,17 +11,32 @@
         <li>svg (required)</li>
         <li>header (required)</li>
         <li>message (required)</li>
-        <li>buttonTitle (required)</li>
-        <li>buttonAction or buttonLinkTo (required)</li>
-        <li>buttonIcon (optional)</li>
+        <li>buttonOneTitle (required)</li>
+        <li>buttonOneAction or buttonOneLinkTo (required)</li>
+        <li>buttonOneType: default is "primary" (required)</li>
+        <li>buttonOneIcon (optional)</li>
+
+        <li>buttonTwoTitle (optional)</li>
+        <li>buttonTwoAction or buttonOneLinkTo (required if there is a second button)</li>
+        <li>buttonTwoType: default is "primary" (optional)</li>
+        <li>buttonTwoIcon (optional)</li>
+
       </ul>
 
     {{/freestyle-note}}
   {{/collection.variant}}
 
-  {{#collection.variant key='default'}}
+  {{#collection.variant key='two buttons'}}
+    {{#freestyle-usage 'feature-overview-two-buttons' title='feature overview - two buttons' usageTitle='Usage'}}
+      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonOneIcon="new-tab" buttonOneType="secondary" buttonOneTitle="Setup guide" buttonOneAction=(action "buttonClick") buttonTwoLinkTo="#" buttonTwoTitle="Contact Sales" buttonTwoAction=(action "buttonClick")}}
+    {{/freestyle-usage}}
+
+  {{/collection.variant}}
+
+
+  {{#collection.variant key='no icon'}}
     {{#freestyle-usage 'feature-overview-no-icon' title='feature overview - no icon' usageTitle='Usage'}}
-      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonTitle="Setup guide" buttonAction=(action "buttonClick")}}
+      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonOneTitle="Setup guide" buttonOneAction=(action "buttonClick")}}
     {{/freestyle-usage}}
 
   {{/collection.variant}}

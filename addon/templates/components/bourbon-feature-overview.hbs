@@ -9,4 +9,10 @@
     {{message}}
   </div>
 </div>
-{{bourbon-button title=buttonTitle class='bourbon-primary-button bourbon-rounded-button' icon=buttonIcon linkTo=buttonLinkTo action=(action "buttonAction")}}
+
+<div class="bourbon-feature-overview__button-container">
+  {{bourbon-button title=buttonOneTitle class=buttonOneClass icon=buttonOneIcon linkTo=buttonOneLinkTo action=(action "buttonOneAction")}}
+  {{#if buttonTwoTitle}}
+    {{bourbon-button title=buttonTwoTitle class=buttonTwoClass icon=buttonTwoIcon linkTo=buttonTwoLinkTo action=(action "buttonTwoAction")}}
+  {{/if}}
+</div>
