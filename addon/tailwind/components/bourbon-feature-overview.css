@@ -33,3 +33,23 @@
   line-height: 26px;
   margin-bottom: 35px;
 }
+
+.bourbon-feature-overview__button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 450px;
+}
+
+.bourbon-feature-overview__button-container .bourbon-secondary-button .bourbon-button__title {
+  @apply .bourbon-text-mine-shaft;
+}
+
+.bourbon-feature-overview__button-container .bourbon-secondary-button svg {
+  @apply .bourbon-text-mine-shaft;
+  @apply .bourbon-fill-current;
+}
+
+.bourbon-feature-overview__button-container .bourbon-primary-button svg {
+  @apply .bourbon-text-white;
+  @apply .bourbon-fill-current;
+}

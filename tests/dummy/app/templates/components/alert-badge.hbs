@@ -1,0 +1,17 @@
+ {{#freestyle-collection title='alert badge' defaultKey='all' inline=false as |collection|}}
+
+  {{#collection.variant key='default'}}
+    {{#freestyle-usage 'alert-badge' title='alert badge' usageTitle='Usage'}}
+      {{bourbon-alert-badge message="This feature requires salesforce. Please contact us to activate." }}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'alert-badge--notes'}}
+      <h4>alert badge options</h4>
+      <ul>
+        <li>message (required)</li>
+      </ul>
+
+    {{/freestyle-note}}
+  {{/collection.variant}}
+
+{{/freestyle-collection}}
