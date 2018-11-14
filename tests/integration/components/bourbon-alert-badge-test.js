@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-alert-badge', function(hooks) {
     await render(hbs`{{bourbon-alert-badge}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-alert-badge}}
-        template block text
-      {{/bourbon-alert-badge}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
