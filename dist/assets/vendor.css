@@ -1334,6 +1334,7 @@ body {
   font-weight: bold;
   line-height: 34px;
   margin: 0 auto 25px;
+  width: 415px;
 }
 
 .bourbon-feature-overview__message {
