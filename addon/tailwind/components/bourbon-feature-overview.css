@@ -1,5 +1,4 @@
 .bourbon-feature-overview__container {
-	height: 496px;
   width: 500px;
   display: flex;
   justify-content: center;
@@ -19,19 +18,17 @@
 }
 
 .bourbon-feature-overview__header {
-  height: 34px;
   font-size: 28px;
   font-weight: bold;
   line-height: 34px;
-  margin-bottom: 25px;
+  margin: 0 auto 25px;
 }
 
 .bourbon-feature-overview__message {
-  height: 104px;
   width: 420px;
   font-size: 16px;
   line-height: 26px;
-  margin-bottom: 35px;
+  margin: 0 auto 35px;
 }
 
 .bourbon-feature-overview__button-container {
