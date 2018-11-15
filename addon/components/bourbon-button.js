@@ -13,13 +13,6 @@ export default Component.extend({
   iconTextButton: computed('icon', 'title', function() { return this.get('icon') && this.get('title')}),
   iconOnlyButton: computed('icon', 'title', 'class', function() { return this.get('icon') && !this.get('class')}),
   textAndIconButton: computed('icon', 'title', 'class', function() { return this.get('icon') && this.get('class')}),
-  openLinkInNewTab: computed('openNewTab', function() {
-    if (this.get('openNewTab') === true) {
-      return '_self';
-    } else {
-      return '_blank';
-    }
-  }),
 
   click() {
     if (typeof this.get('action') === 'function') {
