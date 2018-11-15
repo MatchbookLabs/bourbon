@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 60px auto;
 }
 
 .bourbon-alert-badge__svg svg {
