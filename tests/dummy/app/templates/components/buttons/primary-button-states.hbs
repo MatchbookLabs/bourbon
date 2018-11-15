@@ -4,6 +4,15 @@
   {{/freestyle-usage}}
 
   {{#freestyle-annotation}}
+    <h4>Button options</h4>
+    <ul>
+      <li>title (required)</li>
+      <li>fullWidth (optional)</li>
+      <li>action (required)</li>
+      <li>linkTo: to use if you want to open an external link (optional)</li>
+      <li>openLinkInNewTab: default is false. true will open into a new tab (optional)</li>
+    </ul>
+
     <p>The primary button is used in most situtations to indicate the primary action.</p>
     <p>All titles should be entered in sentence case.</p>
     <p>The attributes that can be added to the button currently include the following:</p>
@@ -14,6 +23,8 @@
       <li>target</li>
       <li>data-hint</li>
     </ul>
+
+
   {{/freestyle-annotation}}
 
   {{#freestyle-usage 'primary-full-width-button' title='primary full width button' usageTitle='Usage'}}

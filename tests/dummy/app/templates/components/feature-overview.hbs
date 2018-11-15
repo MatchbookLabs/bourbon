@@ -14,11 +14,13 @@
         <li>buttonOneTitle (required)</li>
         <li>buttonOneAction or buttonOneLinkTo (required)</li>
         <li>buttonOneType: default is "primary" (required)</li>
+        <li>openButtonOneLinkInNewTab: default will be false (optional)</li>
         <li>buttonOneIcon (optional)</li>
 
         <li>buttonTwoTitle (optional)</li>
         <li>buttonTwoAction or buttonOneLinkTo (required if there is a second button)</li>
         <li>buttonTwoType: default is "primary" (optional)</li>
+        <li>openButtonTwoLinkInNewTab: default will be false (optional)</li>
         <li>buttonTwoIcon (optional)</li>
 
       </ul>
@@ -28,9 +30,8 @@
 
   {{#collection.variant key='two buttons'}}
     {{#freestyle-usage 'feature-overview-two-buttons' title='feature overview - two buttons' usageTitle='Usage'}}
-      {{bourbon-feature-overview svg="messaging" header="Salesforce Messaging" message="GetFeedback for Salesforce Chat lets you seamlessly transition your customers to a survey at the end of a chat session, so you can easily collect real-time, contextual feedback to improve your customer experience." buttonOneIcon="new-tab" buttonOneType="secondary" buttonOneTitle="Setup guide" buttonOneAction=(action "buttonClick") buttonTwoLinkTo="#" buttonTwoTitle="Contact Sales" buttonTwoAction=(action "buttonClick")}}
+      {{bourbon-feature-overview svg="messaging" header="Send email from GetFeedback using Salesforce" message="Customers expect to engage with your team anywhere, anytime. With GetFeedback for Salesforce Chat, you can collect quick, contextual feedback right inside the live chat experience empowering your service teams with actionable data and modernizing your end-to-end customer experience." buttonOneIcon="new-tab" buttonOneType="secondary" buttonOneTitle="Setup guide" buttonOneAction=(action "buttonClick") buttonTwoLinkTo="https://getfeedback.com/" openButtonTwoLinkInNewTab=false buttonTwoTitle="Contact Sales" buttonTwoAction=(action "buttonClick")}}
     {{/freestyle-usage}}
-
   {{/collection.variant}}
 
 
