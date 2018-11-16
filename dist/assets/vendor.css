@@ -1140,14 +1140,16 @@ body {
 }
 
 .bourbon-alert-badge__container {
-  height: 68px;
-  width: 324px;
+  width: 55%; /* this is fallback for IE which doesn't support fit-content */
+  width: fit-content;
   border: 1px solid;
   border-color: #48ba70;
   border-radius: 121px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 60px auto;
+  padding: 8px 13px;
 }
 
 .bourbon-alert-badge__svg svg {
@@ -1156,12 +1158,11 @@ body {
 }
 
 .bourbon-alert-badge__text {
-  height: 40px;
-  width: 241px;
   color: #48ba70;
   font-family: Helvetica;
   font-size: 16px;
   line-height: 20px;
+  padding-left: 12px;
 }
 
 .bourbon-button {
@@ -1263,16 +1264,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 44px;
+  min-width: 180px;
 }
 
 .bourbon-rounded-button {
   height: 44px;
-  padding: 0 40px;
   min-width: 180px;
   border-radius: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+}
+
+.bourbon-secondary-button svg {
+  color: #2d2d2d;
+  fill: currentColor;
+}
+
+.bourbon-primary-button svg {
+  color: #fff;
+  fill: currentColor;
 }
 
 .bourbon-demo-prompt__container {
@@ -1348,20 +1361,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 450px;
-}
-
-.bourbon-feature-overview__button-container .bourbon-secondary-button .bourbon-button__title {
-  color: #2d2d2d;
-}
-
-.bourbon-feature-overview__button-container .bourbon-secondary-button svg {
-  color: #2d2d2d;
-  fill: currentColor;
-}
-
-.bourbon-feature-overview__button-container .bourbon-primary-button svg {
-  color: #fff;
-  fill: currentColor;
 }
 
 .bourbon-modal__wrapper,
