@@ -93,7 +93,7 @@
 
 .bourbon-button__link {
   text-decoration: none;
-  @apply .bourbon-text-white;
+  color: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
