@@ -1141,7 +1141,7 @@ body {
 
 .bourbon-alert-badge__container {
   height: 68px;
-  width: 324px;
+  width: 424px;
   border: 1px solid;
   border-color: #48ba70;
   border-radius: 121px;
@@ -1157,8 +1157,7 @@ body {
 }
 
 .bourbon-alert-badge__text {
-  height: 40px;
-  width: 241px;
+  width: 339px;
   color: #48ba70;
   font-family: Helvetica;
   font-size: 16px;

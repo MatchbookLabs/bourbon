@@ -1,7 +1,7 @@
 
 .bourbon-alert-badge__container {
-	height: 68px;
-  width: 324px;
+  height: 68px;
+  width: 424px;
   border: 1px solid;
   @apply .bourbon-border-fern;
   border-radius: 121px;
@@ -17,8 +17,7 @@
 }
 
 .bourbon-alert-badge__text {
-  height: 40px;
-  width: 241px;
+  width: 339px;
   @apply .bourbon-text-fern;
   font-family: Helvetica;
   font-size: 16px;
