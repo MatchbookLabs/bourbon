@@ -28,9 +28,18 @@
       {{partial 'bourbon-search-to-close-svg'}}
     {{/freestyle-usage}}
 
-    {{#freestyle-usage 'bourbon-upgrade-badge-svg' title='Upgrade badge'}}
-      {{partial 'bourbon-upgrade-badge-svg'}}
+    {{#freestyle-usage 'bourbon-svg--upgrade-badge' title='Upgrade badge'}}
+      {{bourbon-svg--upgrade-badge size='large' color='fern'}}
+      {{bourbon-svg--upgrade-badge}}
+      {{bourbon-svg--upgrade-badge size='small' color='fern'}}
     {{/freestyle-usage}}
 
+    {{#freestyle-annotation}}
+      <h4>SVG options</h4>
+      <ul>
+        <li>size: options are 'small' 18px, 'medium' 24px, 'large' 36px (optional), default is medium</li>
+        <li>color: default is black (optional)</li>
+      </ul>
+    {{/freestyle-annotation}}
   {{/section.subsection}}
 {{/freestyle-section}}
