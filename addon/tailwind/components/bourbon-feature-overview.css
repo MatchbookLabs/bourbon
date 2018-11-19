@@ -7,13 +7,8 @@
   margin: 60px auto;
 }
 
-.bourbon-feature-overview__img-container {
-  height: 242px;
-  margin-bottom: 35px;
-}
-
 .bourbon-feature-overview__svg-container {
-  height: 258px;
+  margin-bottom: 25px;
 }
 
 .bourbon-feature-overview__text-container {
