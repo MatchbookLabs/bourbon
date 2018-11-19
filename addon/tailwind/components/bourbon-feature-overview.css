@@ -12,6 +12,10 @@
   margin-bottom: 35px;
 }
 
+.bourbon-feature-overview__svg-container {
+  height: 258px;
+}
+
 .bourbon-feature-overview__text-container {
   text-align: center;
   @apply .bourbon-text-black;
