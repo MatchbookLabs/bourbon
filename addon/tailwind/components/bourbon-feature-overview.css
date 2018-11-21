@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .bourbon-feature-overview__svg-container {
@@ -20,7 +20,7 @@
   font-size: 28px;
   font-weight: bold;
   line-height: 34px;
-  margin: 0 auto 25px;
+  margin: 0 auto 10px;
   width: 415px;
 }
 
@@ -28,7 +28,7 @@
   width: 420px;
   font-size: 16px;
   line-height: 26px;
-  margin: 0 auto 35px;
+  margin: 0 auto 30px;
 }
 
 .bourbon-feature-overview__button-container {
