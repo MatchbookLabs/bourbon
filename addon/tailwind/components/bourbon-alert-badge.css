@@ -1,6 +1,7 @@
 
 .bourbon-alert-badge__container {
   width: 55%;  /* this is fallback for IE which doesn't support fit-content */
+  width: -moz-fit-content;
   width: fit-content;
   border: 1px solid;
   @apply .bourbon-border-fern;
