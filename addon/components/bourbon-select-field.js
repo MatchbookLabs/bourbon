@@ -36,7 +36,7 @@ export default Component.extend({
   value: null,
   hasValue: computed.notEmpty('value'),
 
-  focusOut(e) {
+  focusOut() {
     this.set('showList', false);
   },
 

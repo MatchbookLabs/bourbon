@@ -6,7 +6,7 @@ export default Component.extend({
   layout,
   classNames: ['bourbon-select-field__option'],
   classNameBindings: ['selected:bourbon-bg-concrete'],
-  attributeBindings: ['selected', 'value', 'disabled', 'data-value'],
+  attributeBindings: ['selected', 'value', 'disabled', 'data-value', 'index'],
   tabindex: null,
   content: null,
   labelPath: null,
@@ -28,7 +28,7 @@ export default Component.extend({
     );
   },
 
-  mouseDown() {
+  mouseDown(e) {
     this.send('updateSelection');
   },
 

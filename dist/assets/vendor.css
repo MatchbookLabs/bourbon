@@ -1649,6 +1649,11 @@ body {
   text-overflow: ellipsis;
 }
 
+.active,
+.bourbon-select-field__option:hover {
+  background-color: #f3f3f3;
+}
+
 .bourbon-select-field__option[disabled="true"] {
   pointer-events: none;
   opacity: .4;
@@ -1662,11 +1667,6 @@ body {
   text-overflow: ellipsis;
   line-height: 1.5;
   outline: none;
-}
-
-.bourbon-select-field__menu-selected--focus {
-  padding-bottom: 10px;
-  box-shadow: -1px 3px 3px -3px rgba(0, 0, 0, .5);
 }
 
 .bourbon-text-field {
