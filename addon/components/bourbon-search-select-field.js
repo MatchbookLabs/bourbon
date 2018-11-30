@@ -45,6 +45,10 @@ export default Component.extend({
     this.set("activeOption", null);
   },
 
+  focusOut() {
+    this.set("activeOption", null);
+  },
+
   keyDown(e) {
     let el = $(e.currentTarget);
     let allOptions = el.find(
@@ -71,6 +75,8 @@ export default Component.extend({
         selectedOption = allOptions[this.get("activeOption")];
         $(selectedOption).addClass("active");
       }
+
+
     } else if (e.keyCode === 38) {
       if (this.get("activeOption") === null) {
         return;
@@ -92,8 +98,7 @@ export default Component.extend({
       e.preventDefault();
       this.send("updateSearchSelection");
       this.set("showDropdown", false);
-      this.set('activeOption', null);
-      $(allOptions).removeClass("active");
+      this.set("activeOption", null);
       document.activeElement.blur();
     }
   },
@@ -105,10 +110,10 @@ export default Component.extend({
     } else {
       let searchString;
 
-      if (typeof(this.get("inputValue")) === 'string') {
-        searchString = this.get("inputValue").toLowerCase()
+      if (typeof this.get("inputValue") === "string") {
+        searchString = this.get("inputValue").toLowerCase();
       } else {
-        searchString =this.get("inputValue.label").toLowerCase()
+        searchString = this.get("inputValue.label").toLowerCase();
       }
 
       let searchList = this.get("content").filter(option =>
