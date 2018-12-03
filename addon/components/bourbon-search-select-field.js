@@ -49,8 +49,20 @@ export default Component.extend({
     this.set("activeOption", null);
   },
 
+  scrollList(item, list) {
+    let listHeight = list.height();
+    let totalHeight = (this.get("activeOption") + 1) * item.scrollHeight;
+
+    if (totalHeight >= listHeight) {
+      list.scrollTop(listHeight);
+    } else if (totalHeight <= listHeight) {
+      list.scrollTop(-listHeight);
+    }
+  },
+
   keyDown(e) {
     let el = $(e.currentTarget);
+    let list = el.find(".bourbon-select-field__menu");
     let allOptions = el.find(
       ".bourbon-select-field__menu .bourbon-select-field__option"
     );
@@ -73,10 +85,9 @@ export default Component.extend({
         }
 
         selectedOption = allOptions[this.get("activeOption")];
+        this.scrollList(selectedOption, list, numOptions);
         $(selectedOption).addClass("active");
       }
-
-
     } else if (e.keyCode === 38) {
       if (this.get("activeOption") === null) {
         return;
@@ -92,6 +103,7 @@ export default Component.extend({
 
         this.set("activeOption", this.get("activeOption") - 1);
         selectedOption = allOptions[this.get("activeOption")];
+        this.scrollList(selectedOption, list);
         $(selectedOption).addClass("active");
       }
     } else if (e.keyCode === 13) {
