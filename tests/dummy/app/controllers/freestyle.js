@@ -9,7 +9,7 @@ export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
 
-    this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose'])),
+    this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose', 'deer', 'kitten', 'puppy', 'duck', 'capybara'])),
     this.set('petObject', A([
       {
         label: 'Chompsky the only Brussels Griffon',

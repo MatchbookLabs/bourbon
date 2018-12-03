@@ -52,12 +52,8 @@ export default Component.extend({
   scrollList(item, list) {
     let listHeight = list.height();
     let totalHeight = (this.get("activeOption") + 1) * item.scrollHeight;
-
-    if (totalHeight >= listHeight) {
-      list.scrollTop(listHeight);
-    } else if (totalHeight <= listHeight) {
-      list.scrollTop(-listHeight);
-    }
+    let scrollHeight = totalHeight - listHeight;
+    list.scrollTop(scrollHeight);
   },
 
   keyDown(e) {
@@ -67,7 +63,6 @@ export default Component.extend({
       ".bourbon-select-field__menu .bourbon-select-field__option"
     );
     let numOptions = allOptions.length;
-    let selectedOption;
 
     if (e.keyCode === 40) {
       if (this.get("activeOption") !== numOptions - 1) {
@@ -84,9 +79,7 @@ export default Component.extend({
           this.set("activeOption", this.get("activeOption") + 1);
         }
 
-        selectedOption = allOptions[this.get("activeOption")];
-        this.scrollList(selectedOption, list, numOptions);
-        $(selectedOption).addClass("active");
+        this.selectOption(allOptions, list);
       }
     } else if (e.keyCode === 38) {
       if (this.get("activeOption") === null) {
@@ -102,17 +95,25 @@ export default Component.extend({
         }
 
         this.set("activeOption", this.get("activeOption") - 1);
-        selectedOption = allOptions[this.get("activeOption")];
-        this.scrollList(selectedOption, list);
-        $(selectedOption).addClass("active");
+        this.selectOption(allOptions, list);
       }
     } else if (e.keyCode === 13) {
       e.preventDefault();
-      this.send("updateSearchSelection");
-      this.set("showDropdown", false);
-      this.set("activeOption", null);
-      document.activeElement.blur();
+      this.resetOptions();
     }
+  },
+
+  selectOption(allOptions, list) {
+    let selectedOption = allOptions[this.get("activeOption")];
+    this.scrollList(selectedOption, list);
+    $(selectedOption).addClass("active");
+  },
+
+  resetOptions() {
+    this.send("updateSearchSelection");
+    this.set("showDropdown", false);
+    this.set("activeOption", null);
+    document.activeElement.blur();
   },
 
   searchResults: observer("inputValue", "content", function() {
