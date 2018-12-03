@@ -96,3 +96,7 @@ button:focus {
   display: flex;
   display: -ms-flex;
 }
+
+.Bourbon--active {
+  @apply .bourbon-bg-concrete;
+}

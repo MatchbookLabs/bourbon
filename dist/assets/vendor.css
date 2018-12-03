@@ -1649,7 +1649,6 @@ body {
   text-overflow: ellipsis;
 }
 
-.active,
 .BourbonSelectField-option:hover {
   background-color: #f3f3f3;
 }
@@ -4568,6 +4567,10 @@ button:focus {
 .bourbon-flex-container {
   display: flex;
   display: -ms-flex;
+}
+
+.Bourbon--active {
+  background-color: #f3f3f3;
 }
 
 @media (min-width: 576px) {

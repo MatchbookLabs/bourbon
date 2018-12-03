@@ -87,7 +87,6 @@
   text-overflow: ellipsis;
 }
 
-.active,
 .BourbonSelectField-option:hover {
   @apply .bourbon-bg-concrete;
 }

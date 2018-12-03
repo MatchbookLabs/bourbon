@@ -64,7 +64,7 @@ export default Component.extend({
 
     if (e.keyCode === 40) {
       if (this.get("activeOption") !== numOptions - 1) {
-        $(allOptions).removeClass("active");
+        $(allOptions).removeClass("Bourbon--active");
       }
 
       if (
@@ -89,7 +89,7 @@ export default Component.extend({
         this.get("activeOption") < numOptions
       ) {
         if (this.get("activeOption") !== numOptions) {
-          $(allOptions).removeClass("active");
+          $(allOptions).removeClass("Bourbon--active");
         }
 
         this.set("activeOption", this.get("activeOption") - 1);
@@ -104,7 +104,7 @@ export default Component.extend({
   selectOption(allOptions, list) {
     let selectedOption = allOptions[this.get("activeOption")];
     this.scrollList(selectedOption, list);
-    $(selectedOption).addClass("active");
+    $(selectedOption).addClass("Bourbon--active");
   },
 
   resetOptions() {
