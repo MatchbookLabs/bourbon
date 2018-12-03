@@ -3,7 +3,7 @@ import TextField from '@ember/component/text-field';
 import layout from '../templates/components/bourbon-text-field';
 
 export default TextField.extend({
-  classNames: ['bourbon-text-field'],
+  classNames: ['BourbonTextField'],
   classNameBindings: ['value::empty'],
   layout,
 

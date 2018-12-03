@@ -8,7 +8,7 @@ import { observer, computed } from '@ember/object';
 
 export default Component.extend({
   layout,
-  classNames: ["bourbon-search-select-field"],
+  classNames: ["BourbonSearchSelectField"],
   classNameBindings: ["showDropdown:bourbon-z-20"],
   isOpen: false,
   activeOption: null,
@@ -58,10 +58,8 @@ export default Component.extend({
 
   keyDown(e) {
     let el = $(e.currentTarget);
-    let list = el.find(".bourbon-select-field__menu");
-    let allOptions = el.find(
-      ".bourbon-select-field__menu .bourbon-select-field__option"
-    );
+    let list = el.find(".BourbonSelectField-menu ");
+    let allOptions = el.find(".BourbonSelectField-menu .BourbonSelectField-option");
     let numOptions = allOptions.length;
 
     if (e.keyCode === 40) {

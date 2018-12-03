@@ -1534,18 +1534,18 @@ body {
   right: -18px;
 }
 
-.bourbon-search-select-field {
+.BourbonSearchSelectField {
   position: relative;
   z-index: 1;
   padding-right: 10px;
 }
 
-.bourbon-search-select-field__input-container {
+.BourbonSearchSelectField-inputContainer {
   position: relative;
   z-index: 23;
 }
 
-.bourbon-search-select-field__input-container:before {
+.BourbonSearchSelectField-inputContainer:before {
   content: "";
   position: absolute;
   top: 14px;
@@ -1558,11 +1558,11 @@ body {
   -webkit-transform: rotate(45deg);
 }
 
-.bourbon-search-select-field__search-container .select {
+.BourbonSearchSelectField-searchContainer .BourbonSelectField {
   top: -42px;
 }
 
-.select {
+.BourbonSelectField {
   font-size: .875rem;
   position: relative;
   display: inline-block;
@@ -1581,7 +1581,7 @@ body {
   border-radius: 2px;
 }
 
-.select:before {
+.BourbonSelectField:before {
   content: "";
   position: absolute;
   top: 14px;
@@ -1595,17 +1595,17 @@ body {
   -webkit-transform: rotate(45deg);
 }
 
-.bourbon-select--active,
-.bourbon-select-field__menu.bourbon-select--focus {
+.BourbonSelectField--active,
+.BourbonSelectField-menu.BourbonSelect--focus {
   border-color: #2e71fc;
   box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
 }
 
-.bourbon-select--active {
+.BourbonSelectField--active {
   z-index: 22;
 }
 
-.bourbon-select-field__menu {
+.BourbonSelectField-menu {
   display: none;
   overflow-x: hidden;
   overflow-y: auto;
@@ -1631,11 +1631,11 @@ body {
   z-index: 11;
 }
 
-.bourbon-select-field__menu:hover {
+.BourbonSelectField-menu:hover {
   cursor: pointer;
 }
 
-.bourbon-select-field__option {
+.BourbonSelectField-option {
   font-size: .875rem;
   background-color: #fff;
   width: 100%;
@@ -1650,16 +1650,16 @@ body {
 }
 
 .active,
-.bourbon-select-field__option:hover {
+.BourbonSelectField-option:hover {
   background-color: #f3f3f3;
 }
 
-.bourbon-select-field__option[disabled="true"] {
+.BourbonSelectField-option[disabled="true"] {
   pointer-events: none;
   opacity: .4;
 }
 
-.bourbon-select-field__menu-selected {
+.BourbonSelectField-selected {
   font-size: .875rem;
   width: 94%;
   white-space: nowrap;
@@ -1669,7 +1669,7 @@ body {
   outline: none;
 }
 
-.bourbon-text-field {
+.BourbonTextField {
   font-size: .875rem;
   padding: 10px;
   border: 1px solid;
@@ -1679,13 +1679,13 @@ body {
   height: 3em;
 }
 
-.bourbon-text-field:focus {
+.BourbonTextField:focus {
   border-color: #2e71fc;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
   outline: none;
 }
 
-.bourbon-text-field[disabled] {
+.BourbonTextField[disabled] {
   cursor: not-allowed;
 }
 

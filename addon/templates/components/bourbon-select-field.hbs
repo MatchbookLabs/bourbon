@@ -1,4 +1,4 @@
-<select name="bourbon-select-field" class="bourbon-select-field bourbon-hidden" focusrole="listbox">
+<select name="BourbonSelectField" class="BourbonSelectField bourbon-hidden" focusrole="listbox">
   {{#if hasPrompt}}
     <option value={{prompt}}>{{prompt}}</option>
   {{/if}}
@@ -16,8 +16,8 @@
   {{/if}}
 </select>
 
-<div class="bourbon-select-field__menu-selected {{if showList 'bourbon-select-field__menu-selected--focus'}}" mousedown="focusOut" focusin="focusIn" focusout="focusOut" tabindex="0">{{label}}</div>
-<div class="bourbon-select-field__menu {{if showList 'bourbon-select--focus bourbon-block'}}">
+<div class="BourbonSelectField-selected" mousedown="focusOut" focusin="focusIn" focusout="focusOut" tabindex="0">{{label}}</div>
+<div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus bourbon-block'}}">
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
       {{#each group.items as |option index|}}

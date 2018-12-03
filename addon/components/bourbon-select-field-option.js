@@ -4,9 +4,9 @@ import layout from '../templates/components/bourbon-select-field-option';
 
 export default Component.extend({
   layout,
-  classNames: ['bourbon-select-field__option'],
-  classNameBindings: ['selected:bourbon-bg-concrete'],
-  attributeBindings: ['selected', 'value', 'disabled', 'data-value', 'index'],
+  classNames: ["BourbonSelectField-option"],
+  classNameBindings: ["selected:bourbon-bg-concrete"],
+  attributeBindings: ["selected", "value", "disabled", "data-value", "index"],
   tabindex: null,
   content: null,
   labelPath: null,
@@ -15,49 +15,49 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    let path = this.get('enabledPath')
+    let path = this.get("enabledPath");
     if (!path) {
-      return
+      return;
     }
 
-
-    return defineProperty(this, 'disabled',
-      computed(path, function () {
-        return !this.get(path)
+    return defineProperty(
+      this,
+      "disabled",
+      computed(path, function() {
+        return !this.get(path);
       })
     );
   },
 
   mouseDown(e) {
-    this.send('updateSelection');
+    this.send("updateSelection");
   },
 
-  label: computed('content', 'labelPath', function() {
-    let path = this.get('labelPath');
+  label: computed("content", "labelPath", function() {
+    let path = this.get("labelPath");
     if (path) {
       return this.get(path);
     } else {
-      return this.get('content');
+      return this.get("content");
     }
   }),
 
-  value: computed('content', 'valuePath', function() {
-    let path = this.get('valuePath');
+  value: computed("content", "valuePath", function() {
+    let path = this.get("valuePath");
     if (path) {
       return this.get(path);
     } else {
-      return this.get('content')
+      return this.get("content");
     }
   }),
 
-  selected: computed('content', 'selection', function() {
-    return this.get('content') === this.get('selection');
+  selected: computed("content", "selection", function() {
+    return this.get("content") === this.get("selection");
   }),
 
   actions: {
     updateSelection() {
-      this.set('selection', this.get('content'));
+      this.set("selection", this.get("content"));
     }
   }
-
 });
