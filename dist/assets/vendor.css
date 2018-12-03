@@ -1166,7 +1166,7 @@ body {
   padding-left: 12px;
 }
 
-.bourbon-button {
+.BourbonButton {
   padding: 0 15px;
   line-height: 17px;
   text-shadow: 0 2px 4px 0 var(--shade);
@@ -1185,81 +1185,81 @@ body {
   border-color: transparent;
 }
 
-.bourbon-button--icon-only {
+.BourbonButton-icon {
   padding: .5rem;
   min-width: 45px;
   min-height: 45px;
   border-color: #e9e9e9;
 }
 
-.bourbon-button--icon-only svg {
+.BourbonButton-icon svg {
   width: 20px;
   height: 20px;
 }
 
-.bourbon-button--icon-text svg {
+.BourbonButton-iconText svg {
   width: 16px;
   height: 16px;
 }
 
-.bourbon-primary-button {
+.BourbonButton--primary {
   color: #fff;
   background-color: #48ba70;
   border-color: #48ba70;
 }
 
-.bourbon-delete-button {
+.BourbonButton--delete {
   color: #fff;
   background-color: #e2443e;
   border-color: #e2443e;
 }
 
-.bourbon-primary-button:hover {
+.BourbonButton--primary:hover {
   background-color: #4cce6f;
   border-color: #4cce6f;
 }
 
-.bourbon-primary-button:active,
-.bourbon-primary-button:focus {
+.BourbonButton--primary:active,
+.BourbonButton--primary:focus {
   background-color: #4ca465;
   border-color: #4ca465;
   box-shadow: inset 0 0 0 1px var(--white);
   outline: none;
 }
 
-.bourbon-secondary-button {
+.BourbonButton--secondary {
   color: #2d2d2d;
   background-color: #fafafa;
   border-color: #e9e9e9;
 }
 
-.bourbon-secondary-button:hover {
+.BourbonButton--secondary:hover {
   background-color: #fff;
 }
 
-.bourbon-secondary-button:active,
-.bourbon-secondary-button:focus {
+.BourbonButton--secondary:active,
+.BourbonButton--secondary:focus {
   background-color: #f3f3f3;
   border-color: #f3f3f3;
   box-shadow: inset 0 0 0 1px var(--dodger-blue);
   outline: none;
 }
 
-.bourbon-primary-button.bourbon-disable-button {
+.BourbonButton--primary.BourbonButton--disable {
   background-color: #e9e9e9;
   border-color: #e9e9e9;
 }
 
-.bourbon-secondary-button.bourbon-disable-button {
+.BourbonButton--secondary.BourbonButton--disable {
   opacity: .5;
 }
 
-.bourbon-disable-button {
+.BourbonButton--disable {
   cursor: default;
   pointer-events: none;
 }
 
-.bourbon-button__link {
+.BourbonButton-link {
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -1269,7 +1269,7 @@ body {
   min-width: 180px;
 }
 
-.bourbon-rounded-button {
+.BourbonButton--rounded {
   height: 44px;
   min-width: 180px;
   border-radius: 22px;
@@ -1279,12 +1279,12 @@ body {
   padding: 0;
 }
 
-.bourbon-secondary-button svg {
+.BourbonButton--secondary svg {
   color: #2d2d2d;
   fill: currentColor;
 }
 
-.bourbon-primary-button svg {
+.BourbonButton--primary svg {
   color: #fff;
   fill: currentColor;
 }

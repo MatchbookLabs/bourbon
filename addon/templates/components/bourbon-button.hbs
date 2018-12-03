@@ -1,7 +1,7 @@
 {{#if linkTo}}
-  <a href={{linkTo}} class='bourbon-button__link' target={{if openLinkInNewTab '_blank' '_self'}} >
+  <a href={{linkTo}} class='BourbonButton-link' target={{if openLinkInNewTab '_blank' '_self'}} >
     {{#if title}}
-      <span class='bourbon-button__title {{if textAndIconButton 'bourbon-pr-2'}}'>
+      <span class='BourbonButton-title {{if textAndIconButton 'bourbon-pr-2'}}'>
         {{title}}
       </span>
     {{/if}}
@@ -11,7 +11,7 @@
   </a>
 {{else}}
   {{#if title}}
-    <span class='bourbon-button__title {{if textAndIconButton 'bourbon-pr-2'}}'>
+    <span class='BourbonButton-title {{if textAndIconButton 'bourbon-pr-2'}}'>
       {{title}}
     </span>
   {{/if}}

@@ -6,17 +6,17 @@ export default Component.extend({
   classNames: ['bourbon-feature-overview__container'],
   buttonOneClass: computed('buttonOneType', function () {
     if (this.get('buttonOneType')) {
-      return `bourbon-${this.get('buttonOneType')}-button bourbon-rounded-button`;
+      return `BourbonButton--${this.get("buttonOneType")} BourbonButton--rounded`;
     } else {
-      return 'bourbon-primary-button bourbon-rounded-button'
+      return 'BourbonButton--primary BourbonButton--rounded'
     }
   }),
 
   buttonTwoClass: computed('buttonTwoType', function () {
     if (this.get('buttonTwoType')) {
-      return `bourbon-${this.get('buttonTwoType')}-button bourbon-rounded-button`;
+      return `BourbonButton--${this.get("buttonTwoType")} BourbonButton--rounded`;
     } else {
-      return 'bourbon-primary-button bourbon-rounded-button'
+      return 'BourbonButton--primary BourbonButton--rounded'
     }
   }),
 

@@ -8,7 +8,7 @@ module('Integration | Component | bourbon-button', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`
-      {{bourbon-button title="hello world" class="bourbon-secondary-button"}}
+      {{bourbon-button title="hello world" class="BourbonButton--secondary"}}
     `);
 
     assert.equal(this.element.textContent.trim(), 'hello world');
