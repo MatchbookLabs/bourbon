@@ -21,7 +21,6 @@ export default TextField.extend({
   },
 
   focusIn(e) {
-    this.set('value', '');
     this._super(...arguments);
 
     if (this.get('actionOnFocusIn')) {
@@ -31,7 +30,6 @@ export default TextField.extend({
 
   focusOut(e) {
     this._super(...arguments);
-
     if (this.get('onFocusOutOrEnter')) {
       this.get('onFocusOutOrEnter')(this.get('value'))
     }

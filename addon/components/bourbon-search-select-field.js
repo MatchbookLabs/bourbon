@@ -164,12 +164,12 @@ export default Component.extend({
         let path = this.get("_valuePath");
         if (path) {
           this.set(
-            "value",
+            "currentValue",
             (typeof value.get === "function" ? value.get(path) : void 0) ||
               value[path]
           );
         } else {
-          this.set("value", value);
+          this.set("currentValue", value);
         }
       }
       this.set("activeOption", null);
