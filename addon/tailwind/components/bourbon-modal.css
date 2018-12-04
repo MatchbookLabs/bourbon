@@ -16,14 +16,6 @@
   @apply .bourbon-bg-shade;
 }
 
-.BourbonModal--fixed {
-  @apply .bourbon-fixed;
-  @apply .bourbon-pin-t;
-  @apply .bourbon-pin-r;
-  @apply .bourbon-pin-b;
-  @apply .bourbon-pin-l;
-}
-
 .BourbonModal {
   top: 40%;
   width: 550px;
@@ -37,6 +29,14 @@
   @apply .bourbon-border;
   @apply .bourbon-border-solid;
   @apply .bourbon-border-mercury;
+}
+
+.BourbonModal--fixed {
+  @apply .bourbon-fixed;
+  @apply .bourbon-pin-t;
+  @apply .bourbon-pin-r;
+  @apply .bourbon-pin-b;
+  @apply .bourbon-pin-l;
 }
 
 .BourbonModal--large {
@@ -94,13 +94,13 @@
   outline: none;
 }
 
+.BourbonModal-closeButton:hover {
+  @apply .bourbon-cursor-pointer;
+}
+
 .BourbonModal-closeButton svg {
   @apply .bourbon-text-grey-light;
   @apply .bourbon-stroke-current;
-}
-
-.BourbonModal-closeButton:hover {
-  @apply .bourbon-cursor-pointer;
 }
 
 .BourbonModal-footer {
@@ -162,14 +162,14 @@
   padding-left: 30px;
 }
 
-.BourbonModal_noPadding{
+.BourbonModal--noPadding {
   @apply .bourbon-p-0;
   @apply .bourbon-m-0;
   border: none;
   width: auto;
 }
 
-.BourbonModal__noPadding .BourbonModal-closeButton {
+.BourbonModal--noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
 }

@@ -40,11 +40,6 @@
   @apply .bourbon-border-fern;
 }
 
-.BourbonButton--delete {
-  @apply .bourbon-text-white;
-  @apply .bourbon-bg-red;
-  @apply .bourbon-border-red;
-}
 
 .BourbonButton--primary:hover {
   @apply .bourbon-bg-emerald;
@@ -77,16 +72,21 @@
   outline: none;
 }
 
-.BourbonButton--primary.BourbonButton--disable {
+.BourbonButton--primary.BourbonButton--disabled {
   @apply .bourbon-bg-mercury;
   @apply .bourbon-border-mercury;
 }
 
-.BourbonButton--secondary.BourbonButton--disable {
+.BourbonButton--secondary.BourbonButton--disabled {
   @apply .bourbon-opacity-50;
 }
 
-.BourbonButton--disable {
+.BourbonButton--delete {
+  @apply .bourbon-text-white;
+  @apply .bourbon-bg-red;
+  @apply .bourbon-border-red;
+}
+.BourbonButton--disabled {
   @apply .bourbon-cursor-default;
   @apply .bourbon-pointer-events-none;
 }
