@@ -1,5 +1,5 @@
 
-.bourbon-alert-badge__container {
+.BourbonAlertBadge-container {
   width: 55%;  /* this is fallback for IE which doesn't support fit-content */
   width: -moz-fit-content;
   width: fit-content;
@@ -13,12 +13,12 @@
   padding: 8px 13px;
 }
 
-.bourbon-alert-badge__svg svg {
+.BourbonAlertBadge-svg svg {
   @apply .bourbon-text-fern;
   @apply .bourbon-fill-current;
 }
 
-.bourbon-alert-badge__text {
+.BourbonAlertBadge-text {
   @apply .bourbon-text-fern;
   font-family: Helvetica;
   font-size: 16px;
