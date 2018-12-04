@@ -1,15 +1,15 @@
-.bourbon-search-select-field {
+.BourbonSearchSelectField {
   position: relative;
   z-index: 1;
   padding-right: 10px;
 }
 
-.bourbon-search-select-field__input-container {
+.BourbonSearchSelectField-inputContainer {
   position: relative;
   z-index: 23;
 }
 
-.bourbon-search-select-field__input-container:before {
+.BourbonSearchSelectField-inputContainer:before {
   content: "";
   position: absolute;
   top: 14px;
@@ -22,6 +22,6 @@
   -webkit-transform: rotate(45deg);
 }
 
-.bourbon-search-select-field__search-container .select {
+.BourbonSearchSelectField-searchContainer .BourbonSelectField {
   top: -42px;
 }

@@ -1,4 +1,4 @@
-.bourbon-text-field {
+.BourbonTextField {
   @apply .bourbon-text-md;
   padding: 10px;
 
@@ -9,12 +9,12 @@
   height: 3em;
 }
 
-.bourbon-text-field:focus {
+.BourbonTextField:focus {
   @apply .bourbon-border-dodger-blue;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   outline: none;
 }
 
-.bourbon-text-field[disabled] {
+.BourbonTextField[disabled] {
   cursor: not-allowed;
 }
