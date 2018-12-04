@@ -1289,7 +1289,7 @@ body {
   fill: currentColor;
 }
 
-.bourbon-demo-prompt__container {
+.BourbonDemoPrompt-container {
   min-height: 168px;
   width: 737px;
   border: 2px solid;
@@ -1302,25 +1302,25 @@ body {
   padding: 0 26px;
 }
 
-.bourbon-demo-prompt__text-container {
+.BourbonDemoPrompt-textContainer {
   text-align: left;
   color: #000;
   width: 403px;
 }
 
-.bourbon-demo-prompt__header {
+.BourbonDemoPrompt-header {
   font-family: Helvetica;
   font-size: 16px;
   font-weight: bold;
   line-height: 26px;
 }
 
-.bourbon-demo-prompt__message {
+.BourbonDemoPrompt-message {
   font-size: 16px;
   line-height: 26px;
 }
 
-.bourbon-demo-prompt__button {
+.BourbonDemoPrompt-button {
   float: right;
 }
 
