@@ -1,16 +1,4 @@
-.bourbon-tooltip__bg-white {
-  @apply .bourbon-bg-white;
-  @apply .bourbon-border-alto;
-  @apply .bourbon-text-black;
-}
-
-.bourbon-tooltip__bg-transparent {
-  background-color: rgba(255, 255, 255, .4);
-  @apply .bourbon-border-alto;
-  @apply .bourbon-text-black;
-}
-
-.bourbon-tooltip {
+.BourbonTooltip {
   text-shadow:  none;
   padding: .5rem .75rem;
   margin: 0 !important;
@@ -23,18 +11,25 @@
   box-shadow: 1px 0 3px 2px var(--shade);
 }
 
-.theme-light .bourbon-tooltip__bg-default,
-.bourbon-tooltip__bg-default {
+.BourbonTooltip--light {
+  @apply .bourbon-bg-white;
+  @apply .bourbon-border-alto;
+  @apply .bourbon-text-black;
+}
+
+.theme-light .BourbonTooltip--dark,
+.BourbonTooltip--dark {
   @apply .bourbon-bg-tuna;
   @apply .bourbon-border-tuna;
 }
 
-.theme-dark .bourbon-tooltip__bg-default {
+.theme-dark .BourbonTooltip--dark {
   @apply .bourbon-bg-white;
   @apply .bourbon-border-white;
   @apply .bourbon-text-black;
 }
 
+/* overwriting ember-tooltip css */
 .ember-tooltip-arrow {
   display: none;
 }

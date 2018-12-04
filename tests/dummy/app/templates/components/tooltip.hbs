@@ -43,7 +43,7 @@
    {{#collection.variant key='content'}}
     {{#freestyle-usage 'tooltip-content' title='popver: passing in a component or partial'}}
       {{bourbon-button title='show partial' class='BourbonButton--primary'}}
-      {{#bourbon-tooltip background='white'}}
+      {{#bourbon-tooltip background='light'}}
         {{partial 'test-popover-content'}}
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
@@ -76,22 +76,15 @@
    {{#collection.variant key='background'}}
     {{#freestyle-usage 'tooltip-background' title='default background'}}
       {{bourbon-button title='default tooltip' class='BourbonButton--primary' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip background='default'}}
+      {{#bourbon-tooltip}}
         I am a slate tooltip
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
 
     {{#freestyle-usage 'tooltip-background-white' title='white background'}}
       {{bourbon-button title='White tooltip' class='BourbonButton--primary' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip background='white'}}
+      {{#bourbon-tooltip background='light'}}
          I am a white tooltip
-      {{/bourbon-tooltip}}
-    {{/freestyle-usage}}
-
-    {{#freestyle-usage 'tooltip-background-transparent' title='transparent background'}}
-      {{bourbon-button title='Transparent tooltip' class='BourbonButton--primary' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip background='transparent' position='right'}}
-         I am a transparent tooltip
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
 
@@ -105,28 +98,28 @@
    {{#collection.variant key='position'}}
     {{#freestyle-usage 'tooltip-position' title='position top'}}
       {{bourbon-button title='Default tooltip position' class='BourbonButton--primary'action=(action 'buttonClick')}}
-      {{#bourbon-tooltip position='top' background='white'}}
+      {{#bourbon-tooltip position='top' background='light'}}
          I should be on the top
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
 
     {{#freestyle-usage 'tooltip-position-right' title='position right'}}
       {{bourbon-button title='Right tooltip position' class='BourbonButton--primary' action=(action 'buttonClick')}}
-      {{#bourbon-tooltip position='right' background='white'}}
+      {{#bourbon-tooltip position='right' background='light'}}
          I should be on the right hand side
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
 
     {{#freestyle-usage 'tooltip-position-left' title='position left'}}
       {{bourbon-button title='Left tooltip position' class='BourbonButton--primary'action=(action 'buttonClick')}}
-      {{#bourbon-tooltip position='left' background='white'}}
+      {{#bourbon-tooltip position='left' background='light'}}
          I should be on the left hand side
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}
 
     {{#freestyle-usage 'tooltip-position-bottom' title='position bottom'}}
       {{bourbon-button title='Bottom tooltip position' class='BourbonButton--primary'action=(action 'buttonClick')}}
-      {{#bourbon-tooltip position='bottom' background='white'}}
+      {{#bourbon-tooltip position='bottom' background='light'}}
          I should be on the bottom
       {{/bourbon-tooltip}}
     {{/freestyle-usage}}

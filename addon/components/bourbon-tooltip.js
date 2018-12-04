@@ -9,20 +9,20 @@ export default Component.extend({
     this._super(...arguments);
 
     this.setProperties({
-      tooltipClass: 'bourbon-tooltip__bg-default',
-      tooltipPosition: (this.get('position') || 'top'),
-      tooltipSpacing: (this.get('spacing') || 10),
-      tooltipEvent: (this.get('event') || 'hover'),
-      tooltipBackgroundColor: (this.get('background') || 'default'),
+      tooltipClass: "BourbonTooltip--dark",
+      tooltipPosition: this.get("position") || "top",
+      tooltipSpacing: this.get("spacing") || 10,
+      tooltipEvent: this.get("event") || "hover",
+      tooltipBackgroundColor: this.get("background") || "dark",
       popperOptions: {
-        "modifiers": {
-          "preventOverflow": {
-            "escapeWithReference": false
+        modifiers: {
+          preventOverflow: {
+            escapeWithReference: false
           }
         }
       }
-    })
+    });
 
-    this.set('tooltipBackgroundClass', `bourbon-tooltip__bg-${this.get('tooltipBackgroundColor')} bourbon-tooltip__${this.get('tooltipPosition')} bourbon-tooltip ember-tooltip`)
+    this.set("tooltipBackgroundClass", `BourbonTooltip--${this.get("tooltipBackgroundColor")} BourbonTooltip--${this.get("tooltipPosition")} BourbonTooltip ember-tooltip`);
   }
 });
