@@ -1,4 +1,4 @@
-.bourbon-feature-overview__container {
+.BourbonFeatureOverview-container {
   width: 500px;
   display: flex;
   justify-content: center;
@@ -7,16 +7,16 @@
   margin: 30px auto;
 }
 
-.bourbon-feature-overview__svg-container {
+.BourbonFeatureOverview-svgContainer {
   margin-bottom: 25px;
 }
 
-.bourbon-feature-overview__text-container {
+.BourbonFeatureOverview-textContainer {
   text-align: center;
   @apply .bourbon-text-black;
 }
 
-.bourbon-feature-overview__header {
+.BourbonFeatureOverview-header {
   font-size: 28px;
   font-weight: bold;
   line-height: 34px;
@@ -24,14 +24,14 @@
   width: 415px;
 }
 
-.bourbon-feature-overview__message {
+.BourbonFeatureOverview-message {
   width: 420px;
   font-size: 16px;
   line-height: 26px;
   margin: 0 auto 30px;
 }
 
-.bourbon-feature-overview__button-container {
+.BourbonFeatureOverview-buttonContainer {
   display: flex;
   justify-content: space-evenly;
   width: 450px;

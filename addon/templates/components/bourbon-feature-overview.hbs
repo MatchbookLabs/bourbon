@@ -1,16 +1,16 @@
-<div class="bourbon-feature-overview__svg-container">
+<div class="BourbonFeatureOverview-svgContainer">
   {{partial (concat 'bourbon-' svg '-svg')}}
 </div>
-<div class="bourbon-feature-overview__text-container">
-  <div class="bourbon-feature-overview__header">
+<div class="BourbonFeatureOverview-textContainer">
+  <div class="BourbonFeatureOverview-header">
     {{header}}
   </div>
-  <div class="bourbon-feature-overview__message">
+  <div class="BourbonFeatureOverview-message">
     {{message}}
   </div>
 </div>
 
-<div class="bourbon-feature-overview__button-container">
+<div class="BourbonFeatureOverview-buttonContainer">
   {{bourbon-button title=buttonOneTitle class=buttonOneClass icon=buttonOneIcon linkTo=buttonOneLinkTo openLinkInNewTab=openButtonOneLinkInNewTab action=(action "buttonOneAction")}}
   {{#if buttonTwoTitle}}
     {{bourbon-button title=buttonTwoTitle class=buttonTwoClass icon=buttonTwoIcon linkTo=buttonTwoLinkTo openLinkInNewTab=openButtonTwoLinkInNewTab action=(action "buttonTwoAction")}}
