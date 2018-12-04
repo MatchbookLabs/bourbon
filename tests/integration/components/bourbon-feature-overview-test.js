@@ -12,7 +12,7 @@ module('Integration | Component | bourbon-feature-overview', function(hooks) {
 
     await render(hbs`{{bourbon-feature-overview svg='messaging'}}`);
 
-    assert.equal(this.element.firstChild.className, 'bourbon-feature-overview__container ember-view');
+    assert.equal(this.element.firstChild.className, "BourbonFeatureOverview-container ember-view");
 
 
   });
