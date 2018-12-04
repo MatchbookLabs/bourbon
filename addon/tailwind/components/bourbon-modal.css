@@ -1,5 +1,5 @@
-.bourbon-modal__wrapper,
-.bourbon-modal__overlay {
+.BourbonModal-wrapper,
+.BourbonModal-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,12 @@
   @apply .bourbon-pin-l;
 }
 
-.bourbon-modal__fixed {
+.BourbonModal-overlay {
+  position: fixed;
+  @apply .bourbon-bg-shade;
+}
+
+.BourbonModal--fixed {
   @apply .bourbon-fixed;
   @apply .bourbon-pin-t;
   @apply .bourbon-pin-r;
@@ -19,12 +24,7 @@
   @apply .bourbon-pin-l;
 }
 
-.bourbon-modal__overlay {
-  position: fixed;
-  @apply .bourbon-bg-shade;
-}
-
-.bourbon-modal {
+.BourbonModal {
   top: 40%;
   width: 550px;
   padding: 35px;
@@ -39,11 +39,11 @@
   @apply .bourbon-border-mercury;
 }
 
-.bourbon-modal--large {
+.BourbonModal--large {
   width: 850px;
 }
 
-.bourbon-modal__title {
+.BourbonModal-title {
   text-align: center;
   @apply .bourbon-text-xl;
   @apply .bourbon-font-semibold;
@@ -53,35 +53,35 @@
   @apply .bourbon-mb-8;
 }
 
-.bourbon-modal--confirmation .bourbon-modal__title {
+.BourbonModal--confirmation .BourbonModal-title {
   text-align: left;
   @apply .bourbon-text-lg;
   @apply .bourbon-mb-4;
 }
 
-.bourbon-modal__dialog {
+.BourbonModal-dialog {
   text-align: left;
   @apply .bourbon-text-base;
   @apply .bourbon-mb-9;
 }
 
-.bourbon-modal__content {
+.BourbonModal-content {
   text-align: center;
 
   @apply .bourbon-leading-normal;
   @apply .bourbon-mb-6;
 }
 
-.bourbon-modal__description {
+.BourbonModal-description {
   @apply .bourbon-text-md;
   @apply .bourbon-text-slate;
 }
 
-.bourbon-modal__header {
+.BourbonModal-header {
   position: relative;
 }
 
-.bourbon-modal__close-button {
+.BourbonModal-closeButton {
   position: absolute;
   right: -26px;
   top: -31px;
@@ -90,20 +90,20 @@
   padding: 0;
 }
 
-.bourbon-modal__close-button:focus {
+.BourbonModal-closeButton:focus {
   outline: none;
 }
 
-.bourbon-modal__close-button svg {
+.BourbonModal-closeButton svg {
   @apply .bourbon-text-grey-light;
   @apply .bourbon-stroke-current;
 }
 
-.bourbon-modal__close-button:hover {
+.BourbonModal-closeButton:hover {
   @apply .bourbon-cursor-pointer;
 }
 
-.bourbon-modal__footer {
+.BourbonModal-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,50 +111,50 @@
   @apply .bourbon-mt-6;
 }
 
-.bourbon-modal__link {
+.BourbonModal-link {
   @apply .bourbon-text-sm;
   @apply .bourbon-no-underline;
   @apply .bourbon-text-slate;
   @apply .bourbon-w-full;
 }
 
-.bourbon-modal__button-wrapper {
+.BourbonModal-buttonWrapper {
   display: flex;
   justify-content: flex-end;
   @apply .bourbon-w-full;
 }
 
-.bourbon-modal__content-area {
+.BourbonModal-contentArea {
   padding: 20px 0;
 }
 
 /* scrollable modal styles */
-.bourbon-modal--scrollable {
+.BourbonModal--scrollable {
   padding: 35px 0;
   display: grid;
   grid-template-rows: 60px auto 60px;
   height: 600px;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__close-button {
+.BourbonModal--scrollable .BourbonModal-closeButton {
   right: 8px;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__content {
+.BourbonModal--scrollable .BourbonModal-content {
   overflow-y: auto;
   padding: 0 35px;
   margin-bottom: 0;
 }
 
-.bourbon-modal__hide-footer .bourbon-modal__content {
+.BourbonModal--hideFooter .BourbonModal-content {
   margin-bottom: 0;
 }
 
-.bourbon-modal__hide-footer .bourbon-modal__footer {
+.BourbonModal--hideFooter .BourbonModal-footer {
   display: none;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__footer {
+.BourbonModal--scrollable .BourbonModal-footer {
   @apply .bourbon-mt-1;
   @apply .bourbon-pt-8;
   box-shadow: 0px -3px 6px -2px rgba(0, 0, 0, .1);
@@ -162,14 +162,14 @@
   padding-left: 30px;
 }
 
-.bourbon-modal__no-padding {
+.BourbonModal_noPadding{
   @apply .bourbon-p-0;
   @apply .bourbon-m-0;
   border: none;
   width: auto;
 }
 
-.bourbon-modal__no-padding .bourbon-modal__close-button {
+.BourbonModal__noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
 }

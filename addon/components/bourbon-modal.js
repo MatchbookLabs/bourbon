@@ -6,38 +6,48 @@ import { computed } from '@ember/object';
 
 
 export default Component.extend({
-  modalService: service('modal'),
-  classNames: ['bourbon-modal__wrapper'],
-  classNameBindings: ['modalService.showModalState:bourbon-fixed'],
+  modalService: service("modal"),
+  classNames: ["BourbonModal-wrapper"],
+  classNameBindings: ["modalService.showModalState:bourbon-fixed"],
 
-  buttonOneClass: computed('modalService.buttonOneType', function () {
+  buttonOneClass: computed("modalService.buttonOneType", function() {
     return `BourbonButton--${this.get("modalService.buttonOneType")}`;
   }),
 
-  buttonTwoClass: computed('modalService.buttonTwoType', function () {
-    return `BourbonButton--${this.get("modalService.buttonTwoType")} bourbon-mr-3`;
+  buttonTwoClass: computed("modalService.buttonTwoType", function() {
+    return `BourbonButton--${this.get(
+      "modalService.buttonTwoType"
+    )} bourbon-mr-3`;
   }),
 
   init() {
     this._super(...arguments);
 
     //  allow the user to escape the modal using the ESC key
-    document.addEventListener('keydown', function (e) {
-      if ((this.get('modalService.showModalState') === true) && e.keyCode === 27 && (this.get('modalService.dismissable') === true)) {
-        this._closeModalActions();
-      }
-    }.bind(this), true);
+    document.addEventListener(
+      "keydown",
+      function(e) {
+        if (
+          this.get("modalService.showModalState") === true &&
+          e.keyCode === 27 &&
+          this.get("modalService.dismissable") === true
+        ) {
+          this._closeModalActions();
+        }
+      }.bind(this),
+      true
+    );
   },
 
   layout,
 
   _closeModalActions() {
-    if (typeof this.get('modalService.closeAction') === 'function') {
-      this.get('modalService.closeAction')();
+    if (typeof this.get("modalService.closeAction") === "function") {
+      this.get("modalService.closeAction")();
     }
 
-    if (this.get('modalService.dismissable') === true) {
-      this.get('modalService').closeBourbonModal();
+    if (this.get("modalService.dismissable") === true) {
+      this.get("modalService").closeBourbonModal();
     }
   },
 
@@ -48,35 +58,39 @@ export default Component.extend({
 
     buttonOneAction() {
       // buttonAction might change the options so need to set a new variable
-      const originalButtonOneDontClose = this.get('modalService.buttonOneDontClose');
+      const originalButtonOneDontClose = this.get(
+        "modalService.buttonOneDontClose"
+      );
 
-      if (this.get('modalService.buttonOneAction')) {
-        this.get('modalService.buttonOneAction')();
+      if (this.get("modalService.buttonOneAction")) {
+        this.get("modalService.buttonOneAction")();
       }
 
       if (!originalButtonOneDontClose) {
-        this.get('modalService').closeBourbonModal();
+        this.get("modalService").closeBourbonModal();
       }
     },
 
     buttonTwoAction() {
       // buttonAction might change the options so need to set a new variable
-      const originalButtonTwoDontClose = this.get('modalService.buttonTwoDontClose');
+      const originalButtonTwoDontClose = this.get(
+        "modalService.buttonTwoDontClose"
+      );
 
-      if (this.get('modalService.buttonTwoAction')) {
-        this.get('modalService.buttonTwoAction')();
+      if (this.get("modalService.buttonTwoAction")) {
+        this.get("modalService.buttonTwoAction")();
       }
 
       if (!originalButtonTwoDontClose) {
-        this.get('modalService').closeBourbonModal();
+        this.get("modalService").closeBourbonModal();
       }
     },
 
     copyButtonAction() {
-      if (this.get('modalService.copyButtonAction')) {
-        this.get('modalService.copyButtonAction')();
+      if (this.get("modalService.copyButtonAction")) {
+        this.get("modalService.copyButtonAction")();
       }
-      this.get('modalService').closeBourbonModal();
+      this.get("modalService").closeBourbonModal();
     }
   }
 });

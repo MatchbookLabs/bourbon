@@ -1363,8 +1363,8 @@ body {
   width: 450px;
 }
 
-.bourbon-modal__wrapper,
-.bourbon-modal__overlay {
+.BourbonModal-wrapper,
+.BourbonModal-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1375,7 +1375,12 @@ body {
   left: 0;
 }
 
-.bourbon-modal__fixed {
+.BourbonModal-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.BourbonModal--fixed {
   position: fixed;
   top: 0;
   right: 0;
@@ -1383,12 +1388,7 @@ body {
   left: 0;
 }
 
-.bourbon-modal__overlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, .4);
-}
-
-.bourbon-modal {
+.BourbonModal {
   top: 40%;
   width: 550px;
   padding: 35px;
@@ -1401,11 +1401,11 @@ body {
   border-color: #e9e9e9;
 }
 
-.bourbon-modal--large {
+.BourbonModal--large {
   width: 850px;
 }
 
-.bourbon-modal__title {
+.BourbonModal-title {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
@@ -1415,34 +1415,34 @@ body {
   margin-bottom: 2rem;
 }
 
-.bourbon-modal--confirmation .bourbon-modal__title {
+.BourbonModal--confirmation .BourbonModal-title {
   text-align: left;
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
 
-.bourbon-modal__dialog {
+.BourbonModal-dialog {
   text-align: left;
   font-size: 1rem;
   margin-bottom: 3rem;
 }
 
-.bourbon-modal__content {
+.BourbonModal-content {
   text-align: center;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
-.bourbon-modal__description {
+.BourbonModal-description {
   font-size: .875rem;
   color: #474c4f;
 }
 
-.bourbon-modal__header {
+.BourbonModal-header {
   position: relative;
 }
 
-.bourbon-modal__close-button {
+.BourbonModal-closeButton {
   position: absolute;
   right: -26px;
   top: -31px;
@@ -1451,71 +1451,71 @@ body {
   padding: 0;
 }
 
-.bourbon-modal__close-button:focus {
+.BourbonModal-closeButton:focus {
   outline: none;
 }
 
-.bourbon-modal__close-button svg {
+.BourbonModal-closeButton svg {
   color: #d3d3d3;
   stroke: currentColor;
 }
 
-.bourbon-modal__close-button:hover {
+.BourbonModal-closeButton:hover {
   cursor: pointer;
 }
 
-.bourbon-modal__footer {
+.BourbonModal-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
 }
 
-.bourbon-modal__link {
+.BourbonModal-link {
   font-size: .8125rem;
   text-decoration: none;
   color: #474c4f;
   width: 100%;
 }
 
-.bourbon-modal__button-wrapper {
+.BourbonModal-buttonWrapper {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
-.bourbon-modal__content-area {
+.BourbonModal-contentArea {
   padding: 20px 0;
 }
 
 /* scrollable modal styles */
 
-.bourbon-modal--scrollable {
+.BourbonModal--scrollable {
   padding: 35px 0;
   display: grid;
   grid-template-rows: 60px auto 60px;
   height: 600px;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__close-button {
+.BourbonModal--scrollable .BourbonModal-closeButton {
   right: 8px;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__content {
+.BourbonModal--scrollable .BourbonModal-content {
   overflow-y: auto;
   padding: 0 35px;
   margin-bottom: 0;
 }
 
-.bourbon-modal__hide-footer .bourbon-modal__content {
+.BourbonModal--hideFooter .BourbonModal-content {
   margin-bottom: 0;
 }
 
-.bourbon-modal__hide-footer .bourbon-modal__footer {
+.BourbonModal--hideFooter .BourbonModal-footer {
   display: none;
 }
 
-.bourbon-modal--scrollable .bourbon-modal__footer {
+.BourbonModal--scrollable .BourbonModal-footer {
   margin-top: .35rem;
   padding-top: 2rem;
   box-shadow: 0 -3px 6px -2px rgba(0, 0, 0, .1);
@@ -1523,14 +1523,14 @@ body {
   padding-left: 30px;
 }
 
-.bourbon-modal__no-padding {
+.BourbonModal_noPadding {
   padding: 0;
   margin: 0;
   border: none;
   width: auto;
 }
 
-.bourbon-modal__no-padding .bourbon-modal__close-button {
+.BourbonModal__noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
 }
