@@ -1,4 +1,4 @@
-.BourbonModal-wrapper,
+.BourbonModal-container,
 .BourbonModal-overlay {
   display: flex;
   justify-content: center;
@@ -118,7 +118,7 @@
   @apply .bourbon-w-full;
 }
 
-.BourbonModal-buttonWrapper {
+.BourbonModal-buttonContainer {
   display: flex;
   justify-content: flex-end;
   @apply .bourbon-w-full;
