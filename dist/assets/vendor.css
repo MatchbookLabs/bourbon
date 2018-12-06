@@ -1208,12 +1208,6 @@ body {
   border-color: #48ba70;
 }
 
-.BourbonButton--delete {
-  color: #fff;
-  background-color: #e2443e;
-  border-color: #e2443e;
-}
-
 .BourbonButton--primary:hover {
   background-color: #4cce6f;
   border-color: #4cce6f;
@@ -1245,16 +1239,22 @@ body {
   outline: none;
 }
 
-.BourbonButton--primary.BourbonButton--disable {
+.BourbonButton--primary.BourbonButton--disabled {
   background-color: #e9e9e9;
   border-color: #e9e9e9;
 }
 
-.BourbonButton--secondary.BourbonButton--disable {
+.BourbonButton--secondary.BourbonButton--disabled {
   opacity: .5;
 }
 
-.BourbonButton--disable {
+.BourbonButton--delete {
+  color: #fff;
+  background-color: #e2443e;
+  border-color: #e2443e;
+}
+
+.BourbonButton--disabled {
   cursor: default;
   pointer-events: none;
 }
@@ -1363,7 +1363,7 @@ body {
   width: 450px;
 }
 
-.BourbonModal-wrapper,
+.BourbonModal-container,
 .BourbonModal-overlay {
   display: flex;
   justify-content: center;
@@ -1380,14 +1380,6 @@ body {
   background-color: rgba(0, 0, 0, .4);
 }
 
-.BourbonModal--fixed {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .BourbonModal {
   top: 40%;
   width: 550px;
@@ -1399,6 +1391,14 @@ body {
   border-width: 1px;
   border-style: solid;
   border-color: #e9e9e9;
+}
+
+.BourbonModal--fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .BourbonModal--large {
@@ -1455,13 +1455,13 @@ body {
   outline: none;
 }
 
+.BourbonModal-closeButton:hover {
+  cursor: pointer;
+}
+
 .BourbonModal-closeButton svg {
   color: #d3d3d3;
   stroke: currentColor;
-}
-
-.BourbonModal-closeButton:hover {
-  cursor: pointer;
 }
 
 .BourbonModal-footer {
@@ -1478,7 +1478,7 @@ body {
   width: 100%;
 }
 
-.BourbonModal-buttonWrapper {
+.BourbonModal-buttonContainer {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -1523,14 +1523,14 @@ body {
   padding-left: 30px;
 }
 
-.BourbonModal_noPadding {
+.BourbonModal--noPadding {
   padding: 0;
   margin: 0;
   border: none;
   width: auto;
 }
 
-.BourbonModal__noPadding .BourbonModal-closeButton {
+.BourbonModal--noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
 }
