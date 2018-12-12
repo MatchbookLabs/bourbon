@@ -5,7 +5,7 @@ import layout from '../templates/components/bourbon-select-field-option';
 export default Component.extend({
   layout,
   classNames: ["BourbonSelectField-option"],
-  classNameBindings: ["selected:bourbon-bg-concrete"],
+  classNameBindings: ["selected:btw-bg-concrete"],
   attributeBindings: ["selected", "value", "disabled", "data-value", "index"],
   tabindex: null,
   content: null,

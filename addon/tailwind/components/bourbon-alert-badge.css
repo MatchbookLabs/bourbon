@@ -1,10 +1,10 @@
 
-.bourbon-alert-badge__container {
+.BourbonAlertBadge-container {
   width: 55%;  /* this is fallback for IE which doesn't support fit-content */
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid;
-  @apply .bourbon-border-fern;
+  @apply .btw-border-fern;
   border-radius: 121px;
   display: flex;
   justify-content: space-evenly;
@@ -13,13 +13,13 @@
   padding: 8px 13px;
 }
 
-.bourbon-alert-badge__svg svg {
-  @apply .bourbon-text-fern;
-  @apply .bourbon-fill-current;
+.BourbonAlertBadge-svg svg {
+  @apply .btw-text-fern;
+  @apply .btw-fill-current;
 }
 
-.bourbon-alert-badge__text {
-  @apply .bourbon-text-fern;
+.BourbonAlertBadge-text {
+  @apply .btw-text-fern;
   font-family: Helvetica;
   font-size: 16px;
   line-height: 20px;

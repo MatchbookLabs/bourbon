@@ -1,12 +1,12 @@
 {{#if modalService.showModalState}}
   {{bourbon-modal-overlay closeModal=(action 'closeBourbonModal')}}
-  <aside class="bourbon-modal {{if modalService.scrollable 'bourbon-modal--scrollable'}} {{if modalService.wideModal 'bourbon-modal--large'}} {{if modalService.confirmationModal 'bourbon-modal--confirmation'}} {{if modalService.noPaddingModal 'bourbon-modal__no-padding'}} {{if modalService.hideFooter 'bourbon-modal__hide-footer'}}">
-    <div class="bourbon-modal__header">
+  <aside class="BourbonModal {{if modalService.scrollable 'BourbonModal--scrollable'}} {{if modalService.wideModal 'BourbonModal--large'}} {{if modalService.confirmationModal 'BourbonModal--confirmation'}} {{if modalService.noPaddingModal 'BourbonModal--noPadding'}} {{if modalService.hideFooter 'BourbonModal--hideFooter'}}">
+    <div class="BourbonModal-header">
       {{#if modalService.title}}
-        <header class="bourbon-modal__title">{{modalService.title}}</header>
+        <header class="BourbonModal-title">{{modalService.title}}</header>
       {{/if}}
       {{#if modalService.dismissable}}
-        {{bourbon-button icon='close-button' class='bourbon-modal__close-button' action=(action 'closeBourbonModal') aria-label='Close'}}
+        {{bourbon-button icon='close-button' class='BourbonModal-closeButton' action=(action 'closeBourbonModal') aria-label='Close'}}
       {{/if}}
     </div>
 
@@ -16,12 +16,12 @@
       {{bourbon-modal-content textContent=modalService.textContent noPadding=modalService.noPaddingModal}}
     {{/if}}
 
-    <div class="bourbon-modal__footer {{if modalService.noPaddingModal 'bourbon-m-0'}}">
+    <div class="BourbonModal-footer {{if modalService.noPaddingModal 'btw-m-0'}}">
       {{#if modalService.linkTitle}}
-        <a class="bourbon-modal__link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
+        <a class="BourbonModal-link" href={{modalService.linkHref}}>{{modalService.linkTitle}}</a>
       {{/if}}
 
-      <div class="bourbon-modal__button-wrapper">
+      <div class="BourbonModal-buttonContainer">
         {{#if modalService.buttonTwoTitle}}
           {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}}
         {{/if}}
@@ -31,7 +31,7 @@
         {{/if}}
 
         {{#if modalService.copyButtonTitle}}
-          {{#copy-button clipboardText=modalService.copyText class="bourbon-button bourbon-primary-button" success=(action 'copyButtonAction')}}
+          {{#copy-button clipboardText=modalService.copyText class="BourbonButton BourbonButton--primary" success=(action 'copyButtonAction')}}
             {{modalService.copyButtonTitle}}
           {{/copy-button}}
         {{/if}}

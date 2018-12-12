@@ -25,7 +25,7 @@ export default Component.extend({
   classNames: ["BourbonSelectField"],
   classNameBindings: [
     "hasValue",
-    "fullWidth:bourbon-block",
+    "fullWidth:btw-block",
     "showList:BourbonSelectField--active"
   ],
   content: null,

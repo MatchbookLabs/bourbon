@@ -16,16 +16,16 @@
     {{/freestyle-note}}
 
     {{#freestyle-usage 'icon-button' title='loading' usageTitle='Usage'}}
-      {{bourbon-button icon='loading' class='bourbon-disable-button bourbon-primary-button'}}
+      {{bourbon-button icon='loading' class='BourbonButton--disabled BourbonButton--primary'}}
     {{/freestyle-usage}}
 
     {{#freestyle-note 'icon-button--notes'}}
-      - requires icon attribute and class for button ie. bourbon-primary-button
+      - requires icon attribute and class for button ie. BourbonButton--primary
       <br>
     {{/freestyle-note}}
 
     {{#freestyle-usage 'icon-text-button' title='Icon Text Button' usageTitle='Usage'}}
-      {{bourbon-button icon='edit-button' title='edit me now' class='bourbon-secondary-button' action=(action 'buttonClick')}}
+      {{bourbon-button icon='edit-button' title='edit me now' class='BourbonButton--secondary' action=(action 'buttonClick')}}
     {{/freestyle-usage}}
     {{#freestyle-note 'icon-text-button--notes'}}
       - requires icon, title and class attributes

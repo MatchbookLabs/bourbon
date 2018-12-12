@@ -14,7 +14,7 @@
   position: absolute;
   top: 14px;
   right: 20px;
-  @apply .bourbon-border-slate;
+  @apply .btw-border-slate;
   border-width: 0 1px 1px 0;
   display: inline-block;
   padding: 4px;

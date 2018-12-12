@@ -1,97 +1,97 @@
-.bourbon-button {
+.BourbonButton {
   padding: 0 15px;
   line-height: 17px;
   text-shadow: 0 2px 4px 0 var(--shade);
-  @apply .bourbon-min-w-button;
-  @apply .bourbon-min-h-button;
-  @apply .bourbon-rounded-sm;
-  @apply .bourbon-text-md;
-  @apply .bourbon-text-center;
-  @apply .bourbon-font-normal;
-  @apply .bourbon-whitespace-no-wrap;
-  @apply .bourbon-antialiased;
-  @apply .bourbon-cursor-pointer;
+  @apply .btw-min-w-button;
+  @apply .btw-min-h-button;
+  @apply .btw-rounded-sm;
+  @apply .btw-text-md;
+  @apply .btw-text-center;
+  @apply .btw-font-normal;
+  @apply .btw-whitespace-no-wrap;
+  @apply .btw-antialiased;
+  @apply .btw-cursor-pointer;
 
-  @apply .bourbon-border;
-  @apply .bourbon-border-solid;
-  @apply .bourbon-border-transparent;
+  @apply .btw-border;
+  @apply .btw-border-solid;
+  @apply .btw-border-transparent;
 }
 
-.bourbon-button--icon-only {
-  @apply .bourbon-p-2;
-  @apply .bourbon-min-w-button-icon;
-  @apply .bourbon-min-h-button-icon;
-  @apply .bourbon-border-mercury;
+.BourbonButton-icon {
+  @apply .btw-p-2;
+  @apply .btw-min-w-button-icon;
+  @apply .btw-min-h-button-icon;
+  @apply .btw-border-mercury;
 }
 
-.bourbon-button--icon-only svg {
+.BourbonButton-icon svg {
   width: 20px;
   height: 20px;
 }
 
-.bourbon-button--icon-text svg {
+.BourbonButton-iconText svg {
   width: 16px;
   height: 16px;
 }
 
-.bourbon-primary-button {
-  @apply .bourbon-text-white;
-  @apply .bourbon-bg-fern;
-  @apply .bourbon-border-fern;
+.BourbonButton--primary {
+  @apply .btw-text-white;
+  @apply .btw-bg-fern;
+  @apply .btw-border-fern;
 }
 
-.bourbon-delete-button {
-  @apply .bourbon-text-white;
-  @apply .bourbon-bg-red;
-  @apply .bourbon-border-red;
+
+.BourbonButton--primary:hover {
+  @apply .btw-bg-emerald;
+  @apply .btw-border-emerald;
 }
 
-.bourbon-primary-button:hover {
-  @apply .bourbon-bg-emerald;
-  @apply .bourbon-border-emerald;
-}
-
-.bourbon-primary-button:active,
-.bourbon-primary-button:focus {
-  @apply .bourbon-bg-fruit-salad;
-  @apply .bourbon-border-fruit-salad;
+.BourbonButton--primary:active,
+.BourbonButton--primary:focus {
+  @apply .btw-bg-fruit-salad;
+  @apply .btw-border-fruit-salad;
   box-shadow: inset 0 0 0 1px var(--white);
   outline: none;
 }
 
-.bourbon-secondary-button {
-  @apply .bourbon-text-mine-shaft;
-  @apply .bourbon-bg-alabaster;
-  @apply .bourbon-border-mercury;
+.BourbonButton--secondary {
+  @apply .btw-text-mine-shaft;
+  @apply .btw-bg-alabaster;
+  @apply .btw-border-mercury;
 }
 
-.bourbon-secondary-button:hover {
-  @apply .bourbon-bg-white;
+.BourbonButton--secondary:hover {
+  @apply .btw-bg-white;
 }
 
-.bourbon-secondary-button:active,
-.bourbon-secondary-button:focus {
-  @apply .bourbon-bg-concrete;
-  @apply .bourbon-border-concrete;
+.BourbonButton--secondary:active,
+.BourbonButton--secondary:focus {
+  @apply .btw-bg-concrete;
+  @apply .btw-border-concrete;
   box-shadow: inset 0 0 0 1px var(--dodger-blue);
   outline: none;
 }
 
-.bourbon-primary-button.bourbon-disable-button {
-  @apply .bourbon-bg-mercury;
-  @apply .bourbon-border-mercury;
+.BourbonButton--primary.BourbonButton--disabled {
+  @apply .btw-bg-mercury;
+  @apply .btw-border-mercury;
 }
 
-.bourbon-secondary-button.bourbon-disable-button {
-  @apply .bourbon-opacity-50;
+.BourbonButton--secondary.BourbonButton--disabled {
+  @apply .btw-opacity-50;
 }
 
-.bourbon-disable-button {
-  @apply .bourbon-cursor-default;
-  @apply .bourbon-pointer-events-none;
+.BourbonButton--delete {
+  @apply .btw-text-white;
+  @apply .btw-bg-red;
+  @apply .btw-border-red;
+}
+.BourbonButton--disabled {
+  @apply .btw-cursor-default;
+  @apply .btw-pointer-events-none;
 }
 
-.bourbon-button__link {
+.BourbonButton-link {
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -102,7 +102,7 @@
   min-width: 180px;
 }
 
-.bourbon-rounded-button {
+.BourbonButton--rounded {
   height: 44px;
   min-width: 180px;
   border-radius: 22px;
@@ -110,15 +110,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 0 25px;
 }
 
-.bourbon-secondary-button svg {
-  @apply .bourbon-text-mine-shaft;
-  @apply .bourbon-fill-current;
+.BourbonButton--secondary svg {
+  @apply .btw-text-mine-shaft;
+  @apply .btw-fill-current;
 }
 
-.bourbon-primary-button svg {
-  @apply .bourbon-text-white;
-  @apply .bourbon-fill-current;
+.BourbonButton--primary svg {
+  @apply .btw-text-white;
+  @apply .btw-fill-current;
 }

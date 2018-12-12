@@ -1,6 +1,6 @@
 {{#collection.variant key='primary'}}
   {{#freestyle-usage 'primary-button' title='primary button' usageTitle='Usage'}}
-    {{bourbon-button title='Primary button long name' class='bourbon-primary-button' action=(action 'buttonClick') data-hint='press the button' tabindex=1}}
+    {{bourbon-button title='Primary button long name' class='BourbonButton--primary' action=(action 'buttonClick') data-hint='press the button' tabindex=1}}
   {{/freestyle-usage}}
 
   {{#freestyle-annotation}}
@@ -28,7 +28,7 @@
   {{/freestyle-annotation}}
 
   {{#freestyle-usage 'primary-full-width-button' title='primary full width button' usageTitle='Usage'}}
-    {{#bourbon-button class='bourbon-primary-button' action=(action 'buttonClick') data-hint='press the button' fullWidth=true}}
+    {{#bourbon-button class='BourbonButton--primary' action=(action 'buttonClick') data-hint='press the button' fullWidth=true}}
       Primary button full width
     {{/bourbon-button}}
   {{/freestyle-usage}}
@@ -37,17 +37,17 @@
     primary button hover state
   </div>
   <div class="FreestyleUsage-rendered">
-    <button style="background-color: var(--emerald) !important; border-color: var(--emerald) !important;" class="bourbon-button bourbon-primary-button">Hover</button>
+    <button style="background-color: var(--emerald) !important; border-color: var(--emerald) !important;" class="BourbonButton BourbonButton--primary">Hover</button>
   </div>
 
   <div class="FreestyleUsage-title">
     primary button pressed state
   </div>
   <div class="FreestyleUsage-rendered">
-    <button style="background-color: var(--fruit-salad) !important; border-color: var(--fruit-salad) !important;" class="bourbon-button bourbon-primary-button">Pressed</button>
+    <button style="background-color: var(--fruit-salad) !important; border-color: var(--fruit-salad) !important;" class="BourbonButton BourbonButton--primary">Pressed</button>
   </div>
 
   {{#freestyle-usage 'button' title='primary button disabled state'}}
-    {{bourbon-button title='Disabled' class='bourbon-primary-button bourbon-disable-button'}}
+    {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
   {{/freestyle-usage}}
 {{/collection.variant}}
