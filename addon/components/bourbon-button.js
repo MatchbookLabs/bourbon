@@ -10,7 +10,7 @@ export default Component.extend({
   classNameBindings: [
     "iconTextButton:BourbonButton-iconText",
     "iconOnlyButton:BourbonButton-icon",
-    "fullWidth:bourbon-w-full"
+    "fullWidth:btw-w-full"
   ],
   attributeBindings: [
     "aria-label",

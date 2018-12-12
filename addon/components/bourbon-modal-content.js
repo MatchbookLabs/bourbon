@@ -4,7 +4,7 @@ import layout from '../templates/components/bourbon-modal-content';
 
 export default Component.extend({
   classNames: ["BourbonModal-content"],
-  classNameBindings: ["noPadding:bourbon-p-0", "noPadding:bourbon-m-0"],
+  classNameBindings: ["noPadding:btw-p-0", "noPadding:btw-m-0"],
   layout,
 
   actions: {

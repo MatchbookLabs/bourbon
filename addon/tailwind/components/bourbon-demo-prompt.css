@@ -2,7 +2,7 @@
   min-height: 168px;
   width: 737px;
   border: 2px solid;
-  @apply .bourbon-border-mercury;
+  @apply .btw-border-mercury;
   border-radius: 84.5px;
 
   display: flex;
@@ -14,7 +14,7 @@
 
 .BourbonDemoPrompt-textContainer {
   text-align: left;
-  @apply .bourbon-text-black;
+  @apply .btw-text-black;
   width: 403px;
 }
 

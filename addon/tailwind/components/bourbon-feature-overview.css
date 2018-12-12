@@ -13,7 +13,7 @@
 
 .BourbonFeatureOverview-textContainer {
   text-align: center;
-  @apply .bourbon-text-black;
+  @apply .btw-text-black;
 }
 
 .BourbonFeatureOverview-header {

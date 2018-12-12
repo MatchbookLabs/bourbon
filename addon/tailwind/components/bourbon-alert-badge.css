@@ -4,7 +4,7 @@
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid;
-  @apply .bourbon-border-fern;
+  @apply .btw-border-fern;
   border-radius: 121px;
   display: flex;
   justify-content: space-evenly;
@@ -14,12 +14,12 @@
 }
 
 .BourbonAlertBadge-svg svg {
-  @apply .bourbon-text-fern;
-  @apply .bourbon-fill-current;
+  @apply .btw-text-fern;
+  @apply .btw-fill-current;
 }
 
 .BourbonAlertBadge-text {
-  @apply .bourbon-text-fern;
+  @apply .btw-text-fern;
   font-family: Helvetica;
   font-size: 16px;
   line-height: 20px;

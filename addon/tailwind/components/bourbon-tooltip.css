@@ -4,29 +4,29 @@
   margin: 0 !important;
   z-index: 101;
   border: 1px solid;
-  @apply .bourbon-font-normal;
-  @apply .bourbon-antialiased;
-  @apply .bourbon-text-md;
+  @apply .btw-font-normal;
+  @apply .btw-antialiased;
+  @apply .btw-text-md;
   line-height: 1.2;
   box-shadow: 1px 0 3px 2px var(--shade);
 }
 
 .BourbonTooltip--light {
-  @apply .bourbon-bg-white;
-  @apply .bourbon-border-alto;
-  @apply .bourbon-text-black;
+  @apply .btw-bg-white;
+  @apply .btw-border-alto;
+  @apply .btw-text-black;
 }
 
 .theme-light .BourbonTooltip--dark,
 .BourbonTooltip--dark {
-  @apply .bourbon-bg-tuna;
-  @apply .bourbon-border-tuna;
+  @apply .btw-bg-tuna;
+  @apply .btw-border-tuna;
 }
 
 .theme-dark .BourbonTooltip--dark {
-  @apply .bourbon-bg-white;
-  @apply .bourbon-border-white;
-  @apply .bourbon-text-black;
+  @apply .btw-bg-white;
+  @apply .btw-border-white;
+  @apply .btw-text-black;
 }
 
 /* overwriting ember-tooltip css */

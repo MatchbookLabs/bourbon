@@ -137,7 +137,7 @@ export default {
   */
 
   options: {
-    prefix: 'bourbon-',
+    prefix: 'btw-',
     important: false,
     separator: ':'
   }

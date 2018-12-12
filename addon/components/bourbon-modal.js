@@ -8,7 +8,7 @@ import { computed } from '@ember/object';
 export default Component.extend({
   modalService: service("modal"),
   classNames: ["BourbonModal-container"],
-  classNameBindings: ["modalService.showModalState:bourbon-fixed"],
+  classNameBindings: ["modalService.showModalState:btw-fixed"],
 
   buttonOneClass: computed("modalService.buttonOneType", function() {
     return `BourbonButton--${this.get("modalService.buttonOneType")}`;
@@ -17,7 +17,7 @@ export default Component.extend({
   buttonTwoClass: computed("modalService.buttonTwoType", function() {
     return `BourbonButton--${this.get(
       "modalService.buttonTwoType"
-    )} bourbon-mr-3`;
+    )} btw-mr-3`;
   }),
 
   init() {

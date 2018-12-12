@@ -1,16 +1,16 @@
 .BourbonTextField {
-  @apply .bourbon-text-md;
+  @apply .btw-text-md;
   padding: 10px;
 
   border: 1px solid;
-  @apply .bourbon-border-alto;
+  @apply .btw-border-alto;
   border-radius: 2px;
   width: 100%;
   height: 3em;
 }
 
 .BourbonTextField:focus {
-  @apply .bourbon-border-dodger-blue;
+  @apply .btw-border-dodger-blue;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   outline: none;
 }

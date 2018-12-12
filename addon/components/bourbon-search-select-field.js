@@ -9,7 +9,7 @@ import { observer, computed } from '@ember/object';
 export default Component.extend({
   layout,
   classNames: ["BourbonSearchSelectField"],
-  classNameBindings: ["showDropdown:bourbon-z-20"],
+  classNameBindings: ["showDropdown:btw-z-20"],
   isOpen: false,
   activeOption: null,
 

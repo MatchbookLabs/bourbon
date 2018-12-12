@@ -5,15 +5,15 @@
   align-items: center;
   z-index: 5;
 
-  @apply .bourbon-pin-t;
-  @apply .bourbon-pin-r;
-  @apply .bourbon-pin-b;
-  @apply .bourbon-pin-l;
+  @apply .btw-pin-t;
+  @apply .btw-pin-r;
+  @apply .btw-pin-b;
+  @apply .btw-pin-l;
 }
 
 .BourbonModal-overlay {
   position: fixed;
-  @apply .bourbon-bg-shade;
+  @apply .btw-bg-shade;
 }
 
 .BourbonModal {
@@ -22,21 +22,21 @@
   padding: 35px;
   z-index: 7;
 
-  @apply .bourbon-border-grey-light;
-  @apply .bourbon-bg-white;
-  @apply .bourbon-rounded;
+  @apply .btw-border-grey-light;
+  @apply .btw-bg-white;
+  @apply .btw-rounded;
 
-  @apply .bourbon-border;
-  @apply .bourbon-border-solid;
-  @apply .bourbon-border-mercury;
+  @apply .btw-border;
+  @apply .btw-border-solid;
+  @apply .btw-border-mercury;
 }
 
 .BourbonModal--fixed {
-  @apply .bourbon-fixed;
-  @apply .bourbon-pin-t;
-  @apply .bourbon-pin-r;
-  @apply .bourbon-pin-b;
-  @apply .bourbon-pin-l;
+  @apply .btw-fixed;
+  @apply .btw-pin-t;
+  @apply .btw-pin-r;
+  @apply .btw-pin-b;
+  @apply .btw-pin-l;
 }
 
 .BourbonModal--large {
@@ -45,36 +45,36 @@
 
 .BourbonModal-title {
   text-align: center;
-  @apply .bourbon-text-xl;
-  @apply .bourbon-font-semibold;
-  @apply .bourbon-antialiased;
+  @apply .btw-text-xl;
+  @apply .btw-font-semibold;
+  @apply .btw-antialiased;
 
-  @apply .bourbon-mt-2;
-  @apply .bourbon-mb-8;
+  @apply .btw-mt-2;
+  @apply .btw-mb-8;
 }
 
 .BourbonModal--confirmation .BourbonModal-title {
   text-align: left;
-  @apply .bourbon-text-lg;
-  @apply .bourbon-mb-4;
+  @apply .btw-text-lg;
+  @apply .btw-mb-4;
 }
 
 .BourbonModal-dialog {
   text-align: left;
-  @apply .bourbon-text-base;
-  @apply .bourbon-mb-9;
+  @apply .btw-text-base;
+  @apply .btw-mb-9;
 }
 
 .BourbonModal-content {
   text-align: center;
 
-  @apply .bourbon-leading-normal;
-  @apply .bourbon-mb-6;
+  @apply .btw-leading-normal;
+  @apply .btw-mb-6;
 }
 
 .BourbonModal-description {
-  @apply .bourbon-text-md;
-  @apply .bourbon-text-slate;
+  @apply .btw-text-md;
+  @apply .btw-text-slate;
 }
 
 .BourbonModal-header {
@@ -95,12 +95,12 @@
 }
 
 .BourbonModal-closeButton:hover {
-  @apply .bourbon-cursor-pointer;
+  @apply .btw-cursor-pointer;
 }
 
 .BourbonModal-closeButton svg {
-  @apply .bourbon-text-grey-light;
-  @apply .bourbon-stroke-current;
+  @apply .btw-text-grey-light;
+  @apply .btw-stroke-current;
 }
 
 .BourbonModal-footer {
@@ -108,20 +108,20 @@
   justify-content: space-between;
   align-items: center;
 
-  @apply .bourbon-mt-6;
+  @apply .btw-mt-6;
 }
 
 .BourbonModal-link {
-  @apply .bourbon-text-sm;
-  @apply .bourbon-no-underline;
-  @apply .bourbon-text-slate;
-  @apply .bourbon-w-full;
+  @apply .btw-text-sm;
+  @apply .btw-no-underline;
+  @apply .btw-text-slate;
+  @apply .btw-w-full;
 }
 
 .BourbonModal-buttonContainer {
   display: flex;
   justify-content: flex-end;
-  @apply .bourbon-w-full;
+  @apply .btw-w-full;
 }
 
 .BourbonModal-contentArea {
@@ -155,16 +155,16 @@
 }
 
 .BourbonModal--scrollable .BourbonModal-footer {
-  @apply .bourbon-mt-1;
-  @apply .bourbon-pt-8;
+  @apply .btw-mt-1;
+  @apply .btw-pt-8;
   box-shadow: 0px -3px 6px -2px rgba(0, 0, 0, .1);
   padding-right: 20px;
   padding-left: 30px;
 }
 
 .BourbonModal--noPadding {
-  @apply .bourbon-p-0;
-  @apply .bourbon-m-0;
+  @apply .btw-p-0;
+  @apply .btw-m-0;
   border: none;
   width: auto;
 }

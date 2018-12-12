@@ -15,61 +15,61 @@
 blockquote, dl, dd, h1, h2,
 h3, h4, h5, h6, figure, p, pre */
 
-.bourbon-blockquote,
+.btw-blockquote,
 blockquote {
   margin: 1em 40px;
 }
-.bourbon-dd,
+.btw-dd,
 dd {
   margin-left: 0 40px 0 0;
 }
 
-.bourbon-dl,
+.btw-dl,
 dl {
   margin: 1em 0;
 }
 
-.bourbon-h1,
+.btw-h1,
 h1 {
   margin: 0.67em 0;
 }
 
-.bourbon-h2,
+.btw-h2,
 h2 {
   margin: 0.83em 0;
 }
 
-.bourbon-h3,
+.btw-h3,
 h3 {
   margin: 1em 0;
 }
 
-.bourbon-h4,
+.btw-h4,
 h4 {
   margin: 1.33em 0;
 }
 
-.bourbon-h5,
+.btw-h5,
 h5 {
   margin: 1.67em 0;
 }
 
-.bourbon-h6,
+.btw-h6,
 h6 {
   margin: 2.33em 0;
 }
 
-.bourbon-figure,
+.btw-figure,
 figure {
   margin: 1em 40px;
 }
 
-.bourbon-p,
+.btw-p,
 p {
   margin: 1em 0;
 }
 
-.bourbon-pre,
+.btw-pre,
 pre {
   margin: 1em 0;
 }
@@ -86,17 +86,17 @@ button:focus {
   outline: none;
 }
 
-.bourbon-group-container {
+.BourbonGroupContainer {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 10px;
 }
 
-.bourbon-flex-container {
+.BourbonFlexContainer{
   display: flex;
   display: -ms-flex;
 }
 
 .Bourbon--active {
-  @apply .bourbon-bg-concrete;
+  @apply .btw-bg-concrete;
 }

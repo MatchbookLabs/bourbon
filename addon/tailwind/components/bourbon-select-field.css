@@ -1,5 +1,5 @@
 .BourbonSelectField {
-  @apply .bourbon-text-md;
+  @apply .btw-text-md;
   position: relative;
   display: inline-block;
   padding: 10px;
@@ -11,10 +11,10 @@
   transform: rotateZ(0);
   min-width: 22em;
   height: 3em;
-  @apply .bourbon-bg-white;
-  @apply .bourbon-text-black;
+  @apply .btw-bg-white;
+  @apply .btw-text-black;
   border: 1px solid;
-  @apply .bourbon-border-alto;
+  @apply .btw-border-alto;
   border-radius: 2px;
 }
 
@@ -24,7 +24,7 @@
   top: 14px;
   right: 20px;
   border-style: solid;
-  @apply .bourbon-border-slate;
+  @apply .btw-border-slate;
   border-width: 0 1px 1px 0;
   display: inline-block;
   padding: 4px;
@@ -34,7 +34,7 @@
 
 .BourbonSelectField--active,
 .BourbonSelectField-menu.BourbonSelect--focus {
-  @apply .bourbon-border-dodger-blue;
+  @apply .btw-border-dodger-blue;
   box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
 }
 
@@ -60,12 +60,12 @@
 
   margin: 0;
   padding: 0;
-  @apply .bourbon-bg-white;
+  @apply .btw-bg-white;
   font-size: 1em;
   text-shadow: none;
   text-align: left;
   border: 1px solid;
-  @apply .bourbon-border-alto;
+  @apply .btw-border-alto;
   z-index: 11;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .BourbonSelectField-option {
-  @apply .bourbon-text-md;
-  @apply .bourbon-bg-white;
+  @apply .btw-text-md;
+  @apply .btw-bg-white;
   width: 100%;
   height: 40px;
   -webkit-appearance: none;
@@ -88,7 +88,7 @@
 }
 
 .BourbonSelectField-option:hover {
-  @apply .bourbon-bg-concrete;
+  @apply .btw-bg-concrete;
 }
 
 .BourbonSelectField-option[disabled="true"] {
@@ -97,7 +97,7 @@
 }
 
 .BourbonSelectField-selected {
-  @apply .bourbon-text-md;
+  @apply .btw-text-md;
   width: 94%;
   white-space: nowrap;
   overflow: hidden;
