@@ -31,7 +31,7 @@
         {{/if}}
 
         {{#if modalService.copyButtonTitle}}
-          {{#copy-button clipboardText=modalService.copyText class="bourbon-button BourbonButton--primary" success=(action 'copyButtonAction')}}
+          {{#copy-button clipboardText=modalService.copyText class="BourbonButton BourbonButton--primary" success=(action 'copyButtonAction')}}
             {{modalService.copyButtonTitle}}
           {{/copy-button}}
         {{/if}}
