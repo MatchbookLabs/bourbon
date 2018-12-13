@@ -175,12 +175,12 @@ export default Component.extend({
         let path = this.get("_valuePath");
         if (path) {
           this.set(
-            "currentValue",
+            "value",
             (typeof value.get === "function" ? value.get(path) : void 0) ||
               value[path]
           );
         } else {
-          this.set("currentValue", value);
+          this.set("value", value);
         }
       }
       this.set("activeOption", null);
@@ -195,8 +195,6 @@ export default Component.extend({
 
     hideContent() {
       if (
-        this.get("value") === null &&
-        this.get("currentValue") &&
         this.get("label")
       ) {
         this.set("inputValue", this.get("label"));
