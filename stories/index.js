@@ -1,13 +1,9 @@
 import hbs from 'htmlbars-inline-precompile';
 import { storiesOf } from '@storybook/ember';
 import { actions } from "@storybook/addon-actions";
-import { withKnobs, select } from "@storybook/addon-knobs";
-import { withBackgrounds } from "@storybook/addon-backgrounds";
-import Centered from "@storybook/addon-centered/ember";
 
 
 storiesOf("static component", module)
-  .addDecorator(Centered)
   .add(
     "alert badge",
     () => {
@@ -27,14 +23,6 @@ storiesOf("static component", module)
 
 
 storiesOf("buttons", module)
-  .addDecorator(Centered)
-  .addDecorator(
-    withBackgrounds([
-      { name: "white", value: "#FFF" },
-      { name: "slate", value: "#474C4F" }
-    ])
-  )
-
   .add("primary button", () => {
     return {
       template: hbs`{{bourbon-button class='BourbonButton--primary' title='primary button'}}`,
