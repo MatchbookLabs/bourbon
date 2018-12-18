@@ -1,23 +1,25 @@
 import hbs from 'htmlbars-inline-precompile';
 import { storiesOf } from '@storybook/ember';
-import { actions } from "@storybook/addon-actions";
+import { action } from "@storybook/addon-actions";
 
 
 storiesOf("static component", module)
   .add(
-    "alert badge",
-    () => {
+    "alert badge", () => {
       return {
-        template: hbs`{{bourbon-alert-badge message="This feature isn't available on your current plan." }}`,
-        context: { onClick: e => console.log(e) }
+        template: hbs`{{bourbon-alert-badge message="This feature isn't available on your current plan." }}`
       };
     },
     { notes: "A very simple component." }
   )
   .add("demo prompt", () => {
     return {
-      template: hbs`{{bourbon-demo-prompt header="Need help? Schedule a demo." message="We would be happy to demo the setup and functionality for you. Tap the button to the right to schedule a demo." buttonTitle="Schedule a demo"}}`,
-      context: { onClick: e => console.log(e) }
+      template:
+        hbs`{{bourbon-demo-prompt
+        header="Need help? Schedule a demo."
+        message="We would be happy to demo the setup and functionality for you. Tap the button to the right to schedule a demo."
+        buttonTitle="Schedule a demo" buttonAction=onClick}}`,
+      context: { onClick: action("demoClick") }
     };
   });
 
@@ -25,8 +27,8 @@ storiesOf("static component", module)
 storiesOf("buttons", module)
   .add("primary button", () => {
     return {
-      template: hbs`{{bourbon-button class='BourbonButton--primary' title='primary button'}}`,
-      context: { onClick: e => console.log(e) }
+      template: hbs`{{bourbon-button class='BourbonButton--primary' title='primary button' action=onClick}}`,
+      context: { onClick: action("buttonClick") }
     };
   })
 
