@@ -19,9 +19,10 @@
     "test": "bin/test",
     "test:all": "ember try:each",
     "build-storybook": "ember build && build-storybook -p 9001 -s dist",
-    "storybook": "ember serve & start-storybook -p 9001 -s dist"
+    "storybook": "start-storybook -p 9001 -s dist"
   },
   "dependencies": {
+    "babel-plugin-ember-modules-api-polyfill": "^2.6.0",
     "ember-assign-polyfill": "^2.5.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-clipboard": "^0.9.0",
@@ -40,6 +41,7 @@
     "@storybook/addon-centered": "^4.1.2",
     "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-notes": "^4.1.2",
+    "@storybook/addon-options": "^4.1.2",
     "@storybook/addon-storysource": "^4.1.2",
     "@storybook/addon-viewport": "^4.1.2",
     "@storybook/ember": "^4.1.1",
@@ -54,6 +56,7 @@
     "ember-cli-qunit": "^4.1.1",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-storybook": "0.0.1",
     "ember-cli-uglify": "^2.0.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",

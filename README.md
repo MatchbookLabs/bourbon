@@ -21,6 +21,13 @@ In bourbon run the following commands
 
 To pick up the changes to the component, you will need to run the following command in the frontend fold you are working in
 * `npm link bourbon`
+*
+
+## Things to remember
+* Using `npm unlink bourbon` will delete `bourbon` from your package.json file
+* You need to restart the flabongo server to see changes made in bourbon code.
+*
+
 
 When making changes in bourbon, you will need to restart the flabongo server in order to see the changes.  This is because flabongo is not watching for changes in the `node_modules` folders when freshing the page.
 

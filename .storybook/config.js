@@ -5,6 +5,7 @@ import Centered from "@storybook/addon-centered/ember";
 import { withBackgrounds } from "@storybook/addon-backgrounds";
 import { setConsoleOptions } from '@storybook/addon-console';
 import { configureViewport } from '@storybook/addon-viewport';
+import { withOptions } from "@storybook/addon-options";
 
 setConsoleOptions({
     panelExclude: [],
@@ -20,9 +21,24 @@ addDecorator(
     ])
 );
 
+addDecorator(
+  withOptions({
+    name: "Bourbon",
+    url: 'https://github.com/MatchbookLabs/bourbon',
+    goFullScreen: false,
+    showStoriesPanel: true
+  })
+);
+
 function loadStories() {
-    require('../stories/index.js');
-    // You can require as many stories as you need.
+    require('../stories/Modals.stories.js');
+    require('../stories/Buttons.stories.js');
+    require('../stories/Tooltip.stories.js');
+    require('../stories/TextField.stories.js');
+    require('../stories/SelectField.stories.js');
+    require('../stories/SearchSelectField.stories.js');
+    require('../stories/StaticComponents.stories.js');
+    require('../stories/Icons.stories.js');
 }
 
 configure(loadStories, module);
