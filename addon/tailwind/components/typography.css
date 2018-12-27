@@ -1,0 +1,7 @@
+.BourbonSection-header {
+  height: 26px;
+  @apply .btw-text-slate;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 27px;
+}

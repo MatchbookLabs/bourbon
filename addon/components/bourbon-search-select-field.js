@@ -59,7 +59,9 @@ export default Component.extend({
   keyDown(e) {
     let el = $(e.currentTarget);
     let list = el.find(".BourbonSelectField-menu ");
-    let allOptions = el.find(".BourbonSelectField-menu .BourbonSelectField-option");
+    let allOptions = el.find(
+      ".BourbonSelectField-menu .BourbonSelectField-option"
+    );
     let numOptions = allOptions.length;
 
     if (e.keyCode === 40) {
@@ -114,17 +116,19 @@ export default Component.extend({
     document.activeElement.blur();
   },
 
-  searchResults: observer("inputValue", "content", function() {
+  searchResults: observer("value", "inputValue", "content", function() {
     if (this.get("inputValue") === "") {
       this.set("searchList", this.get("content"));
       return this.get("content");
     } else {
       let searchString;
-
-      if (typeof this.get("inputValue") === "string") {
-        searchString = this.get("inputValue").toLowerCase();
+      let selectedValue = this.get("inputValue") ? this.get("inputValue") : this.get("value");
+      if (typeof selectedValue === "string") {
+        searchString = selectedValue.toLowerCase();
+      } else if (selectedValue.__data && typeof selectedValue.__data.label === "string") {
+        searchString = selectedValue.__data.label.toLowerCase();
       } else {
-        searchString = this.get("inputValue.label").toLowerCase();
+        searchString = selectedValue.label.toLowerCase();
       }
 
       let searchList = this.get("content").filter(option =>
@@ -194,9 +198,7 @@ export default Component.extend({
     },
 
     hideContent() {
-      if (
-        this.get("label")
-      ) {
+      if (this.get("label")) {
         this.set("inputValue", this.get("label"));
       }
 
