@@ -34,12 +34,14 @@ export default Component.extend({
   optionValue(option) {
     if (typeof option === "string") {
       return option.toLowerCase();
-    } else if (option.__data) {
+    } else if (option.__data && option.__data.label) {
       return option.__data.label.toLowerCase();
+    } else if(option.__data && option.__data.title) {
+      return option.__data.title.toLowerCase();
     } else {
       return option.label.toLowerCase();
     }
-  },
+},
 
   focusIn() {
     this.set("activeOption", null);

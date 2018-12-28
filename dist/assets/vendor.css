@@ -1139,6 +1139,61 @@ body {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.BourbonAccordionItem-body {
+  display: none;
+  padding-bottom: 25px;
+}
+
+.BourbonAccordionItem-header {
+  border-top: 1px solid var(--alto);
+  padding: 25px 0;
+}
+
+.BourbonAccordionItem-header,
+.BourbonAccordionItem-body {
+  color: #474c4f;
+  /* transition: .5s ease-in color; */
+}
+
+.BourbonAccordionItem-header:last-child {
+}
+
+/* .BourbonAccordionItem {
+  position: relative;
+  font-size: 20px;
+} */
+
+.BourbonAccordionItem-item:before {
+  position: absolute;
+  top: 14px;
+  border-style: solid;
+  border-color: #474c4f;
+  border-width: 0 1px 1px 0;
+  padding: 4px;
+          transform: rotate(45 deg);
+  -webkit-transform: rotate(45 deg);
+}
+
+.BourbonAccordionItem-header.BourbonAccordionItem-header--open {
+  font-weight: bold;
+}
+
+.BourbonAccordionItem-body.BourbonAccordionItem-body--open {
+  font-size: .875rem;
+}
+
+.BourbonAccordionItem-header--open,
+.BourbonAccordionItem-body--open {
+  display: block !important;
+  color: #000;
+}
+
+.BourbonAccordion {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
 .BourbonAlertBadge-container {
   width: 55%; /* this is fallback for IE which doesn't support fit-content */
   width: -moz-fit-content;

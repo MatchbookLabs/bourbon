@@ -1,0 +1,12 @@
+{{#if listItem.header}}
+  <div class="BourbonAccordionItem-item BourbonAccordionItem-header {{if isOpen "BourbonAccordionItem-header--open"}}" {{action "openItem"}}>{{listItem.header}}</div>
+{{/if}}
+{{#if listItem.body}}
+  <div class="BourbonAccordionItem-item BourbonAccordionItem-body {{if isOpen "BourbonAccordionItem-body--open"}}">{{listItem.body}}</div>
+{{/if}}
+{{#if listItem.headerPartial}}
+  <div class="BourbonAccordionItem-item BourbonAccordionItem-header {{if isOpen "BourbonAccordionItem-header--open"}}">{{partial listItem.headerPartial}}</div>
+{{/if}}
+{{#if listItem.bodyPartial}}
+  <div class="BourbonAccordionItem-item BourbonAccordionItem-body {{if isOpen "BourbonAccordionItem-body--open"}}">{{partial listItem.bodyPartial}}</div>
+{{/if}}
