@@ -34,17 +34,17 @@ export default Component.extend({
   optionValue(option) {
     if (typeof option === "string") {
       return option.toLowerCase();
-    } else if (option.__data && option.__data.label) {
+    } else if (option.__data) {
       return option.__data.label.toLowerCase();
-    } else if(option.__data && option.__data.title) {
-      return option.__data.title.toLowerCase();
     } else {
       return option.label.toLowerCase();
     }
-},
+  },
 
   focusIn() {
     this.set("activeOption", null);
+    this.set("inputValue", "");
+    this.set("value", null);
   },
 
   focusOut() {
@@ -124,7 +124,8 @@ export default Component.extend({
       return this.get("content");
     } else {
       let searchString;
-      let selectedValue = this.get("inputValue") ? this.get("inputValue") : this.get("value");
+      let selectedValue = this.get("value") ? this.get("value") : this.get("inputValue");
+
       if (typeof selectedValue === "string") {
         searchString = selectedValue.toLowerCase();
       } else if (selectedValue.__data && typeof selectedValue.__data.label === "string") {

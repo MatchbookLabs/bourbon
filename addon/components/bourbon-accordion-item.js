@@ -1,16 +1,22 @@
 import Component from '@ember/component';
 import layout from '../templates/components/bourbon-accordion-item';
+import { computed } from "@ember/object";
 
 export default Component.extend({
   layout,
-  tagName: 'li',
+  tagName: "li",
   classNames: ["BourbonAccordionItem"],
-  isOpen: false,
+  isOpen: computed("listItem.open", function() {
+    if (this.get("listItem.open") === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }),
 
   actions: {
     openItem() {
-      console.log('toggle')
-      this.toggleProperty('isOpen');
+      this.toggleProperty("isOpen");
     }
   }
 });

@@ -12,16 +12,7 @@
 .BourbonAccordionItem-header,
 .BourbonAccordionItem-body {
   @apply .btw-text-slate;
-  /* transition: .5s ease-in color; */
 }
-
-.BourbonAccordionItem-header:last-child {
-}
-
-/* .BourbonAccordionItem {
-  position: relative;
-  font-size: 20px;
-} */
 
 .BourbonAccordionItem-item:before {
   position: absolute;

@@ -1152,16 +1152,7 @@ body {
 .BourbonAccordionItem-header,
 .BourbonAccordionItem-body {
   color: #474c4f;
-  /* transition: .5s ease-in color; */
 }
-
-.BourbonAccordionItem-header:last-child {
-}
-
-/* .BourbonAccordionItem {
-  position: relative;
-  font-size: 20px;
-} */
 
 .BourbonAccordionItem-item:before {
   position: absolute;
