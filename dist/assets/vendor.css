@@ -1154,17 +1154,6 @@ body {
   color: #474c4f;
 }
 
-.BourbonAccordionItem-item:before {
-  position: absolute;
-  top: 14px;
-  border-style: solid;
-  border-color: #474c4f;
-  border-width: 0 1px 1px 0;
-  padding: 4px;
-          transform: rotate(45 deg);
-  -webkit-transform: rotate(45 deg);
-}
-
 .BourbonAccordionItem-header.BourbonAccordionItem-header--open {
   font-weight: bold;
 }
@@ -1851,6 +1840,7 @@ body {
   font-size: 22px;
   font-weight: bold;
   line-height: 27px;
+  width: 100%;
 }
 
 /**
