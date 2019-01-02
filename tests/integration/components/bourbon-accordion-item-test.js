@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-accordion-item', function(hooks) {
     await render(hbs`{{bourbon-accordion-item}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-accordion-item}}
-        template block text
-      {{/bourbon-accordion-item}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
