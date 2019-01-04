@@ -14,9 +14,19 @@ export default Component.extend({
     }
   }),
 
+  isToggleable: computed("listItem.toggleable", function() {
+    if (this.get("listItem.toggleable") === false) {
+      return false;
+    } else {
+      return true;
+    }
+  }),
+
   actions: {
     openItem() {
-      this.toggleProperty("isOpen");
+      if (this.get("isToggleable")) {
+        this.toggleProperty("isOpen");
+      }
     }
   }
 });

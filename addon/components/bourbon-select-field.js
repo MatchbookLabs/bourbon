@@ -84,6 +84,8 @@ export default Component.extend({
             this.set("label", data.label);
           } else if (data.title) {
             this.set("label", data.title);
+          } else if (data.text) {
+            this.set("label", data.text);
           }
         } else {
           this.set("label", value);

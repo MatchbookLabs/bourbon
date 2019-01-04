@@ -124,11 +124,17 @@ export default Component.extend({
       return this.get("content");
     } else {
       let searchString;
-      let selectedValue = this.get("value") ? this.get("value") : this.get("inputValue");
+      let selectedValue = this.get("value")
+        ? this.get("value")
+        : this.get("inputValue");
 
       if (typeof selectedValue === "string") {
         searchString = selectedValue.toLowerCase();
-      } else if (selectedValue.__data && typeof selectedValue.__data.label === "string") {
+      } else if (
+        selectedValue &&
+        selectedValue.__data &&
+        typeof selectedValue.__data.label === "string"
+      ) {
         searchString = selectedValue.__data.label.toLowerCase();
       } else {
         searchString = selectedValue.label.toLowerCase();

@@ -1,3 +1,6 @@
+.BourbonAccordionItem {
+  border-top: 1px solid var(--alto);
+}
 
 .BourbonAccordionItem-body {
   display: none;
@@ -5,13 +8,16 @@
 }
 
 .BourbonAccordionItem-header {
-  border-top: 1px solid var(--alto);
   padding: 25px 0;
 }
 
 .BourbonAccordionItem-header,
 .BourbonAccordionItem-body {
   @apply .btw-text-slate;
+}
+
+.BourbonAccordionItem-header:hover {
+  cursor: pointer;
 }
 
 .BourbonAccordionItem-header.BourbonAccordionItem-header--open {
