@@ -15,7 +15,7 @@ jobs:
           - v1-npm-
 
       - run: npm install
-      - run: npm build
+      - run: ember build
 
       - save_cache:
           paths:
