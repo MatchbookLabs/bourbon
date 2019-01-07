@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+
+ember serve && start-storybook -p ${PORT:-9001} -s dist
