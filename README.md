@@ -3,6 +3,14 @@ bourbon
 
 bourbon is the ember component library that feeds into [https://github.com/MatchbookLabs/flabongo](flabongo)
 
+
+Running Server
+------------------------------------------------------------------------------
+In bourbon run the following commands
+* `npm run storybook`
+
+- a new tab will open up to `http://localhost:9001/`
+
 Usage
 ------------------------------------------------------------------------------
 
