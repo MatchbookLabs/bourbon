@@ -8,7 +8,50 @@ const { inject } = Ember;
 export default FreestyleController.extend(ModalMixin, {
   init() {
     this._super(...arguments);
+    this.set('tableHeaderContent', A([
+      { content: "name", type: "string" },
+      { content: "object", type: "string" },
+      { content: "action", type: "string" },
+      { content: "", type: "string" }
+    ]));
+    this.set("tableRowContent", A([
+      [
+        { content: "new contact activity", type: "string" },
+        { content: "contact", type: "string"},
+        { content: "create activity", type: "string"},
+        {
+          content: {
+            component: 'bourbon-button',
+            title: 'Remove',
+            classNames: "BourbonButton--primary"
+          },
+          type: "component"
+        }
+      ],
 
+      [
+        { content: "another mapping", type: "string" },
+        { content: "prospect", type: "string" },
+        { content: "update fields", type: "string" },
+        {
+          content: {
+            component: 'bourbon-button',
+            title: 'Remove',
+            classNames: "BourbonButton--primary"
+          },
+          type: "component"
+        }
+      ],
+      [
+        { content: "another another mapping", type: "string" },
+        { content: "lead", type: "string" },
+        { content: "update fields", type: "string" },
+        {
+          content: "test-partial",
+          type: "partial"
+        }
+      ]
+    ]));
     this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose', 'deer', 'kitten', 'puppy', 'duck', 'capybara'])),
     this.set('petObject', A([
       {

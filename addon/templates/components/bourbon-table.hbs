@@ -1,0 +1,27 @@
+<tr class="BourbonTable-row">
+  {{#each headerContent as |header|}}
+    <th class="BourbonTable-header">
+      {{#if (eq header.type "string")}}
+        {{header.content}}
+      {{else if (eq header.type "partial")}}
+        {{partial header.content}}
+      {{/if}}
+    </th>
+  {{/each}}
+</tr>
+
+{{#each rowContent as |row|}}
+  <tr class="BourbonTable-row">
+    {{#each row as |rowItem|}}
+      <td class="BourbonTable-rowItem">
+        {{#if (eq rowItem.type "component")}}
+          {{component rowItem.content.component title=rowItem.content.title classNames=rowItem.content.classNames}}
+        {{else if (eq rowItem.type "string")}}
+            {{rowItem.content}}
+        {{else if (eq rowItem.type "partial")}}
+            {{partial rowItem.content}}
+        {{/if}}
+      </td>
+    {{/each}}
+  </tr>
+{{/each}}

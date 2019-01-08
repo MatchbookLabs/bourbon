@@ -1,0 +1,17 @@
+{{#freestyle-collection title='table' defaultKey='all' inline=false as |collection|}}
+
+  {{#collection.variant key='default'}}
+    {{#freestyle-usage 'default-table' title='table' usageTitle='Usage'}}
+
+    {{bourbon-table headerContent=tableHeaderContent rowContent=tableRowContent}}
+    {{/freestyle-usage}}
+
+    {{#freestyle-note 'icon-only-button--notes'}}
+    - requires icon attribute
+    - all icons should live in bourbon
+    <br>
+    {{/freestyle-note}}
+
+  {{/collection.variant}}
+
+{{/freestyle-collection}}
