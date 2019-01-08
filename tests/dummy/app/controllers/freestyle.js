@@ -31,8 +31,8 @@ export default FreestyleController.extend(ModalMixin, {
 
       [
         { content: "another mapping", type: "string" },
-        { content: "prospect", type: "string" },
-        { content: "update fields", type: "string" },
+        { content: "create or update an existing", type: "string" },
+        { content: "contact", type: "string" },
         {
           content: {
             component: 'bourbon-button',
@@ -46,6 +46,19 @@ export default FreestyleController.extend(ModalMixin, {
         { content: "another another mapping", type: "string" },
         { content: "lead", type: "string" },
         { content: "update fields", type: "string" },
+        {
+          content: {
+            component: 'bourbon-button',
+            title: 'Remove',
+            classNames: "BourbonButton--primary"
+          },
+          type: "component"
+        }
+      ],
+      [
+        { content: "latest mapping", type: "string" },
+        { content: "action link group template", type: "string" },
+        { content: "update fields on an existing", type: "string" },
         {
           content: "test-partial",
           type: "partial"
