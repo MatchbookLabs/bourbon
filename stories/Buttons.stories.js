@@ -13,7 +13,7 @@ storiesOf("buttons", module)
                 {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
               </div>
               {{bourbon-button class='BourbonButton--primary' title='Primary full width button' action=onClick fullWidth=true}}`,
-        context: { onClick: action("buttonClick") }
+        context: { onClick: "click" }
       };
     },
     {
@@ -51,7 +51,7 @@ storiesOf("buttons", module)
                 {{bourbon-button title='Disabled' class='BourbonButton--secondary BourbonButton--disabled'}}
               </div>
               {{bourbon-button title='Secondary button' class='BourbonButton--secondary' action=onClick fullWidth=true}}`,
-        context: { onClick: action("buttonClick") }
+        context: { onClick: "click" }
       };
     },
     {
@@ -89,7 +89,7 @@ storiesOf("buttons", module)
               {{#bourbon-button class='BourbonButton--primary BourbonButton--rounded' action=onClick data-hint='press the button' fullWidth=true}}
                 Rounded primary button full width
               {{/bourbon-button}}`,
-      context: { onClick: action("buttonClick") }
+      context: { onClick: "click" }
     };
   })
 
@@ -128,4 +128,5 @@ storiesOf("buttons", module)
         <li>data-hint</li>
       </ul>
       `
-    });
+    }
+  );
