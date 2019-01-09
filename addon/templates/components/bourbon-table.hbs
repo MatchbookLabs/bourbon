@@ -3,7 +3,7 @@
     <th class="BourbonTable-header">
       {{#if (eq header.type "component")}}
         {{component header.content.component}}
-      {{else #if (eq header.type "string")}}
+      {{else if (eq header.type "string")}}
         {{header.content}}
       {{else if (eq header.type "partial")}}
         {{partial header.content}}
