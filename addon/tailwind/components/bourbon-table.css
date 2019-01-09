@@ -1,7 +1,7 @@
 .BourbonTable {
   height: 224px;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .BourbonTable-header {
@@ -25,6 +25,10 @@
   box-shadow: 0 1px 0 0 #EAEDF3;
 }
 
+.BourbonTable-row:first-child {
+  height: 44px;
+}
+
 .BourbonTable-rowItem {
   color: #6B6C6F;
 }
@@ -36,4 +40,10 @@
 
 .BourbonTable-rowItem:last-child * {
   float: right;
+}
+
+.BourbonTable .BourbonTable-header,
+.BourbonTable .BourbonTable-row,
+.BourbonTable .BourbonTable-rowItem {
+  width: 1%;
 }

@@ -23,7 +23,7 @@ export default FreestyleController.extend(ModalMixin, {
           content: {
             component: 'bourbon-button',
             title: 'Remove',
-            classNames: "BourbonButton--primary"
+            classNames: "BourbonButton--secondary"
           },
           type: "component"
         }
@@ -37,7 +37,7 @@ export default FreestyleController.extend(ModalMixin, {
           content: {
             component: 'bourbon-button',
             title: 'Remove',
-            classNames: "BourbonButton--primary"
+            classNames: "BourbonButton--secondary"
           },
           type: "component"
         }
@@ -50,7 +50,7 @@ export default FreestyleController.extend(ModalMixin, {
           content: {
             component: 'bourbon-button',
             title: 'Remove',
-            classNames: "BourbonButton--primary"
+            classNames: "BourbonButton--secondary"
           },
           type: "component"
         }

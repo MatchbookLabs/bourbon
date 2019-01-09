@@ -1672,7 +1672,7 @@ body {
 .BourbonTable {
   height: 224px;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .BourbonTable-header {
@@ -1694,6 +1694,10 @@ body {
   box-shadow: 0 1px 0 0 #eaedf3;
 }
 
+.BourbonTable-row:first-child {
+  height: 44px;
+}
+
 .BourbonTable-rowItem {
   color: #6b6c6f;
 }
@@ -1705,6 +1709,12 @@ body {
 
 .BourbonTable-rowItem:last-child * {
   float: right;
+}
+
+.BourbonTable .BourbonTable-header,
+.BourbonTable .BourbonTable-row,
+.BourbonTable .BourbonTable-rowItem {
+  width: 1%;
 }
 
 .BourbonTextField {
