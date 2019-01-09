@@ -16,7 +16,7 @@
   {{/if}}
 </select>
 
-<div class="BourbonSelectField-selected" mousedown="focusOut" focusin="focusIn" focusout="focusOut" tabindex="0">{{label}}</div>
+<div class="BourbonSelectField-selected" tabindex="0">{{label}}</div>
 <div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}">
   {{#if useOptGroup}}
     {{#each groupedContent as |group|}}
