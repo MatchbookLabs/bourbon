@@ -1567,7 +1567,6 @@ body {
   font-size: .875rem;
   position: relative;
   display: inline-block;
-  padding: 10px;
   cursor: pointer;
   word-wrap: break-word;
   line-height: 1em;
@@ -1580,20 +1579,6 @@ body {
   border: 1px solid;
   border-color: #dcdcdc;
   border-radius: 2px;
-}
-
-.BourbonSelectField:before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  right: 20px;
-  border-style: solid;
-  border-color: #474c4f;
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 4px;
-          transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
 }
 
 .BourbonSelectField--active,
@@ -1661,12 +1646,27 @@ body {
 
 .BourbonSelectField-selected {
   font-size: .875rem;
-  width: 94%;
+  width: 100%;
+  padding: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5;
   outline: none;
+}
+
+.BourbonSelectField-selected:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  border-style: solid;
+  border-color: #474c4f;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 4px;
+          transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .BourbonTable {
