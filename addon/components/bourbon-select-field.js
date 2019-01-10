@@ -44,8 +44,8 @@ export default Component.extend({
     this.set("showList", false);
   },
 
-  focusIn() {
-    this.set("showList", true);
+  mouseDown() {
+    this.set("showList", !(this.get("showList")));
   },
 
   resetPrompt: observer("label", function() {
