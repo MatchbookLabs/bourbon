@@ -22,8 +22,7 @@ In bourbon run the following commands
 To pick up the changes to the component, you will need to run the following command in the frontend fold you are working in
 * `npm link bourbon`
 
-To pick up the styling changes to the component, you will need to run the following command in the root directory of flabongo fold you are working in
-* `bower link bourbon`
+When making changes in bourbon, you will need to restart the flabongo server in order to see the changes.  This is because flabongo is not watching for changes in the `node_modules` folders when freshing the page.
 
 Contributing
 ------------------------------------------------------------------------------
