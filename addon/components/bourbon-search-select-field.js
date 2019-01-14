@@ -116,10 +116,7 @@ export default Component.extend(SelectMixin, {
   resetPrompt: observer("label", function () {
     if (this.get("label")) {
       this.set("inputValue", this.get("label"));
-    } else if (
-      this.get("prompt") &&
-      this.get("inputValue") !== ""
-    ) {
+    } else if ( this.get("prompt") && this.get("inputValue") !== "") {
       this.set("inputValue", this.get("prompt"));
     }
   }),
