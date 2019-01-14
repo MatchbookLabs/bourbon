@@ -1,12 +1,13 @@
 import Component from '@ember/component';
 import layout from '../templates/components/bourbon-search-select-field';
 import { isPresent } from "@ember/utils";
+import SelectMixin from "bourbon/mixins/select";
 
 import { A } from '@ember/array';
 
 import { observer, computed } from '@ember/object';
 
-export default Component.extend({
+export default Component.extend(SelectMixin, {
   layout,
   classNames: ["BourbonSearchSelectField"],
   classNameBindings: ["showDropdown:btw-z-20"],
@@ -16,6 +17,13 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.set("searchList", this.get("content"));
+
+    if (this.get("label") !== null && this.get("value") !== null) {
+      this.inputValueObserver();
+    } else if (this.get("value")) {
+      this.setLabel(this.get('value'));
+      this.inputValueObserver();
+    }
   },
 
   value: null,
@@ -43,6 +51,8 @@ export default Component.extend({
 
   focusIn() {
     this.set("activeOption", null);
+    this.set("inputValue", "");
+    this.set("value", null);
   },
 
   focusOut() {
@@ -59,7 +69,9 @@ export default Component.extend({
   keyDown(e) {
     let el = $(e.currentTarget);
     let list = el.find(".BourbonSelectField-menu ");
-    let allOptions = el.find(".BourbonSelectField-menu .BourbonSelectField-option");
+    let allOptions = el.find(
+      ".BourbonSelectField-menu .BourbonSelectField-option"
+    );
     let numOptions = allOptions.length;
 
     if (e.keyCode === 40) {
@@ -101,6 +113,14 @@ export default Component.extend({
     }
   },
 
+  resetPrompt: observer("label", function () {
+    if (this.get("label")) {
+      this.set("inputValue", this.get("label"));
+    } else if ( this.get("prompt") && this.get("inputValue") !== "") {
+      this.set("inputValue", this.get("prompt"));
+    }
+  }),
+
   selectOption(allOptions, list) {
     let selectedOption = allOptions[this.get("activeOption")];
     this.scrollList(selectedOption, list);
@@ -114,17 +134,25 @@ export default Component.extend({
     document.activeElement.blur();
   },
 
-  searchResults: observer("inputValue", "content", function() {
+  searchResults: observer("value", "inputValue", "content", function() {
     if (this.get("inputValue") === "") {
       this.set("searchList", this.get("content"));
-      return this.get("content");
     } else {
       let searchString;
+      let selectedValue = this.get("value")
+        ? this.get("value")
+        : this.get("inputValue");
 
-      if (typeof this.get("inputValue") === "string") {
-        searchString = this.get("inputValue").toLowerCase();
+      if (typeof selectedValue === "string") {
+        searchString = selectedValue.toLowerCase();
+      } else if (
+        selectedValue &&
+        selectedValue.__data &&
+        typeof selectedValue.get('label') === "string"
+      ) {
+        searchString = selectedValue.get("label").toLowerCase();
       } else {
-        searchString = this.get("inputValue.label").toLowerCase();
+        searchString = selectedValue.label.toLowerCase();
       }
 
       let searchList = this.get("content").filter(option =>
@@ -145,43 +173,13 @@ export default Component.extend({
 
   selection: computed("value", {
     get(key) {
-      let path = this.get("_valuePath");
-      if (path && this.get("value") && this.get("content")) {
-        return this.get("content").findBy(path, this.get("value"));
-      } else {
-        return this.get("value");
-      }
+      this.getSelection();
     },
 
     set(key, value) {
       if (isPresent(value)) {
-        if (typeof value.label === "string") {
-          let label = value.label;
-          this.set("label", label);
-        } else if (value.formattedTitle) {
-          this.set("label", value.get("formattedTitle"));
-        } else if (value.__data) {
-          let data = value.__data;
-
-          if (data.label) {
-            this.set("label", data.label);
-          } else if (data.title) {
-            this.set("label", data.title);
-          }
-        } else {
-          this.set("label", value);
-        }
-
-        let path = this.get("_valuePath");
-        if (path) {
-          this.set(
-            "value",
-            (typeof value.get === "function" ? value.get(path) : void 0) ||
-              value[path]
-          );
-        } else {
-          this.set("value", value);
-        }
+        this.setLabel(value);
+        this.setValue(value);
       }
       this.set("activeOption", null);
       return value;
@@ -194,17 +192,15 @@ export default Component.extend({
     },
 
     hideContent() {
-      if (
-        this.get("label")
-      ) {
+      if (this.get("label")) {
         this.set("inputValue", this.get("label"));
       }
 
       this.set("showDropdown", false);
     },
 
-    // only used for initial load - rest of changes are coming through the bourbon select field option
     updateSearchSelection() {
+      // for key up and down selection
       this.set(
         "selection",
         this.get("searchList").objectAt(this.get("activeOption"))

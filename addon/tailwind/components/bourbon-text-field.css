@@ -1,10 +1,12 @@
 .BourbonTextField {
   @apply .btw-text-md;
+  @apply .btw-text-slate;
   padding: 10px;
+  @apply .btw-bg-white;
 
-  border: 1px solid;
-  @apply .btw-border-alto;
-  border-radius: 2px;
+  border: 1px solid var(--alto);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
   width: 100%;
   height: 3em;
 }

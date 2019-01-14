@@ -3,10 +3,11 @@ import { computed, defineProperty, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { scheduleOnce } from '@ember/runloop';
 import groupBy from 'ember-group-by';
+import SelectMixin from "bourbon/mixins/select";
 
 import layout from '../templates/components/bourbon-select-field';
 
-export default Component.extend({
+export default Component.extend(SelectMixin, {
   layout,
 
   init() {
@@ -48,57 +49,15 @@ export default Component.extend({
     this.set("showList", !(this.get("showList")));
   },
 
-  resetPrompt: observer("label", function() {
-    if (this.get("label")) {
-      this.set("searchTerm", this.get("label"));
-    } else if (
-      this.get("prompt") &&
-      !this.get("hasValue") &&
-      this.get("searchTerm") !== ""
-    ) {
-      this.set("label", this.get("prompt"));
-    }
-  }),
-
   selection: computed("content.[]", "optionValuePath", "value", {
     get(key) {
-      let path = this.get("_valuePath");
-      if (path && this.get("value") && this.get("content")) {
-        return this.get("content").findBy(path, this.get("value"));
-      } else {
-        return this.get("value");
-      }
+      this.getSelection();
     },
 
     set(key, value) {
       if (isPresent(value)) {
-        if (typeof value.label === "string") {
-          let label = value.label;
-          this.set("label", label);
-        } else if (value.formattedTitle) {
-          this.set("label", value.get("formattedTitle"));
-        } else if (value.__data) {
-          let data = value.__data;
-
-          if (data.label) {
-            this.set("label", data.label);
-          } else if (data.title) {
-            this.set("label", data.title);
-          }
-        } else {
-          this.set("label", value);
-        }
-
-        let path = this.get("_valuePath");
-        if (path) {
-          this.set(
-            "value",
-            (typeof value.get === "function" ? value.get(path) : void 0) ||
-              value[path]
-          );
-        } else {
-          this.set("value", value);
-        }
+        this.setLabel(value);
+        this.setValue(value);
       }
       return value;
     }

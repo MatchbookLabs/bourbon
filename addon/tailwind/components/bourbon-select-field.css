@@ -8,13 +8,13 @@
   line-height: 1em;
   white-space: normal;
   transform: rotateZ(0);
-  min-width: 22em;
+  min-width: 15em;
   height: 3em;
   @apply .btw-bg-white;
-  @apply .btw-text-black;
+  @apply .btw-text-slate;
   border: 1px solid;
   @apply .btw-border-alto;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .BourbonSelectField--active,
