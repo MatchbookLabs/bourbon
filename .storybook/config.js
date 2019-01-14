@@ -31,10 +31,10 @@ addDecorator(
 );
 
 function loadStories() {
-    require('../stories/Modals.stories.js');
     require('../stories/Buttons.stories.js');
     require('../stories/Tooltip.stories.js');
     require('../stories/TextField.stories.js');
+    require('../stories/Modals.stories.js');
     require('../stories/SelectField.stories.js');
     require('../stories/SearchSelectField.stories.js');
     require('../stories/StaticComponents.stories.js');

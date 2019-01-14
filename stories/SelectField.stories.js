@@ -45,7 +45,7 @@ storiesOf("select field", module)
           <li>action</li>
         </ul>
 
-        <div class="FreestyleUsage-rendered">An example you find for usage in Flabongo.</div>
+        <div>An example you find for usage in Flabongo.</div>
               = bourbon-select-field
                 content=mappingTypes
                 optionLabelPath="content.label"
@@ -98,7 +98,7 @@ storiesOf("select field", module)
           <li>action</li>
         </ul>
 
-        <div class="FreestyleUsage-rendered">An example you find for usage in Flabongo.</div>
+        <div>An example you find for usage in Flabongo.</div>
               = bourbon-select-field
                 content=mappingTypes
                 optionLabelPath="content.label"
