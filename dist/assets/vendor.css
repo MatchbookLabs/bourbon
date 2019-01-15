@@ -1139,10 +1139,6 @@ body {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.BourbonAccordionItem--open {
-  border-top: 1px solid var(--alto);
-}
-
 .BourbonAccordionItem-body {
   display: none;
   padding: 25px 0;
@@ -1182,6 +1178,7 @@ body {
   list-style: none;
   padding: 0;
   position: relative;
+  border-top: 1px solid var(--alto);
   border-bottom: 1px solid var(--alto);
 }
 
