@@ -1146,10 +1146,12 @@ body {
 .BourbonAccordionItem-body {
   display: none;
   padding: 25px 0;
+  border-top: 1px solid var(--alto);
 }
 
 .BourbonAccordionItem-header {
   padding: 25px 0;
+  border-bottom: 1px solid var(--alto);
 }
 
 .BourbonAccordionItem-header,
@@ -1161,18 +1163,19 @@ body {
   cursor: pointer;
 }
 
-.BourbonAccordionItem-header.BourbonAccordionItem-header--open {
-  font-weight: bold;
-}
-
 .BourbonAccordionItem-body.BourbonAccordionItem-body--open {
   font-size: .875rem;
 }
 
-.BourbonAccordionItem-header--open,
 .BourbonAccordionItem-body--open {
   display: block !important;
   color: #000;
+  border-top: none;
+  border-bottom: 1px solid var(--alto);
+}
+
+.BourbonAccordionItem-header--open {
+  border-bottom: none;
 }
 
 .BourbonAccordion {
