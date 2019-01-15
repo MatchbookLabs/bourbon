@@ -1139,17 +1139,15 @@ body {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.BourbonAccordionItem {
-  border-top: 1px solid var(--alto);
-}
-
 .BourbonAccordionItem-body {
   display: none;
-  padding-bottom: 25px;
+  padding: 25px 0;
+  border-top: 1px solid var(--alto);
 }
 
 .BourbonAccordionItem-header {
   padding: 25px 0;
+  border-bottom: 1px solid var(--alto);
 }
 
 .BourbonAccordionItem-header,
@@ -1161,24 +1159,26 @@ body {
   cursor: pointer;
 }
 
-.BourbonAccordionItem-header.BourbonAccordionItem-header--open {
-  font-weight: bold;
-}
-
 .BourbonAccordionItem-body.BourbonAccordionItem-body--open {
   font-size: .875rem;
 }
 
-.BourbonAccordionItem-header--open,
 .BourbonAccordionItem-body--open {
   display: block !important;
   color: #000;
+  border-top: none;
+  border-bottom: 1px solid var(--alto);
+}
+
+.BourbonAccordionItem-header--open {
+  border-bottom: none;
 }
 
 .BourbonAccordion {
   list-style: none;
   padding: 0;
   position: relative;
+  border-top: 1px solid var(--alto);
   border-bottom: 1px solid var(--alto);
 }
 
