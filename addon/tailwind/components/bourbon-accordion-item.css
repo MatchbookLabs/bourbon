@@ -1,10 +1,10 @@
-.BourbonAccordionItem {
+.BourbonAccordionItem--open {
   border-top: 1px solid var(--alto);
 }
 
 .BourbonAccordionItem-body {
   display: none;
-  padding-bottom: 25px;
+  padding: 25px 0;
 }
 
 .BourbonAccordionItem-header {

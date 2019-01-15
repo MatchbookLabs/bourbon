@@ -6,6 +6,7 @@ export default Component.extend({
   layout,
   tagName: "li",
   classNames: ["BourbonAccordionItem"],
+  classNameBindings: ["isOpen:BourbonAccordionItem--open"],
   isOpen: computed("listItem.open", function() {
     if (this.get("listItem.open") === true) {
       return true;
