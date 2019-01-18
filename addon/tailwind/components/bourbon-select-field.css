@@ -58,6 +58,7 @@
   cursor: pointer;
 }
 
+.BourbonSelectField-optionGroupName,
 .BourbonSelectField-option {
   @apply .btw-text-md;
   @apply .btw-bg-white;
@@ -70,6 +71,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.BourbonSelectField-optionGroupName {
+  background-color: var(--alabaster);
+  border-top: 1px solid var(--shade);
+  border-bottom: 1px solid var(--shade);
+  cursor: not-allowed;
 }
 
 .BourbonSelectField-option:hover {

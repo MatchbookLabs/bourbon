@@ -21,7 +21,7 @@ export default Component.extend(SelectMixin, {
     if (this.get("label") !== null && this.get("value") !== null) {
       this.inputValueObserver();
     } else if (this.get("value")) {
-      this.setLabel(this.get('value'));
+      this.setLabel(this.get("value"));
       this.inputValueObserver();
     }
   },
@@ -113,10 +113,10 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  resetPrompt: observer("label", function () {
+  resetPrompt: observer("label", function() {
     if (this.get("label")) {
       this.set("inputValue", this.get("label"));
-    } else if ( this.get("prompt") && this.get("inputValue") !== "") {
+    } else if (this.get("prompt") && this.get("inputValue") !== "") {
       this.set("inputValue", this.get("prompt"));
     }
   }),
@@ -134,30 +134,55 @@ export default Component.extend(SelectMixin, {
     document.activeElement.blur();
   },
 
+  getSearchString(selectedValue) {
+    if (typeof selectedValue === "string") {
+      return selectedValue.toLowerCase();
+    } else if (
+      selectedValue &&
+      selectedValue.__data &&
+      typeof selectedValue.get("label") === "string"
+    ) {
+      return selectedValue.get("label").toLowerCase();
+    } else {
+      return selectedValue.label.toLowerCase();
+    }
+  },
+
+  getSearchList(searchString) {
+    if (this.get("groupedContent")) {
+      let searchGroupList = [];
+      for (var group of this.get("content")) {
+        let newGroupItems = group.items.filter(option =>
+          this.optionValue(option).match(searchString)
+        );
+
+        if (newGroupItems.length) {
+          searchGroupList.push({
+            label: group.label,
+            items: newGroupItems
+          });
+        }
+      }
+
+      return searchGroupList;
+    } else {
+      return this.get("content").filter(option =>
+        this.optionValue(option).match(searchString)
+      );
+    }
+  },
+
   searchResults: observer("value", "inputValue", "content", function() {
     if (this.get("inputValue") === "") {
       this.set("searchList", this.get("content"));
     } else {
-      let searchString;
       let selectedValue = this.get("value")
         ? this.get("value")
         : this.get("inputValue");
 
-      if (typeof selectedValue === "string") {
-        searchString = selectedValue.toLowerCase();
-      } else if (
-        selectedValue &&
-        selectedValue.__data &&
-        typeof selectedValue.get('label') === "string"
-      ) {
-        searchString = selectedValue.get("label").toLowerCase();
-      } else {
-        searchString = selectedValue.label.toLowerCase();
-      }
+      let searchString = this.getSearchString(selectedValue);
 
-      let searchList = this.get("content").filter(option =>
-        this.optionValue(option).match(searchString)
-      );
+      let searchList = this.getSearchList(searchString);
 
       if (searchList.length === 0) {
         if (this.get("optionLabelPath")) {

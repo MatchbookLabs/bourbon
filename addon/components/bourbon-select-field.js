@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import { computed, defineProperty, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { scheduleOnce } from '@ember/runloop';
-import groupBy from 'ember-group-by';
 import SelectMixin from "bourbon/mixins/select";
 
 import layout from '../templates/components/bourbon-select-field';
@@ -12,11 +11,6 @@ export default Component.extend(SelectMixin, {
 
   init() {
     this._super(...arguments);
-    let groupByPath = this.get("groupByPath");
-    if (groupByPath) {
-      defineProperty(this, "groupedContent", groupBy("content", groupByPath));
-    }
-
     if (this.get("hasPrompt") && this.get("value") === null) {
       this.set("selection", this.get("prompt"));
       this.set("label", this.get("prompt"));
@@ -36,9 +30,8 @@ export default Component.extend(SelectMixin, {
   optionValuePath: null,
   optionLabelPath: null,
   optionEnabledPath: null,
-  groupByPath: null,
+  groupedContent: false,
   showList: false,
-  useOptGroup: computed.bool("groupByPath"),
   prompt: null,
   hasPrompt: computed.notEmpty("prompt"),
   value: null,
