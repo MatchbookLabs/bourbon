@@ -17,9 +17,12 @@ export default Component.extend(SelectMixin, {
       defineProperty(this, "groupedContent", groupBy("content", groupByPath));
     }
 
-    if (this.get("hasPrompt")) {
+    if (this.get("hasPrompt") && this.get("value") === null) {
       this.set("selection", this.get("prompt"));
       this.set("label", this.get("prompt"));
+    } else if (typeof this.get("value") === "string") {
+      let value = this.findValueObject(this.get("value"));
+      this.set("selection", value);
     }
   },
 
@@ -46,7 +49,15 @@ export default Component.extend(SelectMixin, {
   },
 
   mouseDown() {
-    this.set("showList", !(this.get("showList")));
+    this.set("showList", !this.get("showList"));
+  },
+
+  findValueObject(valueString) {
+    for (var optIndex in this.get("content")) {
+      if (this.get("content")[optIndex].value === valueString) {
+        return this.get("content")[optIndex];
+      }
+    }
   },
 
   selection: computed("content.[]", "optionValuePath", "value", {
