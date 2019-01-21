@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed, defineProperty, observer } from '@ember/object';
+import { computed, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { scheduleOnce } from '@ember/runloop';
 import SelectMixin from "bourbon/mixins/select";
@@ -37,6 +37,12 @@ export default Component.extend(SelectMixin, {
   value: null,
   hasValue: computed.notEmpty("value"),
 
+  inputValueObserver: observer("value", function() {
+    if (this.get('value') === null) {
+      this.set("label", this.get("prompt"));
+    }
+  }),
+
   focusOut() {
     this.set("showList", false);
   },
@@ -53,15 +59,22 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  selection: computed("content.[]", "optionValuePath", "value", {
+  selection: computed("content.[]", "value", {
     get(key) {
       this.getSelection();
     },
 
     set(key, value) {
       if (isPresent(value)) {
-        this.setLabel(value);
-        this.setValue(value);
+        if (this.get("groupedContent") && this.get('value')) {
+          let valueString = this.get("value.label");
+          let searchValue = this.findValueObject(valueString);
+          this.setLabel(searchValue);
+          this.setValue(searchValue);
+        } else {
+          this.setLabel(value);
+          this.setValue(value);
+        }
       }
       return value;
     }

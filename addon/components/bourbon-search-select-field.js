@@ -36,7 +36,11 @@ export default Component.extend(SelectMixin, {
   optionEnabledPath: null,
 
   inputValueObserver: observer("value", function() {
-    this.set("inputValue", this.get("label"));
+    if (this.get('value')) {
+      this.set("inputValue", this.get("label"));
+    } else {
+      this.set("inputValue", this.get("prompt"));
+    }
   }),
 
   optionValue(option) {
@@ -52,7 +56,6 @@ export default Component.extend(SelectMixin, {
   focusIn() {
     this.set("activeOption", null);
     this.set("inputValue", "");
-    this.set("value", null);
   },
 
   focusOut() {
@@ -193,6 +196,8 @@ export default Component.extend(SelectMixin, {
       } else {
         this.set("searchList", A(searchList));
       }
+
+      return searchList
     }
   }),
 
