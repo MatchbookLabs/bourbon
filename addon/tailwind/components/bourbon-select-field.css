@@ -75,8 +75,8 @@
 
 .BourbonSelectField-optionGroupName {
   background-color: var(--alabaster);
-  border-top: 1px solid var(--shade);
-  border-bottom: 1px solid var(--shade);
+  border-top: 1px solid var(--alto);
+  border-bottom: 1px solid var(--alto);
   cursor: not-allowed;
 }
 
