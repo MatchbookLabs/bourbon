@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import layout from '../templates/components/bourbon-search-select-field';
-import { isPresent } from "@ember/utils";
-import SelectMixin from "bourbon/mixins/select";
+import { isPresent } from '@ember/utils';
+import SelectMixin from 'bourbon/mixins/select';
 
 import { A } from '@ember/array';
 
@@ -9,18 +9,18 @@ import { observer, computed } from '@ember/object';
 
 export default Component.extend(SelectMixin, {
   layout,
-  classNames: ["BourbonSearchSelectField"],
-  classNameBindings: ["showDropdown:btw-z-20"],
+  classNames: ['BourbonSearchSelectField'],
+  classNameBindings: ['showDropdown:btw-z-20'],
   isOpen: false,
   activeOption: null,
 
   init() {
     this._super(...arguments);
-    this.set("searchList", this.get("content"));
+    this.set('searchList', this.get('content'));
 
-    if (this.get("label") !== null && this.get("value") !== null) {
+    if (this.get('label') !== null && this.get('value') !== null) {
       this.inputValueObserver();
-    } else if (this.get("value")) {
+    } else if (this.get('value')) {
       this.setLabel(this.get('value'));
       this.inputValueObserver();
     }
@@ -28,19 +28,23 @@ export default Component.extend(SelectMixin, {
 
   value: null,
   label: null,
-  inputValue: "",
+  inputValue: '',
   showDropdown: false,
   searchList: null,
   optionValuePath: null,
   optionLabelPath: null,
   optionEnabledPath: null,
 
-  inputValueObserver: observer("value", function() {
-    this.set("inputValue", this.get("label"));
+  inputValueObserver: observer('value', function() {
+    if (this.get('value')) {
+      this.set('inputValue', this.get('label'));
+    } else {
+      this.set('inputValue', this.get('prompt'));
+    }
   }),
 
   optionValue(option) {
-    if (typeof option === "string") {
+    if (typeof option === 'string') {
       return option.toLowerCase();
     } else if (option.__data) {
       return option.__data.label.toLowerCase();
@@ -50,61 +54,60 @@ export default Component.extend(SelectMixin, {
   },
 
   focusIn() {
-    this.set("activeOption", null);
-    this.set("inputValue", "");
-    this.set("value", null);
+    this.set('activeOption', null);
+    this.set('inputValue', '');
   },
 
   focusOut() {
-    this.set("activeOption", null);
+    this.set('activeOption', null);
   },
 
   scrollList(item, list) {
     let listHeight = list.height();
-    let totalHeight = (this.get("activeOption") + 1) * item.scrollHeight;
+    let totalHeight = (this.get('activeOption') + 1) * item.scrollHeight;
     let scrollHeight = totalHeight - listHeight;
     list.scrollTop(scrollHeight);
   },
 
   keyDown(e) {
     let el = $(e.currentTarget);
-    let list = el.find(".BourbonSelectField-menu ");
+    let list = el.find('.BourbonSelectField-menu ');
     let allOptions = el.find(
-      ".BourbonSelectField-menu .BourbonSelectField-option"
+      '.BourbonSelectField-menu .BourbonSelectField-option'
     );
     let numOptions = allOptions.length;
 
     if (e.keyCode === 40) {
-      if (this.get("activeOption") !== numOptions - 1) {
-        $(allOptions).removeClass("Bourbon--active");
+      if (this.get('activeOption') !== numOptions - 1) {
+        $(allOptions).removeClass('Bourbon--active');
       }
 
       if (
-        this.get("activeOption") >= 0 &&
-        this.get("activeOption") < numOptions - 1
+        this.get('activeOption') >= 0 &&
+        this.get('activeOption') < numOptions - 1
       ) {
-        if (this.get("activeOption") === null) {
-          this.set("activeOption", 0);
+        if (this.get('activeOption') === null) {
+          this.set('activeOption', 0);
         } else {
-          this.set("activeOption", this.get("activeOption") + 1);
+          this.set('activeOption', this.get('activeOption') + 1);
         }
 
         this.selectOption(allOptions, list);
       }
     } else if (e.keyCode === 38) {
-      if (this.get("activeOption") === null) {
+      if (this.get('activeOption') === null) {
         return;
       }
 
       if (
-        this.get("activeOption") > 0 &&
-        this.get("activeOption") < numOptions
+        this.get('activeOption') > 0 &&
+        this.get('activeOption') < numOptions
       ) {
-        if (this.get("activeOption") !== numOptions) {
-          $(allOptions).removeClass("Bourbon--active");
+        if (this.get('activeOption') !== numOptions) {
+          $(allOptions).removeClass('Bourbon--active');
         }
 
-        this.set("activeOption", this.get("activeOption") - 1);
+        this.set('activeOption', this.get('activeOption') - 1);
         this.selectOption(allOptions, list);
       }
     } else if (e.keyCode === 13) {
@@ -113,65 +116,92 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  resetPrompt: observer("label", function () {
-    if (this.get("label")) {
-      this.set("inputValue", this.get("label"));
-    } else if ( this.get("prompt") && this.get("inputValue") !== "") {
-      this.set("inputValue", this.get("prompt"));
+  resetPrompt: observer('label', function() {
+    if (this.get('label')) {
+      this.set('inputValue', this.get('label'));
+    } else if (this.get('prompt') && this.get('inputValue') !== '') {
+      this.set('inputValue', this.get('prompt'));
     }
   }),
 
   selectOption(allOptions, list) {
-    let selectedOption = allOptions[this.get("activeOption")];
+    let selectedOption = allOptions[this.get('activeOption')];
     this.scrollList(selectedOption, list);
-    $(selectedOption).addClass("Bourbon--active");
+    $(selectedOption).addClass('Bourbon--active');
   },
 
   resetOptions() {
-    this.send("updateSearchSelection");
-    this.set("showDropdown", false);
-    this.set("activeOption", null);
+    this.send('updateSearchSelection');
+    this.set('showDropdown', false);
+    this.set('activeOption', null);
     document.activeElement.blur();
   },
 
-  searchResults: observer("value", "inputValue", "content", function() {
-    if (this.get("inputValue") === "") {
-      this.set("searchList", this.get("content"));
+  getSearchString(selectedValue) {
+    if (typeof selectedValue === 'string') {
+      return selectedValue.toLowerCase();
+    } else if (
+      selectedValue &&
+      selectedValue.__data &&
+      typeof selectedValue.get('label') === 'string'
+    ) {
+      return selectedValue.get('label').toLowerCase();
     } else {
-      let searchString;
-      let selectedValue = this.get("value")
-        ? this.get("value")
-        : this.get("inputValue");
+      return selectedValue.label.toLowerCase();
+    }
+  },
 
-      if (typeof selectedValue === "string") {
-        searchString = selectedValue.toLowerCase();
-      } else if (
-        selectedValue &&
-        selectedValue.__data &&
-        typeof selectedValue.get('label') === "string"
-      ) {
-        searchString = selectedValue.get("label").toLowerCase();
-      } else {
-        searchString = selectedValue.label.toLowerCase();
+  getSearchList(searchString) {
+    if (this.get('groupedContent')) {
+      let searchGroupList = [];
+      for (var group of this.get('content')) {
+        let newGroupItems = group.items.filter(option =>
+          this.optionValue(option).match(searchString)
+        );
+
+        if (newGroupItems.length) {
+          searchGroupList.push({
+            label: group.label,
+            items: newGroupItems
+          });
+        }
       }
 
-      let searchList = this.get("content").filter(option =>
+      return searchGroupList;
+    } else {
+      return this.get('content').filter(option =>
         this.optionValue(option).match(searchString)
       );
+    }
+  },
+
+  searchResults: observer('value', 'inputValue', 'content', function() {
+    if (this.get('inputValue') === '') {
+      this.set('searchList', this.get('content'));
+    } else {
+      let selectedValue = this.get('value')
+        ? this.get('value')
+        : this.get('inputValue');
+
+      let searchString = this.getSearchString(selectedValue);
+
+      let searchList = this.getSearchList(searchString);
 
       if (searchList.length === 0) {
-        if (this.get("optionLabelPath")) {
-          this.set("searchList", A([{ label: "No results found." }]));
+        if (this.get('optionLabelPath')) {
+          this.set('searchList', A([{ label: 'No results found.' }]));
         } else {
-          this.set("searchList", A(["No results found."]));
+          this.set('searchList', A(['No results found.']));
         }
       } else {
-        this.set("searchList", A(searchList));
+        this.set('searchList', A(searchList));
       }
+
+      return searchList
     }
   }),
 
-  selection: computed("value", {
+  selection: computed('value', {
     get(key) {
       this.getSelection();
     },
@@ -181,29 +211,29 @@ export default Component.extend(SelectMixin, {
         this.setLabel(value);
         this.setValue(value);
       }
-      this.set("activeOption", null);
+      this.set('activeOption', null);
       return value;
     }
   }),
 
   actions: {
     showContent() {
-      this.set("showDropdown", true);
+      this.set('showDropdown', true);
     },
 
     hideContent() {
-      if (this.get("label")) {
-        this.set("inputValue", this.get("label"));
+      if (this.get('label')) {
+        this.set('inputValue', this.get('label'));
       }
 
-      this.set("showDropdown", false);
+      this.set('showDropdown', false);
     },
 
     updateSearchSelection() {
       // for key up and down selection
       this.set(
-        "selection",
-        this.get("searchList").objectAt(this.get("activeOption"))
+        'selection',
+        this.get('searchList').objectAt(this.get('activeOption'))
       );
     }
   }

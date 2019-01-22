@@ -3,6 +3,6 @@ import layout from '../templates/components/bourbon-accordion';
 
 export default Component.extend({
   layout,
-  tagName: "ul",
-  classNames: ["BourbonAccordion"],
+  tagName: 'ul',
+  classNames: ['BourbonAccordion'],
 });

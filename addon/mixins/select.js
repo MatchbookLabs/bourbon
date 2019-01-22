@@ -2,21 +2,23 @@ import Mixin from "@ember/object/mixin";
 
 export default Mixin.create({
   setLabel(value) {
-    if (typeof value.label === "string") {
-      let label = value.label;
+    let checkValue = value ? value : this.get('value')
+
+    if (typeof checkValue.label === "string") {
+      let label = checkValue.label;
       this.set("label", label);
-    } else if (typeof value === "string" || typeof value === "number") {
-      this.set("label", value);
-    } else if (value.formattedTitle) {
+    } else if (typeof checkValue === "string" || typeof value === "number") {
+      this.set("label", checkValue);
+    } else if (checkValue.formattedTitle) {
       this.set("label", value.get("formattedTitle"));
-    } else if (value.get("label")) {
-      this.set("label", value.get("label"));
-    } else if (value.get("title")) {
-      this.set("label", value.get("title"));
-    } else if (value.get("text")) {
-      this.set("label", value.get("text"));
+    } else if (checkValue.get("label")) {
+      this.set("label", checkValue.get("label"));
+    } else if (checkValue.get("title")) {
+      this.set("label", checkValue.get("title"));
+    } else if (checkValue.get("text")) {
+      this.set("label", checkValue.get("text"));
     } else {
-      this.set("label", value);
+      this.set("label", checkValue);
     }
   },
 

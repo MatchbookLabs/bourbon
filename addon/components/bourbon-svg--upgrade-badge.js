@@ -18,6 +18,6 @@ export default Component.extend({
   }),
 
   iconColor: computed('color', function() {
-    return `btw-text-${this.get("color")} btw-fill-current`
+    return `btw-text-${this.get('color')} btw-fill-current`
   })
 });

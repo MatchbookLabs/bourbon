@@ -2,11 +2,13 @@
   {{#if hasPrompt}}
     <option value={{prompt}}>{{prompt}}</option>
   {{/if}}
-  {{#if useOptGroup}}
-    {{#each groupedContent as |group|}}
-      {{#each group.items as |option|}}
-        {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
-      {{/each}}
+  {{#if groupedContent}}
+    {{#each content as |group|}}
+      <optgroup label={{group.label}}>
+        {{#each group.items as |option|}}
+          {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+        {{/each}}
+      </optgroup>
     {{/each}}
 
   {{else}}
@@ -18,16 +20,17 @@
 
 <div class="BourbonSelectField-selected" tabindex="0">{{label}}</div>
 <div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}">
-  {{#if useOptGroup}}
-    {{#each groupedContent as |group|}}
+  {{#if groupedContent}}
+    {{#each content as |group|}}
+      <div class="BourbonSelectField-optionGroupName">{{group.label}}</div>
       {{#each group.items as |option index|}}
-        {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+        {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath disabled=option.disabled target=target role="listitem"}}
       {{/each}}
     {{/each}}
 
   {{else}}
     {{#each content as |option index|}}
-      {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+      {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath disabled=option.disabled target=target role="listitem"}}
     {{/each}}
   {{/if}}
 </div>
