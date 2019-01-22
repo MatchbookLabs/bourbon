@@ -9,11 +9,11 @@ export default Component.extend({
     this._super(...arguments);
 
     this.setProperties({
-      tooltipClass: "BourbonTooltip--dark",
-      tooltipPosition: this.get("position") || "top",
-      tooltipSpacing: this.get("spacing") || 10,
-      tooltipEvent: this.get("event") || "hover",
-      tooltipBackgroundColor: this.get("background") || "dark",
+      tooltipClass: 'BourbonTooltip--dark',
+      tooltipPosition: this.get('position') || 'top',
+      tooltipSpacing: this.get('spacing') || 10,
+      tooltipEvent: this.get('event') || 'hover',
+      tooltipBackgroundColor: this.get('background') || 'dark',
       popperOptions: {
         modifiers: {
           preventOverflow: {
@@ -23,6 +23,6 @@ export default Component.extend({
       }
     });
 
-    this.set("tooltipBackgroundClass", `BourbonTooltip--${this.get("tooltipBackgroundColor")} BourbonTooltip--${this.get("tooltipPosition")} BourbonTooltip ember-tooltip`);
+    this.set('tooltipBackgroundClass', `BourbonTooltip--${this.get('tooltipBackgroundColor')} BourbonTooltip--${this.get('tooltipPosition')} BourbonTooltip ember-tooltip`);
   }
 });
