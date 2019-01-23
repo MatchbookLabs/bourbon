@@ -9,8 +9,10 @@ export default Mixin.create({
       this.set("label", label);
     } else if (typeof checkValue === "string" || typeof value === "number") {
       this.set("label", checkValue);
+    } else if (checkValue.text) {
+      this.set('label', checkValue.text);
     } else if (checkValue.formattedTitle) {
-      this.set("label", value.get("formattedTitle"));
+      this.set('label', checkValue.get('formattedTitle'));
     } else if (checkValue.get("label")) {
       this.set("label", checkValue.get("label"));
     } else if (checkValue.get("title")) {
