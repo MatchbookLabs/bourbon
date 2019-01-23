@@ -1354,13 +1354,11 @@ body {
 }
 
 .BourbonButton--icon {
-  height: 55px;
   box-shadow: inset 0 0 0 1px var(--mercury);
 }
 
 .BourbonButton--icon svg {
   border-radius: 4px;
-  height: 30px;
 }
 
 .BourbonDemoPrompt-container {
