@@ -1,2 +1,1 @@
-web: npm start
-storybook: npm start
+web: bin/boot
