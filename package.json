@@ -18,7 +18,7 @@
     "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
     "test": "bin/test",
     "test:all": "ember try:each",
-    "build-storybook": "ember build && build-storybook -p 4200 -s dist"
+    "build-storybook": "ember build && build-storybook -c .storybook -o build -s dist"
   },
   "dependencies": {
     "babel-plugin-ember-modules-api-polyfill": "^2.6.0",
