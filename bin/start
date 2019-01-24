@@ -1,4 +1,0 @@
-#!/bin/bash
-#
-
-ember build && start-storybook -p ${PORT:-4200} -s dist
