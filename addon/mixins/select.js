@@ -40,9 +40,69 @@ export default Mixin.create({
   getSelection() {
     let path = this.get("_valuePath");
     if (path && this.get("value") && this.get("content")) {
-      return this.get("content").findBy(path, this.get("value"));
+      return this.get("content").findBy(path);
     } else {
       return this.get("value");
     }
+  },
+
+  keyDown(e) {
+    let el = $(e.currentTarget);
+    let list = el.find('.BourbonSelectField-menu ');
+    let allOptions = el.find(
+      '.BourbonSelectField-menu .BourbonSelectField-option'
+    );
+    let numOptions = allOptions.length;
+
+    if (e.keyCode === 40) {
+      if (this.get('activeOption') !== numOptions - 1) {
+        $(allOptions).removeClass('Bourbon--active');
+      }
+
+      if (
+        this.get('activeOption') >= 0 &&
+        this.get('activeOption') < numOptions - 1
+      ) {
+        if (this.get('activeOption') === null) {
+          this.set('activeOption', 0);
+        } else {
+          this.set('activeOption', this.get('activeOption') + 1);
+        }
+
+        this.selectOption(allOptions, list);
+      }
+    } else if (e.keyCode === 38) {
+      if (this.get('activeOption') === null) {
+        return;
+      }
+
+      if (
+        this.get('activeOption') > 0 &&
+        this.get('activeOption') < numOptions
+      ) {
+        if (this.get('activeOption') !== numOptions) {
+          $(allOptions).removeClass('Bourbon--active');
+        }
+
+        this.set('activeOption', this.get('activeOption') - 1);
+        this.selectOption(allOptions, list);
+      }
+    } else if (e.keyCode === 13) {
+      e.preventDefault();
+      this.resetOptions();
+    }
+  },
+
+  selectOption(allOptions, list) {
+    let selectedOption = allOptions[this.get('activeOption')];
+    this.scrollList(selectedOption, list);
+    $(selectedOption).addClass('Bourbon--active');
+  },
+
+  scrollList(item, list) {
+    let listHeight = list.height();
+    let totalHeight = (this.get('activeOption') + 1) * item.scrollHeight;
+    let scrollHeight = totalHeight - listHeight;
+    list.scrollTop(scrollHeight);
   }
 });

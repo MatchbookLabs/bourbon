@@ -43,6 +43,14 @@ export default Component.extend(SelectMixin, {
     }
   }),
 
+  resetPrompt: observer('label', function() {
+    if (this.get('label')) {
+      this.set('inputValue', this.get('label'));
+    } else if (this.get('prompt') && this.get('inputValue') !== '') {
+      this.set('inputValue', this.get('prompt'));
+    }
+  }),
+
   optionValue(option) {
     if (typeof option === 'string') {
       return option.toLowerCase();
@@ -62,74 +70,6 @@ export default Component.extend(SelectMixin, {
   focusOut() {
     this.set('activeOption', null);
     this.set('showDropdown', false);
-  },
-
-  scrollList(item, list) {
-    let listHeight = list.height();
-    let totalHeight = (this.get('activeOption') + 1) * item.scrollHeight;
-    let scrollHeight = totalHeight - listHeight;
-    list.scrollTop(scrollHeight);
-  },
-
-  keyDown(e) {
-    let el = $(e.currentTarget);
-    let list = el.find('.BourbonSelectField-menu ');
-    let allOptions = el.find(
-      '.BourbonSelectField-menu .BourbonSelectField-option'
-    );
-    let numOptions = allOptions.length;
-
-    if (e.keyCode === 40) {
-      if (this.get('activeOption') !== numOptions - 1) {
-        $(allOptions).removeClass('Bourbon--active');
-      }
-
-      if (
-        this.get('activeOption') >= 0 &&
-        this.get('activeOption') < numOptions - 1
-      ) {
-        if (this.get('activeOption') === null) {
-          this.set('activeOption', 0);
-        } else {
-          this.set('activeOption', this.get('activeOption') + 1);
-        }
-
-        this.selectOption(allOptions, list);
-      }
-    } else if (e.keyCode === 38) {
-      if (this.get('activeOption') === null) {
-        return;
-      }
-
-      if (
-        this.get('activeOption') > 0 &&
-        this.get('activeOption') < numOptions
-      ) {
-        if (this.get('activeOption') !== numOptions) {
-          $(allOptions).removeClass('Bourbon--active');
-        }
-
-        this.set('activeOption', this.get('activeOption') - 1);
-        this.selectOption(allOptions, list);
-      }
-    } else if (e.keyCode === 13) {
-      e.preventDefault();
-      this.resetOptions();
-    }
-  },
-
-  resetPrompt: observer('label', function() {
-    if (this.get('label')) {
-      this.set('inputValue', this.get('label'));
-    } else if (this.get('prompt') && this.get('inputValue') !== '') {
-      this.set('inputValue', this.get('prompt'));
-    }
-  }),
-
-  selectOption(allOptions, list) {
-    let selectedOption = allOptions[this.get('activeOption')];
-    this.scrollList(selectedOption, list);
-    $(selectedOption).addClass('Bourbon--active');
   },
 
   resetOptions() {
@@ -181,12 +121,11 @@ export default Component.extend(SelectMixin, {
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {
-      let selectedValue = this.get('value')
-        ? this.get('value')
-        : this.get('inputValue');
+      let selectedValue = this.get('inputValue')
+        ? this.get('inputValue')
+        : this.get('value');
 
       let searchString = this.getSearchString(selectedValue);
-
       let searchList = this.getSearchList(searchString);
 
       if (searchList.length === 0) {
@@ -213,9 +152,11 @@ export default Component.extend(SelectMixin, {
         this.setLabel(value);
         this.setValue(value);
       }
+
       this.set('activeOption', null);
       return value;
     }
+
   }),
 
   actions: {

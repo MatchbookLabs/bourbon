@@ -36,6 +36,7 @@ export default Component.extend(SelectMixin, {
   hasPrompt: computed.notEmpty('prompt'),
   value: null,
   hasValue: computed.notEmpty('value'),
+  activeOption: null,
 
   inputValueObserver: observer('value', function() {
     if (this.get('value') === null) {
@@ -44,11 +45,20 @@ export default Component.extend(SelectMixin, {
   }),
 
   focusOut() {
+    this.set('activeOption', null);
     this.set('showList', false);
   },
 
   mouseDown() {
+    this.set('activeOption', null);
     this.set('showList', !this.get('showList'));
+  },
+
+  resetOptions() {
+    this.send('updateSelection');
+    this.set('showList', false);
+    this.set('activeOption', null);
+    document.activeElement.blur();
   },
 
   findValueObject(valueString) {
@@ -59,9 +69,10 @@ export default Component.extend(SelectMixin, {
     }
   },
 
+
   selection: computed('content.[]', 'value', {
     get(key) {
-      this.getSelection();
+      return this.getSelection();
     },
 
     set(key, value) {
@@ -111,11 +122,15 @@ export default Component.extend(SelectMixin, {
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
 
-      if (this.get('prompt')) {
-        selectedIndex -= 1;
-      }
+      if (this.get('activeOption')) {
+        this.set('selection', this.get('content').objectAt(this.get('activeOption')));
+      } else {
+        if (this.get('prompt')) {
+          selectedIndex -= 1;
+        }
 
-      this.set('selection', this.get('content').objectAt(selectedIndex));
+        this.set('selection', this.get('content').objectAt(selectedIndex));
+      }
     }
   }
 });
