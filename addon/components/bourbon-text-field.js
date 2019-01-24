@@ -4,7 +4,7 @@ import layout from '../templates/components/bourbon-text-field';
 
 export default TextField.extend({
   classNames: ['BourbonTextField'],
-  classNameBindings: ['value::empty'],
+  classNameBindings: ['value::empty', 'isFocused:BourbonTextField--active'],
   layout,
 
   actionOnFocusIn: '',
@@ -13,6 +13,7 @@ export default TextField.extend({
   onFocusOutOrEnter: '',
   autofocus: false,
   value: null,
+  isFocused: false,
 
   didInsertElement()  {
     if (this.get('autofocus')) {
@@ -22,7 +23,7 @@ export default TextField.extend({
 
   focusIn(e) {
     this._super(...arguments);
-
+    this.set('isFocused', true)
     if (this.get('actionOnFocusIn')) {
       this.get('actionOnFocusIn')();
     }
@@ -30,6 +31,8 @@ export default TextField.extend({
 
   focusOut(e) {
     this._super(...arguments);
+    this.set('isFocused', false)
+
     if (this.get('onFocusOutOrEnter')) {
       this.get('onFocusOutOrEnter')(this.get('value'))
     }

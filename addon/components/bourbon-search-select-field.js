@@ -10,7 +10,7 @@ import { observer, computed } from '@ember/object';
 export default Component.extend(SelectMixin, {
   layout,
   classNames: ['BourbonSearchSelectField'],
-  classNameBindings: ['showDropdown:btw-z-20'],
+  classNameBindings: ['showDropdown:btw-z-20','showDropdown:BourbonSelectField--active'],
   isOpen: false,
   activeOption: null,
 
@@ -53,13 +53,15 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  focusIn() {
+  mouseDown() {
     this.set('activeOption', null);
     this.set('inputValue', '');
+    this.set('showDropdown', !this.get('showDropdown'));
   },
 
   focusOut() {
     this.set('activeOption', null);
+    this.set('showDropdown', false);
   },
 
   scrollList(item, list) {
