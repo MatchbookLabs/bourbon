@@ -103,7 +103,6 @@ export default FreestyleController.extend(ModalMixin, {
         "pats very jealous pupper big ol pupper. Borkf heck heckin good boys vvv big ol pupper what a nice floof I am bekom fat shibe snoot doggorino, shoober heckin good boys wow such tempt borkf porgo h*ck ruff. Smol borking doggo with a long snoot for pats ur givin me a spook borking doggo long doggo long woofer, tungg doggo porgo, noodle horse very good spot very hand that feed shibe. Waggy wags much ruin diet you are doing me the shock, many pats.",
     });
 
-
     this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose', 'deer', 'kitten', 'puppy', 'duck', 'capybara'])),
 
     this.set('groupContent', A([
@@ -139,8 +138,8 @@ export default FreestyleController.extend(ModalMixin, {
             value: 'banana'
           }
         ])
-       }
-      ])),
+      }
+    ])),
     this.set('petObject', A([
       {
         label: 'Chompsky the only Brussels Griffon',
@@ -170,7 +169,6 @@ export default FreestyleController.extend(ModalMixin, {
         value: 'banana'
       }
     ])),
-
 
     this.set('somePetObject', A([
       {
