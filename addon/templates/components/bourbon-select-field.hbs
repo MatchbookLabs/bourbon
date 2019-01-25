@@ -21,11 +21,14 @@
 <div class="BourbonSelectField-selected" tabindex="0">{{label}}</div>
 <div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}">
   {{#if groupedContent}}
-    {{#each content as |group|}}
-      <div class="BourbonSelectField-optionGroupName">{{group.label}}</div>
-      {{#each group.items as |option index|}}
-        {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath disabled=option.disabled target=target role="listitem"}}
-      {{/each}}
+    {{#each content as |group index|}}
+      <div class="BourbonSelectField-optionGroup" index={{index}}>
+        <div class="BourbonSelectField-optionGroupName">{{group.label}}</div>
+        {{#each group.items as |option index|}}
+          {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath disabled=option.disabled target=target role="listitem"}}
+        {{/each}}
+      </div>
+
     {{/each}}
 
   {{else}}

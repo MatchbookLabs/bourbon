@@ -9,13 +9,23 @@
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
   width: 100%;
   height: 3em;
+  cursor: pointer;
+
 }
 
-.BourbonTextField:focus {
+.BourbonTextField--active {
   @apply .btw-border-dodger-blue;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   outline: none;
 }
+
+
+.empty.BourbonTextField--active {
+  @apply .btw-border-alto;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
+  outline: none;
+}
+
 
 .BourbonTextField[disabled] {
   cursor: not-allowed;

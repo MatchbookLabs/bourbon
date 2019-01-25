@@ -1615,6 +1615,26 @@ body {
 .BourbonSearchSelectField-inputContainer {
   position: relative;
   z-index: 23;
+  width: 100%;
+}
+
+.BourbonSearchSelectField--active {
+  border-color: #2e71fc;
+  box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.BourbonSearchSelectField--active .BourbonSearchSelectField-inputContainer .BourbonTextField:focus {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.BourbonSearchSelectField--active .BourbonSearchSelectField-inputContainer .BourbonTextField {
+  border-color: #2e71fc;
+  box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .BourbonSearchSelectField-inputContainer:before {
@@ -1628,10 +1648,15 @@ body {
   padding: 4px;
           transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  cursor: pointer;
 }
 
 .BourbonSearchSelectField-searchContainer .BourbonSelectField {
   top: -42px;
+}
+
+.BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
+  top: 40px;
 }
 
 .BourbonSelectField {
@@ -1652,10 +1677,18 @@ body {
   border-radius: 4px;
 }
 
-.BourbonSelectField--active,
+.BourbonSelectField--active {
+  border-color: #2e71fc;
+  box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .BourbonSelectField-menu.BourbonSelect--focus {
   border-color: #2e71fc;
   box-shadow: 0 2px 2px rgba(24, 144, 255, .2);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .BourbonSelectField--active {
@@ -1668,13 +1701,11 @@ body {
   overflow-y: auto;
   backface-visibility: hidden;
   -webkit-overflow-scrolling: touch;
-  border-top-width: 0 !important;
   min-width: calc(100% + 2px);
   width: calc(100% + 2px);
   max-height: 13em;
   cursor: auto;
   position: absolute;
-  top: 97%;
   left: -1px;
   border-radius: 2px;
   margin: 0;
@@ -1685,6 +1716,7 @@ body {
   text-align: left;
   border: 1px solid;
   border-color: #dcdcdc;
+  border-top-width: 0 !important;
   z-index: 11;
 }
 
@@ -1806,11 +1838,18 @@ body {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
   width: 100%;
   height: 3em;
+  cursor: pointer;
 }
 
-.BourbonTextField:focus {
+.BourbonTextField--active {
   border-color: #2e71fc;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+  outline: none;
+}
+
+.empty.BourbonTextField--active {
+  border-color: #dcdcdc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
   outline: none;
 }
 

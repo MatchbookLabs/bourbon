@@ -6,6 +6,27 @@
 .BourbonSearchSelectField-inputContainer {
   position: relative;
   z-index: 23;
+  width: 100%;
+}
+
+
+.BourbonSearchSelectField--active {
+  @apply .btw-border-dodger-blue;
+  box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.BourbonSearchSelectField--active .BourbonSearchSelectField-inputContainer .BourbonTextField:focus {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.BourbonSearchSelectField--active .BourbonSearchSelectField-inputContainer .BourbonTextField {
+  @apply .btw-border-dodger-blue;
+  box-shadow: 0px 2px 2px rgba(24, 144, 255, .2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .BourbonSearchSelectField-inputContainer:before {
@@ -19,8 +40,13 @@
   padding: 4px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  cursor: pointer;
 }
 
 .BourbonSearchSelectField-searchContainer .BourbonSelectField {
   top: -42px;
+}
+
+.BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
+  top: 40px;
 }

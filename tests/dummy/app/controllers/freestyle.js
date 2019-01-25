@@ -105,6 +105,42 @@ export default FreestyleController.extend(ModalMixin, {
 
 
     this.set('petsArray', A(['cats', 'dogs', 'rabbits', 'bears', 'beaver', 'moose', 'goose', 'deer', 'kitten', 'puppy', 'duck', 'capybara'])),
+
+    this.set('groupContent', A([
+      {
+        label:  'pets',
+        items: A([
+          {
+            label: 'Chompsky the only Brussels Griffon',
+            value: 'the only Brussels Griffon'
+          },
+          {
+            label: 'Memphis the other Brussels Griffon',
+            value: 'the other Brussels Griffon'
+          },
+          {
+            label: 'Macho the Frenchie who is so Frenchie',
+            value: 'Frenchie'
+          }
+        ])},
+      {
+        label: 'fruits',
+        items: A([
+          {
+            label: 'apple',
+            value: 'apple'
+          },
+          {
+            label: 'orange',
+            value: 'orange'
+          },
+          {
+            label: 'banana',
+            value: 'banana'
+          }
+        ])
+       }
+      ])),
     this.set('petObject', A([
       {
         label: 'Chompsky the only Brussels Griffon',
@@ -117,6 +153,21 @@ export default FreestyleController.extend(ModalMixin, {
       {
         label: 'Macho the Frenchie who is so Frenchie',
         value: 'Frenchie'
+      }
+    ])),
+
+    this.set('fruitObject', A([
+      {
+        label: 'apple',
+        value: 'apple'
+      },
+      {
+        label: 'orange',
+        value: 'orange'
+      },
+      {
+        label: 'banana',
+        value: 'banana'
       }
     ])),
 

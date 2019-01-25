@@ -36,6 +36,7 @@ export default Component.extend(SelectMixin, {
   hasPrompt: computed.notEmpty('prompt'),
   value: null,
   hasValue: computed.notEmpty('value'),
+  activeOption: null,
 
   inputValueObserver: observer('value', function() {
     if (this.get('value') === null) {
@@ -44,39 +45,46 @@ export default Component.extend(SelectMixin, {
   }),
 
   focusOut() {
+    this.set('activeOption', null);
     this.set('showList', false);
   },
 
   mouseDown() {
+    this.set('activeOption', null);
     this.set('showList', !this.get('showList'));
   },
 
   findValueObject(valueString) {
-    for (var optIndex in this.get('content')) {
-      if (this.get('content')[optIndex].value === valueString) {
+    for (var optIndex of this.get('content')) {
+      if (this.get('content')[optIndex].label === valueString) {
         return this.get('content')[optIndex];
       }
     }
+
   },
 
-  selection: computed('content.[]', 'value', {
+  keyDown(e) {
+    this.moveUpDown(e);
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      this.send('updateSelection');
+      this.set('showList', false);
+      this.set('activeOption', null);
+      document.activeElement.blur();
+    }
+  },
+
+  selection: computed('value', {
     get(key) {
       this.getSelection();
     },
 
     set(key, value) {
       if (isPresent(value)) {
-        if (this.get('groupedContent') && this.get('value')) {
-          let valueString = this.get('value.label');
-          let searchValue = this.findValueObject(valueString);
-          this.setLabel(searchValue);
-          this.setValue(searchValue);
-        } else {
-          this.setLabel(value);
-          this.setValue(value);
-        }
+        this.setLabel(value);
+        this.setValue(value);
       }
-      return value;
+      this.set('activeOption', null);
     }
   }),
 
@@ -111,11 +119,16 @@ export default Component.extend(SelectMixin, {
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
 
-      if (this.get('prompt')) {
-        selectedIndex -= 1;
-      }
+      if (this.get('activeOption')) {
+        this.set('selection', this.get('content').objectAt(this.get('activeOption')))
+      } else {
+        if (this.get('prompt')) {
+          selectedIndex -= 1;
+        }
 
-      this.set('selection', this.get('content').objectAt(selectedIndex));
+        this.set('selection', this.get('content').objectAt(selectedIndex));
+
+      }
     }
   }
 });
