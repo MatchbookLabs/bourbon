@@ -10,7 +10,10 @@ import { observer, computed } from '@ember/object';
 export default Component.extend(SelectMixin, {
   layout,
   classNames: ['BourbonSearchSelectField'],
-  classNameBindings: ['showDropdown:btw-z-20','showDropdown:BourbonSelectField--active'],
+  classNameBindings: [
+    'showDropdown:btw-z-20',
+    'showDropdown:BourbonSearchSelectField--active'
+  ],
   isOpen: false,
   activeOption: null,
 
@@ -44,7 +47,9 @@ export default Component.extend(SelectMixin, {
   }),
 
   resetPrompt: observer('label', function() {
-    if (this.get('label')) {
+    if (this.get('value') === null && this.get('prompt')) {
+      this.set('inputValue', this.get('prompt'));
+    } else if (this.get('label')) {
       this.set('inputValue', this.get('label'));
     } else if (this.get('prompt') && this.get('inputValue') !== '') {
       this.set('inputValue', this.get('prompt'));
@@ -62,12 +67,14 @@ export default Component.extend(SelectMixin, {
   },
 
   mouseDown() {
+    this.resetPrompt();
     this.set('activeOption', null);
-    this.set('inputValue', '');
     this.set('showDropdown', !this.get('showDropdown'));
+    this.set('inputValue', '');
   },
 
   focusOut() {
+    this.resetPrompt();
     this.set('activeOption', null);
     this.set('showDropdown', false);
   },

@@ -69,7 +69,6 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-
   selection: computed('content.[]', 'value', {
     get(key) {
       return this.getSelection();
