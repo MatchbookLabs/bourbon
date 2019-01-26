@@ -2,7 +2,7 @@ import Mixin from "@ember/object/mixin";
 
 export default Mixin.create({
   setLabel(value) {
-    let checkValue = value ? value : this.get('value')
+    let checkValue = value ? value : this.get('value');
 
     if (typeof checkValue.label === "string") {
       let label = checkValue.label;
@@ -27,7 +27,7 @@ export default Mixin.create({
   setValue(value) {
     let path = this.get("_valuePath");
 
-    let checkValue = value ? value : this.get('value')
+    let checkValue = value ? value : this.get('value');
     if (path && checkValue) {
       this.set(
         "value",
@@ -48,6 +48,7 @@ export default Mixin.create({
     );
     let numOptions = allOptions.length;
 
+    // e.keyCode 40 is for 'down arrow'
     if (e.keyCode === 40) {
       if (this.get('activeOption') !== numOptions - 1) {
         $(allOptions).removeClass('Bourbon--active');
@@ -65,6 +66,7 @@ export default Mixin.create({
 
         this.selectOption(allOptions, list);
       }
+    // e.keyCode 38 is for 'up arrow'
     } else if (e.keyCode === 38) {
       if (this.get('activeOption') === null) {
         return;

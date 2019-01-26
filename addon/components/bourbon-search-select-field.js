@@ -82,6 +82,7 @@ export default Component.extend(SelectMixin, {
 
   keyDown(e) {
     this.moveUpDown(e);
+    // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
       this.send('updateSearchSelection');
@@ -116,7 +117,7 @@ export default Component.extend(SelectMixin, {
 
         if (newGroupItems.length) {
           searchGroupList.push({
-            label: group.label,
+            groupHeader: group.groupHeader,
             items: newGroupItems
           });
         }
@@ -175,10 +176,6 @@ export default Component.extend(SelectMixin, {
     },
 
     hideContent() {
-      if (this.get('label')) {
-        this.set('inputValue', this.get('label'));
-      }
-
       this.set('showDropdown', false);
     },
 

@@ -55,7 +55,7 @@ export default Component.extend(SelectMixin, {
   },
 
   findValueObject(valueString) {
-    for (var optIndex of this.get('content')) {
+    for (var optIndex in this.get('content')) {
       if (this.get('content')[optIndex].label === valueString) {
         return this.get('content')[optIndex];
       }
@@ -65,6 +65,7 @@ export default Component.extend(SelectMixin, {
 
   keyDown(e) {
     this.moveUpDown(e);
+    // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
       this.send('updateSelection');

@@ -107,7 +107,7 @@ export default FreestyleController.extend(ModalMixin, {
 
     this.set('groupContent', A([
       {
-        label:  'pets',
+        groupHeader:  'pets',
         items: A([
           {
             label: 'Chompsky the only Brussels Griffon',
@@ -123,7 +123,7 @@ export default FreestyleController.extend(ModalMixin, {
           }
         ])},
       {
-        label: 'fruits',
+        groupHeader: 'fruits',
         items: A([
           {
             label: 'apple',
