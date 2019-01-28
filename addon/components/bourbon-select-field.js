@@ -86,6 +86,7 @@ export default Component.extend(SelectMixin, {
         this.setValue(value);
       }
       this.set('activeOption', null);
+      return value;
     }
   }),
 

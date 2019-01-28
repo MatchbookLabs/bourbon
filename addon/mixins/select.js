@@ -2,7 +2,7 @@ import Mixin from "@ember/object/mixin";
 
 export default Mixin.create({
   setLabel(value) {
-    let checkValue = value ? value : this.get('value');
+    let checkValue = this.getCheckValue(value);
 
     if (typeof checkValue.label === "string") {
       let label = checkValue.label;
@@ -13,7 +13,7 @@ export default Mixin.create({
       this.set('label', checkValue.text);
     } else if (checkValue.formattedTitle) {
       this.set('label', checkValue.get('formattedTitle'));
-    } else if (checkValue.get("label")) {
+    } else if (checkValue.label || checkValue.get("label")) {
       this.set("label", checkValue.get("label"));
     } else if (checkValue.get("title")) {
       this.set("label", checkValue.get("title"));
@@ -27,7 +27,8 @@ export default Mixin.create({
   setValue(value) {
     let path = this.get("_valuePath");
 
-    let checkValue = value ? value : this.get('value');
+    let checkValue = this.getCheckValue(value);
+
     if (path && checkValue) {
       this.set(
         "value",
@@ -36,6 +37,14 @@ export default Mixin.create({
       );
     } else {
       this.set("value", checkValue);
+    }
+  },
+
+  getCheckValue(value) {
+    if (value.groupHeader) {
+      return this.get('value');
+    } else {
+      return value ? value : this.get('value');
     }
   },
 

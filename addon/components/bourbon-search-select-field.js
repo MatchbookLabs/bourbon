@@ -57,7 +57,6 @@ export default Component.extend(SelectMixin, {
   },
 
   mouseDown() {
-    this.resetPrompt();
     this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
     this.set('inputValue', '');
@@ -130,7 +129,7 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  searchResults: observer('value', 'inputValue', function() {
+  searchResults: observer('inputValue', function() {
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {
@@ -167,6 +166,8 @@ export default Component.extend(SelectMixin, {
         this.setValue(value);
       }
       this.set('activeOption', null);
+      return value;
+
     }
   }),
 
@@ -182,6 +183,7 @@ export default Component.extend(SelectMixin, {
     updateSearchSelection() {
       // for key up and down selection
       if (this.get('groupedContent')) {
+
         let groupList = []
         for (var option of this.get('searchList')) {
           groupList.push(...option.items)
