@@ -49,8 +49,15 @@ export default Component.extend(SelectMixin, {
     this.set('showList', false);
   },
 
-  mouseDown() {
-    this.set('activeOption', null);
+  mouseDown(e) {
+    let el = $(e.target);
+    if (el.find('BourbonSelectField-option')) {
+      this.set('activeOption', el.attr('index'));
+      this.send("updateSelection");
+
+    } else {
+      this.set('activeOption', null);
+    }
     this.set('showList', !this.get('showList'));
   },
 
@@ -82,6 +89,9 @@ export default Component.extend(SelectMixin, {
 
     set(key, value) {
       if (isPresent(value)) {
+        if (this.get('groupedContent') && value.groupHeader) {
+          value = value.items[0]
+        }
         this.setLabel(value);
         this.setValue(value);
       }

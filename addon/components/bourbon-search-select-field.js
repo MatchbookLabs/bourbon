@@ -162,6 +162,9 @@ export default Component.extend(SelectMixin, {
 
     set(key, value) {
       if (isPresent(value)) {
+        if (this.get('groupedContent') && value.groupHeader) {
+          value = value.items[0]
+        }
         this.setLabel(value);
         this.setValue(value);
       }
@@ -183,7 +186,6 @@ export default Component.extend(SelectMixin, {
     updateSearchSelection() {
       // for key up and down selection
       if (this.get('groupedContent')) {
-
         let groupList = []
         for (var option of this.get('searchList')) {
           groupList.push(...option.items)
