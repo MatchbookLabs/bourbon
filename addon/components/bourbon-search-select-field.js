@@ -60,7 +60,7 @@ export default Component.extend(SelectMixin, {
     this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
 
-    if (this.get('showDropdown') === true) {
+    if (this.get('showDropdown')) {
       this.set('inputValue', '');
     } else {
       this.inputValueObserver();
