@@ -134,7 +134,8 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  searchResults: observer('inputValue', function() {
+  searchResults: observer('inputValue','content', function() {
+
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {

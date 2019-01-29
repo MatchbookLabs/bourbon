@@ -11,6 +11,7 @@ export default Component.extend(SelectMixin, {
 
   init() {
     this._super(...arguments);
+
     if (this.get('hasPrompt') && this.get('value') === null) {
       this.set('selection', this.get('prompt'));
       this.set('label', this.get('prompt'));
