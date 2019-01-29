@@ -8,6 +8,8 @@ export default TextField.extend({
     'value::empty',
     'isFocused:BourbonTextField--active'
   ],
+  attributeBindings: ['autocomplete'],
+
   layout,
 
   actionOnFocusIn: '',

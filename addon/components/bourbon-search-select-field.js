@@ -59,7 +59,12 @@ export default Component.extend(SelectMixin, {
   mouseDown() {
     this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
-    this.set('inputValue', '');
+
+    if (this.get('showDropdown')) {
+      this.set('inputValue', '');
+    } else {
+      this.inputValueObserver();
+    }
   },
 
   focusOut() {
