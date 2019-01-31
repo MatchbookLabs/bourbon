@@ -31,13 +31,13 @@ addDecorator(
 );
 
 function loadStories() {
-    require('../stories/Buttons.stories.js');
-    require('../stories/Tooltip.stories.js');
-    require('../stories/TextField.stories.js');
-    require('../stories/Modals.stories.js');
-    require('../stories/SelectField.stories.js');
-    require('../stories/SearchSelectField.stories.js');
-    require('../stories/StaticComponents.stories.js');
+    require('../stories/Buttons/Buttons.stories.js');
+    require('../stories/Tooltip/Tooltip.stories.js');
+    require('../stories/TextField/TextField.stories.js');
+    require('../stories/Modals/Modals.stories.js');
+    require('../stories/SelectField/SelectField.stories.js');
+    require('../stories/SearchSelectField/SearchSelectField.stories.js');
+    require('../stories/StaticComponents/StaticComponents.stories.js');
     require('../stories/Icons.stories.js');
 }
 

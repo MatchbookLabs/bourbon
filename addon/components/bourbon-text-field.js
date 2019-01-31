@@ -23,6 +23,7 @@ export default TextField.extend({
   didInsertElement()  {
     if (this.get('autofocus')) {
       this.$().focus()
+      this.set('isFocused', true);
     }
   },
 
