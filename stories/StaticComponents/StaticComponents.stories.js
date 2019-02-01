@@ -7,7 +7,7 @@ import demoPrompt from './demoPrompt.md';
 
 
 
-storiesOf('static component', module)
+storiesOf('static components', module)
   .add(
     'alert badge',
     () => {

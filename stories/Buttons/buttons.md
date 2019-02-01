@@ -1,7 +1,6 @@
 
 # button component
 
-- The primary button is used in most situations to indicate the primary action.
 - All titles should be entered in sentence case.
 
 &nbsp;

@@ -867,6 +867,7 @@ body {
   position: relative;
   border-top: 1px solid var(--alto);
   border-bottom: 1px solid var(--alto);
+  width: 688px;
 }
 
 .BourbonAlertBadge-container {
