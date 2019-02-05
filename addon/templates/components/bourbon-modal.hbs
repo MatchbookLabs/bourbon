@@ -1,6 +1,6 @@
 {{#if modalService.showModalState}}
   {{bourbon-modal-overlay closeModal=(action 'closeBourbonModal')}}
-  <aside class="BourbonModal {{if modalService.scrollable 'BourbonModal--scrollable'}} {{if modalService.wideModal 'BourbonModal--large'}} {{if modalService.confirmationModal 'BourbonModal--confirmation'}} {{if modalService.noPaddingModal 'BourbonModal--noPadding'}} {{if modalService.hideFooter 'BourbonModal--hideFooter'}}">
+  <aside class="BourbonModal {{if modalService.scrollable 'BourbonModal--scrollable'}} {{if modalService.wideModal 'BourbonModal--large'}} {{if modalService.noPaddingModal 'BourbonModal--noPadding'}} {{if modalService.hideFooter 'BourbonModal--hideFooter'}}">
     <div class="BourbonModal-header">
       {{#if modalService.title}}
         <header class="BourbonModal-title">{{modalService.title}}</header>
