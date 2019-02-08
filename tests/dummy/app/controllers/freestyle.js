@@ -273,6 +273,18 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneType: 'secondary',
     }),
 
+
+    this.set('modalNotificationParams', {
+      closeAction: this.controllerCloseAction,
+      notificationModal: true,
+      notificationIcon: 'bourbon-confirm-email-icon',
+      title: 'Please confirm your email',
+      textContent: 'We just sent you a link to click on to confirm your email address. Please confirm this as soon as you can.',
+      buttonOneTitle: 'Sounds good',
+      buttonOneAction: this.primaryClick,
+    }),
+
+
     this.set('confirmationModalParams', {
       confirmationModal: true,
       closeAction: this.controllerCloseAction,

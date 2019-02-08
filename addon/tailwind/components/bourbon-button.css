@@ -40,7 +40,6 @@
   @apply .btw-border-fern;
 }
 
-
 .BourbonButton--primary:hover {
   @apply .btw-bg-emerald;
   @apply .btw-border-emerald;
@@ -149,4 +148,9 @@
 
 .BourbonButton--icon svg {
   border-radius: 4px;
+}
+
+.BourbonButton--fullWidth {
+  @apply .btw-w-full;
+  height: 45px;
 }

@@ -17,6 +17,8 @@ export default Component.extend({
       return '36px';
     } else if (this.get('size') === 'xlarge') {
       return '55px';
+    } else if (this.get('size') === 'xxlarge') {
+      return '100px';
     }
   }),
 

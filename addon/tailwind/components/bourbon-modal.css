@@ -47,11 +47,13 @@
 .BourbonModal-title {
   font-size: 28px;
   line-height: 39px;
+  @apply .btw-text-mine-shaft;
+
   @apply .btw-text-3xl;
   @apply .btw-antialiased;
 
   @apply .btw-mt-2;
-  @apply .btw-mb-8;
+  @apply .btw-mb-5;
 }
 
 .BourbonModal--subheader,
@@ -160,4 +162,27 @@
 .BourbonModal--noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
+}
+
+
+/* Styles for notification modal */
+.BourbonModal--notification {
+  text-align: center;
+  width: 432px;
+  padding: 40px;
+}
+.BourbonModal--notification  .BourbonModal-title {
+  @apply .btw-mb-4
+}
+
+.BourbonModal--notification  .BourbonModal-footer {
+  flex-direction: column-reverse;
+}
+
+.BourbonModal--notification .BourbonModal-link {
+  padding-top: 20px;
+}
+
+.BourbonModal--notification  .BourbonModal-dialog {
+  @apply .btw-mb-5;
 }
