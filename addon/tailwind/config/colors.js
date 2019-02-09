@@ -26,7 +26,7 @@ export default {
   'black': '#000',
   'white': '#FFF',
   'slate': '#474C4F',
-  'light-tuna': '#3E3F42',
+  'light-tuna': '#777',
   'tuna': 'rgba(60,64,67,0.90)',
   'alto': '#DCDCDC',
   'alabaster': '#FAFAFA',

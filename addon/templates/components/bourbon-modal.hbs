@@ -1,11 +1,15 @@
 {{#if modalService.showModalState}}
   {{bourbon-modal-overlay closeModal=(action 'closeBourbonModal')}}
-  <aside class="BourbonModal {{if modalService.scrollable 'BourbonModal--scrollable'}} {{if modalService.wideModal 'BourbonModal--large'}} {{if modalService.noPaddingModal 'BourbonModal--noPadding'}} {{if modalService.hideFooter 'BourbonModal--hideFooter'}}">
+  <aside class="BourbonModal {{if modalService.scrollable 'BourbonModal--scrollable'}} {{if modalService.notificationModal 'BourbonModal--notification'}} {{if modalService.wideModal 'BourbonModal--large'}} {{if modalService.noPaddingModal 'BourbonModal--noPadding'}} {{if modalService.hideFooter 'BourbonModal--hideFooter'}}">
+    {{#if modalService.notificationIcon}}
+      {{bourbon-icon bourbonIcon=modalService.notificationIcon size='xxlarge'}}
+    {{/if}}
+
     <div class="BourbonModal-header">
       {{#if modalService.title}}
         <header class="BourbonModal-title">{{modalService.title}}</header>
       {{/if}}
-      {{#if modalService.dismissable}}
+      {{#if showCloseButton}}
         {{bourbon-button icon='close-button' class='BourbonModal-closeButton' action=(action 'closeBourbonModal') aria-label='Close'}}
       {{/if}}
     </div>
@@ -23,11 +27,11 @@
 
       <div class="BourbonModal-buttonContainer">
         {{#if modalService.buttonTwoTitle}}
-          {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction')}}
+          {{bourbon-button title=modalService.buttonTwoTitle class=buttonTwoClass action=(action 'buttonTwoAction') fullWidth=modalService.notificationModal }}
         {{/if}}
 
         {{#if modalService.buttonOneTitle}}
-          {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction')}}
+          {{bourbon-button title=modalService.buttonOneTitle class=buttonOneClass action=(action 'buttonOneAction') fullWidth=modalService.notificationModal }}
         {{/if}}
 
         {{#if modalService.copyButtonTitle}}

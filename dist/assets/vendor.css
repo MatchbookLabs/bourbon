@@ -1121,6 +1121,7 @@ making styling changes in the library */
   --dodger-blue: #2e71fc;
   --slate: #474c4f;
   --tuna: rgba(60, 64, 67, .9);
+  --light-tuna: #777;
   --alto: #dcdcdc;
   --lightgray: #d3d3d3;
   --alabaster: #fafafa;
@@ -1361,6 +1362,11 @@ body {
   border-radius: 4px;
 }
 
+.BourbonButton--fullWidth {
+  width: 100%;
+  height: 45px;
+}
+
 .BourbonDemoPrompt-container {
   min-height: 168px;
   width: 737px;
@@ -1458,7 +1464,7 @@ body {
   padding: 35px;
   z-index: 7;
   text-align: left;
-  color: #3e3f42;
+  color: #777;
   border-color: #d3d3d3;
   background-color: #fff;
   border-radius: .25rem;
@@ -1482,11 +1488,12 @@ body {
 .BourbonModal-title {
   font-size: 28px;
   line-height: 39px;
+  color: #2d2d2d;
   font-size: 1.75rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: .5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .BourbonModal--subheader,
@@ -1594,6 +1601,30 @@ body {
 .BourbonModal--noPadding .BourbonModal-closeButton {
   top: -24px;
   right: -18px;
+}
+
+/* Styles for notification modal */
+
+.BourbonModal--notification {
+  text-align: center;
+  width: 432px;
+  padding: 40px;
+}
+
+.BourbonModal--notification  .BourbonModal-title {
+  margin-bottom: 1rem;
+}
+
+.BourbonModal--notification  .BourbonModal-footer {
+  flex-direction: column-reverse;
+}
+
+.BourbonModal--notification .BourbonModal-link {
+  padding-top: 20px;
+}
+
+.BourbonModal--notification  .BourbonModal-dialog {
+  margin-bottom: 1.25rem;
 }
 
 .BourbonSearchSelectField {
@@ -1956,7 +1987,7 @@ body {
 }
 
 .btw-bg-light-tuna {
-  background-color: #3e3f42;
+  background-color: #777;
 }
 
 .btw-bg-tuna {
@@ -2028,7 +2059,7 @@ body {
 }
 
 .hover\:btw-bg-light-tuna:hover {
-  background-color: #3e3f42;
+  background-color: #777;
 }
 
 .hover\:btw-bg-tuna:hover {
@@ -2164,7 +2195,7 @@ body {
 }
 
 .btw-border-light-tuna {
-  border-color: #3e3f42;
+  border-color: #777;
 }
 
 .btw-border-tuna {
@@ -2236,7 +2267,7 @@ body {
 }
 
 .hover\:btw-border-light-tuna:hover {
-  border-color: #3e3f42;
+  border-color: #777;
 }
 
 .hover\:btw-border-tuna:hover {
@@ -4182,7 +4213,7 @@ body {
 }
 
 .btw-text-light-tuna {
-  color: #3e3f42;
+  color: #777;
 }
 
 .btw-text-tuna {
@@ -4254,7 +4285,7 @@ body {
 }
 
 .hover\:btw-text-light-tuna:hover {
-  color: #3e3f42;
+  color: #777;
 }
 
 .hover\:btw-text-tuna:hover {
@@ -4815,7 +4846,7 @@ button:focus {
   }
 
   .sm\:btw-bg-light-tuna {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .sm\:btw-bg-tuna {
@@ -4887,7 +4918,7 @@ button:focus {
   }
 
   .sm\:hover\:btw-bg-light-tuna:hover {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .sm\:hover\:btw-bg-tuna:hover {
@@ -5023,7 +5054,7 @@ button:focus {
   }
 
   .sm\:btw-border-light-tuna {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .sm\:btw-border-tuna {
@@ -5095,7 +5126,7 @@ button:focus {
   }
 
   .sm\:hover\:btw-border-light-tuna:hover {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .sm\:hover\:btw-border-tuna:hover {
@@ -7033,7 +7064,7 @@ button:focus {
   }
 
   .sm\:btw-text-light-tuna {
-    color: #3e3f42;
+    color: #777;
   }
 
   .sm\:btw-text-tuna {
@@ -7105,7 +7136,7 @@ button:focus {
   }
 
   .sm\:hover\:btw-text-light-tuna:hover {
-    color: #3e3f42;
+    color: #777;
   }
 
   .sm\:hover\:btw-text-tuna:hover {
@@ -7558,7 +7589,7 @@ button:focus {
   }
 
   .md\:btw-bg-light-tuna {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .md\:btw-bg-tuna {
@@ -7630,7 +7661,7 @@ button:focus {
   }
 
   .md\:hover\:btw-bg-light-tuna:hover {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .md\:hover\:btw-bg-tuna:hover {
@@ -7766,7 +7797,7 @@ button:focus {
   }
 
   .md\:btw-border-light-tuna {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .md\:btw-border-tuna {
@@ -7838,7 +7869,7 @@ button:focus {
   }
 
   .md\:hover\:btw-border-light-tuna:hover {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .md\:hover\:btw-border-tuna:hover {
@@ -9776,7 +9807,7 @@ button:focus {
   }
 
   .md\:btw-text-light-tuna {
-    color: #3e3f42;
+    color: #777;
   }
 
   .md\:btw-text-tuna {
@@ -9848,7 +9879,7 @@ button:focus {
   }
 
   .md\:hover\:btw-text-light-tuna:hover {
-    color: #3e3f42;
+    color: #777;
   }
 
   .md\:hover\:btw-text-tuna:hover {
@@ -10301,7 +10332,7 @@ button:focus {
   }
 
   .lg\:btw-bg-light-tuna {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .lg\:btw-bg-tuna {
@@ -10373,7 +10404,7 @@ button:focus {
   }
 
   .lg\:hover\:btw-bg-light-tuna:hover {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .lg\:hover\:btw-bg-tuna:hover {
@@ -10509,7 +10540,7 @@ button:focus {
   }
 
   .lg\:btw-border-light-tuna {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .lg\:btw-border-tuna {
@@ -10581,7 +10612,7 @@ button:focus {
   }
 
   .lg\:hover\:btw-border-light-tuna:hover {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .lg\:hover\:btw-border-tuna:hover {
@@ -12519,7 +12550,7 @@ button:focus {
   }
 
   .lg\:btw-text-light-tuna {
-    color: #3e3f42;
+    color: #777;
   }
 
   .lg\:btw-text-tuna {
@@ -12591,7 +12622,7 @@ button:focus {
   }
 
   .lg\:hover\:btw-text-light-tuna:hover {
-    color: #3e3f42;
+    color: #777;
   }
 
   .lg\:hover\:btw-text-tuna:hover {
@@ -13044,7 +13075,7 @@ button:focus {
   }
 
   .xl\:btw-bg-light-tuna {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .xl\:btw-bg-tuna {
@@ -13116,7 +13147,7 @@ button:focus {
   }
 
   .xl\:hover\:btw-bg-light-tuna:hover {
-    background-color: #3e3f42;
+    background-color: #777;
   }
 
   .xl\:hover\:btw-bg-tuna:hover {
@@ -13252,7 +13283,7 @@ button:focus {
   }
 
   .xl\:btw-border-light-tuna {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .xl\:btw-border-tuna {
@@ -13324,7 +13355,7 @@ button:focus {
   }
 
   .xl\:hover\:btw-border-light-tuna:hover {
-    border-color: #3e3f42;
+    border-color: #777;
   }
 
   .xl\:hover\:btw-border-tuna:hover {
@@ -15262,7 +15293,7 @@ button:focus {
   }
 
   .xl\:btw-text-light-tuna {
-    color: #3e3f42;
+    color: #777;
   }
 
   .xl\:btw-text-tuna {
@@ -15334,7 +15365,7 @@ button:focus {
   }
 
   .xl\:hover\:btw-text-light-tuna:hover {
-    color: #3e3f42;
+    color: #777;
   }
 
   .xl\:hover\:btw-text-tuna:hover {

@@ -10,6 +10,8 @@ export default Service.extend({
       buttonOneDontClose: false,
       buttonTwoDontClose: false,
       wideModal: false,
+      notificationModal: false,
+      notificationIcon: null,
       noPaddingModal: false,
       closeAction: null,
       title: null,
