@@ -270,9 +270,8 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneTitle: 'Secondary Button',
       buttonOneAction: this.primaryClick,
       buttonOneDontClose: true,
-      buttonOneType: 'secondary',
+      buttonOneType: 'secondary'
     }),
-
 
     this.set('modalNotificationParams', {
       closeAction: this.controllerCloseAction,
@@ -281,7 +280,7 @@ export default FreestyleController.extend(ModalMixin, {
       title: 'Please confirm your email',
       textContent: 'We just sent you a link to click on to confirm your email address. Please confirm this as soon as you can.',
       buttonOneTitle: 'Sounds good',
-      buttonOneAction: this.primaryClick,
+      buttonOneAction: this.primaryClick
     }),
 
 
@@ -294,14 +293,14 @@ export default FreestyleController.extend(ModalMixin, {
       buttonOneAction: this.primaryClick,
       buttonOneType: 'delete',
       buttonTwoTitle: 'Cancel',
-      buttonTwoAction: () => this.secondaryClick('anonymous'),
+      buttonTwoAction: () => this.secondaryClick('anonymous')
     }),
 
     this.set('noPaddingModalParams', {
       confirmationModal: true,
       noPaddingModal: true,
       title: 'Am I cute?',
-      content: 'test-image-content',
+      content: 'test-image-content'
     }),
 
     this.set('longModalParams', {

@@ -20,8 +20,12 @@ export default Component.extend({
     )} btw-mr-3`;
   }),
 
-  showCloseButton: computed('modalService.dissmissable', 'modalService.notificationModal', function() {
-    return this.get('modalService.dissmissable') || !this.get('modalService.notificationModal')
+  showCloseButton: computed('modalService.dismissable', 'modalService.notificationModal', function() {
+    if (this.get('modalService.notificationModal')) {
+      return !this.get('modalService.notificationModal');
+    } else if (this.get('modalService.dismissable')) {
+      return this.get('modalService.dismissable')
+    }
   }),
 
   init() {
