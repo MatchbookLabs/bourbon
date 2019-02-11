@@ -63,12 +63,7 @@ export default Component.extend(SelectMixin, {
   },
 
   findValueObject(valueString) {
-    for (var optIndex in this.get('content')) {
-      if (this.get('content')[optIndex].label === valueString) {
-        return this.get('content')[optIndex];
-      }
-    }
-
+    this.get('content').find(v => v.label == valueString)
   },
 
   keyDown(e) {
