@@ -8,7 +8,7 @@ export default TextField.extend({
     'value::empty',
     'isFocused:BourbonTextField--active'
   ],
-  attributeBindings: ['autocomplete'],
+  attributeBindings: ['autocomplete', 'type'],
 
   layout,
 
