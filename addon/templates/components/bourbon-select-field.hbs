@@ -23,7 +23,9 @@
   {{#if groupedContent}}
     {{#each content as |group outerIndex|}}
       <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>
-        <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
+        {{#if group.groupHeader}}
+          <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
+        {{/if}}
         {{#each group.items as |option innerIndex|}}
           {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
         {{/each}}

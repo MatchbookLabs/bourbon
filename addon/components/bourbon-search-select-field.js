@@ -94,7 +94,6 @@ export default Component.extend(SelectMixin, {
     // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
-      debugger;
       if (this.get('searchList') !== 'No results found.' &&  this.get('searchList').length > 0) {
         this.set('activeOption', 0);
       }
@@ -145,7 +144,6 @@ export default Component.extend(SelectMixin, {
   },
 
   searchResults: observer('inputValue','content', function() {
-
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {
@@ -156,9 +154,10 @@ export default Component.extend(SelectMixin, {
       let searchString = this.getSearchString(selectedValue);
 
       let searchList = this.getSearchList(searchString);
-
       if (searchList.length === 0) {
-        if (this.get('optionLabelPath')) {
+        if (this.get('groupedContent')) {
+          this.set('searchList', A([{groupHeader: null, items: [{label: 'No results found.' }]}]));
+        } else if (this.get('optionLabelPath')) {
           this.set('searchList', A([{ label: 'No results found.' }]));
         } else {
           this.set('searchList', A(['No results found.']));
@@ -170,6 +169,8 @@ export default Component.extend(SelectMixin, {
       return searchList
     }
   }),
+
+
 
   selection: computed('value', {
     get(key) {
