@@ -13,6 +13,10 @@
 
 }
 
+.BourbonTextField:focus {
+  outline: none;
+}
+
 .BourbonTextField--active {
   @apply .btw-border-dodger-blue;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
@@ -29,4 +33,8 @@
 
 .BourbonTextField[disabled] {
   cursor: not-allowed;
+}
+
+input[type="search"].BourbonTextField {
+  box-sizing: border-box;
 }

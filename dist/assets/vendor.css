@@ -1548,6 +1548,10 @@ body {
   cursor: pointer;
 }
 
+.BourbonTextField:focus {
+  outline: none;
+}
+
 .BourbonTextField--active {
   border-color: #2e71fc;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
@@ -1562,6 +1566,10 @@ body {
 
 .BourbonTextField[disabled] {
   cursor: not-allowed;
+}
+
+input[type="search"].BourbonTextField {
+  box-sizing: border-box;
 }
 
 .BourbonTooltip {

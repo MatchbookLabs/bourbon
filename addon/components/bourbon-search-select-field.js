@@ -38,6 +38,7 @@ export default Component.extend(SelectMixin, {
   optionValuePath: null,
   optionLabelPath: null,
   optionEnabledPath: null,
+  autofocus: null,
 
   inputValueObserver: observer('value', function() {
     if (this.get('value')) {
@@ -57,9 +58,11 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  mouseDown() {
+  mouseDown(e) {
     this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
+    this.set('autofocus', this.get('showDropdown'));
+
 
     if (this.get('showDropdown')) {
       this.set('inputValue', '');
@@ -73,6 +76,7 @@ export default Component.extend(SelectMixin, {
     this.set('activeOption', null);
     this.inputValueObserver();
     this.set('showDropdown', false);
+    this.set('autofocus', false);
   },
 
   resetPrompt: observer('label', function() {
@@ -90,8 +94,13 @@ export default Component.extend(SelectMixin, {
     // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
+      debugger;
+      if (this.get('searchList') !== 'No results found.' &&  this.get('searchList').length > 0) {
+        this.set('activeOption', 0);
+      }
       this.send('updateSearchSelection');
       this.set('showDropdown', false);
+      this.set('autofocus', false);
       this.set('activeOption', null);
       document.activeElement.blur();
     }
@@ -182,14 +191,6 @@ export default Component.extend(SelectMixin, {
   }),
 
   actions: {
-    showContent() {
-      this.set('showDropdown', true);
-    },
-
-    hideContent() {
-      this.set('showDropdown', false);
-    },
-
     updateSearchSelection() {
       // for key up and down selection
       if (this.get('groupedContent')) {

@@ -1,4 +1,5 @@
 import TextField from '@ember/component/text-field';
+import { observer } from '@ember/object';
 
 import layout from '../templates/components/bourbon-text-field';
 
@@ -8,7 +9,7 @@ export default TextField.extend({
     'value::empty',
     'isFocused:BourbonTextField--active'
   ],
-  attributeBindings: ['autocomplete', 'type'],
+  attributeBindings: ['autocomplete', 'type', 'autofocus'],
 
   layout,
 
@@ -19,6 +20,14 @@ export default TextField.extend({
   autofocus: false,
   value: null,
   isFocused: false,
+
+  focusedElementObserver: observer('autofocus', function() {
+    if (this.get("autofocus")) {
+      this.set('isFocused', true)
+    } else {
+      this.set('isFocused', false)
+    }
+  }),
 
   didInsertElement()  {
     if (this.get('autofocus')) {
