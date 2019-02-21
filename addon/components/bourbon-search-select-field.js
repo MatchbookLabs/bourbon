@@ -30,6 +30,7 @@ export default Component.extend(SelectMixin, {
   },
 
   value: null,
+  prompt: null,
   label: null,
   inputValue: '',
   showDropdown: false,

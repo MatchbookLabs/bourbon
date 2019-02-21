@@ -1,0 +1,16 @@
+.addon-notes-container table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.addon-notes-container table td,
+.addon-notes-container table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.addon-notes-container table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
