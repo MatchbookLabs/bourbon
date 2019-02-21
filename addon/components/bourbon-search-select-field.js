@@ -39,7 +39,6 @@ export default Component.extend(SelectMixin, {
   optionLabelPath: null,
   optionEnabledPath: null,
   autofocus: null,
-  noResults: false,
 
   inputValueObserver: observer('value', function() {
     if (this.get('value')) {
@@ -87,6 +86,15 @@ export default Component.extend(SelectMixin, {
       this.set('inputValue', this.get('label'));
     } else if (this.get('prompt') && this.get('inputValue') !== '') {
       this.set('inputValue', this.get('prompt'));
+    }
+  }),
+
+  noResults: computed('searchList', function() {
+    console.log(this.get('searchList'))
+    if (this.get('groupedContent')) {
+      return this.get('searchList')[0]['items'][0]['label'] === 'No results found.'
+    } else if (this.get('searchList')[0]) {
+      return this.get('searchList')[0] === 'No results found.' || this.get('searchList')[0]['label'] === 'No results found.'
     }
   }),
 
@@ -157,7 +165,6 @@ export default Component.extend(SelectMixin, {
 
       let searchList = this.getSearchList(searchString);
       if (searchList.length === 0) {
-        this.set('noResults', true)
         if (this.get('groupedContent')) {
           this.set('searchList', A([{groupHeader: null, items: [{label: 'No results found.' }]}]));
         } else if (this.get('optionLabelPath')) {
@@ -166,7 +173,6 @@ export default Component.extend(SelectMixin, {
           this.set('searchList', A(['No results found.']));
         }
       } else {
-        this.set('noResults', false)
         this.set('searchList', A(searchList));
       }
 
