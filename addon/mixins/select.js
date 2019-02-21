@@ -1,42 +1,42 @@
-import Mixin from "@ember/object/mixin";
+import Mixin from '@ember/object/mixin';
 
 export default Mixin.create({
   setLabel(value) {
     let checkValue = this.getCheckValue(value);
 
-    if (typeof checkValue.label === "string") {
+    if (typeof checkValue.label === 'string') {
       let label = checkValue.label;
-      this.set("label", label);
-    } else if (typeof checkValue === "string" || typeof value === "number") {
-      this.set("label", checkValue);
-    } else if (checkValue.text) {
-      this.set('label', checkValue.text);
-    } else if (checkValue.formattedTitle) {
+      this.set('label', label);
+    } else if (typeof checkValue === 'string' || typeof value === 'number') {
+      this.set('label', checkValue);
+    } else if (checkValue.get('text')) {
+      this.set('label', checkValue.get('text'));
+    } else if (checkValue.get('formattedTitle')) {
       this.set('label', checkValue.get('formattedTitle'));
-    } else if (checkValue.label || checkValue.get("label")) {
-      this.set("label", checkValue.get("label"));
-    } else if (checkValue.get("title")) {
-      this.set("label", checkValue.get("title"));
-    } else if (checkValue.get("text")) {
-      this.set("label", checkValue.get("text"));
+    } else if (checkValue.get('label')) {
+      this.set('label', checkValue.get('label'));
+    } else if (checkValue.get('title')) {
+      this.set('label', checkValue.get('title'));
+    } else if (checkValue.get('text')) {
+      this.set('label', checkValue.get('text'));
     } else {
-      this.set("label", checkValue);
+      this.set('label', checkValue);
     }
   },
 
   setValue(value) {
-    let path = this.get("_valuePath");
+    let path = this.get('_valuePath');
 
     let checkValue = this.getCheckValue(value);
 
     if (path && checkValue) {
       this.set(
-        "value",
-        (typeof checkValue.get === "function" ? checkValue.get(path) : void 0) ||
+        'value',
+        (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) ||
         checkValue[path]
       );
     } else {
-      this.set("value", checkValue);
+      this.set('value', checkValue);
     }
   },
 
@@ -96,11 +96,11 @@ export default Mixin.create({
   },
 
   getSelection() {
-    let path = this.get("_valuePath");
-    if (path && this.get("value") && this.get("content")) {
-      return this.get("content").findBy(path, this.get("value"));
+    let path = this.get('_valuePath');
+    if (path && this.get('value') && this.get('content')) {
+      return this.get('content').findBy(path, this.get('value'));
     } else {
-      return this.get("value");
+      return this.get('value');
     }
   },
 

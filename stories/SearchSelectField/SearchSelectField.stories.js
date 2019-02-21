@@ -60,4 +60,53 @@ storiesOf('search select field', module)
     {
       notes: { markdown: searchSelectField }
     }
+  )
+  .add(
+    'grouped content search select field',
+    () => {
+      return {
+        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" value=null groupedContent=true}}`,
+        context: {
+          onClick: action('searchSelectFieldClick'),
+          petObject: A([
+            {
+              groupHeader:  'pets',
+              items: A([
+                {
+                  label: 'Chompsky the only Brussels Griffon',
+                  value: 'the only Brussels Griffon'
+                },
+                {
+                  label: 'Memphis the other Brussels Griffon',
+                  value: 'the other Brussels Griffon'
+                },
+                {
+                  label: 'Macho the Frenchie who is so Frenchie',
+                  value: 'Frenchie'
+                }
+              ])},
+            {
+              groupHeader: 'fruits',
+              items: A([
+                {
+                  label: 'apple',
+                  value: 'apple'
+                },
+                {
+                  label: 'orange',
+                  value: 'orange'
+                },
+                {
+                  label: 'banana',
+                  value: 'banana'
+                }
+              ])
+            }
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: searchSelectField }
+    }
   );
