@@ -89,8 +89,7 @@ export default Component.extend(SelectMixin, {
     }
   }),
 
-  noResults: computed('searchList', function() {
-    console.log(this.get('searchList'))
+  noResults: computed('searchList.[]', function() {
     if (this.get('groupedContent')) {
       return this.get('searchList')[0]['items'][0]['label'] === 'No results found.'
     } else if (this.get('searchList')[0]) {
