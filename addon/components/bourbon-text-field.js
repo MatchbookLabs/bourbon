@@ -22,8 +22,8 @@ export default TextField.extend({
   isFocused: false,
 
   focusedElementObserver: observer('autofocus', function() {
-    if (this.get("autofocus")) {
-      this.set('isFocused', true)
+    if (this.get('autofocus')) {
+      this.set('isFocused', this.get('autofocus'))
     } else {
       this.set('isFocused', false)
     }

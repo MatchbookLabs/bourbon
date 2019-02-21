@@ -39,6 +39,7 @@ export default Component.extend(SelectMixin, {
   optionLabelPath: null,
   optionEnabledPath: null,
   autofocus: null,
+  noResults: false,
 
   inputValueObserver: observer('value', function() {
     if (this.get('value')) {
@@ -94,7 +95,8 @@ export default Component.extend(SelectMixin, {
     // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
-      if (this.get('searchList') !== 'No results found.' &&  this.get('searchList').length > 0) {
+      // if valid option availble select first option upon enter
+      if (!this.get('noResults') &&  this.get('searchList').length > 0) {
         this.set('activeOption', 0);
       }
       this.send('updateSearchSelection');
@@ -155,6 +157,7 @@ export default Component.extend(SelectMixin, {
 
       let searchList = this.getSearchList(searchString);
       if (searchList.length === 0) {
+        this.set('noResults', true)
         if (this.get('groupedContent')) {
           this.set('searchList', A([{groupHeader: null, items: [{label: 'No results found.' }]}]));
         } else if (this.get('optionLabelPath')) {
@@ -163,14 +166,13 @@ export default Component.extend(SelectMixin, {
           this.set('searchList', A(['No results found.']));
         }
       } else {
+        this.set('noResults', false)
         this.set('searchList', A(searchList));
       }
 
       return searchList
     }
   }),
-
-
 
   selection: computed('value', {
     get(key) {
