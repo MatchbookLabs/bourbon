@@ -111,6 +111,13 @@ export default Component.extend(SelectMixin, {
       this.set('autofocus', false);
       this.set('activeOption', null);
       document.activeElement.blur();
+      } else if (e.keyCode === 8) {
+      // e.keyCode 8 is for 'Delete'
+      // since inputValue is being set manually we need to
+      // manually change the inputValue when the user is
+      // using the delete button to change their input
+      e.preventDefault();
+      this.set('inputValue', this.get('inputValue').slice(0,-1));
     }
   },
 
