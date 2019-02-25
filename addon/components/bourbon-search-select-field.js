@@ -104,7 +104,11 @@ export default Component.extend(SelectMixin, {
       e.preventDefault();
       // if valid option availble select first option upon enter
       if (!this.get('noResults') &&  this.get('searchList').length > 0) {
-        this.set('activeOption', 0);
+        // only select the first option if we have not keyed down
+        // to a dfferent selection
+        if (this.get('activeOption') === null) {
+          this.set('activeOption', 0);
+        }
       }
       this.send('updateSearchSelection');
       this.set('showDropdown', false);
