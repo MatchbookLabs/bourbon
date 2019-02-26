@@ -19,7 +19,7 @@
     "test": "bin/test",
     "test:all": "ember try:each",
     "build-storybook": "ember build && build-storybook -c .storybook -o build -s dist",
-    "storybook": "ember build && start-storybook -p 4200 -s dist"
+    "storybook": "ember build && start-storybook -p 9001 -s dist"
   },
   "dependencies": {
     "babel-plugin-ember-modules-api-polyfill": "^2.6.0",

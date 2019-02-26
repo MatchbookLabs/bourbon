@@ -7,7 +7,8 @@ bourbon is the ember component library that feeds into [https://github.com/Match
 Running Server
 ------------------------------------------------------------------------------
 In bourbon run the following commands
-* `npm start`
+* `ember serve`
+* `npm run storybook`
 
 - a new tab will open up to `http://localhost:9001/`
 
@@ -29,12 +30,18 @@ In bourbon run the following commands
 
 To pick up the changes to the component, you will need to run the following command in the frontend fold you are working in
 * `npm link bourbon`
-*
+
 
 ## Things to remember
 * Using `npm unlink bourbon` will delete `bourbon` from your package.json file
 * You need to restart the flabongo server to see changes made in bourbon code.
-*
+* If you run into issue, firs try removing the `tmp` file from bourbon and retarting your server.
+* If you can not see what the issue in starting your flabongo server after linking the 2 repos, you can remove the node modules and rerun bin set up.
+```
+rm -Rf node_modules frontend/*/node_modules
+./bin/setup
+
+```
 
 
 When making changes in bourbon, you will need to restart the flabongo server in order to see the changes.  This is because flabongo is not watching for changes in the `node_modules` folders when freshing the page.
