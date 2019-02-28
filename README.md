@@ -1,7 +1,7 @@
 bourbon
 ==============================================================================
 
-bourbon is the ember component library that feeds into [https://github.com/MatchbookLabs/flabongo](flabongo)
+bourbon is the ember component library that feeds into [https://github.com/MatchbookLabs/flabongo](flabongo) which uses [https://github.com/storybooks/storybook](storybook)
 
 
 Running Server
@@ -31,20 +31,14 @@ In bourbon run the following commands
 To pick up the changes to the component, you will need to run the following command in the frontend fold you are working in
 * `npm link bourbon`
 
+In the root directory where `bower.json` exists, run the following command to get the CSS changes
+* `bower link bourbon`
 
 ## Things to remember
 * Using `npm unlink bourbon` will delete `bourbon` from your package.json file
-* You need to restart the flabongo server to see changes made in bourbon code.
-* If you run into issue, firs try removing the `tmp` file from bourbon and retarting your server.
-* If you can not see what the issue in starting your flabongo server after linking the 2 repos, you can remove the node modules and rerun bin set up.
-```
-rm -Rf node_modules frontend/*/node_modules
-./bin/setup
+* You need to restart the flabongo server to see changes made in bourbon code. This is because flabongo is not watching for changes in the `node_modules` folders when freshing the page.
+* If you run into issue starting your flabongo server after linking the two repos, first try removing the `tmp` file from bourbon and restarting your flabongo server.  If that doesn't solve the issue, then the second step would be to try removing the node modules `rm -Rf node_modules frontend/*/node_modules`  and rerun bin set up `./bin/setup`.
 
-```
-
-
-When making changes in bourbon, you will need to restart the flabongo server in order to see the changes.  This is because flabongo is not watching for changes in the `node_modules` folders when freshing the page.
 
 Contributing
 ------------------------------------------------------------------------------
@@ -65,11 +59,6 @@ Contributing
 * `ember test` – Runs the test suite on the current Ember version
 * `ember test --server` – Runs the test suite in "watch mode"
 * `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
