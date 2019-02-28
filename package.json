@@ -19,7 +19,7 @@
     "test": "bin/test",
     "test:all": "ember try:each",
     "build-storybook": "ember build && build-storybook -c .storybook -o build -s dist",
-    "storybook": "ember build && start-storybook -p 4200 -s dist"
+    "storybook": "ember build && start-storybook -p 9001 -s dist"
   },
   "dependencies": {
     "babel-plugin-ember-modules-api-polyfill": "^2.6.0",
@@ -46,7 +46,7 @@
     "@storybook/addon-viewport": "^4.1.2",
     "@storybook/ember": "^4.1.1",
     "babel-loader": "^8.0.4",
-    "bower": "^1.8.4",
+    "bower": "^1.8.8",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.4",

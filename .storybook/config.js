@@ -31,6 +31,7 @@ addDecorator(
 );
 
 function loadStories() {
+    require('../stories/Toggle/Toggle.stories.js');
     require('../stories/Buttons/Buttons.stories.js');
     require('../stories/Tooltip/Tooltip.stories.js');
     require('../stories/Modals/Modals.stories.js');
