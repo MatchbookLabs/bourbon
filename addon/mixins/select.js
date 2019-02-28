@@ -44,7 +44,11 @@ export default Mixin.create({
     if (value.groupHeader) {
       return this.get('value');
     } else {
-      return value ? value : this.get('value');
+      if (typeof value === 'number') {
+        return value;
+      } else {
+        return value ? value : this.get('value');
+      }
     }
   },
 
