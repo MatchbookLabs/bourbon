@@ -5,49 +5,54 @@ export default Component.extend({
   layout,
   tagName: 'label',
   classNames: ['BourbonToggle'],
-  classNameBindings: ['disabled', 'readOnly:readonly'],
-  attributeBindings: ['disabled:disabled'],
+  attributeBindings: ['label:aria-label'],
 
   init() {
     this._super(...arguments);
     this.send('setToggleState')
   },
+  ariaRole: 'button',
 
+  value: null,
   toggleState: null,
   disabled: false,
-
+  action: null,
   readOnly: false,
+  label: 'toggle button',
 
   click() {
-    if (this.get('toggleState') === 'on') {
-      this.set('toggleState', 'off')
-    } else {
-      this.set('toggleState', 'on')
+    if (this.get('readOnly') || this.get('disabled')) {
+      return false;
     }
+
+    this.set('value', !this.get('value'));
+    if (this.get('action')) {
+      this.sendAction('action');
+    }
+
+    this.send('setToggleState');
   },
 
   actions: {
     setToggleState() {
       let currentToggleState = this.get('value');
-      switch (currentToggleState) {
-      case 'toggleOn':
-        this.set('toggleState', 'on')
-        this.set('disabled', false)
+
+      switch(currentToggleState) {
+      case true:
+        if (this.get('disabled')) {
+          this.set('toggleState', 'on--disabled')
+        } else {
+          this.set('toggleState', 'on')
+        }
         break;
-      case 'toggleOnDisabled':
-        this.set('toggleState', 'on--disabled')
-        this.set('disabled', true)
-        break;
-      case 'toggleOff':
-        this.set('toggleState', 'off')
-        this.set('disabled', false)
-        break;
-      case 'toggleOffDisabled':
-        this.set('toggleState', 'off--disabled')
-        this.set('disabled', true)
+      case false:
+        if (this.get('disabled')) {
+          this.set('toggleState', 'off--disabled')
+        } else {
+          this.set('toggleState', 'off')
+        }
         break;
       }
-    },
-
+    }
   }
 });
