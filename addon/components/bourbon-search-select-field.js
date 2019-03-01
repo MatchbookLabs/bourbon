@@ -48,16 +48,6 @@ export default Component.extend(SelectMixin, {
     }
   }),
 
-  optionValue(option) {
-    if (typeof option === 'string') {
-      return option.toLowerCase();
-    } else if (option.__data) {
-      return option.__data.label.toLowerCase();
-    } else {
-      return option.label.toLowerCase();
-    }
-  },
-
   mouseDown(e) {
     this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
@@ -115,7 +105,7 @@ export default Component.extend(SelectMixin, {
       this.set('autofocus', false);
       this.set('activeOption', null);
       document.activeElement.blur();
-      } else if (e.keyCode === 8) {
+    } else if (e.keyCode === 8) {
       // e.keyCode 8 is for 'Delete'
       // since inputValue is being set manually we need to
       // manually change the inputValue when the user is
@@ -125,17 +115,13 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  getSearchString(selectedValue) {
-    if (typeof selectedValue === 'string') {
-      return selectedValue.toLowerCase();
-    } else if (
-      selectedValue &&
-      selectedValue.__data &&
-      typeof selectedValue.get('label') === 'string'
-    ) {
-      return selectedValue.get('label').toLowerCase();
+  optionValue(option) {
+    if (typeof option === 'string') {
+      return option.toLowerCase();
+    } else if (typeof option.get === 'function') {
+      return option.get('label').toLowerCase();
     } else {
-      return selectedValue.label.toLowerCase();
+      return option.label.toLowerCase();
     }
   },
 
@@ -171,7 +157,7 @@ export default Component.extend(SelectMixin, {
         ? this.get('inputValue')
         : this.get('value');
 
-      let searchString = this.getSearchString(selectedValue);
+      let searchString = this.optionValue(selectedValue);
 
       let searchList = this.getSearchList(searchString);
       if (searchList.length === 0) {
