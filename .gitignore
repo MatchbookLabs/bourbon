@@ -4,6 +4,7 @@
 /dist
 !/dist/assets/vendor.css
 /tmp
+.storybook/preview-head.html
 
 # dependencies
 /node_modules
