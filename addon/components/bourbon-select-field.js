@@ -11,13 +11,7 @@ export default Component.extend(SelectMixin, {
 
   init() {
     this._super(...arguments);
-    if (this.get('hasPrompt') && this.get('value') === null) {
-      this.set('selection', this.get('prompt'));
-      this.set('label', this.get('prompt'));
-    } else if (typeof this.get('value') === 'string') {
-      let value = this.findValueObject(this.get('value'));
-      this.set('selection', value);
-    }
+    this.resetPrompt();
   },
 
   classNames: ['BourbonSelectField'],
@@ -38,10 +32,22 @@ export default Component.extend(SelectMixin, {
   hasValue: computed.notEmpty('value'),
   activeOption: null,
 
-  inputValueObserver: observer('value', function() {
-    if (this.get('value') === null) {
+  resetPrompt() {
+    // value, label and selection all need to be set
+    if (this.get('hasPrompt') && (!this.get('value'))) {
       this.set('label', this.get('prompt'));
+    } else if (typeof this.get('value') === 'string') {
+      let value = this.findValueObject(this.get('value'));
+      this.set('selection', value);
+    } else if (typeof this.get('value') === 'number') {
+      this.set('selection', this.get('value'));
+    } else if (this.get('value')) {
+      this.set('selection', this.get('value'));
     }
+  },
+
+  inputValueObserver: observer('value', function() {
+    this.resetPrompt();
   }),
 
   focusOut() {
@@ -77,7 +83,7 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  selection: computed('value', {
+  selection: computed('value', 'content.[]', {
     get(key) {
       this.getSelection();
     },
@@ -125,7 +131,6 @@ export default Component.extend(SelectMixin, {
     // only used for initial load - rest of changes are coming through the bourbon select field option
     updateSelection() {
       let selectedIndex = this.$('select')[0].selectedIndex;
-
       if (this.get('activeOption')) {
         this.set('selection', this.get('content').objectAt(this.get('activeOption')))
       } else {
