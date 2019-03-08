@@ -22,7 +22,7 @@ storiesOf("toggle", module)
     "toggle on disabled",
     () => {
       return {
-        template: hbs`{{bourbon-toggle value=true action=onClick disabled=true}}`,
+        template: hbs`{{bourbon-toggle value=true title="Disabled because you are not an admin." action=onClick disabled=true}}`,
         context: {
           onClick: 'click',
         }
