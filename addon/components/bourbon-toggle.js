@@ -5,6 +5,7 @@ export default Component.extend({
   layout,
   tagName: 'label',
   classNames: ['BourbonToggle'],
+  classNameBindings: ['disabled:BourbonToggle--disabled'],
   attributeBindings: ['label:aria-label'],
 
   init() {
