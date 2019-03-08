@@ -24,7 +24,7 @@ export default Component.extend({
   }),
 
   toggleState: computed('value', function() {
-    return `${this.get('value') ? 'on' : 'off'}${this.get('disabled') ? '--disabled' : ''}`;
+    return `${this.get('value') ? 'on' : 'off'}`;
   }),
 
   click() {

@@ -1,3 +1,4 @@
 .BourbonToggle--disabled {
-  cursor: default
+  opacity: .5;
+  cursor: default;
 }

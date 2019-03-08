@@ -1615,6 +1615,7 @@ input[type="search"].BourbonTextField {
 }
 
 .BourbonToggle--disabled {
+  opacity: .5;
   cursor: default;
 }
 
