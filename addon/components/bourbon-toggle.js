@@ -7,15 +7,14 @@ export default Component.extend({
   tagName: 'label',
   classNames: ['BourbonToggle'],
   classNameBindings: ['disabled:BourbonToggle--disabled'],
-  attributeBindings: ['label:aria-label', 'toggleTitle:title'],
+  attributeBindings: ['label:aria-label'],
 
   ariaRole: 'button',
   value: null,
   disabled: false,
   action: null,
-  label: 'toggle button',
 
-  toggleTitle: computed('title', 'value', 'disabled', function() {
+  label: computed('title', 'value', 'disabled', function() {
     if (this.get('title')) {
       return this.get('title');
     } else {
