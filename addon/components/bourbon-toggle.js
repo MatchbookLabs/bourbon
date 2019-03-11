@@ -1,58 +1,36 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/bourbon-toggle';
 
 export default Component.extend({
   layout,
   tagName: 'label',
   classNames: ['BourbonToggle'],
+  classNameBindings: ['disabled:BourbonToggle--disabled'],
   attributeBindings: ['label:aria-label'],
 
-  init() {
-    this._super(...arguments);
-    this.send('setToggleState')
-  },
   ariaRole: 'button',
-
   value: null,
-  toggleState: null,
   disabled: false,
   action: null,
-  readOnly: false,
-  label: 'toggle button',
+
+  label: computed('value', 'disabled', function() {
+    return `Toggle button ${this.get('value') ? 'on' : 'off'}${this.get('disabled') ? ' and disabled' : ''}`;
+  }),
+
+  toggleState: computed('value', function() {
+    return `${this.get('value') ? 'on' : 'off'}`;
+  }),
 
   click() {
-    if (this.get('readOnly') || this.get('disabled')) {
+    if (this.get('disabled')) {
       return false;
     }
 
     this.set('value', !this.get('value'));
+
     if (this.get('action')) {
       this.sendAction('action');
-    }
-
-    this.send('setToggleState');
-  },
-
-  actions: {
-    setToggleState() {
-      let currentToggleState = this.get('value');
-
-      switch(currentToggleState) {
-      case true:
-        if (this.get('disabled')) {
-          this.set('toggleState', 'on--disabled')
-        } else {
-          this.set('toggleState', 'on')
-        }
-        break;
-      case false:
-        if (this.get('disabled')) {
-          this.set('toggleState', 'off--disabled')
-        } else {
-          this.set('toggleState', 'off')
-        }
-        break;
-      }
     }
   }
 });

@@ -1614,6 +1614,11 @@ input[type="search"].BourbonTextField {
   cursor: pointer;
 }
 
+.BourbonToggle--disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 .BourbonSection-header {
   height: 26px;
   color: #474c4f;
