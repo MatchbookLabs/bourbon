@@ -14,12 +14,8 @@ export default Component.extend({
   disabled: false,
   action: null,
 
-  label: computed('title', 'value', 'disabled', function() {
-    if (this.get('title')) {
-      return this.get('title');
-    } else {
-      return `${this.get('value') ? 'On' : 'Off'}${this.get('disabled') ? ' and Disabled' : ''}`;
-    }
+  label: computed('value', 'disabled', function() {
+    return `Toggle button ${this.get('value') ? 'on' : 'off'}${this.get('disabled') ? ' and disabled' : ''}`;
   }),
 
   toggleState: computed('value', function() {
