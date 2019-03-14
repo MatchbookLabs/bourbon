@@ -7,11 +7,6 @@ import layout from '../templates/components/bourbon-select-field';
 
 export default Component.extend(SelectMixin, {
   layout,
-
-  init() {
-    this._super(...arguments);
-  },
-
   classNames: ['BourbonSelectField'],
   classNameBindings: [
     'hasValue',
@@ -29,25 +24,6 @@ export default Component.extend(SelectMixin, {
   value: null,
   hasValue: computed.notEmpty('value'),
   activeOption: null,
-
-  resetPrompt() {
-    // value, label and selection all need to be set
-    if (this.get('hasPrompt') && (!this.get('value'))) {
-      this.set('label', this.get('prompt'));
-    } else if (typeof this.get('value') === 'string') {
-      let value = this.findValueObject(this.get('value'));
-      this.set('selection', value);
-    } else if (typeof this.get('value') === 'number') {
-      this.set('selection', this.get('value'));
-    } else if (this.get('value')) {
-      this.set('selection', this.get('value'));
-    }
-  },
-
-  inputValueObserver: observer('value', function() {
-    // TODO refactor and remove observer to only set selection explicitly
-    this.resetPrompt();
-  }),
 
   focusOut() {
     this.set('activeOption', null);
@@ -80,11 +56,9 @@ export default Component.extend(SelectMixin, {
         if (this.get('groupedContent') && value.groupHeader) {
           value = value.items[0]
         }
-        this.setLabel(value);
         this.setValue(value);
       } else {
         this.set('value', null)
-        this.set('label', this.get('prompt'));
       }
       this.set('activeOption', null);
       return value;
@@ -99,19 +73,7 @@ export default Component.extend(SelectMixin, {
     }
   }),
 
-  _valuePath: computed('optionValuePath', function() {
-    if (this.get('optionValuePath') !== null) {
-      return this.get('optionValuePath').replace(/^content\.?/, '');
-    }
-  }),
-
-  _labelPath: computed('optionLabelPath', function () {
-    if (this.get('optionLabelPath') !== null) {
-      return this.get('optionLabelPath').replace(/^content\.?/, '');
-    }
-  }),
-
-  _initSelection: observer('content', function() {
+  _initSelection: observer('content', 'value', function() {
     this.send('updateSelection');
   }),
 

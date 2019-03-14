@@ -1,30 +1,8 @@
 import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 
 export default Mixin.create({
-  setLabel(value) {
-    // TODOD redo with optionValuePath and make a computed property
-    let checkValue = this.getCheckValue(value);
-
-    if (typeof checkValue.label === 'string') {
-      let label = checkValue.label;
-      this.set('label', label);
-    } else if (typeof checkValue === 'string' || typeof value === 'number') {
-      this.set('label', checkValue);
-    } else if (checkValue.get('text')) {
-      this.set('label', checkValue.get('text'));
-    } else if (checkValue.get('formattedTitle')) {
-      this.set('label', checkValue.get('formattedTitle'));
-    } else if (checkValue.get('label')) {
-      this.set('label', checkValue.get('label'));
-    } else if (checkValue.get('title')) {
-      this.set('label', checkValue.get('title'));
-    } else if (checkValue.get('text')) {
-      this.set('label', checkValue.get('text'));
-    } else {
-      this.set('label', checkValue);
-    }
-  },
-
   setValue(value) {
     let path = this.get('_valuePath');
 
@@ -54,11 +32,50 @@ export default Mixin.create({
     }
   },
 
+  label: computed('value', 'content', function () {
+    let checkValue = this.get('value')
+
+    if (typeof this.get('value') === 'string' || typeof this.get('value') === 'boolean' ) {
+      checkValue = this.findValueObject(this.get('value'));
+    }
+
+    if (checkValue === null || checkValue === undefined) {
+      return this.get('prompt')
+    }
+
+    let path = this.get('_labelPath');
+    if (path && isPresent(checkValue)) {
+      return (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) || checkValue[path]
+    } else {
+      return checkValue;
+    }
+  }),
+
+  _valuePath: computed('optionValuePath', function () {
+    if (this.get('optionValuePath') !== null) {
+      return this.get('optionValuePath').replace(/^content\.?/, '');
+    }
+  }),
+
+  _labelPath: computed('optionLabelPath', function () {
+    if (this.get('optionLabelPath') !== null) {
+      return this.get('optionLabelPath').replace(/^content\.?/, '');
+    }
+  }),
+
   findValueObject(valueString) {
     let path = this.get('_valuePath');
 
     if (path) {
-      return this.get('content').find(v => v[path] == valueString);
+      if (this.get('groupedContent')) {
+        let groupList = []
+        for (var option of this.get('searchList')) {
+          groupList.push(...option.items)
+        }
+        return groupList.find(v => v[path] == valueString);
+      } else {
+        return this.get('content').find(v => v[path] == valueString);
+      }
     } else {
       return this.get('content').find(v => v == valueString);
     }

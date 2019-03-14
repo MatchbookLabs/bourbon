@@ -24,7 +24,6 @@ export default Component.extend(SelectMixin, {
 
   value: null,
   prompt: null,
-  label: null,
   inputValue: '',
   showDropdown: false,
   searchList: null,
@@ -34,7 +33,6 @@ export default Component.extend(SelectMixin, {
   autofocus: null,
   readonly: null,
   hasValue: computed.notEmpty('value'),
-
 
   mouseDown(e) {
     this.set('showDropdown', !this.get('showDropdown'));
@@ -56,7 +54,6 @@ export default Component.extend(SelectMixin, {
     this.set('showDropdown', false);
     this.set('autofocus', false);
     this.set('readonly', true);
-
   },
 
   resetPrompt: observer('label', 'value', function() {
@@ -64,8 +61,6 @@ export default Component.extend(SelectMixin, {
       this.set('inputValue', this.get('prompt'));
     } else if (this.get('label')) {
       this.set('inputValue', this.get('label'));
-    } else if (this.get('prompt') && this.get('inputValue') !== '') {
-      this.set('inputValue', this.get('prompt'));
     }
   }),
 
@@ -91,10 +86,10 @@ export default Component.extend(SelectMixin, {
         }
       }
       this.send('updateSearchSelection', this.get('activeOption'));
+      this.set('activeOption', null);
       this.set('showDropdown', false);
       this.set('autofocus', false);
       this.set('readonly', true);
-      this.set('activeOption', null);
       document.activeElement.blur();
     } else if (e.keyCode === 8) {
       // e.keyCode 8 is for 'Delete'
@@ -178,26 +173,14 @@ export default Component.extend(SelectMixin, {
         if (this.get('groupedContent') && value.groupHeader) {
           value = value.items[0]
         }
-        this.setLabel(value);
         this.setValue(value);
+        this.set('inputValue', this.get('label'));
       } else {
         this.set('value', null)
-        this.set('label', this.get('prompt'));
+        this.set('inputValue', this.get('prompt'));
       }
       this.set('activeOption', null);
       return value;
-    }
-  }),
-
-  _valuePath: computed('optionValuePath', function () {
-    if (this.get('optionValuePath') !== null) {
-      return this.get('optionValuePath').replace(/^content\.?/, '');
-    }
-  }),
-
-  _labelPath: computed('optionLabelPath', function () {
-    if (this.get('optionLabelPath') !== null) {
-      return this.get('optionLabelPath').replace(/^content\.?/, '');
     }
   }),
 
@@ -209,7 +192,6 @@ export default Component.extend(SelectMixin, {
     updateSearchSelection(selectedIndex, outerIndex = null) {
       // for key up and down selection
       if (this.get('groupedContent')) {
-
         if (outerIndex) {
           this.set('selection', this.get("searchList")[outerIndex].items[selectedIndex]);
         } else {
