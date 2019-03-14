@@ -1,11 +1,10 @@
 import Component from '@ember/component';
-import layout from '../templates/components/bourbon-search-select-field';
 import { isPresent } from '@ember/utils';
-import SelectMixin from 'bourbon/mixins/select';
-
 import { A } from '@ember/array';
-
 import { observer, computed } from '@ember/object';
+
+import layout from '../templates/components/bourbon-search-select-field';
+import SelectMixin from 'bourbon/mixins/select';
 
 export default Component.extend(SelectMixin, {
   layout,
@@ -19,14 +18,8 @@ export default Component.extend(SelectMixin, {
 
   init() {
     this._super(...arguments);
+    // TODO figure out if we still need searchList
     this.set('searchList', this.get('content'));
-
-    if (this.get('label') !== null && this.get('value') !== null) {
-      this.inputValueObserver();
-    } else if (this.get('value')) {
-      this.setLabel(this.get('value'));
-      this.inputValueObserver();
-    }
   },
 
   value: null,
@@ -39,37 +32,34 @@ export default Component.extend(SelectMixin, {
   optionLabelPath: null,
   optionEnabledPath: null,
   autofocus: null,
+  readonly: null,
+  hasValue: computed.notEmpty('value'),
 
-  inputValueObserver: observer('value', function() {
-    if (this.get('value')) {
-      this.set('inputValue', this.get('label'));
-    } else {
-      this.set('inputValue', this.get('prompt'));
-    }
-  }),
 
   mouseDown(e) {
-    this.set('activeOption', null);
     this.set('showDropdown', !this.get('showDropdown'));
-    this.set('autofocus', this.get('showDropdown'));
-
 
     if (this.get('showDropdown')) {
       this.set('inputValue', '');
+      this.set('autofocus', true);
+      this.set('readonly', null);
     } else {
-      this.inputValueObserver();
+      this.set('autofocus', false);
+      this.set('readonly', true);
+      this.resetPrompt();
     }
   },
 
   focusOut() {
     this.resetPrompt();
     this.set('activeOption', null);
-    this.inputValueObserver();
     this.set('showDropdown', false);
     this.set('autofocus', false);
+    this.set('readonly', true);
+
   },
 
-  resetPrompt: observer('label', function() {
+  resetPrompt: observer('label', 'value', function() {
     if (this.get('value') === null && this.get('prompt')) {
       this.set('inputValue', this.get('prompt'));
     } else if (this.get('label')) {
@@ -92,17 +82,18 @@ export default Component.extend(SelectMixin, {
     // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
-      // if valid option availble select first option upon enter
+      // if valid option available select first option upon enter
       if (!this.get('noResults') &&  this.get('searchList').length > 0) {
         // only select the first option if we have not keyed down
-        // to a dfferent selection
+        // to a different selection
         if (this.get('activeOption') === null) {
           this.set('activeOption', 0);
         }
       }
-      this.send('updateSearchSelection');
+      this.send('updateSearchSelection', this.get('activeOption'));
       this.set('showDropdown', false);
       this.set('autofocus', false);
+      this.set('readonly', true);
       this.set('activeOption', null);
       document.activeElement.blur();
     } else if (e.keyCode === 8) {
@@ -160,6 +151,7 @@ export default Component.extend(SelectMixin, {
       let searchString = this.optionValue(selectedValue);
 
       let searchList = this.getSearchList(searchString);
+
       if (searchList.length === 0) {
         if (this.get('groupedContent')) {
           this.set('searchList', A([{groupHeader: null, items: [{label: 'No results found.' }]}]));
@@ -188,27 +180,61 @@ export default Component.extend(SelectMixin, {
         }
         this.setLabel(value);
         this.setValue(value);
+      } else {
+        this.set('value', null)
+        this.set('label', this.get('prompt'));
       }
       this.set('activeOption', null);
       return value;
-
     }
   }),
 
+  _valuePath: computed('optionValuePath', function () {
+    if (this.get('optionValuePath') !== null) {
+      return this.get('optionValuePath').replace(/^content\.?/, '');
+    }
+  }),
+
+  _labelPath: computed('optionLabelPath', function () {
+    if (this.get('optionLabelPath') !== null) {
+      return this.get('optionLabelPath').replace(/^content\.?/, '');
+    }
+  }),
+
+  didInsertElement() {
+    this.send('updateSearchSelection');
+  },
+
   actions: {
-    updateSearchSelection() {
+    updateSearchSelection(selectedIndex, outerIndex = null) {
       // for key up and down selection
       if (this.get('groupedContent')) {
-        let groupList = []
-        for (var option of this.get('searchList')) {
-          groupList.push(...option.items)
-        }
-        this.set('selection', groupList[this.get('activeOption')]);
 
+        if (outerIndex) {
+          this.set('selection', this.get("searchList")[outerIndex].items[selectedIndex]);
+        } else {
+          let groupList = []
+          for (var option of this.get('searchList')) {
+            groupList.push(...option.items)
+          }
+          this.set('selection', groupList[selectedIndex]);
+        }
       } else {
+        if (selectedIndex === undefined) {
+          if (this.findValueObject(this.get('value'))) {
+            this.set('selection', this.findValueObject(this.get('value')));
+            return;
+          } else {
+            selectedIndex = 0
+            if (this.get('prompt')) {
+              selectedIndex -= 1;
+            }
+          }
+        }
+
         this.set(
           'selection',
-          this.get('searchList').objectAt(this.get('activeOption'))
+          this.get('searchList').objectAt(selectedIndex)
         );
       }
 

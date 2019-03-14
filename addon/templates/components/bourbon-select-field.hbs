@@ -6,14 +6,14 @@
     {{#each content as |group|}}
       <optgroup label={{group.groupHeader}}>
         {{#each group.items as |option|}}
-          {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+          {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
         {{/each}}
       </optgroup>
     {{/each}}
 
   {{else}}
     {{#each content as |option|}}
-      {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+      {{bourbon-select-field-option tagName="option" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
     {{/each}}
   {{/if}}
 </select>
@@ -27,14 +27,14 @@
           <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
         {{/if}}
         {{#each group.items as |option innerIndex|}}
-          {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+          {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSelection" innerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
         {{/each}}
       </div>
     {{/each}}
 
   {{else}}
     {{#each content as |option index|}}
-      {{bourbon-select-field-option index=index tagName="div" content=option selection=selection labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath target=target role="listitem"}}
+      {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
     {{/each}}
   {{/if}}
 </div>

@@ -2,6 +2,7 @@ import Mixin from '@ember/object/mixin';
 
 export default Mixin.create({
   setLabel(value) {
+    // TODOD redo with optionValuePath and make a computed property
     let checkValue = this.getCheckValue(value);
 
     if (typeof checkValue.label === 'string') {
@@ -41,6 +42,7 @@ export default Mixin.create({
   },
 
   getCheckValue(value) {
+    // TODO check if still needed
     if (value.groupHeader) {
       return this.get('value');
     } else {
@@ -52,43 +54,44 @@ export default Mixin.create({
     }
   },
 
+  findValueObject(valueString) {
+    let path = this.get('_valuePath');
+
+    if (path) {
+      return this.get('content').find(v => v[path] == valueString);
+    } else {
+      return this.get('content').find(v => v == valueString);
+    }
+  },
+
   moveUpDown(e) {
     let el = $(e.currentTarget);
 
     let list = el.find('.BourbonSelectField-menu');
-    let allOptions = el.find(
-      '.BourbonSelectField-menu .BourbonSelectField-option'
-    );
+    let allOptions = el.find('.BourbonSelectField-menu .BourbonSelectField-option');
     let numOptions = allOptions.length;
 
-    // e.keyCode 40 is for 'down arrow'
     if (e.keyCode === 40) {
+      // e.keyCode 40 is for 'down arrow'
+      // resetting all options
       if (this.get('activeOption') !== numOptions - 1) {
         $(allOptions).removeClass('Bourbon--active');
       }
 
-      if (
-        this.get('activeOption') >= 0 &&
-        this.get('activeOption') < numOptions - 1
-      ) {
-        if (this.get('activeOption') === null) {
-          this.set('activeOption', 0);
-        } else {
-          this.set('activeOption', this.get('activeOption') + 1);
-        }
-
-        this.selectOption(allOptions, list);
+      if (this.get('activeOption') === null) {
+        this.set('activeOption', 0);
+      } else if (this.get('activeOption') >= 0 && this.get('activeOption') < numOptions - 1) {
+        this.set('activeOption', this.get('activeOption') + 1);
       }
+
+      this.selectOption(allOptions, list);
     // e.keyCode 38 is for 'up arrow'
     } else if (e.keyCode === 38) {
       if (this.get('activeOption') === null) {
         return;
       }
 
-      if (
-        this.get('activeOption') > 0 &&
-        this.get('activeOption') < numOptions
-      ) {
+      if (this.get('activeOption') > 0 && this.get('activeOption') < numOptions) {
         if (this.get('activeOption') !== numOptions) {
           $(allOptions).removeClass('Bourbon--active');
         }

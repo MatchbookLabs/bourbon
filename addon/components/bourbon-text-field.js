@@ -1,5 +1,5 @@
 import TextField from '@ember/component/text-field';
-import { observer } from '@ember/object';
+import { observer, computed } from '@ember/object';
 
 import layout from '../templates/components/bourbon-text-field';
 
@@ -9,7 +9,7 @@ export default TextField.extend({
     'value::empty',
     'isFocused:BourbonTextField--active'
   ],
-  attributeBindings: ['autocomplete', 'type', 'autofocus'],
+  attributeBindings: ['autocomplete', 'type', 'autofocus', 'boundReadOnly:readonly'],
 
   layout,
 
@@ -18,8 +18,15 @@ export default TextField.extend({
   actionOnEnter: '',
   onFocusOutOrEnter: '',
   autofocus: false,
+  readonly: null,
   value: null,
   isFocused: false,
+
+  // attribute binding doesn't work for readonly = false
+  // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
+  boundReadOnly: computed('readonly', function() {
+    return this.get('readonly') || null;
+  }),
 
   focusedElementObserver: observer('autofocus', function() {
     this.set('isFocused', this.get('autofocus'))
