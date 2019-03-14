@@ -213,13 +213,13 @@ export default Component.extend(SelectMixin, {
             }
           }
         }
-
-        this.set(
-          'selection',
-          this.get('searchList').objectAt(selectedIndex)
-        );
+        if (this.get('searchList')) {
+          this.set(
+            'selection',
+            this.get('searchList').objectAt(selectedIndex)
+          );
+        }
       }
-
     }
   }
 });
