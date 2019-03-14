@@ -1,19 +1,12 @@
 import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
-import { scheduleOnce } from '@ember/runloop';
 import SelectMixin from 'bourbon/mixins/select';
 
 import layout from '../templates/components/bourbon-select-field';
 
 export default Component.extend(SelectMixin, {
   layout,
-
-  init() {
-    this._super(...arguments);
-    this.resetPrompt();
-  },
-
   classNames: ['BourbonSelectField'],
   classNameBindings: [
     'hasValue',
@@ -32,43 +25,13 @@ export default Component.extend(SelectMixin, {
   hasValue: computed.notEmpty('value'),
   activeOption: null,
 
-  resetPrompt() {
-    // value, label and selection all need to be set
-    if (this.get('hasPrompt') && (!this.get('value'))) {
-      this.set('label', this.get('prompt'));
-    } else if (typeof this.get('value') === 'string') {
-      let value = this.findValueObject(this.get('value'));
-      this.set('selection', value);
-    } else if (typeof this.get('value') === 'number') {
-      this.set('selection', this.get('value'));
-    } else if (this.get('value')) {
-      this.set('selection', this.get('value'));
-    }
-  },
-
-  inputValueObserver: observer('value', function() {
-    this.resetPrompt();
-  }),
-
   focusOut() {
     this.set('activeOption', null);
     this.set('showList', false);
   },
 
   mouseDown(e) {
-    let el = $(e.target);
-    if (el.find('BourbonSelectField-option')) {
-      this.set('activeOption', el.attr('index'));
-      this.send("updateSelection");
-
-    } else {
-      this.set('activeOption', null);
-    }
     this.set('showList', !this.get('showList'));
-  },
-
-  findValueObject(valueString) {
-    return this.get('content').find(v => v.label == valueString || v.value == valueString );
   },
 
   keyDown(e) {
@@ -76,7 +39,7 @@ export default Component.extend(SelectMixin, {
     // e.keyCode 13 is for 'Enter'
     if (e.keyCode === 13) {
       e.preventDefault();
-      this.send('updateSelection');
+      this.send('updateSelection', this.get('activeOption'));
       this.set('showList', false);
       this.set('activeOption', null);
       document.activeElement.blur();
@@ -93,8 +56,9 @@ export default Component.extend(SelectMixin, {
         if (this.get('groupedContent') && value.groupHeader) {
           value = value.items[0]
         }
-        this.setLabel(value);
         this.setValue(value);
+      } else {
+        this.set('value', null)
       }
       this.set('activeOption', null);
       return value;
@@ -109,38 +73,29 @@ export default Component.extend(SelectMixin, {
     }
   }),
 
-  _valuePath: computed('optionValuePath', function() {
-    if (this.get('optionValuePath') !== null) {
-      return this.get('optionValuePath').replace(/^content\.?/, '');
-    }
-  }),
-
-  _initSelection: observer('searchTerm', function() {
-    scheduleOnce('afterRender', this, function() {
-      if (this.get('content')) {
-        this.send('updateSelection');
-      }
-    });
+  _initSelection: observer('content', 'value', function() {
+    this.send('updateSelection');
   }),
 
   didInsertElement() {
-    this._initSelection();
+    this.send('updateSelection');
   },
 
   actions: {
-    // only used for initial load - rest of changes are coming through the bourbon select field option
-    updateSelection() {
-      let selectedIndex = this.$('select')[0].selectedIndex;
-      if (this.get('activeOption')) {
-        this.set('selection', this.get('content').objectAt(this.get('activeOption')))
-      } else {
-        if (this.get('prompt')) {
-          selectedIndex -= 1;
+    updateSelection(selectedIndex) {
+      if (selectedIndex === undefined) {
+        if (this.findValueObject(this.get('value'))) {
+          this.set('selection', this.findValueObject(this.get('value')));
+          return;
+        } else {
+          selectedIndex = 0
+          if (this.get('prompt')) {
+            selectedIndex -= 1;
+          }
         }
-
-        this.set('selection', this.get('content').objectAt(selectedIndex));
-
       }
+
+      this.set('selection', this.get('content').objectAt(selectedIndex));
     }
   }
 });

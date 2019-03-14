@@ -1,7 +1,28 @@
 <div class="BourbonSearchSelectField-inputContainer">
-  {{bourbon-text-field placeholder=prompt value=inputValue autofocus=autofocus autocomplete="off" type="search"}}
+  {{bourbon-text-field placeholder=prompt value=inputValue autofocus=autofocus readonly=readonly autocomplete="off" type="search"}}
 </div>
 
 <div class="BourbonSearchSelectField-searchContainer">
-  {{bourbon-select-field content=searchList prompt=prompt fullWidth=true showList=showDropdown searchTerm=inputValue label=label value=value optionLabelPath=optionLabelPath optionValuePath=optionValuePath optionEnabledPath=optionEnabledPath groupedContent=groupedContent selectFieldContext=selectFieldContext}}
+  <div class="BourbonSelectField btw-block">
+    <div class="BourbonSelectField-selected" tabindex="0">{{label}}</div>
+    <div class="BourbonSelectField-menu {{if showDropdown 'BourbonSelect--focus btw-block'}}">
+      {{#if groupedContent}}
+        {{#each searchList as |group outerIndex|}}
+          <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>
+            {{#if group.groupHeader}}
+              <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
+            {{/if}}
+            {{#each group.items as |option innerIndex|}}
+              {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" innerIndex outerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+            {{/each}}
+          </div>
+        {{/each}}
+
+      {{else}}
+        {{#each searchList as |option index|}}
+          {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
 </div>

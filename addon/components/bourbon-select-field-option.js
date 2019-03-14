@@ -14,7 +14,7 @@ export default Component.extend({
   enabledPath: null,
 
   mouseDown(e) {
-    this.send('updateSelection');
+    this.get('updateSelection')();
   },
 
   isDisabled: computed('content', 'enabledPath', function() {
@@ -46,11 +46,5 @@ export default Component.extend({
 
   selected: computed('content', 'selection', function() {
     return this.get('content') === this.get('selection');
-  }),
-
-  actions: {
-    updateSelection() {
-      this.set('selection', this.get('content'));
-    }
-  }
+  })
 });

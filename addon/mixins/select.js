@@ -1,29 +1,8 @@
 import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 
 export default Mixin.create({
-  setLabel(value) {
-    let checkValue = this.getCheckValue(value);
-
-    if (typeof checkValue.label === 'string') {
-      let label = checkValue.label;
-      this.set('label', label);
-    } else if (typeof checkValue === 'string' || typeof value === 'number') {
-      this.set('label', checkValue);
-    } else if (checkValue.get('text')) {
-      this.set('label', checkValue.get('text'));
-    } else if (checkValue.get('formattedTitle')) {
-      this.set('label', checkValue.get('formattedTitle'));
-    } else if (checkValue.get('label')) {
-      this.set('label', checkValue.get('label'));
-    } else if (checkValue.get('title')) {
-      this.set('label', checkValue.get('title'));
-    } else if (checkValue.get('text')) {
-      this.set('label', checkValue.get('text'));
-    } else {
-      this.set('label', checkValue);
-    }
-  },
-
   setValue(value) {
     let path = this.get('_valuePath');
 
@@ -41,6 +20,7 @@ export default Mixin.create({
   },
 
   getCheckValue(value) {
+    // TODO check if still needed
     if (value.groupHeader) {
       return this.get('value');
     } else {
@@ -52,43 +32,89 @@ export default Mixin.create({
     }
   },
 
+  label: computed('value', 'content', function () {
+    let checkValue = this.get('value')
+
+    if (typeof this.get('value') === 'string' || typeof this.get('value') === 'boolean' ) {
+      checkValue = this.findValueObject(this.get('value'));
+    }
+
+    if (checkValue === null || checkValue === undefined) {
+      return this.get('prompt')
+    }
+
+    let path = this.get('_labelPath');
+    if (path && isPresent(checkValue)) {
+      return (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) || checkValue[path]
+    } else {
+      return checkValue;
+    }
+  }),
+
+  _valuePath: computed('optionValuePath', function () {
+    if (this.get('optionValuePath') !== null) {
+      return this.get('optionValuePath').replace(/^content\.?/, '');
+    }
+  }),
+
+  _labelPath: computed('optionLabelPath', function () {
+    if (this.get('optionLabelPath') !== null) {
+      return this.get('optionLabelPath').replace(/^content\.?/, '');
+    }
+  }),
+
+  findValueObject(valueString) {
+    let path = this.get('_valuePath');
+
+    if (path) {
+      if (this.get('groupedContent')) {
+        let groupList = []
+        for (var option of this.get('searchList')) {
+          groupList.push(...option.items)
+        }
+        if (groupList) {
+          return groupList.find(v => v[path] == valueString);
+        }
+      } else {
+        if (this.get('content')) {
+          return this.get('content').find(v => v[path] == valueString);
+        }
+      }
+    } else {
+      if (this.get('content')) {
+        return this.get('content').find(v => v == valueString);
+      }
+    }
+  },
+
   moveUpDown(e) {
     let el = $(e.currentTarget);
 
     let list = el.find('.BourbonSelectField-menu');
-    let allOptions = el.find(
-      '.BourbonSelectField-menu .BourbonSelectField-option'
-    );
+    let allOptions = el.find('.BourbonSelectField-menu .BourbonSelectField-option');
     let numOptions = allOptions.length;
 
-    // e.keyCode 40 is for 'down arrow'
     if (e.keyCode === 40) {
+      // e.keyCode 40 is for 'down arrow'
+      // resetting all options
       if (this.get('activeOption') !== numOptions - 1) {
         $(allOptions).removeClass('Bourbon--active');
       }
 
-      if (
-        this.get('activeOption') >= 0 &&
-        this.get('activeOption') < numOptions - 1
-      ) {
-        if (this.get('activeOption') === null) {
-          this.set('activeOption', 0);
-        } else {
-          this.set('activeOption', this.get('activeOption') + 1);
-        }
-
-        this.selectOption(allOptions, list);
+      if (this.get('activeOption') === null) {
+        this.set('activeOption', 0);
+      } else if (this.get('activeOption') >= 0 && this.get('activeOption') < numOptions - 1) {
+        this.set('activeOption', this.get('activeOption') + 1);
       }
+
+      this.selectOption(allOptions, list);
     // e.keyCode 38 is for 'up arrow'
     } else if (e.keyCode === 38) {
       if (this.get('activeOption') === null) {
         return;
       }
 
-      if (
-        this.get('activeOption') > 0 &&
-        this.get('activeOption') < numOptions
-      ) {
+      if (this.get('activeOption') > 0 && this.get('activeOption') < numOptions) {
         if (this.get('activeOption') !== numOptions) {
           $(allOptions).removeClass('Bourbon--active');
         }

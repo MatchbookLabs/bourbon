@@ -1,4 +1,6 @@
 .BourbonSearchSelectField {
+  min-width: 15em;
+  height: 3em;
   position: relative;
   z-index: 1;
 }
@@ -7,6 +9,10 @@
   position: relative;
   z-index: 23;
   width: 100%;
+}
+
+.BourbonSearchSelectField-inputContainer .BourbonTextField {
+  height: 42px;
 }
 
 

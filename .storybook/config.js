@@ -31,18 +31,18 @@ addDecorator(
 );
 
 function loadStories() {
-    require('../stories/Toggle/Toggle.stories.js');
-    require('../stories/Buttons/Buttons.stories.js');
-    require('../stories/Tooltip/Tooltip.stories.js');
-    require('../stories/Modals/Modals.stories.js');
-    require('../stories/Accordion/Accordion.stories.js');
-    require('../stories/Table/Table.stories.js');
-    require('../stories/TextField/TextField.stories.js');
-    require('../stories/SelectField/SelectField.stories.js');
-    require('../stories/SearchSelectField/SearchSelectField.stories.js');
-    require('../stories/StaticComponents/StaticComponents.stories.js');
-    require('../stories/Icons/Icons.stories.js');
-    require('../stories/Icons.stories.js');
+  require('../stories/SearchSelectField/SearchSelectField.stories.js');
+  require('../stories/SelectField/SelectField.stories.js');
+  require('../stories/TextField/TextField.stories.js');
+  require('../stories/Toggle/Toggle.stories.js');
+  require('../stories/Buttons/Buttons.stories.js');
+  require('../stories/Tooltip/Tooltip.stories.js');
+  require('../stories/Modals/Modals.stories.js');
+  require('../stories/Accordion/Accordion.stories.js');
+  require('../stories/Table/Table.stories.js');
+  require('../stories/StaticComponents/StaticComponents.stories.js');
+  require('../stories/Icons/Icons.stories.js');
+  require('../stories/Icons.stories.js');
 }
 
 configure(loadStories, module);
