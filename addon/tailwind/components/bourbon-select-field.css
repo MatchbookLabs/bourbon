@@ -87,7 +87,8 @@
   cursor: not-allowed;
 }
 
-.BourbonSelectField-option:hover {
+.BourbonSelectField-option:hover,
+.BourbonSelectField-option[active] {
   @apply .btw-bg-concrete;
 }
 

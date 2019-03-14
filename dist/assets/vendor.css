@@ -1453,7 +1453,8 @@ body {
   cursor: not-allowed;
 }
 
-.BourbonSelectField-option:hover {
+.BourbonSelectField-option:hover,
+.BourbonSelectField-option[active] {
   background-color: #f3f3f3;
 }
 

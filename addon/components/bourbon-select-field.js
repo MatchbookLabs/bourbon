@@ -1,146 +1,154 @@
 import Component from '@ember/component';
+import EmberObject from '@ember/object';
 import { computed, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
-import { scheduleOnce } from '@ember/runloop';
-import SelectMixin from 'bourbon/mixins/select';
-
+import { A } from '@ember/array';
 import layout from '../templates/components/bourbon-select-field';
 
-export default Component.extend(SelectMixin, {
+export default Component.extend({
   layout,
-
-  init() {
-    this._super(...arguments);
-    this.resetPrompt();
-  },
-
   classNames: ['BourbonSelectField'],
   classNameBindings: [
     'hasValue',
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active'
   ],
+
+  // passed in
   content: null,
-  optionValuePath: null,
-  optionLabelPath: null,
-  optionEnabledPath: null,
-  groupedContent: false,
-  showList: false,
   prompt: null,
-  hasPrompt: computed.notEmpty('prompt'),
   value: null,
-  hasValue: computed.notEmpty('value'),
-  activeOption: null,
-
-  resetPrompt() {
-    // value, label and selection all need to be set
-    if (this.get('hasPrompt') && (!this.get('value'))) {
-      this.set('label', this.get('prompt'));
-    } else if (typeof this.get('value') === 'string') {
-      let value = this.findValueObject(this.get('value'));
-      this.set('selection', value);
-    } else if (typeof this.get('value') === 'number') {
-      this.set('selection', this.get('value'));
-    } else if (this.get('value')) {
-      this.set('selection', this.get('value'));
-    }
-  },
-
-  inputValueObserver: observer('value', function() {
-    this.resetPrompt();
-  }),
-
-  focusOut() {
-    this.set('activeOption', null);
-    this.set('showList', false);
-  },
-
-  mouseDown(e) {
-    let el = $(e.target);
-    if (el.find('BourbonSelectField-option')) {
-      this.set('activeOption', el.attr('index'));
-      this.send("updateSelection");
-
-    } else {
-      this.set('activeOption', null);
-    }
-    this.set('showList', !this.get('showList'));
-  },
-
-  findValueObject(valueString) {
-    return this.get('content').find(v => v.label == valueString || v.value == valueString );
-  },
-
-  keyDown(e) {
-    this.moveUpDown(e);
-    // e.keyCode 13 is for 'Enter'
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      this.send('updateSelection');
-      this.set('showList', false);
-      this.set('activeOption', null);
-      document.activeElement.blur();
-    }
-  },
-
-  selection: computed('value', 'content.[]', {
-    get(key) {
-      this.getSelection();
-    },
-
-    set(key, value) {
-      if (isPresent(value)) {
-        if (this.get('groupedContent') && value.groupHeader) {
-          value = value.items[0]
-        }
-        this.setLabel(value);
-        this.setValue(value);
-      }
-      this.set('activeOption', null);
-      return value;
-    }
-  }),
-
+  optionLabelPath: null,
+  optionValuePath: null,
+  optionEnabledPath: null,
   action: null,
 
-  _sendAction: observer('selection', function() {
-    if (typeof this.get('action') === 'function') {
-      this.send('action', this.get('selection'));
+  // internal
+  showList: false,
+  hasValue: computed.notEmpty('value'),
+
+  _labelPath: computed('optionLabelPath', function() {
+    if (isPresent(this.get('optionLabelPath'))) {
+      return this.get('optionLabelPath').replace(/^content\.?/, '');
     }
   }),
 
   _valuePath: computed('optionValuePath', function() {
-    if (this.get('optionValuePath') !== null) {
+    if (isPresent(this.get('optionValuePath'))) {
       return this.get('optionValuePath').replace(/^content\.?/, '');
     }
   }),
 
-  _initSelection: observer('searchTerm', function() {
-    scheduleOnce('afterRender', this, function() {
-      if (this.get('content')) {
-        this.send('updateSelection');
-      }
-    });
+  _enabledPath: computed('optionEnabledPath', function() {
+    if (isPresent(this.get('optionEnabledPath'))) {
+      return this.get('optionEnabledPath').replace(/^content\.?/, '');
+    }
   }),
 
-  didInsertElement() {
-    this._initSelection();
+  internalContent: computed('content', '_labelPath', '_valuePath', '_enabledPath', function() {
+    return A(this.get('content').map((item) => {
+      if (typeof item === 'string' || typeof item === 'number') {
+        return EmberObject.create({ label: item.toString(), value: item });
+      } else {
+        let emberItem = EmberObject.create(item);
+        let endItem = {};
+        endItem.label = this.get('_labelPath') ? emberItem.get(this.get('_labelPath')) : emberItem.get('label');
+        endItem.value = this.get('_valuePath') ? emberItem.get(this.get('_valuePath')) : emberItem.get('value');
+        endItem.enabled = this.get('_enabledPath') ? emberItem.get(this.get('_enabledPath')) : true;
+        return EmberObject.create(endItem);
+      }
+    }));
+  }),
+
+  selectedIndex: computed('internalContent', 'value', {
+    get(key) {
+      let valueHolder = this.get('internalContent').findBy('value', this.get('value'));
+      return this.get('internalContent').indexOf(valueHolder);
+    },
+
+    set(key, value) {
+      this.set('value', this.get('internalContent').objectAt(value).get('value'));
+      return value;
+    }
+  }),
+
+  activeIndex: computed('selectedIndex', {
+    get(key) {
+      return this.get('selectedIndex');
+    },
+
+    set(key, value) {
+      return value;
+    }
+  }),
+
+  selection: computed('selectedIndex', function() {
+    if (this.get('selectedIndex') !== -1) {
+      return this.get('internalContent').objectAt(this.get('selectedIndex'));
+    } else {
+      return null;
+    }
+  }),
+
+  label: computed('selection', 'prompt', function() {
+    if (isPresent(this.get('selection'))) {
+      return this.get('selection.label');
+    } else {
+      return this.get('prompt');
+    }
+  }),
+
+  focusIn() {
+    this.set('showList', true);
+  },
+
+  focusOut() {
+    this.set('showList', false);
+  },
+
+  keyDown(e) {
+    if (e.keyCode === 38) {
+      // up arrow
+      this.moveActiveUp(this.get('activeIndex'));
+    } else if (e.keyCode === 40) {
+      // down arrow
+      this.moveActiveDown(this.get('activeIndex'));
+    } else if (e.keyCode === 13) {
+      //  enter
+      this.set('selectedIndex', this.get('activeIndex'));
+      this.set('showList', false);
+    }
+  },
+
+  moveActiveUp(prevIndex) {
+    let nextIndex = prevIndex - 1;
+    if (nextIndex < 0) {
+      return;
+    } else {
+      if (!this.get('internalContent').objectAt(nextIndex).get('enabled')) {
+        this.moveActiveUp(nextIndex);
+      } else {
+        this.set('activeIndex', nextIndex);
+      }
+    }
+  },
+
+  moveActiveDown(prevIndex) {
+    let nextIndex = prevIndex + 1;
+    if (nextIndex >= this.get('internalContent.length')) {
+      return;
+    } else {
+      if (!this.get('internalContent').objectAt(nextIndex).get('enabled')) {
+        this.moveActiveDown(nextIndex);
+      } else {
+        this.set('activeIndex', nextIndex);
+      }
+    }
   },
 
   actions: {
-    // only used for initial load - rest of changes are coming through the bourbon select field option
-    updateSelection() {
-      let selectedIndex = this.$('select')[0].selectedIndex;
-      if (this.get('activeOption')) {
-        this.set('selection', this.get('content').objectAt(this.get('activeOption')))
-      } else {
-        if (this.get('prompt')) {
-          selectedIndex -= 1;
-        }
-
-        this.set('selection', this.get('content').objectAt(selectedIndex));
-
-      }
+    selectIndex(index) {
+      this.set('selectedIndex', index);
     }
   }
 });

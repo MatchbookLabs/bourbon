@@ -60,4 +60,32 @@ storiesOf('select field', module)
     {
       notes: { markdown: selectField }
     }
+  )
+  .add(
+    'lawrence test select field',
+    () => {
+      return {
+        template: hbs`
+          <div>value: {{value}}</div>
+          {{bourbon-select-field content=content prompt="Select a thing..." value=value}}
+          {{bourbon-select-field content=content prompt="Select another thing..." value=value optionLabelPath="otherLabel" optionValuePath="otherValue" optionEnabledPath="enabled"}}
+        `,
+        context: {
+          onClick: action('selectFieldClick'),
+          content: A([...Array(10).keys()].map((v,i)=> (
+            {
+              label: `label ${i}`,
+              value: `value ${i}`,
+              otherLabel: `other label ${i}`,
+              otherValue: `value ${i}`,
+              enabled: !!(i%2)
+            }
+          ))),
+          value: 'value 1'
+        }
+      };
+    },
+    {
+      notes: { markdown: selectField }
+    }
   );
