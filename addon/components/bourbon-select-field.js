@@ -84,7 +84,7 @@ export default Component.extend(SelectMixin, {
   actions: {
     updateSelection(selectedIndex) {
       if (selectedIndex === undefined) {
-        if (this.findValueObject(this.get('value'))) {
+        if (isPresent(this.findValueObject(this.get('value')))) {
           this.set('selection', this.findValueObject(this.get('value')));
           return;
         } else {
