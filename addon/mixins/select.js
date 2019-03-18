@@ -7,8 +7,7 @@ export default Mixin.create({
     let path = this.get('_valuePath');
 
     let checkValue = this.getCheckValue(value);
-
-    if (path && checkValue) {
+    if (path && isPresent(checkValue)) {
       this.set(
         'value',
         (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) ||
@@ -27,16 +26,16 @@ export default Mixin.create({
       if (typeof value === 'number') {
         return value;
       } else {
-        return value ? value : this.get('value');
+        return isPresent(value) ? value : this.get('value');
       }
     }
   },
 
-  label: computed('value', 'content', function () {
-    let checkValue = this.get('value')
+  label: computed('selection', 'content', function () {
+    let checkValue = this.get('selection')
 
-    if (typeof this.get('value') === 'string' || typeof this.get('value') === 'boolean' ) {
-      checkValue = this.findValueObject(this.get('value'));
+    if (typeof this.get('selection') === 'string' || typeof this.get('selection') === 'boolean' ) {
+      checkValue = this.findValueObject(this.get('selection'));
     }
 
     if (checkValue === null || checkValue === undefined) {
