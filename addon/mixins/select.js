@@ -72,16 +72,16 @@ export default Mixin.create({
           groupList.push(...option.items)
         }
         if (groupList) {
-          return groupList.find(v => v[path] == valueString);
+          return groupList.find(v => v[path] === valueString);
         }
       } else {
         if (this.get('content')) {
-          return this.get('content').find(v => v[path] == valueString);
+          return this.get('content').find(v => v[path] === valueString);
         }
       }
     } else {
       if (this.get('content')) {
-        return this.get('content').find(v => v == valueString);
+        return this.get('content').find(v => v === valueString);
       }
     }
   },
