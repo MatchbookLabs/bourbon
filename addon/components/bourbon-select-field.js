@@ -69,7 +69,7 @@ export default Component.extend(SelectMixin, {
 
   _sendAction: observer('selection', function() {
     if (typeof this.get('action') === 'function') {
-      this.send('action', this.get('selection'));
+      this.get('action')(this.get('selection'));
     }
   }),
 
