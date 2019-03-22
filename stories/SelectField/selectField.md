@@ -16,7 +16,7 @@
 | fullWidth | boolean | false| false| add 100% width for select field||
 | content | array | null | true | list of content to be displayed in select field ||
 | value | object or string | null | false | add if want to show default value on load||
-| selection | object or string | null | false | add if want to show default value on load||
+| action | function | null | false | add if want to trigger an action on selection change||
 | prompt | string | null | false | if you want a placehoder prompt to guide user| for example, "Select a Salesforce object..."|
 | target | class | this | false | if you want change/pass in the context of the search select field ||
 | optionLabelPath | string | null | false | passed in when value passed in is an object as to indicate where the label is defined within the value object ||
@@ -33,5 +33,6 @@
     prompt="Select an action..."
     target=this
     fullWidth=true
+    action=(action "flabongoAction")
   ]
 ```
