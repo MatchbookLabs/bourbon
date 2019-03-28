@@ -104,6 +104,8 @@ export default Component.extend(SelectMixin, {
   optionValue(option) {
     if (typeof option === 'string') {
       return option.toLowerCase();
+    } else if (typeof option === 'number') {
+      return option.toString();
     } else if (typeof option.get === 'function') {
       return option.get('label').toLowerCase();
     } else {

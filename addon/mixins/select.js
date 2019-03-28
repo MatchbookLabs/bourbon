@@ -5,17 +5,17 @@ import { isPresent } from '@ember/utils';
 export default Mixin.create({
   setValue(value) {
     let path = this.get('_valuePath');
-
     let checkValue = this.getCheckValue(value);
+
     if (path && isPresent(checkValue)) {
-      this.set(
-        'value',
-        (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) ||
-        checkValue[path]
-      );
-    } else {
-      this.set('value', checkValue);
+      if (typeof checkValue.get === 'function') {
+        checkValue = checkValue.get(path);
+      } else {
+        checkValue = checkValue[path];
+      }
     }
+
+    this.set('value', checkValue);
   },
 
   getCheckValue(value) {
@@ -34,8 +34,10 @@ export default Mixin.create({
   label: computed('selection', 'content', function () {
     let checkValue = this.get('selection')
 
-    if (typeof this.get('selection') === 'string' || typeof this.get('selection') === 'boolean' ) {
-      checkValue = this.findValueObject(this.get('selection'));
+    if (typeof checkValue === 'string' ||
+        typeof checkValue === 'number' ||
+        typeof checkValue === 'boolean' ) {
+      checkValue = this.findValueObject(checkValue);
     }
 
     if (checkValue === null || checkValue === undefined) {
@@ -44,7 +46,11 @@ export default Mixin.create({
 
     let path = this.get('_labelPath');
     if (path && isPresent(checkValue)) {
-      return (typeof checkValue.get === 'function' ? checkValue.get(path) : void 0) || checkValue[path]
+      if (typeof checkValue.get === 'function') {
+        return checkValue.get(path); // if Ember.Object
+      } else {
+        return checkValue[path]; // if JS object
+      }
     } else {
       return checkValue;
     }
@@ -62,7 +68,7 @@ export default Mixin.create({
     }
   }),
 
-  findValueObject(valueString) {
+  findValueObject(value) {
     let path = this.get('_valuePath');
 
     if (path) {
@@ -72,16 +78,16 @@ export default Mixin.create({
           groupList.push(...option.items)
         }
         if (groupList) {
-          return groupList.find(v => v[path] === valueString);
+          return groupList.find(v => v[path] === value);
         }
       } else {
         if (this.get('content')) {
-          return this.get('content').find(v => v[path] === valueString);
+          return this.get('content').find(v => v[path] === value);
         }
       }
     } else {
       if (this.get('content')) {
-        return this.get('content').find(v => v === valueString);
+        return this.get('content').find(v => v === value);
       }
     }
   },
