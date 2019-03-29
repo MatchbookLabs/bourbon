@@ -56,3 +56,8 @@
 .BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
   top: 40px;
 }
+
+.BourbonSearchSelectField--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}

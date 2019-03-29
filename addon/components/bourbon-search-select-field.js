@@ -11,7 +11,8 @@ export default Component.extend(SelectMixin, {
   classNames: ['BourbonSearchSelectField'],
   classNameBindings: [
     'showDropdown:btw-z-20',
-    'showDropdown:BourbonSearchSelectField--active'
+    'showDropdown:BourbonSearchSelectField--active',
+    'disabled:BourbonSearchSelectField--disabled'
   ],
   isOpen: false,
   activeOption: null,
@@ -32,6 +33,7 @@ export default Component.extend(SelectMixin, {
   optionEnabledPath: null,
   autofocus: null,
   readonly: null,
+  disabled: false,
   hasValue: computed.notEmpty('value'),
 
   mouseDown(e) {
