@@ -1493,6 +1493,11 @@ body {
   -webkit-transform: rotate(45deg);
 }
 
+.BourbonSelectField--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .BourbonTable {
   height: 224px;
   width: 100%;

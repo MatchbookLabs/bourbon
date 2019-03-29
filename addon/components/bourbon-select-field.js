@@ -11,7 +11,8 @@ export default Component.extend(SelectMixin, {
   classNameBindings: [
     'hasValue',
     'fullWidth:btw-block',
-    'showList:BourbonSelectField--active'
+    'showList:BourbonSelectField--active',
+    'disabled:BourbonSelectField--disabled'
   ],
   content: null,
   optionValuePath: null,
@@ -24,6 +25,7 @@ export default Component.extend(SelectMixin, {
   value: null,
   hasValue: computed.notEmpty('value'),
   activeOption: null,
+  disabled: false,
 
   focusOut() {
     this.set('activeOption', null);
