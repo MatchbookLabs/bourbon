@@ -32,7 +32,7 @@ export default Mixin.create({
   },
 
   label: computed('selection', 'content', function () {
-    let checkValue = this.get('selection')
+    let checkValue = this.get('value')
 
     if (typeof checkValue === 'string' ||
         typeof checkValue === 'number' ||
