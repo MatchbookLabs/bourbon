@@ -3,6 +3,7 @@ import hbs from "htmlbars-inline-precompile";
 import { storiesOf } from "@storybook/ember";
 import { action } from "@storybook/addon-actions";
 import searchSelectField from './searchSelectField.md';
+import searchSelectFieldDisabled from './searchSelectFieldDisabled.md';
 
 storiesOf('search select field', module)
   .add(
@@ -135,6 +136,6 @@ storiesOf('search select field', module)
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectFieldDisabled }
     }
   )
