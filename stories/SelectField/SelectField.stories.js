@@ -3,6 +3,8 @@ import hbs from "htmlbars-inline-precompile";
 import { storiesOf } from "@storybook/ember";
 import { action } from "@storybook/addon-actions";
 import selectField from './selectField.md';
+import selectFieldObject from './selectFieldObject.md';
+import selectFieldDisabled from './selectFieldDisabled.md';
 
 storiesOf('select field', module)
   .add(
@@ -58,6 +60,34 @@ storiesOf('select field', module)
       };
     },
     {
-      notes: { markdown: selectField }
+      notes: { markdown: selectFieldObject }
+    }
+  )
+  .add(
+    'disabled select field',
+    () => {
+      return {
+        template: hbs`{{bourbon-select-field content=petObject prompt="Select your favorite dog..." value="the only Brussels Griffon" optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true disabled=true}}`,
+        context: {
+          onClick: action('selectFieldClick'),
+          petObject: A([
+            {
+              label: 'Chompsky the only Brussels Griffon',
+              value: 'the only Brussels Griffon'
+            },
+            {
+              label: 'Memphis the other Brussels Griffon',
+              value: 'the other Brussels Griffon'
+            },
+            {
+              label: 'Macho the Frenchie who is so Frenchie',
+              value: 'Frenchie'
+            }
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: selectFieldDisabled }
     }
   );

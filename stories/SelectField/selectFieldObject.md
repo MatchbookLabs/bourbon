@@ -1,11 +1,11 @@
 
-# select field component
+# select field component with array of object for content
 
 &nbsp;
 
 ### Example of usage in bourbon
 ```
-{{bourbon-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}
+{{bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}
 ```
 &nbsp;
 
