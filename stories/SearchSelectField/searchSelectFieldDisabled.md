@@ -1,11 +1,11 @@
 
-# search select field component
+# disabled search select field component
 
 &nbsp;
 
 ### Example of usage in bourbon
 ```
-{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}
+{{bourbon-search-select-field content=petObject disabled=true value="Frenchie" optionLabelPath="content.label" optionValuePath="content.value"}}
 ```
 &nbsp;
 

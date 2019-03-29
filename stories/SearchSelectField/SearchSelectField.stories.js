@@ -3,6 +3,7 @@ import hbs from "htmlbars-inline-precompile";
 import { storiesOf } from "@storybook/ember";
 import { action } from "@storybook/addon-actions";
 import searchSelectField from './searchSelectField.md';
+import searchSelectFieldDisabled from './searchSelectFieldDisabled.md';
 
 storiesOf('search select field', module)
   .add(
@@ -65,7 +66,7 @@ storiesOf('search select field', module)
     'grouped content search select field',
     () => {
       return {
-        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" value=null groupedContent=true}}`,
+        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" groupedContent=true}}`,
         context: {
           onClick: action('searchSelectFieldClick'),
           petObject: A([
@@ -109,4 +110,32 @@ storiesOf('search select field', module)
     {
       notes: { markdown: searchSelectField }
     }
-  );
+  )
+  .add(
+    'disabled search select field',
+    () => {
+      return {
+        template: hbs`{{bourbon-search-select-field content=petObject disabled=true value="Frenchie" optionLabelPath="content.label" optionValuePath="content.value"}}`,
+        context: {
+          onClick: action('searchSelectFieldClick'),
+          petObject: A([
+            {
+              label: 'Chompsky the only Brussels Griffon',
+              value: 'the only Brussels Griffon'
+            },
+            {
+              label: 'Memphis the other Brussels Griffon',
+              value: 'the other Brussels Griffon'
+            },
+            {
+              label: 'Macho the Frenchie who is so Frenchie',
+              value: 'Frenchie'
+            }
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: searchSelectFieldDisabled }
+    }
+  )
