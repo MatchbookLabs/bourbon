@@ -1364,12 +1364,10 @@ body {
   cursor: pointer;
 }
 
-.BourbonSearchSelectField-searchContainer .BourbonSelectField {
-  top: -42px;
-}
-
+.BourbonSearchSelectField-searchContainer .BourbonSelectField,
 .BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
-  top: 40px;
+  position: absolute;
+  top: 0;
 }
 
 .BourbonSearchSelectField--disabled {
@@ -1386,7 +1384,7 @@ body {
   line-height: 1em;
   white-space: normal;
   transform: rotateZ(0);
-  min-width: 15em;
+  min-width: 14em;
   height: 3em;
   background-color: #fff;
   color: #474c4f;
@@ -1560,6 +1558,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
   width: 100%;
+  min-width: 14em;
   height: 3em;
 }
 
