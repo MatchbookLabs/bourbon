@@ -32,10 +32,6 @@ export default Component.extend(SelectMixin, {
     this.set('showList', false);
   },
 
-  mouseDown(e) {
-    this.set('showList', !this.get('showList'));
-  },
-
   keyDown(e) {
     this.moveUpDown(e);
     // e.keyCode 13 is for 'Enter'
@@ -56,11 +52,11 @@ export default Component.extend(SelectMixin, {
     set(key, value) {
       if (isPresent(value)) {
         if (this.get('groupedContent') && value.groupHeader) {
-          value = value.items[0]
+          value = value.items[0];
         }
         this.setValue(value);
       } else {
-        this.set('value', null)
+        this.set('value', null);
       }
       this.set('activeOption', null);
       return value;
@@ -90,7 +86,7 @@ export default Component.extend(SelectMixin, {
           this.set('selection', this.findValueObject(this.get('value')));
           return;
         } else {
-          selectedIndex = 0
+          selectedIndex = 0;
           if (this.get('prompt')) {
             selectedIndex -= 1;
           }
@@ -98,6 +94,10 @@ export default Component.extend(SelectMixin, {
       }
 
       this.set('selection', this.get('content').objectAt(selectedIndex));
+    },
+    
+    mouseDown() {
+      this.set('showList', !this.get('showList'));
     }
   }
 });

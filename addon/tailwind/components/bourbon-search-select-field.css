@@ -49,8 +49,7 @@
   cursor: pointer;
 }
 
-.BourbonSearchSelectField-searchContainer .BourbonSelectField,
-.BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
+.BourbonSearchSelectField-searchContainer {
   position: absolute;
   top: 0px;
   width: 100%;
