@@ -36,20 +36,6 @@ export default Component.extend(SelectMixin, {
   disabled: false,
   hasValue: computed.notEmpty('value'),
 
-  mouseDown(e) {
-    this.set('showDropdown', !this.get('showDropdown'));
-
-    if (this.get('showDropdown')) {
-      this.set('inputValue', '');
-      this.set('autofocus', true);
-      this.set('readonly', null);
-    } else {
-      this.set('autofocus', false);
-      this.set('readonly', true);
-      this.resetPrompt();
-    }
-  },
-
   focusOut() {
     this.resetPrompt();
     this.set('activeOption', null);
@@ -68,9 +54,14 @@ export default Component.extend(SelectMixin, {
 
   noResults: computed('searchList.[]', function() {
     if (this.get('groupedContent')) {
-      return this.get('searchList')[0]['items'][0]['label'] === 'No results found.'
+      return (
+        this.get('searchList')[0]['items'][0]['label'] === 'No results found.'
+      );
     } else if (this.get('searchList')[0]) {
-      return this.get('searchList')[0] === 'No results found.' || this.get('searchList')[0]['label'] === 'No results found.'
+      return (
+        this.get('searchList')[0] === 'No results found.' ||
+        this.get('searchList')[0]['label'] === 'No results found.'
+      );
     }
   }),
 
@@ -80,7 +71,7 @@ export default Component.extend(SelectMixin, {
     if (e.keyCode === 13) {
       e.preventDefault();
       // if valid option available select first option upon enter
-      if (!this.get('noResults') &&  this.get('searchList').length > 0) {
+      if (!this.get('noResults') && this.get('searchList').length > 0) {
         // only select the first option if we have not keyed down
         // to a different selection
         if (this.get('activeOption') === null) {
@@ -99,7 +90,7 @@ export default Component.extend(SelectMixin, {
       // manually change the inputValue when the user is
       // using the delete button to change their input
       e.preventDefault();
-      this.set('inputValue', this.get('inputValue').slice(0,-1));
+      this.set('inputValue', this.get('inputValue').slice(0, -1));
     }
   },
 
@@ -139,7 +130,7 @@ export default Component.extend(SelectMixin, {
     }
   },
 
-  searchResults: observer('inputValue','content', function() {
+  searchResults: observer('inputValue', 'content', function() {
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {
@@ -153,7 +144,10 @@ export default Component.extend(SelectMixin, {
 
       if (searchList.length === 0) {
         if (this.get('groupedContent')) {
-          this.set('searchList', A([{groupHeader: null, items: [{label: 'No results found.' }]}]));
+          this.set(
+            'searchList',
+            A([{ groupHeader: null, items: [{ label: 'No results found.' }] }])
+          );
         } else if (this.get('optionLabelPath')) {
           this.set('searchList', A([{ label: 'No results found.' }]));
         } else {
@@ -163,7 +157,7 @@ export default Component.extend(SelectMixin, {
         this.set('searchList', A(searchList));
       }
 
-      return searchList
+      return searchList;
     }
   }),
 
@@ -175,12 +169,12 @@ export default Component.extend(SelectMixin, {
     set(key, value) {
       if (isPresent(value)) {
         if (this.get('groupedContent') && value.groupHeader) {
-          value = value.items[0]
+          value = value.items[0];
         }
         this.setValue(value);
         this.set('inputValue', this.get('label'));
       } else {
-        this.set('value', null)
+        this.set('value', null);
         this.set('inputValue', this.get('prompt'));
       }
       this.set('activeOption', null);
@@ -197,11 +191,14 @@ export default Component.extend(SelectMixin, {
       // for key up and down selection
       if (this.get('groupedContent')) {
         if (outerIndex) {
-          this.set('selection', this.get("searchList")[outerIndex].items[selectedIndex]);
+          this.set(
+            'selection',
+            this.get('searchList')[outerIndex].items[selectedIndex]
+          );
         } else {
-          let groupList = []
+          let groupList = [];
           for (var option of this.get('searchList')) {
-            groupList.push(...option.items)
+            groupList.push(...option.items);
           }
           this.set('selection', groupList[selectedIndex]);
         }
@@ -211,18 +208,29 @@ export default Component.extend(SelectMixin, {
             this.set('selection', this.findValueObject(this.get('value')));
             return;
           } else {
-            selectedIndex = 0
+            selectedIndex = 0;
             if (this.get('prompt')) {
               selectedIndex -= 1;
             }
           }
         }
         if (this.get('searchList')) {
-          this.set(
-            'selection',
-            this.get('searchList').objectAt(selectedIndex)
-          );
+          this.set('selection', this.get('searchList').objectAt(selectedIndex));
         }
+      }
+    },
+
+    mouseDown() {
+      this.set('showDropdown', !this.get('showDropdown'));
+
+      if (this.get('showDropdown')) {
+        this.set('inputValue', '');
+        this.set('autofocus', true);
+        this.set('readonly', null);
+      } else {
+        this.set('autofocus', false);
+        this.set('readonly', true);
+        this.resetPrompt();
       }
     }
   }
