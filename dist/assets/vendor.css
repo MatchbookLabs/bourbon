@@ -1368,6 +1368,7 @@ body {
 .BourbonSearchSelectField-searchContainer .BourbonSelectField-menu {
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
 .BourbonSearchSelectField--disabled {
