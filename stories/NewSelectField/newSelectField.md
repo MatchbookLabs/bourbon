@@ -22,5 +22,12 @@
 | optionEnabledPath | string | null | false | passed in when value passed in is an object as to indicate where the enabled is defined within the value object ||
 
 ### Example of usage in Flabongo
-
-content => array of number, strings,
+```
+  = new-bourbon-select-field [
+    classNames='SalesforceMapper-fieldMappings-selection'
+    content=mappableRules
+    optionLabelPath="content.label"
+    optionValuePath="content.value"
+    value=hasMappingRule
+  ]
+```
