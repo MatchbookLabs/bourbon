@@ -1,19 +1,17 @@
-import { A } from "@ember/array";
+import { A } from '@ember/array';
 import EmberObject from '@ember/object';
 
-import hbs from "htmlbars-inline-precompile";
-import { storiesOf } from "@storybook/ember";
-import { action } from "@storybook/addon-actions";
-import selectField from './selectField.md';
-import selectFieldObject from './selectFieldObject.md';
-import selectFieldDisabled from './selectFieldDisabled.md';
+import hbs from 'htmlbars-inline-precompile';
+import { storiesOf } from '@storybook/ember';
+import { action } from '@storybook/addon-actions';
+import newSelectField from './newSelectField.md';
 
-storiesOf('select field', module)
+storiesOf('new select field', module)
   .add(
     'array select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petsArray prompt="Select an animal..."}}`,
+        template: hbs`{{new-bourbon-select-field content=petsArray prompt="Select an animal..."}}`,
         context: {
           onClick: action('selectFieldClick'),
           petsArray: A([
@@ -34,14 +32,14 @@ storiesOf('select field', module)
       };
     },
     {
-      notes: { markdown: selectField }
+      notes: { markdown: newSelectField }
     }
   )
   .add(
     'object select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
+        template: hbs`{{new-bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
@@ -62,14 +60,15 @@ storiesOf('select field', module)
       };
     },
     {
-      notes: { markdown: selectFieldObject }
+      notes: { markdown: newSelectField }
     }
   )
+
   .add(
     'ember object select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
+        template: hbs`{{new-bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
@@ -90,14 +89,14 @@ storiesOf('select field', module)
       };
     },
     {
-      notes: { markdown: selectFieldObject }
+      notes: { markdown: newSelectField }
     }
   )
   .add(
     'disabled select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petObject prompt="Select your favorite dog..." value="the only Brussels Griffon" optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true disabled=true}}`,
+        template: hbs`{{new-bourbon-select-field content=petObject prompt="Select your favorite dog..." value="the only Brussels Griffon" optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true disabled=true}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
@@ -118,6 +117,6 @@ storiesOf('select field', module)
       };
     },
     {
-      notes: { markdown: selectFieldDisabled }
+      notes: { markdown: newSelectField }
     }
   );

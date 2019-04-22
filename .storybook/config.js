@@ -31,6 +31,7 @@ addDecorator(
 );
 
 function loadStories() {
+  require('../stories/NewSelectField/NewSelectField.stories.js');
   require('../stories/SearchSelectField/SearchSelectField.stories.js');
   require('../stories/SelectField/SelectField.stories.js');
   require('../stories/TextField/TextField.stories.js');
