@@ -104,7 +104,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5;
+  height: 42px;
   outline: none;
+  text-align: left;
 }
 
 .BourbonSelectField-selected:before {

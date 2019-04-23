@@ -1,0 +1,12 @@
+<button class="BourbonSelectField-selected" aria-haspopup="listbox" aria-live="polite" aria-expanded={{ariaExpanded}} aria-activedescendant={{activeDescendant}} tabindex="0" {{action "mouseDown"}}>{{label}}</button>
+<ul class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}" role="listbox">
+  {{#each internalContent as |option index|}}
+    {{new-bourbon-select-field-option
+      role="option"
+      label=option.label
+      disabled=(not option.enabled)
+      active=(eq index activeIndex)
+      selected=(eq index selectedIndex)
+      mouseDown=(action 'selectIndex' index)}}
+  {{/each}}
+</ul>
