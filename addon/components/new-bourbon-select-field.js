@@ -27,8 +27,19 @@ export default Component.extend({
 
   // internal
   showList: false,
+  activeDescendant: null,
   hasValue: computed.notEmpty('value'),
 
+  didRender() {
+    this.set(
+      'activeDescendant',
+      $('.NewBourbonSelectField-option[aria-selected]').attr('id')
+    );
+  },
+
+  ariaExpanded: computed('showList', function() {
+    return this.get('showList');
+  }),
   _labelPath: computed('optionLabelPath', function() {
     if (isPresent(this.get('optionLabelPath'))) {
       return this.get('optionLabelPath').replace(/^content\.?/, '');
@@ -58,7 +69,8 @@ export default Component.extend({
           if (typeof item === 'string' || typeof item === 'number') {
             return EmberObject.create({
               label: item.toString(),
-              value: item
+              value: item,
+              enabled: true
             });
           } else {
             let emberItem =
@@ -131,10 +143,6 @@ export default Component.extend({
     }
   }),
 
-  focusIn() {
-    this.set('showList', true);
-  },
-
   focusOut() {
     this.set('showList', false);
   },
@@ -148,9 +156,15 @@ export default Component.extend({
       this.moveActiveDown(this.get('activeIndex'));
     } else if (e.keyCode === 13) {
       //  enter
-      this.set('selectedIndex', this.get('activeIndex'));
-      this.set('showList', false);
-      document.activeElement.blur();
+      if (this.get('showList')) {
+        this.set('selectedIndex', this.get('activeIndex'));
+        this.set('showList', false);
+        document.activeElement.blur();
+      } else {
+        // When user is focused in and presses
+        // enter we want to show the list
+        this.set('showList', true);
+      }
     }
   },
 
@@ -191,6 +205,10 @@ export default Component.extend({
   actions: {
     selectIndex(index) {
       this.set('selectedIndex', index);
+    },
+
+    mouseDown() {
+      this.set('showList', true);
     }
   }
 });

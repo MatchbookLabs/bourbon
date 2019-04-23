@@ -15,7 +15,7 @@
 | classNames | string | NewBourbonSelectField | false | can modify styles and spacing for the select field ||
 | prompt | string | null | false | if you want a placehoder prompt to guide user| for example, "Select a Salesforce object..."|
 | content | array | null | true | list of content to be displayed in select field | contents of array can be Ember.Object, JS Object, Ember model|
-| value | object or string | null | false | add if want to show default value on load||
+| value | object or string | null | true | ||
 | action | function | null | false | add if want to trigger an action on selection change||
 | optionLabelPath | string | null | false | passed in when value passed in is an object as to indicate where the label is defined within the value object ||
 | optionValuePath | string | null | false | passed in when value passed in is an object as to indicate where the value is defined within the value object ||
