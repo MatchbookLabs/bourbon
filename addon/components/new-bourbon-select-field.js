@@ -40,6 +40,7 @@ export default Component.extend({
   ariaExpanded: computed('showList', function() {
     return this.get('showList');
   }),
+
   _labelPath: computed('optionLabelPath', function() {
     if (isPresent(this.get('optionLabelPath'))) {
       return this.get('optionLabelPath').replace(/^content\.?/, '');
@@ -158,7 +159,7 @@ export default Component.extend({
       //  enter
       if (this.get('showList')) {
         this.set('selectedIndex', this.get('activeIndex'));
-        this.set('showList', false);
+        // triggers the focusOut to hide the list
         document.activeElement.blur();
       } else {
         // When user is focused in and presses
