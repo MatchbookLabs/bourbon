@@ -83,13 +83,10 @@ export default Component.extend({
               : emberItem.get('label');
             endItem.value = this.get('_valuePath')
               ? emberItem.get(this.get('_valuePath'))
-              : emberItem.get('value');
+              : emberItem;
             endItem.enabled = this.get('_enabledPath')
               ? emberItem.get(this.get('_enabledPath'))
               : true;
-
-            // when the value is supposed to be the item
-            if (endItem.value === undefined) endItem.value = emberItem;
 
             return EmberObject.create(endItem);
           }
