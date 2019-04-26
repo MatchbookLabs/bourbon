@@ -14,7 +14,7 @@ export default Component.extend({
     'showList:BourbonSelectField--active',
     'disabled:BourbonSelectField--disabled'
   ],
-  attributeBindings: ['disabled:disabled'],
+  attributeBindings: ['disabled:disabled', 'tabindex:tabindex'],
 
   // passed in
   content: null,
@@ -29,6 +29,7 @@ export default Component.extend({
   showList: false,
   activeDescendant: null,
   hasValue: computed.notEmpty('value'),
+  tabindex: "0",
 
   didRender() {
     this.set(
@@ -203,6 +204,8 @@ export default Component.extend({
   actions: {
     selectIndex(index) {
       this.set('selectedIndex', index);
+      // to deal with focusOut not being triggered upon selection in Safari & FF
+      this.set('showList', false);
     },
 
     mouseDown() {
