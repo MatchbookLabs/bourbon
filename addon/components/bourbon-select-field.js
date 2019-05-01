@@ -75,10 +75,6 @@ export default Component.extend(SelectMixin, {
     this.send('updateSelection');
   }),
 
-  didInsertElement() {
-    this.send('updateSelection');
-  },
-
   actions: {
     updateSelection(selectedIndex) {
       if (selectedIndex === undefined) {
@@ -95,7 +91,7 @@ export default Component.extend(SelectMixin, {
 
       this.set('selection', this.get('content').objectAt(selectedIndex));
     },
-    
+
     mouseDown() {
       this.set('showList', !this.get('showList'));
     }

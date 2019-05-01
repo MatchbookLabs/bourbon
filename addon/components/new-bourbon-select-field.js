@@ -102,7 +102,7 @@ export default Component.extend({
         'value',
         this.get('value')
       );
-      return this.get('internalContent').indexOf(valueHolder);
+      return this.get('prompt') ? this.get('internalContent').indexOf(valueHolder) : 0;
     },
 
     set(key, value) {
