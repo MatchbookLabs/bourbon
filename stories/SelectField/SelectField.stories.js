@@ -41,7 +41,7 @@ storiesOf('select field', module)
     'object select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
+        template: hbs`{{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
