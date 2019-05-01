@@ -1562,7 +1562,6 @@ body {
   min-width: 14em;
   height: 3em;
   position: relative;
-  margin: 5px 0;
 }
 
 .BourbonTextField:focus {
@@ -1596,7 +1595,6 @@ input[type="search"].BourbonTextField {
   font-size: .8125em;
   opacity: 0;
   overflow: hidden;
-  padding: .5em 1em;
   position: absolute;
   text-overflow: ellipsis;
   top: 0;
@@ -1623,7 +1621,7 @@ input[type="search"].BourbonTextField {
 .BourbonTextField--not-empty .BourbonTextField-label {
   opacity: 1;
   transform: none;
-  top: -14px;
+  top: -8px;
 }
 
 .BourbonTooltip {

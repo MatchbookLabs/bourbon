@@ -68,5 +68,5 @@ input[type="search"].BourbonTextField {
 .BourbonTextField--not-empty .BourbonTextField-label    {
   opacity: 1;
   transform: none;
-  top: -14px;
+  top: -8px;
 }
