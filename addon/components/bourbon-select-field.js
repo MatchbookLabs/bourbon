@@ -75,6 +75,10 @@ export default Component.extend(SelectMixin, {
     this.send('updateSelection');
   }),
 
+  didInsertElement() {
+    this.send('updateSelection');
+  },
+
   actions: {
     updateSelection(selectedIndex) {
       if (selectedIndex === undefined) {
