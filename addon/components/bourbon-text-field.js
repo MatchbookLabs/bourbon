@@ -22,12 +22,11 @@ export default Component.extend({
   actionOnFocusIn: '',
   actionOnFocusOut: '',
   actionOnEnter: '',
-  onFocusOutOrEnter: '',
+  onFocusOutOrEnter: null,
   autofocus: false,
   readonly: null,
-  // value: null,
+  value: null,
   isFocused: false,
-  isNotEmpty: false,
   noLabel: false,
 
   // attribute binding doesn't work for readonly = false
@@ -40,12 +39,8 @@ export default Component.extend({
     this.set('isFocused', this.get('autofocus'));
   }),
 
-  valueObserver: observer('value', function() {
-    if (this.get('value') && !this.get('noLabel')) {
-      this.set('isNotEmpty', true);
-    } else {
-      this.set('isNotEmpty', false);
-    }
+  isNotEmpty: computed('value', function() {
+    return this.get('value') && !this.get('noLabel');
   }),
 
   didInsertElement() {

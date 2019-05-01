@@ -5,7 +5,7 @@
 
 ### Example of usage in bourbon
 ```
-{{bourbon-text-field placeholder="i am the placholder" onFocusOutOrEnter=onClick}}
+{{bourbon-text-field placeholder="i am the placeholder" onFocusOutOrEnter=onClick}}
 ```
 &nbsp;
 

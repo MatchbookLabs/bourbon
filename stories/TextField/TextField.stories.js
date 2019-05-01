@@ -8,7 +8,7 @@ storiesOf('text field', module)
     'default text field with floating label',
     () => {
       return {
-        template: hbs`{{bourbon-text-field placeholder="i am the placholder" onFocusOutOrEnter=onClick}}`,
+        template: hbs`{{bourbon-text-field placeholder="i am the placeholder" onFocusOutOrEnter=onClick}}`,
         context: { onClick: action('textFieldClick') }
       };
     },
@@ -20,7 +20,7 @@ storiesOf('text field', module)
     'no label textfield',
     () => {
       return {
-        template: hbs`{{bourbon-text-field placeholder="i am the placholder" noLabel=true onFocusOutOrEnter=onClick}}`,
+        template: hbs`{{bourbon-text-field placeholder="i am the placeholder" noLabel=true onFocusOutOrEnter=onClick}}`,
         context: { onClick: action('textFieldClick') }
       };
     },
