@@ -95,7 +95,7 @@ export default Component.extend(SelectMixin, {
 
       this.set('selection', this.get('content').objectAt(selectedIndex));
     },
-    
+
     mouseDown() {
       this.set('showList', !this.get('showList'));
     }
