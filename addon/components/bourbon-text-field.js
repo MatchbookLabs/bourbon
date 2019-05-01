@@ -1,26 +1,33 @@
-import TextField from '@ember/component/text-field';
+import Component from '@ember/component';
 import { observer, computed } from '@ember/object';
 
 import layout from '../templates/components/bourbon-text-field';
 
-export default TextField.extend({
+export default Component.extend({
   classNames: ['BourbonTextField'],
   classNameBindings: [
     'value::empty',
-    'isFocused:BourbonTextField--active'
+    'isFocused:BourbonTextField--active',
+    'isNotEmpty:BourbonTextField--not-empty'
   ],
-  attributeBindings: ['autocomplete', 'type', 'autofocus', 'boundReadOnly:readonly'],
+  attributeBindings: [
+    'autocomplete',
+    'type',
+    'autofocus',
+    'boundReadOnly:readonly'
+  ],
 
   layout,
 
   actionOnFocusIn: '',
   actionOnFocusOut: '',
   actionOnEnter: '',
-  onFocusOutOrEnter: '',
+  onFocusOutOrEnter: null,
   autofocus: false,
   readonly: null,
   value: null,
   isFocused: false,
+  noLabel: false,
 
   // attribute binding doesn't work for readonly = false
   // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
@@ -29,28 +36,39 @@ export default TextField.extend({
   }),
 
   focusedElementObserver: observer('autofocus', function() {
-    this.set('isFocused', this.get('autofocus'))
+    this.set('isFocused', this.get('autofocus'));
   }),
 
-  didInsertElement()  {
+  isNotEmpty: computed('value', function() {
+    return this.get('value') && !this.get('noLabel');
+  }),
+
+  didInsertElement() {
     if (this.get('autofocus')) {
-      this.$().focus()
+      this.$().focus();
       this.set('isFocused', true);
     }
   },
 
   focusIn() {
-    this.set('isFocused', true)
+    this.set('isFocused', true);
     if (this.get('actionOnFocusIn')) {
       this.get('actionOnFocusIn')();
     }
   },
 
+  input(e) {
+    let el = $(e.currentTarget);
+    let textInput = el.find('.BourbonTextField-input').val();
+
+    this.set('value', textInput);
+  },
+
   focusOut() {
-    this.set('isFocused', false)
+    this.set('isFocused', false);
 
     if (this.get('onFocusOutOrEnter')) {
-      this.get('onFocusOutOrEnter')(this.get('value'))
+      this.get('onFocusOutOrEnter')(this.get('value'));
     }
 
     if (this.get('actionOnFocusOut')) {
@@ -69,5 +87,4 @@ export default TextField.extend({
       }
     }
   }
-
 });

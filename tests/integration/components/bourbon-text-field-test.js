@@ -13,14 +13,5 @@ module('Integration | Component | bourbon-text-field', function(hooks) {
     await render(hbs`{{bourbon-text-field}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bourbon-text-field}}
-        template block text
-      {{/bourbon-text-field}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

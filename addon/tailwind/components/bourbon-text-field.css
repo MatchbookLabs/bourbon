@@ -1,15 +1,14 @@
 .BourbonTextField {
   @apply .btw-text-md;
   @apply .btw-text-slate;
-  padding: 10px;
   @apply .btw-bg-white;
 
   border: 1px solid var(--alto);
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
-  width: 100%;
   min-width: 14em;
   height: 3em;
+  position: relative;
 }
 
 .BourbonTextField:focus {
@@ -22,13 +21,11 @@
   outline: none;
 }
 
-
 .empty.BourbonTextField--active {
   @apply .btw-border-alto;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
   outline: none;
 }
-
 
 .BourbonTextField[disabled] {
   cursor: not-allowed;
@@ -36,4 +33,40 @@
 
 input[type="search"].BourbonTextField {
   box-sizing: border-box;
+}
+
+.BourbonTextField-label {
+  @apply .btw-text-xs;
+  @apply .btw-text-slate;
+  @apply .btw-bg-white;
+  font-size: .8125em;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 0;
+  left: 9px;
+  transform: translateY(3px);
+  transition: all .2s ease-out;
+  padding: 0 3px;
+  white-space: nowrap;
+  width: auto;
+  z-index: 1;
+}
+
+.BourbonTextField-input {
+  padding: 5px 9px;
+  border-radius: 4px;
+  transition: all .2s ease-out;
+  width: 100%;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.BourbonTextField--not-empty .BourbonTextField-label    {
+  opacity: 1;
+  transform: none;
+  top: -8px;
 }

@@ -21,10 +21,11 @@ making styling changes in the library */
 }
 
 *:focus {
+  outline: var(--dodger-blue);
   @apply .btw-border-dodger-blue;
   outline-color: var(--dodger-blue);
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
