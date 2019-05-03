@@ -107,9 +107,12 @@ export default Component.extend({
 
       if (index !== -1) {
         return index;
-      } else if (index === -1 && !this.get('prompt')) {
+      } else if (!this.get('prompt')) {
         // default to first option when there is no prompt passed
         return 0;
+      } else {
+        // if index = -1 and this.get('prompt') then show prompt
+        return null;
       }
     },
 
