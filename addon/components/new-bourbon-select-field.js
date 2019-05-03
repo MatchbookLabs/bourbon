@@ -102,7 +102,18 @@ export default Component.extend({
         'value',
         this.get('value')
       );
-      return this.get('prompt') ? this.get('internalContent').indexOf(valueHolder) : 0;
+
+      let index = this.get('internalContent').indexOf(valueHolder);
+
+      if (index !== -1) {
+        return index;
+      } else if (!this.get('prompt')) {
+        // default to first option when there is no prompt passed
+        return 0;
+      } else {
+        // if index = -1 and this.get('prompt') then show prompt
+        return null;
+      }
     },
 
     set(key, value) {
