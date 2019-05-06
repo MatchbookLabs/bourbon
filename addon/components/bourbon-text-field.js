@@ -25,8 +25,8 @@ export default Component.extend({
 
   // attribute binding doesn't work for readonly = false
   // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
-  boundReadOnly: computed('disabled', function() {
-    return this.get('disabled') || null;
+  boundReadOnly: computed('readonly', function() {
+    return this.get('readonly') || null;
   }),
 
   focusedElementObserver: observer('autofocus', function() {
