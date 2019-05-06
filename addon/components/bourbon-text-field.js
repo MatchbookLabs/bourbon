@@ -10,12 +10,6 @@ export default Component.extend({
     'isFocused:BourbonTextField--active',
     'isNotEmpty:BourbonTextField--not-empty'
   ],
-  attributeBindings: [
-    'autocomplete',
-    'type',
-    'autofocus',
-    'boundReadOnly:readonly'
-  ],
 
   layout,
 
