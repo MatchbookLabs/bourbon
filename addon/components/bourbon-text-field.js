@@ -10,12 +10,6 @@ export default Component.extend({
     'isFocused:BourbonTextField--active',
     'isNotEmpty:BourbonTextField--not-empty'
   ],
-  attributeBindings: [
-    'autocomplete',
-    'type',
-    'autofocus',
-    'boundReadOnly:readonly'
-  ],
 
   layout,
 
@@ -31,8 +25,8 @@ export default Component.extend({
 
   // attribute binding doesn't work for readonly = false
   // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
-  boundReadOnly: computed('readonly', function() {
-    return this.get('readonly') || null;
+  boundReadOnly: computed('disabled', function() {
+    return this.get('disabled') || null;
   }),
 
   focusedElementObserver: observer('autofocus', function() {

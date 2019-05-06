@@ -17,6 +17,9 @@
 | placeholder | string | null | false | if you want a placehoder prompt to guide user| for example, "Select a Salesforce object..."|
 | noLabel | boolean | false | false | if you don't want to show label pass true ||
 | autofocus | boolean | false | false | if you want the text field focused on load ||
+| disabled | boolean | false | false | if you want the text field disabled ||
+| readonly | boolean | null | false | if you want the text field to have readonly attribute ||
+| autocomplete | boolean | null | false | if you want the text field to have autocomplete attribute ||
 | isFocused | boolean | false | false | if you want the text field is focused ||
 | actionOnFocusIn | function | "" | false | action to be taken when focused into the text field ||
 | actionOnFocusOut | function | "" | false | action to be taken when focused out of the text field ||

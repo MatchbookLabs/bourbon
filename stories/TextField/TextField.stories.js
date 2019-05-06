@@ -27,4 +27,28 @@ storiesOf('text field', module)
     {
       notes: { markdown: textField }
     }
+  )
+  .add(
+    'autofocus textfield',
+    () => {
+      return {
+        template: hbs`{{bourbon-text-field placeholder="i am the placeholder" autofocus=true onFocusOutOrEnter=onClick}}`,
+        context: { onClick: action('textFieldClick') }
+      };
+    },
+    {
+      notes: { markdown: textField }
+    }
+  )
+  .add(
+    'disabled textfield',
+    () => {
+      return {
+        template: hbs`{{bourbon-text-field placeholder="i am the disabled text-field" disabled=true onFocusOutOrEnter=onClick}}`,
+        context: { onClick: action('textFieldClick') }
+      };
+    },
+    {
+      notes: { markdown: textField }
+    }
   );
