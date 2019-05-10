@@ -1617,6 +1617,7 @@ input[type="search"].BourbonTextField {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: normal;
+  color: inherit;
 }
 
 .BourbonTextField--not-empty .BourbonTextField-label {
