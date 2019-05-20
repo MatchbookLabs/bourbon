@@ -29,13 +29,23 @@ export default Component.extend({
   showList: false,
   activeDescendant: null,
   hasValue: computed.notEmpty('value'),
-  tabindex: "0",
+  tabindex: '0',
 
   didRender() {
     this.set(
       'activeDescendant',
       $('.NewBourbonSelectField-option[aria-selected]').attr('id')
     );
+  },
+
+  didInsertElement() {
+    this._super(...arguments);
+    if (this.get('defaultSelection') && this.get('value') === undefined) {
+      this.set(
+        'selectedIndex',
+        this.get('content').indexOf(this.get('defaultSelection'))
+      );
+    }
   },
 
   ariaExpanded: computed('showList', function() {
@@ -109,6 +119,14 @@ export default Component.extend({
         return index;
       } else if (!this.get('prompt')) {
         // default to first option when there is no prompt passed
+        if (!this.get('defaultSelection')) {
+          this.set(
+            'value',
+            this.get('internalContent')
+              .objectAt(0)
+              .get('value')
+          );
+        }
         return 0;
       } else {
         // if index = -1 and this.get('prompt') then show prompt
@@ -138,8 +156,9 @@ export default Component.extend({
   }),
 
   selection: computed('selectedIndex', function() {
-    if (this.get('selectedIndex') !== -1) {
-      return this.get('internalContent').objectAt(this.get('selectedIndex'));
+    let index = this.get('selectedIndex');
+    if (index !== -1) {
+      return this.get('internalContent').objectAt(index);
     } else {
       return null;
     }

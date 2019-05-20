@@ -6,7 +6,6 @@ import layout from '../templates/components/bourbon-text-field';
 export default Component.extend({
   classNames: ['BourbonTextField'],
   classNameBindings: [
-    'value::empty',
     'isFocused:BourbonTextField--active',
     'isNotEmpty:BourbonTextField--not-empty'
   ],
@@ -22,6 +21,10 @@ export default Component.extend({
   value: null,
   isFocused: false,
   noLabel: false,
+
+  fieldType: computed('type', function() {
+    return this.get('type') ? this.get('type') : 'text'
+  }),
 
   // attribute binding doesn't work for readonly = false
   // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
@@ -54,7 +57,6 @@ export default Component.extend({
   input(e) {
     let el = $(e.currentTarget);
     let textInput = el.find('.BourbonTextField-input').val();
-
     this.set('value', textInput);
   },
 
