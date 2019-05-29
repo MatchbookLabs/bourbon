@@ -1,11 +1,11 @@
 <div class="BourbonSearchSelectField-inputContainer" {{action "mouseDown"}}>
   {{bourbon-text-field placeholder=prompt noLabel=true value=inputValue autofocus=autofocus readonly=readonly autocomplete="off" type="search"}}
 </div>
-{{#if loadOptions}}
+{{#if showDropdown}}
   <div class="BourbonSearchSelectField-searchContainer">
     <div class="BourbonSelectField btw-block">
       <div class="BourbonSelectField-selected" tabindex="0">{{label}}</div>
-      <div class="BourbonSelectField-menu {{if showDropdown 'BourbonSelect--focus btw-block'}}">
+      <div class="BourbonSelectField-menu BourbonSelect--focus btw-block">
         {{#if groupedContent}}
           {{#each searchList as |group outerIndex|}}
             <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>

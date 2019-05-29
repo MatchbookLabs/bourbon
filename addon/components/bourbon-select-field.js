@@ -24,8 +24,6 @@ export default Component.extend(SelectMixin, {
   value: null,
   activeOption: null,
   disabled: false,
-  lazyLoad: false,
-  loadOptions: true,
 
   focusOut() {
     this.set('activeOption', null);
@@ -76,10 +74,6 @@ export default Component.extend(SelectMixin, {
   }),
 
   didInsertElement() {
-    if (this.get('lazyLoad')) {
-      this.set('loadOptions', false);
-    }
-
     this.send('updateSelection');
   },
 
@@ -102,11 +96,6 @@ export default Component.extend(SelectMixin, {
 
     mouseDown() {
       this.set('showList', !this.get('showList'));
-
-      if (this.get('lazyLoad') && this.get('showList')) {
-        this.set('loadOptions', true);
-        this.set('lazyLoad', false);
-      }
     }
   }
 });

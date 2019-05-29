@@ -1,6 +1,6 @@
 <div class="BourbonSelectField-selected" tabindex="0"  {{action "mouseDown"}}>{{label}}</div>
-{{#if loadOptions}}
-  <div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}">
+{{#if showList}}
+  <div class="BourbonSelectField-menu BourbonSelect--focus btw-block">
     {{#if groupedContent}}
       {{#each content as |group outerIndex|}}
         <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>

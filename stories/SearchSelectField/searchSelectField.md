@@ -20,7 +20,6 @@
 | disabled | boolean | false | false | add if want to show the search select field but not allow interaction with it||
 | prompt | string | null | false | if you want a placehoder prompt to guide user| for example, "Select a Salesforce object..."|
 | target | class | this | false | if you want change/pass in the context of the search select field ||
-| lazyLoad | boolean | false | false | if you don't want to load the options until the user first clicks on the dropdown||
 | optionLabelPath | string | null | false | passed in when value passed in is an object as to indicate where the label is defined within the value object ||
 | optionValuePath | string | null | false | passed in when value passed in is an object as to indicate where the value is defined within the value object ||
 | optionEnabledPath | string | null | false | passed in when value passed in is an object as to indicate where the enabled is defined within the value object ||
