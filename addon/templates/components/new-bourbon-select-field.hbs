@@ -1,6 +1,6 @@
 <button class="BourbonSelectField-selected" aria-haspopup="listbox" aria-live="polite" aria-expanded={{ariaExpanded}} aria-activedescendant={{activeDescendant}} tabindex="0" {{action "mouseDown"}}>{{label}}</button>
-{{#if loadOptions}}
-  <ul class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}" role="listbox">
+{{#if showList}}
+  <ul class="BourbonSelectField-menu BourbonSelect--focus btw-block" role="listbox">
     {{#each internalContent as |option index|}}
       {{new-bourbon-select-field-option
         role="option"

@@ -11,7 +11,7 @@ storiesOf('new select field', module)
     'array select field',
     () => {
       return {
-        template: hbs`{{new-bourbon-select-field content=petsArray prompt="Select an animal..." lazyLoad=true}}`,
+        template: hbs`{{new-bourbon-select-field content=petsArray prompt="Select an animal..."}}`,
         context: {
           onClick: action('selectFieldClick'),
           petsArray: A([
@@ -39,7 +39,7 @@ storiesOf('new select field', module)
     'object select field',
     () => {
       return {
-        template: hbs`{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true lazyLoad=true value='the other Brussels Griffon'}}`,
+        template: hbs`{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true value='the other Brussels Griffon'}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
