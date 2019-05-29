@@ -3,7 +3,7 @@ import EmberObject from '@ember/object';
 
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { click, render } from '@ember/test-helpers';
 
 import hbs from 'htmlbars-inline-precompile';
 
@@ -38,8 +38,7 @@ module('Integration | Component | new-bourbon-select-field', function(hooks) {
       'Select a dog'
     );
 
-    // TODO fix test.  not sure why this is broken now
-    await click('.NewBourbonSelectField');
+    await click('.BourbonSelectField-selected');
     await click('.NewBourbonSelectField-option');
 
     assert.equal(
