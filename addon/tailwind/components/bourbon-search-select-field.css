@@ -47,6 +47,7 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   cursor: pointer;
+  z-index: 1;
 }
 
 .BourbonSearchSelectField-searchContainer {

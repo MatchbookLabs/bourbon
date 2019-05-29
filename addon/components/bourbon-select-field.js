@@ -9,7 +9,6 @@ export default Component.extend(SelectMixin, {
   layout,
   classNames: ['BourbonSelectField'],
   classNameBindings: [
-    'hasValue',
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
     'disabled:BourbonSelectField--disabled'
@@ -23,7 +22,6 @@ export default Component.extend(SelectMixin, {
   prompt: null,
   hasPrompt: computed.notEmpty('prompt'),
   value: null,
-  hasValue: computed.notEmpty('value'),
   activeOption: null,
   disabled: false,
 

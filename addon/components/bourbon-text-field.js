@@ -23,7 +23,7 @@ export default Component.extend({
   noLabel: false,
 
   fieldType: computed('type', function() {
-    return this.get('type') ? this.get('type') : 'text'
+    return this.get('type') ? this.get('type') : 'text';
   }),
 
   // attribute binding doesn't work for readonly = false
@@ -62,6 +62,7 @@ export default Component.extend({
 
   focusOut() {
     this.set('isFocused', false);
+    document.activeElement.blur();
 
     if (this.get('onFocusOutOrEnter')) {
       this.get('onFocusOutOrEnter')(this.get('value'));

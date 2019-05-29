@@ -9,7 +9,6 @@ export default Component.extend({
   layout,
   classNames: ['BourbonSelectField', 'NewBourbonSelectField'],
   classNameBindings: [
-    'hasValue',
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
     'disabled:BourbonSelectField--disabled'
@@ -24,11 +23,9 @@ export default Component.extend({
   optionValuePath: null,
   optionEnabledPath: null,
   action: null,
-
   // internal
   showList: false,
   activeDescendant: null,
-  hasValue: computed.notEmpty('value'),
   tabindex: '0',
 
   didRender() {

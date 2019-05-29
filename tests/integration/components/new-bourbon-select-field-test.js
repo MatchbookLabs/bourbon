@@ -38,7 +38,7 @@ module('Integration | Component | new-bourbon-select-field', function(hooks) {
       'Select a dog'
     );
 
-    await click('.NewBourbonSelectField');
+    await click('.BourbonSelectField-selected');
     await click('.NewBourbonSelectField-option');
 
     assert.equal(

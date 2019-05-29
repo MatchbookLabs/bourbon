@@ -1,20 +1,22 @@
 <div class="BourbonSelectField-selected" tabindex="0"  {{action "mouseDown"}}>{{label}}</div>
-<div class="BourbonSelectField-menu {{if showList 'BourbonSelect--focus btw-block'}}">
-  {{#if groupedContent}}
-    {{#each content as |group outerIndex|}}
-      <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>
-        {{#if group.groupHeader}}
-          <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
-        {{/if}}
-        {{#each group.items as |option innerIndex|}}
-          {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSelection" innerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
-        {{/each}}
-      </div>
-    {{/each}}
+{{#if showList}}
+  <div class="BourbonSelectField-menu BourbonSelect--focus btw-block">
+    {{#if groupedContent}}
+      {{#each content as |group outerIndex|}}
+        <div class="BourbonSelectField-optionGroup" index={{outerIndex}}>
+          {{#if group.groupHeader}}
+            <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
+          {{/if}}
+          {{#each group.items as |option innerIndex|}}
+            {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSelection" innerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+          {{/each}}
+        </div>
+      {{/each}}
 
-  {{else}}
-    {{#each content as |option index|}}
-      {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
-    {{/each}}
-  {{/if}}
-</div>
+    {{else}}
+      {{#each content as |option index|}}
+        {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+      {{/each}}
+    {{/if}}
+  </div>
+{{/if}}

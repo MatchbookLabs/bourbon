@@ -34,7 +34,6 @@ export default Component.extend(SelectMixin, {
   autofocus: null,
   readonly: null,
   disabled: false,
-  hasValue: computed.notEmpty('value'),
 
   focusOut() {
     this.resetPrompt();
