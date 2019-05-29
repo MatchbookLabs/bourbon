@@ -39,14 +39,14 @@ module('Integration | Component | new-bourbon-select-field', function(hooks) {
     );
 
     // TODO fix test.  not sure why this is broken now
-    // await click('.NewBourbonSelectField');
-    // await click('.NewBourbonSelectField-option');
+    await click('.NewBourbonSelectField');
+    await click('.NewBourbonSelectField-option');
 
-    // assert.equal(
-    //   this.$('.BourbonSelectField-selected')
-    //     .text(),
-    //   'Chompsky the only Brussels Griffon'
-    // );
+    assert.equal(
+      this.$('.BourbonSelectField-selected')
+        .text(),
+      'Chompsky the only Brussels Griffon'
+    );
   });
 
 });

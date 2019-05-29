@@ -23,7 +23,6 @@ export default Component.extend({
   optionValuePath: null,
   optionEnabledPath: null,
   action: null,
-  lazyLoad: false,
   // internal
   showList: false,
   activeDescendant: null,
