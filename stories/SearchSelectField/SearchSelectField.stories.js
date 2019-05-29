@@ -10,7 +10,7 @@ storiesOf('search select field', module)
     'array search select field',
     () => {
       return {
-        template: hbs`{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}`,
+        template: hbs`{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..." lazyLoad=true}}`,
         context: {
           onClick: action('searchSelectFieldClick'),
           petsArray: A([

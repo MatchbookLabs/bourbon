@@ -9,7 +9,6 @@ export default Component.extend({
   layout,
   classNames: ['BourbonSelectField', 'NewBourbonSelectField'],
   classNameBindings: [
-    'hasValue',
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
     'disabled:BourbonSelectField--disabled'
@@ -24,12 +23,12 @@ export default Component.extend({
   optionValuePath: null,
   optionEnabledPath: null,
   action: null,
-
+  lazyLoad: false,
   // internal
   showList: false,
   activeDescendant: null,
-  hasValue: computed.notEmpty('value'),
   tabindex: '0',
+  loadOptions: true,
 
   didRender() {
     this.set(
@@ -39,6 +38,10 @@ export default Component.extend({
   },
 
   didInsertElement() {
+    if (this.get('lazyLoad')) {
+      this.set('loadOptions', false);
+    }
+
     this._super(...arguments);
     if (this.get('defaultSelection') && this.get('value') === undefined) {
       this.set(
@@ -240,6 +243,10 @@ export default Component.extend({
 
     mouseDown() {
       this.set('showList', true);
+      if (this.get('lazyLoad') && this.get('showList')) {
+        this.set('loadOptions', true);
+        this.set('lazyLoad', false);
+      }
     }
   }
 });

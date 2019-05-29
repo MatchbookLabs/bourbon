@@ -34,7 +34,8 @@ export default Component.extend(SelectMixin, {
   autofocus: null,
   readonly: null,
   disabled: false,
-  hasValue: computed.notEmpty('value'),
+  lazyLoad: false,
+  loadOptions: true,
 
   focusOut() {
     this.resetPrompt();
@@ -183,6 +184,10 @@ export default Component.extend(SelectMixin, {
   }),
 
   didInsertElement() {
+    if (this.get('lazyLoad')) {
+      this.set('loadOptions', false);
+    }
+
     this.send('updateSearchSelection');
   },
 
@@ -222,6 +227,11 @@ export default Component.extend(SelectMixin, {
 
     mouseDown() {
       this.set('showDropdown', !this.get('showDropdown'));
+      
+      if (this.get('lazyLoad') && this.get('showDropdown')) {
+        this.set('loadOptions', true);
+        this.set('lazyLoad', false);
+      }
 
       if (this.get('showDropdown')) {
         this.set('inputValue', '');

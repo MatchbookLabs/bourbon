@@ -17,6 +17,7 @@
 | content | array | null | true | list of content to be displayed in select field | contents of array can be Ember.Object, JS Object, Ember model, numbers, strings|
 | value | object or string | null | true | ||
 | action | function | null | false | add if want to trigger an action on selection change||
+| lazyLoad | boolean | false | false | if you don't want to load the options until the user first clicks on the dropdown||
 | optionLabelPath | string | null | false | passed in when value passed in is an object as to indicate where the label is defined within the value object ||
 | optionValuePath | string | null | false | passed in when value passed in is an object as to indicate where the value is defined within the value object ||
 | optionEnabledPath | string | null | false | passed in when value passed in is an object as to indicate where the enabled is defined within the value object ||

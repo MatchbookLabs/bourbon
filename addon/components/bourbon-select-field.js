@@ -9,7 +9,6 @@ export default Component.extend(SelectMixin, {
   layout,
   classNames: ['BourbonSelectField'],
   classNameBindings: [
-    'hasValue',
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
     'disabled:BourbonSelectField--disabled'
@@ -23,9 +22,10 @@ export default Component.extend(SelectMixin, {
   prompt: null,
   hasPrompt: computed.notEmpty('prompt'),
   value: null,
-  hasValue: computed.notEmpty('value'),
   activeOption: null,
   disabled: false,
+  lazyLoad: false,
+  loadOptions: true,
 
   focusOut() {
     this.set('activeOption', null);
@@ -76,6 +76,10 @@ export default Component.extend(SelectMixin, {
   }),
 
   didInsertElement() {
+    if (this.get('lazyLoad')) {
+      this.set('loadOptions', false);
+    }
+
     this.send('updateSelection');
   },
 
@@ -98,6 +102,11 @@ export default Component.extend(SelectMixin, {
 
     mouseDown() {
       this.set('showList', !this.get('showList'));
+
+      if (this.get('lazyLoad') && this.get('showList')) {
+        this.set('loadOptions', true);
+        this.set('lazyLoad', false);
+      }
     }
   }
 });
