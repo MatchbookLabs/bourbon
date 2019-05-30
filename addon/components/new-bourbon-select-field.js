@@ -28,6 +28,11 @@ export default Component.extend({
   activeDescendant: null,
   tabindex: '0',
 
+  init() {
+    this._super(...arguments);
+    this.set('clickOutsideElement', this.get('clickHandler').bind(this));
+  },
+
   didRender() {
     this.set(
       'activeDescendant',
@@ -42,6 +47,22 @@ export default Component.extend({
         'selectedIndex',
         this.get('content').indexOf(this.get('defaultSelection'))
       );
+    }
+  },
+
+  willInsertElement() {
+    this._super(...arguments);
+    document.addEventListener('click', this.get('clickOutsideElement'), false);
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    document.removeEventListener('click', this.get('clickOutsideElement'), false);
+  },
+
+  clickHandler() {
+    if (document.activeElement !== document.querySelector('.BourbonSelectField-selected')) {
+      this.set('showList', false);
     }
   },
 
@@ -169,10 +190,6 @@ export default Component.extend({
     }
   }),
 
-  focusOut() {
-    this.set('showList', false);
-  },
-
   keyDown(e) {
     if (e.keyCode === 38) {
       // up arrow
@@ -236,7 +253,7 @@ export default Component.extend({
     },
 
     mouseDown() {
-      this.set('showList', true);
-    }
+      this.set('showList', !this.get('showList'));
+    },
   }
 });

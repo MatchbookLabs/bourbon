@@ -21,6 +21,7 @@ export default Component.extend(SelectMixin, {
     this._super(...arguments);
     // TODO figure out if we still need searchList
     this.set('searchList', this.get('content'));
+    this.set('clickOutsideElement', this.get('clickHandler').bind(this));
   },
 
   value: null,
@@ -35,12 +36,24 @@ export default Component.extend(SelectMixin, {
   readonly: null,
   disabled: false,
 
-  focusOut() {
-    this.resetPrompt();
-    this.set('activeOption', null);
-    this.set('showDropdown', false);
-    this.set('autofocus', false);
-    this.set('readonly', true);
+  willInsertElement() {
+    this._super(...arguments);
+    document.addEventListener('click', this.get('clickOutsideElement'), false);
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    document.removeEventListener('click', this.get('clickOutsideElement'), false);
+  },
+
+  clickHandler() {
+    if (document.activeElement !== document.querySelector('.BourbonTextField-input')) {
+      this.resetPrompt();
+      this.set('activeOption', null);
+      this.set('showDropdown', false);
+      this.set('autofocus', false);
+      this.set('readonly', true);
+    }
   },
 
   resetPrompt: observer('label', 'value', function() {
