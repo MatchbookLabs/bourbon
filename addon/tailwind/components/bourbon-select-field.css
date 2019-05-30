@@ -74,14 +74,13 @@
   @apply .btw-text-md;
   @apply .btw-bg-white;
   width: 100%;
-  height: 40px;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 10px;
-  line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 12px 10px;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .BourbonSelectField-optionGroupName {

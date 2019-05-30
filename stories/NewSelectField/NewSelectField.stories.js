@@ -101,11 +101,11 @@ storiesOf('new select field', module)
           onClick: action('selectFieldClick'),
           petObject: A([
             {
-              label: 'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
+              label: 'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
               value: 'the only Brussels Griffon'
             },
             {
-              label: 'Memphis the other Brussels Griffon Memphis the other Brussels Griffon',
+              label: 'Memphis the other Brussels Griffon Memphis the other Brussels Griffon Memphis the other Brussels Griffon Memphis the other Brussels Griffon',
               value: 'the other Brussels Griffon'
             },
             {
