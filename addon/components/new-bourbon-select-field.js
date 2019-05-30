@@ -4,9 +4,9 @@ import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { A } from '@ember/array';
 import layout from '../templates/components/new-bourbon-select-field';
-import clickHandlerMixin from 'bourbon/mixins/clickHandler';
+import ClickHandlerMixin from 'bourbon/mixins/clickHandler';
 
-export default Component.extend(clickHandlerMixin, {
+export default Component.extend(ClickHandlerMixin, {
   layout,
   classNames: ['BourbonSelectField', 'NewBourbonSelectField'],
   classNameBindings: [

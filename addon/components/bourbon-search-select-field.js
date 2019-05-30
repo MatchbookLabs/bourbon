@@ -5,9 +5,9 @@ import { observer, computed } from '@ember/object';
 
 import layout from '../templates/components/bourbon-search-select-field';
 import SelectMixin from 'bourbon/mixins/select';
-import clickHandlerMixin from 'bourbon/mixins/clickHandler';
+import ClickHandlerMixin from 'bourbon/mixins/clickHandler';
 
-export default Component.extend(SelectMixin, clickHandlerMixin, {
+export default Component.extend(SelectMixin, ClickHandlerMixin, {
   layout,
   classNames: ['BourbonSearchSelectField'],
   classNameBindings: [
