@@ -94,6 +94,34 @@ storiesOf('select field', module)
     }
   )
   .add(
+    'multiple select field',
+    () => {
+      return {
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{bourbon-select-field content=petsArray value="puppy"}}{{bourbon-select-field content=petsArray prompt="Select your favorite animal..."}}</div>`,
+        context: {
+          onClick: action('selectFieldClick'),
+          petsArray: A([
+            'cats',
+            'dogs',
+            'rabbits',
+            'bears',
+            'beaver',
+            'moose',
+            'goose',
+            'deer',
+            'kitten',
+            'puppy',
+            'duck',
+            'capybara'
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: selectField }
+    }
+  )
+  .add(
     'disabled select field',
     () => {
       return {

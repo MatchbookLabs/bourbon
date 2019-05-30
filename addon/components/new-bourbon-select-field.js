@@ -4,8 +4,9 @@ import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { A } from '@ember/array';
 import layout from '../templates/components/new-bourbon-select-field';
+import clickHandlerMixin from 'bourbon/mixins/clickHandler';
 
-export default Component.extend({
+export default Component.extend(clickHandlerMixin, {
   layout,
   classNames: ['BourbonSelectField', 'NewBourbonSelectField'],
   classNameBindings: [
@@ -28,11 +29,6 @@ export default Component.extend({
   activeDescendant: null,
   tabindex: '0',
 
-  init() {
-    this._super(...arguments);
-    this.set('clickOutsideElement', this.get('clickHandler').bind(this));
-  },
-
   didRender() {
     this.set(
       'activeDescendant',
@@ -50,18 +46,8 @@ export default Component.extend({
     }
   },
 
-  willInsertElement() {
-    this._super(...arguments);
-    document.addEventListener('click', this.get('clickOutsideElement'), false);
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    document.removeEventListener('click', this.get('clickOutsideElement'), false);
-  },
-
-  clickHandler() {
-    if (document.activeElement !== document.querySelector('.BourbonSelectField-selected')) {
+  clickHandler(e) {
+    if (e.target !== document.activeElement) {
       this.set('showList', false);
     }
   },
@@ -253,7 +239,10 @@ export default Component.extend({
     },
 
     mouseDown() {
-      this.set('showList', !this.get('showList'));
+      // needed to explicitly add focus here because Safari was adding focus to
+      // a different element than all the other browsers
+      this.$('.BourbonSelectField-selected').focus();
+      this.set('showList', true);
     }
   }
 });

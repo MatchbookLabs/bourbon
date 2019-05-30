@@ -93,6 +93,35 @@ storiesOf('new select field', module)
     }
   )
   .add(
+    'multiple select fields',
+    () => {
+      return {
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true value='the other Brussels Griffon'}} {{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}</div>`,
+        context: {
+          onClick: action('selectFieldClick'),
+          petObject: A([
+            {
+              label: 'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
+              value: 'the only Brussels Griffon'
+            },
+            {
+              label: 'Memphis the other Brussels Griffon Memphis the other Brussels Griffon',
+              value: 'the other Brussels Griffon'
+            },
+            {
+              label: 'Macho the Frenchie who is so Frenchie Macho the Frenchie who is so Frenchie',
+              value: 'Frenchie'
+            }
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: newSelectField }
+    }
+  )
+
+  .add(
     'disabled select field',
     () => {
       return {
