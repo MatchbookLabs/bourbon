@@ -220,6 +220,8 @@ export default Component.extend(SelectMixin, clickHandlerMixin, {
           this.set('selection', this.get('searchList').objectAt(selectedIndex));
         }
       }
+
+      this.set('showDropdown', false);
     },
 
     mouseDown() {
