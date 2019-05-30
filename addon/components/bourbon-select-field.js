@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import SelectMixin from 'bourbon/mixins/select';
-import ClickHandlerMixin from 'bourbon/mixins/clickHandler';
+import ClickHandlerMixin from 'bourbon/mixins/click-handler';
 
 import layout from '../templates/components/bourbon-select-field';
 

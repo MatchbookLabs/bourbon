@@ -5,7 +5,7 @@ import { observer, computed } from '@ember/object';
 
 import layout from '../templates/components/bourbon-search-select-field';
 import SelectMixin from 'bourbon/mixins/select';
-import ClickHandlerMixin from 'bourbon/mixins/clickHandler';
+import ClickHandlerMixin from 'bourbon/mixins/click-handler';
 
 export default Component.extend(SelectMixin, ClickHandlerMixin, {
   layout,
