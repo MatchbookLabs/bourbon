@@ -254,6 +254,6 @@ export default Component.extend({
 
     mouseDown() {
       this.set('showList', !this.get('showList'));
-    },
+    }
   }
 });
