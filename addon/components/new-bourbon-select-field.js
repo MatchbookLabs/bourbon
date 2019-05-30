@@ -4,8 +4,9 @@ import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { A } from '@ember/array';
 import layout from '../templates/components/new-bourbon-select-field';
+import ClickHandlerMixin from 'bourbon/mixins/click-handler';
 
-export default Component.extend({
+export default Component.extend(ClickHandlerMixin, {
   layout,
   classNames: ['BourbonSelectField', 'NewBourbonSelectField'],
   classNameBindings: [
@@ -42,6 +43,12 @@ export default Component.extend({
         'selectedIndex',
         this.get('content').indexOf(this.get('defaultSelection'))
       );
+    }
+  },
+
+  clickHandler(e) {
+    if (e.target !== document.activeElement) {
+      this.set('showList', false);
     }
   },
 
@@ -169,10 +176,6 @@ export default Component.extend({
     }
   }),
 
-  focusOut() {
-    this.set('showList', false);
-  },
-
   keyDown(e) {
     if (e.keyCode === 38) {
       // up arrow
@@ -236,6 +239,9 @@ export default Component.extend({
     },
 
     mouseDown() {
+      // needed to explicitly add focus here because Safari was adding focus to
+      // a different element than all the other browsers
+      this.$('.BourbonSelectField-selected').focus();
       this.set('showList', true);
     }
   }

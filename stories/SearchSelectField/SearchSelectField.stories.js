@@ -112,6 +112,34 @@ storiesOf('search select field', module)
     }
   )
   .add(
+    'multiple search select fields',
+    () => {
+      return {
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}{{bourbon-search-select-field content=petsArray prompt="Select an animal..."}}</div>`,
+        context: {
+          onClick: action('searchSelectFieldClick'),
+          petsArray: A([
+            'cats',
+            'dogs',
+            'rabbits',
+            'bears',
+            'beaver',
+            'moose',
+            'goose',
+            'deer',
+            'kitten',
+            'puppy',
+            'duck',
+            'capybara'
+          ])
+        }
+      };
+    },
+    {
+      notes: { markdown: searchSelectField }
+    }
+  )
+  .add(
     'disabled search select field',
     () => {
       return {

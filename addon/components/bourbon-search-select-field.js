@@ -5,8 +5,9 @@ import { observer, computed } from '@ember/object';
 
 import layout from '../templates/components/bourbon-search-select-field';
 import SelectMixin from 'bourbon/mixins/select';
+import ClickHandlerMixin from 'bourbon/mixins/click-handler';
 
-export default Component.extend(SelectMixin, {
+export default Component.extend(SelectMixin, ClickHandlerMixin, {
   layout,
   classNames: ['BourbonSearchSelectField'],
   classNameBindings: [
@@ -35,12 +36,14 @@ export default Component.extend(SelectMixin, {
   readonly: null,
   disabled: false,
 
-  focusOut() {
-    this.resetPrompt();
-    this.set('activeOption', null);
-    this.set('showDropdown', false);
-    this.set('autofocus', false);
-    this.set('readonly', true);
+  clickHandler(e) {
+    if (e.target !== document.activeElement) {
+      this.resetPrompt();
+      this.set('activeOption', null);
+      this.set('showDropdown', false);
+      this.set('autofocus', false);
+      this.set('readonly', true);
+    }
   },
 
   resetPrompt: observer('label', 'value', function() {
@@ -217,6 +220,8 @@ export default Component.extend(SelectMixin, {
           this.set('selection', this.get('searchList').objectAt(selectedIndex));
         }
       }
+
+      this.set('showDropdown', false);
     },
 
     mouseDown() {

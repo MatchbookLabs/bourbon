@@ -2,10 +2,11 @@ import Component from '@ember/component';
 import { computed, observer } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import SelectMixin from 'bourbon/mixins/select';
+import ClickHandlerMixin from 'bourbon/mixins/click-handler';
 
 import layout from '../templates/components/bourbon-select-field';
 
-export default Component.extend(SelectMixin, {
+export default Component.extend(SelectMixin, ClickHandlerMixin, {
   layout,
   classNames: ['BourbonSelectField'],
   classNameBindings: [
@@ -25,9 +26,11 @@ export default Component.extend(SelectMixin, {
   activeOption: null,
   disabled: false,
 
-  focusOut() {
-    this.set('activeOption', null);
-    this.set('showList', false);
+  clickHandler(e) {
+    if (e.target !== document.activeElement) {
+      this.set('activeOption', null);
+      this.set('showList', false);
+    }
   },
 
   keyDown(e) {
