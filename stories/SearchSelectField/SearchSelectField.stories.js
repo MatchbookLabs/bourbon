@@ -130,7 +130,8 @@ storiesOf('search select field', module)
             'kitten',
             'puppy',
             'duck',
-            'capybara'
+            'capybara',
+            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon'
           ])
         }
       };
