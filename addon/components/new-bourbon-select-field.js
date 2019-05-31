@@ -242,7 +242,7 @@ export default Component.extend(ClickHandlerMixin, {
       // needed to explicitly add focus here because Safari was adding focus to
       // a different element than all the other browsers
       this.$('.BourbonSelectField-selected').focus();
-      this.set('showList', true);
+      this.set('showList', !this.get('showList'));
     }
   }
 });

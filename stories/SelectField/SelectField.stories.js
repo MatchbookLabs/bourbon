@@ -74,7 +74,7 @@ storiesOf('select field', module)
           onClick: action('selectFieldClick'),
           petObject: A([
             EmberObject.create({
-              label: 'Chompsky the only Brussels Griffon',
+              label: 'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
               value: 'the only Brussels Griffon'
             }),
             EmberObject.create({
@@ -112,7 +112,8 @@ storiesOf('select field', module)
             'kitten',
             'puppy',
             'duck',
-            'capybara'
+            'capybara',
+            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon'
           ])
         }
       };
