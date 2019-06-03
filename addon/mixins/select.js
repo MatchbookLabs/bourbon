@@ -146,9 +146,7 @@ export default Mixin.create({
   },
 
   scrollList(item, list) {
-    let listHeight = list.height();
-    let totalHeight = (this.get('activeOption') + 1) * item.scrollHeight;
-    let scrollHeight = totalHeight - listHeight;
-    list.scrollTop(scrollHeight);
+    let itemHeight = (this.get('activeOption')) * item.scrollHeight;
+    list.scrollTop(itemHeight);
   }
 });

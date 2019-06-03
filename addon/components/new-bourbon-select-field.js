@@ -47,7 +47,7 @@ export default Component.extend(ClickHandlerMixin, {
   },
 
   clickHandler(e) {
-    if (e.target !== document.activeElement) {
+    if (e.target !== document.activeElement || document.activeElement.textContent !== this.get('label')) {
       this.set('showList', false);
     }
   },
@@ -177,18 +177,28 @@ export default Component.extend(ClickHandlerMixin, {
   }),
 
   keyDown(e) {
+    let el = $(e.currentTarget);
+    let list = el.find('.BourbonSelectField-menu');
+
     if (e.keyCode === 38) {
       // up arrow
       this.moveActiveUp(this.get('activeIndex'));
+      let itemHeight = el.find('.NewBourbonSelectField-option')[this.get('activeIndex') + 1].offsetHeight;
+      let scrollHeight = ((this.get('activeIndex') - 1) * itemHeight);
+      list.scrollTop(scrollHeight);
     } else if (e.keyCode === 40) {
       // down arrow
       this.moveActiveDown(this.get('activeIndex'));
+      let itemHeight = el.find('.NewBourbonSelectField-option')[this.get('activeIndex') - 1].offsetHeight;
+      let scrollHeight = (this.get('activeIndex') * itemHeight);
+      list.scrollTop(scrollHeight);
     } else if (e.keyCode === 13) {
       //  enter
       if (this.get('showList')) {
         this.set('selectedIndex', this.get('activeIndex'));
         // triggers the focusOut to hide the list
         document.activeElement.blur();
+        this.set('showList', false);
       } else {
         // When user is focused in and presses
         // enter we want to show the list
@@ -215,7 +225,7 @@ export default Component.extend(ClickHandlerMixin, {
   },
 
   moveActiveDown(prevIndex) {
-    let nextIndex = prevIndex + 1;
+    let nextIndex = prevIndex === null ? 0 : prevIndex + 1;
     if (nextIndex >= this.get('internalContent.length')) {
       return;
     } else {

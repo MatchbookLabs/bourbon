@@ -1362,8 +1362,8 @@ body {
   padding: 4px;
           transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  cursor: pointer;
   z-index: 1;
+  pointer-events: none;
 }
 
 .BourbonSearchSelectField-searchContainer {
