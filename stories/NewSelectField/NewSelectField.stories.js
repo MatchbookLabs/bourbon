@@ -96,7 +96,7 @@ storiesOf('new select field', module)
     'multiple select fields',
     () => {
       return {
-        template: hbs`<div class="btw-flex btw-max-w-sm">{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true value='the other Brussels Griffon'}} {{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value"}}</div>`,
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true prompt="Select a dog..."}} {{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" prompt="Select a second dog..."}}</div>`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
@@ -111,7 +111,15 @@ storiesOf('new select field', module)
             {
               label: 'Macho the Frenchie who is so Frenchie Macho the Frenchie who is so Frenchie',
               value: 'Frenchie'
-            }
+            },
+            {
+              label: 'Cosmos the Klee Kai',
+              value: 'Klee Kai'
+            },
+            {
+              label: 'Luna the chihuahua mix',
+              value: 'Chihuahua'
+            },
           ])
         }
       };

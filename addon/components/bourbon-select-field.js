@@ -27,7 +27,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
   disabled: false,
 
   clickHandler(e) {
-    if (e.target !== document.activeElement) {
+    if (e.target !== document.activeElement || document.activeElement.textContent != this.get('label')) {
       this.set('activeOption', null);
       this.set('showList', false);
     }

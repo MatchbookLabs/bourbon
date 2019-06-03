@@ -115,7 +115,7 @@ storiesOf('search select field', module)
     'multiple search select fields',
     () => {
       return {
-        template: hbs`<div class="btw-flex btw-max-w-sm">{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}{{bourbon-search-select-field content=petsArray prompt="Select an animal..."}}</div>`,
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}{{bourbon-search-select-field content=petsArray prompt="Select another animal..."}}</div>`,
         context: {
           onClick: action('searchSelectFieldClick'),
           petsArray: A([
