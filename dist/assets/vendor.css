@@ -1609,6 +1609,7 @@ input[type="search"].BourbonTextField {
   white-space: nowrap;
   width: auto;
   z-index: 1;
+  visibility: hidden;
 }
 
 .BourbonTextField-input {
@@ -1628,6 +1629,7 @@ input[type="search"].BourbonTextField {
   opacity: 1;
   transform: none;
   top: -8px;
+  visibility: visible;
 }
 
 .BourbonTooltip {
