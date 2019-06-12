@@ -38,6 +38,11 @@ export default Component.extend(ClickHandlerMixin, {
 
   didInsertElement() {
     this._super(...arguments);
+
+    if (this.get('value') !== this.get('selection.value')) {
+      this.set('value', this.get('selection.value'))
+    }
+
     if (this.get('defaultSelection') && this.get('value') === undefined) {
       this.set(
         'selectedIndex',
@@ -119,19 +124,13 @@ export default Component.extend(ClickHandlerMixin, {
 
       let index = this.get('internalContent').indexOf(valueHolder);
 
+      if ((index !== -1 && !valueHolder.enabled) || ((index === -1 && !this.get('prompt')))) {
+        // if value passed in that is not enabled need to check for the first enabled option
+        index = this.get('internalContent').findIndex(element => element.enabled === true);
+      }
+
       if (index !== -1) {
         return index;
-      } else if (!this.get('prompt')) {
-        // default to first option when there is no prompt passed
-        if (!this.get('defaultSelection')) {
-          this.set(
-            'value',
-            this.get('internalContent')
-              .objectAt(0)
-              .get('value')
-          );
-        }
-        return 0;
       } else {
         // if index = -1 and this.get('prompt') then show prompt
         return null;
@@ -139,12 +138,14 @@ export default Component.extend(ClickHandlerMixin, {
     },
 
     set(key, value) {
-      this.set(
-        'value',
-        this.get('internalContent')
-          .objectAt(value)
-          .get('value')
-      );
+      if (value !== -1) {
+        this.set(
+          'value',
+          this.get('internalContent')
+            .objectAt(value)
+            .get('value')
+        );
+      }
       return value;
     }
   }),
