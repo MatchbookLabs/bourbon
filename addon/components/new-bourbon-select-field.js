@@ -44,10 +44,13 @@ export default Component.extend(ClickHandlerMixin, {
     }
 
     if (this.get('defaultSelection') && this.get('value') === undefined) {
-      this.set(
-        'selectedIndex',
-        this.get('content').indexOf(this.get('defaultSelection'))
-      );
+      // need to check if defaultSelection is valid & only update if enabled
+      let defaultSelectionIndex = this.get('content').indexOf(this.get('defaultSelection'));
+      let defaultSelectionEnabled = this.get('internalContent')[defaultSelectionIndex].enabled;
+
+      if (defaultSelectionEnabled) {
+        this.set('selectedIndex', defaultSelectionIndex);
+      }
     }
   },
 
