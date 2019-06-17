@@ -1170,7 +1170,8 @@ body {
 }
 
 .BourbonModal--large {
-  width: 850px;
+  min-width: 850px;
+  width: auto;
 }
 
 .BourbonModal-title {
