@@ -131,7 +131,7 @@ export default Component.extend(ClickHandlerMixin, {
 
       if ((index !== -1 && !valueHolder.enabled) || ((index === -1 && !this.get('prompt')))) {
         // if value passed in that is not enabled need to check for the first enabled option
-        index = this.get('internalContent').findIndex(element => !!element.enabled === true);
+        index = this.get('internalContent').findIndex(element => !!element.enabled);
       }
 
       if (index !== -1) {
