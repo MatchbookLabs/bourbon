@@ -34,18 +34,19 @@ export default Component.extend(ClickHandlerMixin, {
       'activeDescendant',
       $('.NewBourbonSelectField-option[aria-selected]').attr('id')
     );
+
+    if (this.get('value') !== this.get('selection.value')) {
+      this.set('value', this.get('selection.value'))
+    }
   },
 
   didInsertElement() {
     this._super(...arguments);
 
-    if (this.get('value') !== this.get('selection.value')) {
-      this.set('value', this.get('selection.value'))
-    }
-
     if (this.get('defaultSelection') && this.get('value') === undefined) {
       // need to check if defaultSelection is valid & only update if enabled
       let defaultSelectionIndex = this.get('content').indexOf(this.get('defaultSelection'));
+
       if (defaultSelectionIndex !== -1) {
         let defaultSelectionEnabled = this.get('internalContent')[defaultSelectionIndex].enabled;
         if (defaultSelectionEnabled) {
@@ -130,7 +131,7 @@ export default Component.extend(ClickHandlerMixin, {
 
       if ((index !== -1 && !valueHolder.enabled) || ((index === -1 && !this.get('prompt')))) {
         // if value passed in that is not enabled need to check for the first enabled option
-        index = this.get('internalContent').findIndex(element => element.enabled === true);
+        index = this.get('internalContent').findIndex(element => !!element.enabled === true);
       }
 
       if (index !== -1) {
