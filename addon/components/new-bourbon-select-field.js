@@ -38,7 +38,6 @@ export default Component.extend(ClickHandlerMixin, {
     if (this.get('value') !== this.get('selection.value')) {
       this.set('value', this.get('selection.value'))
     }
-
   },
 
   didInsertElement() {
