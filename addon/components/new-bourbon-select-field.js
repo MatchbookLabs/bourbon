@@ -38,6 +38,7 @@ export default Component.extend(ClickHandlerMixin, {
     if (this.get('value') !== this.get('selection.value')) {
       this.set('value', this.get('selection.value'))
     }
+
   },
 
   didInsertElement() {
@@ -167,16 +168,19 @@ export default Component.extend(ClickHandlerMixin, {
 
   selection: computed('selectedIndex', function() {
     let index = this.get('selectedIndex');
-    if (index !== -1) {
-      return this.get('internalContent').objectAt(index);
+
+    // don't set selection if index is null or undefined
+    if (isPresent(index) && index !== -1) {
+      return this.get('internalContent').objectAt(this.get('selectedIndex'));
     } else {
       return null;
     }
   }),
 
   label: computed('selection', 'prompt', function() {
-    if (isPresent(this.get('selection'))) {
-      return this.get('selection.label');
+    let selection = this.get('selection');
+    if (isPresent(selection)) {
+      return selection.label;
     } else {
       return this.get('prompt');
     }
