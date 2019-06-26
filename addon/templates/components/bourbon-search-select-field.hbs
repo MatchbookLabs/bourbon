@@ -1,5 +1,8 @@
 <div class="BourbonSearchSelectField-inputContainer" {{action "mouseDown"}}>
-  {{bourbon-text-field placeholder=prompt noLabel=true value=inputValue autofocus=autofocus readonly=readonly autocomplete="off" type="search"}}
+  <div class="BourbonTextField {{if isFocused 'BourbonTextField--active'}}">
+    <label class="BourbonTextField-label">{{prompt}}</label>
+    <input class="BourbonTextField-input" type="search" placeholder={{prompt}} value={{inputValue}}>
+  </div>
 </div>
 {{#if showDropdown}}
   <div class="BourbonSearchSelectField-searchContainer">
