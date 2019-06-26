@@ -46,6 +46,13 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     }
   },
 
+  input(e) {
+    let el = $(e.currentTarget);
+    let textInput = el.find('.BourbonTextField-input').val();
+
+    this.set('inputValue', textInput);
+  },
+
   resetPrompt: observer('label', 'value', function() {
     if (this.get('value') === null && this.get('prompt')) {
       this.set('inputValue', this.get('prompt'));
