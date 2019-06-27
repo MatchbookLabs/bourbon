@@ -21,6 +21,6 @@ module('Integration | Component | bourbon-text-field', function(hooks) {
 
     await render(hbs`{{bourbon-text-field disabled=true}}`);
 
-    assert.equal(this.element.children[0].innerHTML.trim(), '<label class="BourbonTextField-label"></label>\n<input class="BourbonTextField-input" disabled="" type="text">');
+    assert.equal(this.element.children[0].innerHTML.trim(), '<label class="BourbonTextField-label"></label>\n<input id="ember412" disabled="" class="BourbonTextField-input ember-text-field ember-view" type="text">');
   });
 });
