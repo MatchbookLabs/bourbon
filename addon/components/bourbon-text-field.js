@@ -60,13 +60,17 @@ export default Component.extend({
     let textInput = el.find('.BourbonTextField-input').val();
 
     // setting value directly here was causing the cursor to
-    // jump to the end of the input field in safari.
+    // jump to the end of the input field in safari. So have a holder
+    // variable and then observer to properly set value in valueObserver
     this.set('textInput', textInput);
   },
 
+  valueObserver: computed('textInput', function() {
+    this.set('value', this.get('textInput'));
+  }),
+
   focusOut() {
     this.set('isFocused', false);
-    this.set('value', this.get('textInput'));
     document.activeElement.blur();
 
     if (this.get('onFocusOutOrEnter')) {
@@ -80,8 +84,6 @@ export default Component.extend({
 
   keyDown(e) {
     if (e.keyCode === 13) {
-      this.set('value', this.get('textInput'));
-
       if (this.get('actionOnEnter')) {
         this.get('actionOnEnter')(this.get('value'));
       }
