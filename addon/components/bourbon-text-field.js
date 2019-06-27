@@ -37,8 +37,8 @@ export default Component.extend({
     this.set('isFocused', this.get('autofocus'));
   }),
 
-  isNotEmpty: computed('textInput', function() {
-    return this.get('textInput') && !this.get('noLabel');
+  isNotEmpty: computed('value', function() {
+    return this.get('value') && !this.get('noLabel');
   }),
 
   didInsertElement() {
@@ -65,7 +65,7 @@ export default Component.extend({
     this.set('textInput', textInput);
   },
 
-  valueObserver: computed('textInput', function() {
+  valueObserver: observer('textInput', function() {
     this.set('value', this.get('textInput'));
   }),
 
