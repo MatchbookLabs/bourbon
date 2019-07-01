@@ -1472,7 +1472,7 @@ body {
   background-color: #f3f3f3;
 }
 
-.BourbonSelectField-option[disabled="true"] {
+.BourbonSelectField-option[disabled] {
   pointer-events: none;
   opacity: .4;
 }
