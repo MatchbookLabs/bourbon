@@ -94,7 +94,7 @@
   @apply .btw-bg-concrete;
 }
 
-.BourbonSelectField-option[disabled="true"] {
+.BourbonSelectField-option[disabled] {
   pointer-events: none;
   opacity: .4;
 }

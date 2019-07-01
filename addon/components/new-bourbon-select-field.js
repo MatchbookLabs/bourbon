@@ -57,7 +57,7 @@ export default Component.extend(ClickHandlerMixin, {
   },
 
   clickHandler(e) {
-    if (e.target !== document.activeElement || document.activeElement.textContent !== this.get('label')) {
+    if (!e.target.isEqualNode(document.activeElement)) {
       this.set('showList', false);
     }
   },
