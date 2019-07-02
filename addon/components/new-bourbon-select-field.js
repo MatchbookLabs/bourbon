@@ -57,9 +57,7 @@ export default Component.extend(ClickHandlerMixin, {
   },
 
   clickHandler(e) {
-    // this clickhandler checks if the user clicks outside of the dropdown to close the dropdown
-    // also it ensures that there isn't more than one dropdown open  at a time.
-    if (!e.target.isEqualNode(document.activeElement) || document.activeElement.textContent !== this.get('label')) {
+    if (!this.element.contains(e.target)) {
       this.set('showList', false);
     }
   },
