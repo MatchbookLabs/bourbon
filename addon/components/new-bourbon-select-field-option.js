@@ -12,9 +12,8 @@ export default Component.extend({
   active: false,
   selected: false,
   isDisabled: computed('disabled', function () {
-    let disabled = this.get('disabled');
     // returning false just sets it to the string "false"
     // returning undefined makes it just ignore it.
-    return disabled ? disabled : undefined;
+    return this.get('disabled') || undefined;
   })
 });
