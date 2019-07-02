@@ -21,7 +21,7 @@ export default Component.extend({
     let path = this.get('enabledPath');
     // returning false just sets it to the string "false"
     // returning undefined makes it just ignore it.
-    return path ? !this.get(path) : undefined;
+    return (path && !this.get(path)) ?  !this.get(path) : undefined;
   }),
 
   label: computed('content', 'labelPath', function() {
