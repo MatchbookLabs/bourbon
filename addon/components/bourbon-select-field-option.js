@@ -22,7 +22,9 @@ export default Component.extend({
     if (path) {
       return !this.get(path);
     } else {
-      return false;
+      // returning false just sets it to the string "false"
+      // returning undefined makes it just ignore it.
+      return undefined;
     }
   }),
 
