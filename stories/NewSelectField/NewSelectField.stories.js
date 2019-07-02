@@ -39,22 +39,35 @@ storiesOf('new select field', module)
     'object select field',
     () => {
       return {
-        template: hbs`{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true value='the other Brussels Griffon'}}`,
+        template: hbs`{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" optionEnabledPath="content.enabled" fullWidth=true value='the other Brussels Griffon'}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
+              enabled: true
             },
             {
               label: 'Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
+              enabled: false
             },
             {
-              label: 'Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
-            }
+              label: 'Macho the Frenchie who is so Frenchie Macho the Frenchie who is so Frenchie',
+              value: 'Frenchie',
+              enabled: true
+            },
+            {
+              label: 'Cosmos the Klee Kai',
+              value: 'Klee Kai',
+              enabled: true
+            },
+            {
+              label: 'Luna the chihuahua mix',
+              value: 'Chihuahua',
+              enabled: true
+            },
           ])
         }
       };
@@ -96,29 +109,34 @@ storiesOf('new select field', module)
     'multiple select fields',
     () => {
       return {
-        template: hbs`<div class="btw-flex btw-max-w-sm">{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true prompt="Select a dog..."}} {{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" prompt="Select a second dog..."}}</div>`,
+        template: hbs`<div class="btw-flex btw-max-w-sm">{{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" optionEnabledPath="content.enabled" fullWidth=true prompt="Select a dog..."}} {{new-bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" prompt="Select a second dog..."}}</div>`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
+              enabled: true
             },
             {
               label: 'Memphis the other Brussels Griffon Memphis the other Brussels Griffon Memphis the other Brussels Griffon Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
+              enabled: false
             },
             {
               label: 'Macho the Frenchie who is so Frenchie Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
+              value: 'Frenchie',
+              enabled: true
             },
             {
               label: 'Cosmos the Klee Kai',
-              value: 'Klee Kai'
+              value: 'Klee Kai',
+              enabled: true
             },
             {
               label: 'Luna the chihuahua mix',
-              value: 'Chihuahua'
+              value: 'Chihuahua',
+              enabled: true
             },
           ])
         }

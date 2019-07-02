@@ -38,21 +38,24 @@ storiesOf('search select field', module)
     'object search select field',
     () => {
       return {
-        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" value=null}}`,
+        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" optionEnabledPath="content.enabled"  value=null}}`,
         context: {
           onClick: action('searchSelectFieldClick'),
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
+              enabled: false
             },
             {
               label: 'Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
+              enabled: true
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
+              value: 'Frenchie',
+              enabled: false
             }
           ])
         }

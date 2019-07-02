@@ -19,29 +19,19 @@ export default Component.extend({
 
   isDisabled: computed('content', 'enabledPath', function() {
     let path = this.get('enabledPath');
-    if (path) {
-      return !this.get(path);
-    } else {
-      return false;
-    }
+    // returning false just sets it to the string "false"
+    // returning undefined makes it just ignore it.
+    return path ? !this.get(path) : undefined;
   }),
 
   label: computed('content', 'labelPath', function() {
     let path = this.get('labelPath');
-    if (path) {
-      return this.get(path);
-    } else {
-      return this.get('content');
-    }
+    return path ? this.get(path) : this.get('content');
   }),
 
   value: computed('content', 'valuePath', function() {
     let path = this.get('valuePath');
-    if (path) {
-      return this.get(path);
-    } else {
-      return this.get('content');
-    }
+    return path ? this.get(path) : this.get('content');
   }),
 
   selected: computed('content', 'selection', function() {

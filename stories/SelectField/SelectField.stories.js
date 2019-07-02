@@ -41,21 +41,24 @@ storiesOf('select field', module)
     'object select field',
     () => {
       return {
-        template: hbs`{{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" fullWidth=true value='the other Brussels Griffon'}}`,
+        template: hbs`{{bourbon-select-field content=petObject optionLabelPath="content.label" optionValuePath="content.value" optionEnabledPath="content.enabled"  fullWidth=true value='the other Brussels Griffon'}}`,
         context: {
           onClick: action('selectFieldClick'),
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
+              enabled: false
             },
             {
               label: 'Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
+              enabled: true
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
+              value: 'Frenchie',
+              enabled: false
             }
           ])
         }
