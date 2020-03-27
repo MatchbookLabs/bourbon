@@ -21,5 +21,5 @@ export default {
   '3': '0.75rem',
   '4': '1rem',
   '6': '1.5rem',
-  '8': '2rem'
+  '8': '2rem',
 };

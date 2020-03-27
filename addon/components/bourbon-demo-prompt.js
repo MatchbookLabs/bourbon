@@ -9,6 +9,6 @@ export default Component.extend({
   actions: {
     buttonAction() {
       this.get('buttonAction')();
-    }
-  }
+    },
+  },
 });

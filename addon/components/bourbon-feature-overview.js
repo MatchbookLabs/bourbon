@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   classNames: ['BourbonFeatureOverview-container'],
-  buttonOneClass: computed('buttonOneType', function() {
+  buttonOneClass: computed('buttonOneType', function () {
     if (this.get('buttonOneType')) {
       return `BourbonButton--${this.get(
         'buttonOneType'
@@ -14,7 +14,7 @@ export default Component.extend({
     }
   }),
 
-  buttonTwoClass: computed('buttonTwoType', function() {
+  buttonTwoClass: computed('buttonTwoType', function () {
     if (this.get('buttonTwoType')) {
       return `BourbonButton--${this.get(
         'buttonTwoType'
@@ -43,6 +43,6 @@ export default Component.extend({
         /* eslint no-console: 0 */
         console.warn('warning: no button action passed');
       }
-    }
-  }
+    },
+  },
 });

@@ -7,7 +7,7 @@ export default Component.extend({
   tagName: '',
   size: 'medium',
   color: 'black',
-  iconSize: computed('size', function() {
+  iconSize: computed('size', function () {
     if (this.get('size') === 'small') {
       return '18px';
     } else if (this.get('size') === 'medium') {
@@ -17,7 +17,7 @@ export default Component.extend({
     }
   }),
 
-  iconColor: computed('color', function() {
-    return `btw-text-${this.get('color')} btw-fill-current`
-  })
+  iconColor: computed('color', function () {
+    return `btw-text-${this.get('color')} btw-fill-current`;
+  }),
 });

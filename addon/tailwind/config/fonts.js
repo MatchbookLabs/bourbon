@@ -29,7 +29,7 @@ export default {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    'sans-serif'
+    'sans-serif',
   ],
   serif: [
     'Constantia',
@@ -41,7 +41,7 @@ export default {
     'Bitstream Vera Serif',
     'Liberation Serif',
     'Georgia',
-    'serif'
+    'serif',
   ],
   mono: [
     'Menlo',
@@ -49,6 +49,6 @@ export default {
     'Consolas',
     'Liberation Mono',
     'Courier New',
-    'monospace'
-  ]
+    'monospace',
+  ],
 };

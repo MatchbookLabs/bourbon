@@ -12,7 +12,7 @@ export default Component.extend(ClickHandlerMixin, {
   classNameBindings: [
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
-    'disabled:BourbonSelectField--disabled'
+    'disabled:BourbonSelectField--disabled',
   ],
   attributeBindings: ['disabled:disabled', 'tabindex:tabindex'],
 
@@ -36,7 +36,7 @@ export default Component.extend(ClickHandlerMixin, {
     );
 
     if (this.get('value') !== this.get('selection.value')) {
-      this.set('value', this.get('selection.value'))
+      this.set('value', this.get('selection.value'));
     }
   },
 
@@ -45,10 +45,14 @@ export default Component.extend(ClickHandlerMixin, {
 
     if (this.get('defaultSelection') && this.get('value') === undefined) {
       // need to check if defaultSelection is valid & only update if enabled
-      let defaultSelectionIndex = this.get('content').indexOf(this.get('defaultSelection'));
+      let defaultSelectionIndex = this.get('content').indexOf(
+        this.get('defaultSelection')
+      );
 
       if (defaultSelectionIndex !== -1) {
-        let defaultSelectionEnabled = this.get('internalContent')[defaultSelectionIndex].enabled;
+        let defaultSelectionEnabled = this.get('internalContent')[
+          defaultSelectionIndex
+        ].enabled;
         if (defaultSelectionEnabled) {
           this.set('selectedIndex', defaultSelectionIndex);
         }
@@ -62,23 +66,23 @@ export default Component.extend(ClickHandlerMixin, {
     }
   },
 
-  ariaExpanded: computed('showList', function() {
+  ariaExpanded: computed('showList', function () {
     return this.get('showList');
   }),
 
-  _labelPath: computed('optionLabelPath', function() {
+  _labelPath: computed('optionLabelPath', function () {
     if (isPresent(this.get('optionLabelPath'))) {
       return this.get('optionLabelPath').replace(/^content\.?/, '');
     }
   }),
 
-  _valuePath: computed('optionValuePath', function() {
+  _valuePath: computed('optionValuePath', function () {
     if (isPresent(this.get('optionValuePath'))) {
       return this.get('optionValuePath').replace(/^content\.?/, '');
     }
   }),
 
-  _enabledPath: computed('optionEnabledPath', function() {
+  _enabledPath: computed('optionEnabledPath', function () {
     if (isPresent(this.get('optionEnabledPath'))) {
       return this.get('optionEnabledPath').replace(/^content\.?/, '');
     }
@@ -89,14 +93,14 @@ export default Component.extend(ClickHandlerMixin, {
     '_labelPath',
     '_valuePath',
     '_enabledPath',
-    function() {
+    function () {
       return A(
-        this.get('content').map(item => {
+        this.get('content').map((item) => {
           if (typeof item === 'string' || typeof item === 'number') {
             return EmberObject.create({
               label: item.toString(),
               value: item,
-              enabled: true
+              enabled: true,
             });
           } else {
             let emberItem =
@@ -129,9 +133,14 @@ export default Component.extend(ClickHandlerMixin, {
 
       let index = this.get('internalContent').indexOf(valueHolder);
 
-      if ((index !== -1 && !valueHolder.enabled) || ((index === -1 && !this.get('prompt')))) {
+      if (
+        (index !== -1 && !valueHolder.enabled) ||
+        (index === -1 && !this.get('prompt'))
+      ) {
         // if value passed in that is not enabled need to check for the first enabled option
-        index = this.get('internalContent').findIndex(element => !!element.enabled);
+        index = this.get('internalContent').findIndex(
+          (element) => !!element.enabled
+        );
       }
 
       if (index !== -1) {
@@ -146,13 +155,11 @@ export default Component.extend(ClickHandlerMixin, {
       if (value !== -1) {
         this.set(
           'value',
-          this.get('internalContent')
-            .objectAt(value)
-            .get('value')
+          this.get('internalContent').objectAt(value).get('value')
         );
       }
       return value;
-    }
+    },
   }),
 
   activeIndex: computed('selectedIndex', {
@@ -162,10 +169,10 @@ export default Component.extend(ClickHandlerMixin, {
 
     set(key, value) {
       return value;
-    }
+    },
   }),
 
-  selection: computed('selectedIndex', function() {
+  selection: computed('selectedIndex', function () {
     let index = this.get('selectedIndex');
 
     // don't set selection if index is null or undefined
@@ -176,7 +183,7 @@ export default Component.extend(ClickHandlerMixin, {
     }
   }),
 
-  label: computed('selection', 'prompt', function() {
+  label: computed('selection', 'prompt', function () {
     let selection = this.get('selection');
     if (isPresent(selection)) {
       return selection.label;
@@ -192,14 +199,18 @@ export default Component.extend(ClickHandlerMixin, {
     if (e.keyCode === 38) {
       // up arrow
       this.moveActiveUp(this.get('activeIndex'));
-      let itemHeight = el.find('.NewBourbonSelectField-option')[this.get('activeIndex') + 1].offsetHeight;
-      let scrollHeight = ((this.get('activeIndex') - 1) * itemHeight);
+      let itemHeight = el.find('.NewBourbonSelectField-option')[
+        this.get('activeIndex') + 1
+      ].offsetHeight;
+      let scrollHeight = (this.get('activeIndex') - 1) * itemHeight;
       list.scrollTop(scrollHeight);
     } else if (e.keyCode === 40) {
       // down arrow
       this.moveActiveDown(this.get('activeIndex'));
-      let itemHeight = el.find('.NewBourbonSelectField-option')[this.get('activeIndex') - 1].offsetHeight;
-      let scrollHeight = (this.get('activeIndex') * itemHeight);
+      let itemHeight = el.find('.NewBourbonSelectField-option')[
+        this.get('activeIndex') - 1
+      ].offsetHeight;
+      let scrollHeight = this.get('activeIndex') * itemHeight;
       list.scrollTop(scrollHeight);
     } else if (e.keyCode === 13) {
       //  enter
@@ -221,11 +232,7 @@ export default Component.extend(ClickHandlerMixin, {
     if (nextIndex < 0) {
       return;
     } else {
-      if (
-        !this.get('internalContent')
-          .objectAt(nextIndex)
-          .get('enabled')
-      ) {
+      if (!this.get('internalContent').objectAt(nextIndex).get('enabled')) {
         this.moveActiveUp(nextIndex);
       } else {
         this.set('activeIndex', nextIndex);
@@ -238,11 +245,7 @@ export default Component.extend(ClickHandlerMixin, {
     if (nextIndex >= this.get('internalContent.length')) {
       return;
     } else {
-      if (
-        !this.get('internalContent')
-          .objectAt(nextIndex)
-          .get('enabled')
-      ) {
+      if (!this.get('internalContent').objectAt(nextIndex).get('enabled')) {
         this.moveActiveDown(nextIndex);
       } else {
         this.set('activeIndex', nextIndex);
@@ -262,6 +265,6 @@ export default Component.extend(ClickHandlerMixin, {
       // a different element than all the other browsers
       this.$('.BourbonSelectField-selected').focus();
       this.set('showList', !this.get('showList'));
-    }
-  }
+    },
+  },
 });

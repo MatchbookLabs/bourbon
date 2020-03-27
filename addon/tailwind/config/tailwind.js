@@ -1,4 +1,4 @@
-import container from 'tailwindcss/plugins/container'
+import container from 'tailwindcss/plugins/container';
 
 import colors from './colors';
 import screens from './screens';
@@ -102,7 +102,7 @@ export default {
     visibility: ['responsive'],
     whitespace: ['responsive'],
     width: ['responsive'],
-    zIndex: ['responsive']
+    zIndex: ['responsive'],
   },
 
   /*
@@ -123,7 +123,7 @@ export default {
     container({
       // center: true,
       // padding: '1rem',
-    })
+    }),
   ],
 
   /*
@@ -139,6 +139,6 @@ export default {
   options: {
     prefix: 'btw-',
     important: false,
-    separator: ':'
-  }
+    separator: ':',
+  },
 };

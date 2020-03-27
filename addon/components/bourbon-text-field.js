@@ -7,7 +7,7 @@ export default Component.extend({
   classNames: ['BourbonTextField'],
   classNameBindings: [
     'isFocused:BourbonTextField--active',
-    'isNotEmpty:BourbonTextField--not-empty'
+    'isNotEmpty:BourbonTextField--not-empty',
   ],
 
   layout,
@@ -22,21 +22,21 @@ export default Component.extend({
   isFocused: false,
   noLabel: false,
 
-  fieldType: computed('type', function() {
+  fieldType: computed('type', function () {
     return this.get('type') ? this.get('type') : 'text';
   }),
 
   // attribute binding doesn't work for readonly = false
   // https://stackoverflow.com/questions/16109358/what-is-the-correct-readonly-attribute-syntax-for-input-text-elements
-  boundReadOnly: computed('readonly', function() {
+  boundReadOnly: computed('readonly', function () {
     return this.get('readonly') || null;
   }),
 
-  focusedElementObserver: observer('autofocus', function() {
+  focusedElementObserver: observer('autofocus', function () {
     this.set('isFocused', this.get('autofocus'));
   }),
 
-  isNotEmpty: computed('value', function() {
+  isNotEmpty: computed('value', function () {
     return this.get('value') && !this.get('noLabel');
   }),
 
@@ -83,5 +83,5 @@ export default Component.extend({
         this.get('onFocusOutOrEnter')(this.get('value'));
       }
     }
-  }
+  },
 });

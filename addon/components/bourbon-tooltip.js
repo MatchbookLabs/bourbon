@@ -17,12 +17,19 @@ export default Component.extend({
       popperOptions: {
         modifiers: {
           preventOverflow: {
-            escapeWithReference: false
-          }
-        }
-      }
+            escapeWithReference: false,
+          },
+        },
+      },
     });
 
-    this.set('tooltipBackgroundClass', `BourbonTooltip--${this.get('tooltipBackgroundColor')} BourbonTooltip--${this.get('tooltipPosition')} BourbonTooltip ember-tooltip`);
-  }
+    this.set(
+      'tooltipBackgroundClass',
+      `BourbonTooltip--${this.get(
+        'tooltipBackgroundColor'
+      )} BourbonTooltip--${this.get(
+        'tooltipPosition'
+      )} BourbonTooltip ember-tooltip`
+    );
+  },
 });

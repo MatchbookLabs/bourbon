@@ -10,7 +10,7 @@ export default Component.extend({
   classNameBindings: [
     'iconTextButton:BourbonButton-iconText',
     'iconOnlyButton:BourbonButton-icon',
-    'fullWidth:BourbonButton--fullWidth'
+    'fullWidth:BourbonButton--fullWidth',
   ],
   attributeBindings: [
     'aria-label',
@@ -18,15 +18,15 @@ export default Component.extend({
     'data-hint',
     'target',
     'tabindex',
-    'title'
+    'title',
   ],
-  iconTextButton: computed('icon', 'title', function() {
+  iconTextButton: computed('icon', 'title', function () {
     return this.get('icon') && this.get('title');
   }),
-  iconOnlyButton: computed('icon', 'title', 'class', function() {
+  iconOnlyButton: computed('icon', 'title', 'class', function () {
     return this.get('icon') && !this.get('class');
   }),
-  textAndIconButton: computed('icon', 'title', 'class', function() {
+  textAndIconButton: computed('icon', 'title', 'class', function () {
     return this.get('icon') && this.get('class');
   }),
 
@@ -37,5 +37,5 @@ export default Component.extend({
       /* eslint no-console: 0 */
       console.warn('warning: no button action passed');
     }
-  }
+  },
 });

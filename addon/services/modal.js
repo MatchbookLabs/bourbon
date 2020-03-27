@@ -29,7 +29,7 @@ export default Service.extend({
       copyButtonAction: null,
       linkTitle: null,
       linkHref: null,
-      dismissable: true
+      dismissable: true,
     });
 
     this.setProperties(this.defaultParams);
@@ -50,5 +50,5 @@ export default Service.extend({
     this.setProperties(this.defaultParams);
 
     document.body.classList.remove('BourbonModal--fixed');
-  }
+  },
 });

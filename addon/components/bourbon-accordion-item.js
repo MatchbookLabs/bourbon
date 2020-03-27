@@ -6,7 +6,7 @@ export default Component.extend({
   layout,
   tagName: 'li',
   classNames: ['BourbonAccordionItem'],
-  isOpen: computed('listItem.open', function() {
+  isOpen: computed('listItem.open', function () {
     if (this.get('listItem.open') === true) {
       return true;
     } else {
@@ -14,7 +14,7 @@ export default Component.extend({
     }
   }),
 
-  isToggleable: computed('listItem.toggleable', function() {
+  isToggleable: computed('listItem.toggleable', function () {
     if (this.get('listItem.toggleable') === false) {
       return false;
     } else {
@@ -27,6 +27,6 @@ export default Component.extend({
       if (this.get('isToggleable')) {
         this.toggleProperty('isOpen');
       }
-    }
-  }
+    },
+  },
 });

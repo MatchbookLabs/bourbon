@@ -13,7 +13,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
   classNameBindings: [
     'showDropdown:btw-z-20',
     'showDropdown:BourbonSearchSelectField--active',
-    'disabled:BourbonSearchSelectField--disabled'
+    'disabled:BourbonSearchSelectField--disabled',
   ],
   isOpen: false,
   activeOption: null,
@@ -53,7 +53,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     this.set('inputValue', textInput);
   },
 
-  resetPrompt: observer('label', 'value', function() {
+  resetPrompt: observer('label', 'value', function () {
     if (this.get('value') === null && this.get('prompt')) {
       this.set('inputValue', this.get('prompt'));
     } else if (this.get('label')) {
@@ -61,7 +61,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     }
   }),
 
-  noResults: computed('searchList.[]', function() {
+  noResults: computed('searchList.[]', function () {
     if (this.get('groupedContent')) {
       return (
         this.get('searchList')[0]['items'][0]['label'] === 'No results found.'
@@ -120,26 +120,26 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
       let searchGroupList = [];
 
       for (var group of this.get('content')) {
-        let newGroupItems = group.items.filter(option =>
+        let newGroupItems = group.items.filter((option) =>
           this.optionValue(option).match(searchString)
         );
 
         if (newGroupItems.length) {
           searchGroupList.push({
             groupHeader: group.groupHeader,
-            items: newGroupItems
+            items: newGroupItems,
           });
         }
       }
       return searchGroupList;
     } else {
-      return this.get('content').filter(option =>
+      return this.get('content').filter((option) =>
         this.optionValue(option).match(searchString)
       );
     }
   },
 
-  searchResults: observer('inputValue', 'content', function() {
+  searchResults: observer('inputValue', 'content', function () {
     if (this.get('inputValue') === '') {
       this.set('searchList', this.get('content'));
     } else {
@@ -188,7 +188,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
       }
       this.set('activeOption', null);
       return value;
-    }
+    },
   }),
 
   didInsertElement() {
@@ -243,6 +243,6 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
         this.set('readonly', true);
         this.resetPrompt();
       }
-    }
-  }
+    },
+  },
 });

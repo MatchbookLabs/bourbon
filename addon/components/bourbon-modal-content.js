@@ -10,6 +10,6 @@ export default Component.extend({
   actions: {
     closeBourbonModal() {
       this.get('closeBourbonModal')();
-    }
-  }
+    },
+  },
 });

@@ -7,7 +7,14 @@ export default Component.extend({
   tagName: 'li',
   classNames: ['NewBourbonSelectField-option', 'BourbonSelectField-option'],
   classNameBindings: ['selected:btw-bg-concrete', 'active:btw-bg-concrete'],
-  attributeBindings: ['isDisabled:disabled', 'active', 'selected:selected', 'tabindex', 'role', 'selected:aria-selected'],
+  attributeBindings: [
+    'isDisabled:disabled',
+    'active',
+    'selected:selected',
+    'tabindex',
+    'role',
+    'selected:aria-selected',
+  ],
   label: null,
   active: false,
   selected: false,
@@ -15,5 +22,5 @@ export default Component.extend({
     // returning false just sets it to the string "false"
     // returning undefined makes it just ignore it.
     return this.get('disabled') || undefined;
-  })
+  }),
 });

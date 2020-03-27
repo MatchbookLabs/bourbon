@@ -6,7 +6,13 @@ export default Component.extend({
   layout,
   classNames: ['BourbonSelectField-option'],
   classNameBindings: ['selected:btw-bg-concrete'],
-  attributeBindings: ['selected', 'value', 'isDisabled:disabled', 'data-value', 'index'],
+  attributeBindings: [
+    'selected',
+    'value',
+    'isDisabled:disabled',
+    'data-value',
+    'index',
+  ],
   tabindex: null,
   content: null,
   labelPath: null,
@@ -17,24 +23,24 @@ export default Component.extend({
     this.get('updateSelection')();
   },
 
-  isDisabled: computed('content', 'enabledPath', function() {
+  isDisabled: computed('content', 'enabledPath', function () {
     let path = this.get('enabledPath');
     // returning false just sets it to the string "false"
     // returning undefined makes it just ignore it.
-    return (path && !this.get(path)) ?  !this.get(path) : undefined;
+    return path && !this.get(path) ? !this.get(path) : undefined;
   }),
 
-  label: computed('content', 'labelPath', function() {
+  label: computed('content', 'labelPath', function () {
     let path = this.get('labelPath');
     return path ? this.get(path) : this.get('content');
   }),
 
-  value: computed('content', 'valuePath', function() {
+  value: computed('content', 'valuePath', function () {
     let path = this.get('valuePath');
     return path ? this.get(path) : this.get('content');
   }),
 
-  selected: computed('content', 'selection', function() {
+  selected: computed('content', 'selection', function () {
     return this.get('content') === this.get('selection');
-  })
+  }),
 });
