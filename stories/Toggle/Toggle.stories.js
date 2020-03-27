@@ -67,6 +67,23 @@ storiesOf("toggle", module)
     }
   )
   .add(
+    "margarita toggle off",
+    () => {
+      return {
+        template: hbs`
+        <div class="using-new-app">
+          {{bourbon-toggle value=false action=onClick}}
+        </div>`,
+        context: {
+          onClick: "click"
+        }
+      };
+    },
+    {
+      notes: { markdown: toggle }
+    }
+  )
+  .add(
     "toggle off",
     () => {
       return {
