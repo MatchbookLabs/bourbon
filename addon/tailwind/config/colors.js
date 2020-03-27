@@ -15,25 +15,27 @@
 */
 
 export default {
-  transparent: 'transparent',
+  transparent: "transparent",
 
   /* getfeedback colors */
 
-  'fern': '#48BA70',
-  'emerald': '#4CCE6F',
-  'fruit-salad': '#4CA465',
-  'dodger-blue': '#2E71FC',
-  'black': '#000',
-  'white': '#FFF',
-  'slate': '#474C4F',
-  'light-tuna': '#777',
-  'tuna': 'rgba(60,64,67,0.90)',
-  'alto': '#DCDCDC',
-  'alabaster': '#FAFAFA',
-  'concrete': '#F3F3F3',
-  'mercury': '#E9E9E9',
-  'mine-shaft': '#2D2D2D',
-  'shade': 'rgba(0,0,0,0.4)',
+  fern: "#48BA70",
+  margarita: "#42AA95",
+  paradiso: "#2E7668",
+  emerald: "#4CCE6F",
+  "fruit-salad": "#4CA465",
+  "dodger-blue": "#2E71FC",
+  black: "#000",
+  white: "#FFF",
+  slate: "#474C4F",
+  "light-tuna": "#777",
+  tuna: "rgba(60,64,67,0.90)",
+  alto: "#DCDCDC",
+  alabaster: "#FAFAFA",
+  concrete: "#F3F3F3",
+  mercury: "#E9E9E9",
+  "mine-shaft": "#2D2D2D",
+  shade: "rgba(0,0,0,0.4)",
 
   /* tailwind colors */
   // black: '#22292f',
@@ -41,7 +43,7 @@ export default {
   // 'grey-darker': '#606f7b',
   // 'grey-dark': '#8795a1',
   // grey: '#b8c2cc',
-  'grey-light': '#D3D3D3',
+  "grey-light": "#D3D3D3",
   // 'grey-lighter': '#f1f5f8',
   // 'grey-lightest': '#f8fafc',
   // white: '#ffffff',
@@ -49,7 +51,7 @@ export default {
   // 'red-darkest': '#3b0d0c',
   // 'red-darker': '#621b18',
   // 'red-dark': '#cc1f1a',
-  red: '#E2443E',
+  red: "#E2443E"
   // 'red-light': '#ef5753',
   // 'red-lighter': '#f9acaa',
   // 'red-lightest': '#fcebea',

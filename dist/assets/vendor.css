@@ -801,7 +801,9 @@ making styling changes in the library */
 :root {
   --black: #000;
   --white: #fff;
-  --fern: #5cb675;
+  --fern: #48ba70;
+  --margarita: #42aa95;
+  --paradiso: #2e7668;
   --emerald: #4cce6f;
   --fruit-salad: #4ca465;
   --dodger-blue: #2e71fc;
@@ -876,7 +878,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid;
-  border-color: #48ba70;
+  border-color: #42aa95;
   border-radius: 121px;
   display: flex;
   justify-content: space-evenly;
@@ -886,12 +888,12 @@ body {
 }
 
 .BourbonAlertBadge-svg svg {
-  color: #48ba70;
+  color: #42aa95;
   fill: currentColor;
 }
 
 .BourbonAlertBadge-text {
-  color: #48ba70;
+  color: #42aa95;
   font-family: Helvetica;
   font-size: 16px;
   line-height: 20px;
@@ -936,20 +938,19 @@ body {
 
 .BourbonButton--primary {
   color: #fff;
-  background-color: #48ba70;
-  border-color: #48ba70;
+  background-color: #42aa95;
+  border-color: #42aa95;
 }
 
 .BourbonButton--primary:hover {
-  background-color: #4cce6f;
-  border-color: #4cce6f;
+  background-color: #2e7668;
+  border-color: #2e7668;
 }
 
 .BourbonButton--primary:active,
 .BourbonButton--primary:focus {
-  background-color: #4ca465;
-  border-color: #4ca465;
-  box-shadow: inset 0 0 0 1px var(--white);
+  background-color: #2e7668;
+  border-color: #2e7668;
   outline: none;
 }
 
@@ -1025,7 +1026,7 @@ body {
   height: 55px;
   min-width: 122px;
   border-color: #dcdcdc;
-  color: #48ba70;
+  color: #42aa95;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
@@ -1035,10 +1036,10 @@ body {
 .BourbonButton--large:hover,
 .BourbonButton--large:focus,
  {
-  background-color: #48ba70;
-  border-color: #48ba70;
+  background-color: #42aa95;
+  border-color: #42aa95;
   color: #fff;
-  box-shadow: inset 0 0 0 1px var(--fern);
+  box-shadow: inset 0 0 0 1px var(--margarita);
   outline: none;
 }
 
@@ -1723,6 +1724,14 @@ input[type="search"].BourbonTextField {
   background-color: #48ba70;
 }
 
+.btw-bg-margarita {
+  background-color: #42aa95;
+}
+
+.btw-bg-paradiso {
+  background-color: #2e7668;
+}
+
 .btw-bg-emerald {
   background-color: #4cce6f;
 }
@@ -1793,6 +1802,14 @@ input[type="search"].BourbonTextField {
 
 .hover\:btw-bg-fern:hover {
   background-color: #48ba70;
+}
+
+.hover\:btw-bg-margarita:hover {
+  background-color: #42aa95;
+}
+
+.hover\:btw-bg-paradiso:hover {
+  background-color: #2e7668;
 }
 
 .hover\:btw-bg-emerald:hover {
@@ -1931,6 +1948,14 @@ input[type="search"].BourbonTextField {
   border-color: #48ba70;
 }
 
+.btw-border-margarita {
+  border-color: #42aa95;
+}
+
+.btw-border-paradiso {
+  border-color: #2e7668;
+}
+
 .btw-border-emerald {
   border-color: #4cce6f;
 }
@@ -2001,6 +2026,14 @@ input[type="search"].BourbonTextField {
 
 .hover\:btw-border-fern:hover {
   border-color: #48ba70;
+}
+
+.hover\:btw-border-margarita:hover {
+  border-color: #42aa95;
+}
+
+.hover\:btw-border-paradiso:hover {
+  border-color: #2e7668;
 }
 
 .hover\:btw-border-emerald:hover {
@@ -3949,6 +3982,14 @@ input[type="search"].BourbonTextField {
   color: #48ba70;
 }
 
+.btw-text-margarita {
+  color: #42aa95;
+}
+
+.btw-text-paradiso {
+  color: #2e7668;
+}
+
 .btw-text-emerald {
   color: #4cce6f;
 }
@@ -4019,6 +4060,14 @@ input[type="search"].BourbonTextField {
 
 .hover\:btw-text-fern:hover {
   color: #48ba70;
+}
+
+.hover\:btw-text-margarita:hover {
+  color: #42aa95;
+}
+
+.hover\:btw-text-paradiso:hover {
+  color: #2e7668;
 }
 
 .hover\:btw-text-emerald:hover {
@@ -4587,6 +4636,14 @@ button:focus {
     background-color: #48ba70;
   }
 
+  .sm\:btw-bg-margarita {
+    background-color: #42aa95;
+  }
+
+  .sm\:btw-bg-paradiso {
+    background-color: #2e7668;
+  }
+
   .sm\:btw-bg-emerald {
     background-color: #4cce6f;
   }
@@ -4657,6 +4714,14 @@ button:focus {
 
   .sm\:hover\:btw-bg-fern:hover {
     background-color: #48ba70;
+  }
+
+  .sm\:hover\:btw-bg-margarita:hover {
+    background-color: #42aa95;
+  }
+
+  .sm\:hover\:btw-bg-paradiso:hover {
+    background-color: #2e7668;
   }
 
   .sm\:hover\:btw-bg-emerald:hover {
@@ -4795,6 +4860,14 @@ button:focus {
     border-color: #48ba70;
   }
 
+  .sm\:btw-border-margarita {
+    border-color: #42aa95;
+  }
+
+  .sm\:btw-border-paradiso {
+    border-color: #2e7668;
+  }
+
   .sm\:btw-border-emerald {
     border-color: #4cce6f;
   }
@@ -4865,6 +4938,14 @@ button:focus {
 
   .sm\:hover\:btw-border-fern:hover {
     border-color: #48ba70;
+  }
+
+  .sm\:hover\:btw-border-margarita:hover {
+    border-color: #42aa95;
+  }
+
+  .sm\:hover\:btw-border-paradiso:hover {
+    border-color: #2e7668;
   }
 
   .sm\:hover\:btw-border-emerald:hover {
@@ -6805,6 +6886,14 @@ button:focus {
     color: #48ba70;
   }
 
+  .sm\:btw-text-margarita {
+    color: #42aa95;
+  }
+
+  .sm\:btw-text-paradiso {
+    color: #2e7668;
+  }
+
   .sm\:btw-text-emerald {
     color: #4cce6f;
   }
@@ -6875,6 +6964,14 @@ button:focus {
 
   .sm\:hover\:btw-text-fern:hover {
     color: #48ba70;
+  }
+
+  .sm\:hover\:btw-text-margarita:hover {
+    color: #42aa95;
+  }
+
+  .sm\:hover\:btw-text-paradiso:hover {
+    color: #2e7668;
   }
 
   .sm\:hover\:btw-text-emerald:hover {
@@ -7330,6 +7427,14 @@ button:focus {
     background-color: #48ba70;
   }
 
+  .md\:btw-bg-margarita {
+    background-color: #42aa95;
+  }
+
+  .md\:btw-bg-paradiso {
+    background-color: #2e7668;
+  }
+
   .md\:btw-bg-emerald {
     background-color: #4cce6f;
   }
@@ -7400,6 +7505,14 @@ button:focus {
 
   .md\:hover\:btw-bg-fern:hover {
     background-color: #48ba70;
+  }
+
+  .md\:hover\:btw-bg-margarita:hover {
+    background-color: #42aa95;
+  }
+
+  .md\:hover\:btw-bg-paradiso:hover {
+    background-color: #2e7668;
   }
 
   .md\:hover\:btw-bg-emerald:hover {
@@ -7538,6 +7651,14 @@ button:focus {
     border-color: #48ba70;
   }
 
+  .md\:btw-border-margarita {
+    border-color: #42aa95;
+  }
+
+  .md\:btw-border-paradiso {
+    border-color: #2e7668;
+  }
+
   .md\:btw-border-emerald {
     border-color: #4cce6f;
   }
@@ -7608,6 +7729,14 @@ button:focus {
 
   .md\:hover\:btw-border-fern:hover {
     border-color: #48ba70;
+  }
+
+  .md\:hover\:btw-border-margarita:hover {
+    border-color: #42aa95;
+  }
+
+  .md\:hover\:btw-border-paradiso:hover {
+    border-color: #2e7668;
   }
 
   .md\:hover\:btw-border-emerald:hover {
@@ -9548,6 +9677,14 @@ button:focus {
     color: #48ba70;
   }
 
+  .md\:btw-text-margarita {
+    color: #42aa95;
+  }
+
+  .md\:btw-text-paradiso {
+    color: #2e7668;
+  }
+
   .md\:btw-text-emerald {
     color: #4cce6f;
   }
@@ -9618,6 +9755,14 @@ button:focus {
 
   .md\:hover\:btw-text-fern:hover {
     color: #48ba70;
+  }
+
+  .md\:hover\:btw-text-margarita:hover {
+    color: #42aa95;
+  }
+
+  .md\:hover\:btw-text-paradiso:hover {
+    color: #2e7668;
   }
 
   .md\:hover\:btw-text-emerald:hover {
@@ -10073,6 +10218,14 @@ button:focus {
     background-color: #48ba70;
   }
 
+  .lg\:btw-bg-margarita {
+    background-color: #42aa95;
+  }
+
+  .lg\:btw-bg-paradiso {
+    background-color: #2e7668;
+  }
+
   .lg\:btw-bg-emerald {
     background-color: #4cce6f;
   }
@@ -10143,6 +10296,14 @@ button:focus {
 
   .lg\:hover\:btw-bg-fern:hover {
     background-color: #48ba70;
+  }
+
+  .lg\:hover\:btw-bg-margarita:hover {
+    background-color: #42aa95;
+  }
+
+  .lg\:hover\:btw-bg-paradiso:hover {
+    background-color: #2e7668;
   }
 
   .lg\:hover\:btw-bg-emerald:hover {
@@ -10281,6 +10442,14 @@ button:focus {
     border-color: #48ba70;
   }
 
+  .lg\:btw-border-margarita {
+    border-color: #42aa95;
+  }
+
+  .lg\:btw-border-paradiso {
+    border-color: #2e7668;
+  }
+
   .lg\:btw-border-emerald {
     border-color: #4cce6f;
   }
@@ -10351,6 +10520,14 @@ button:focus {
 
   .lg\:hover\:btw-border-fern:hover {
     border-color: #48ba70;
+  }
+
+  .lg\:hover\:btw-border-margarita:hover {
+    border-color: #42aa95;
+  }
+
+  .lg\:hover\:btw-border-paradiso:hover {
+    border-color: #2e7668;
   }
 
   .lg\:hover\:btw-border-emerald:hover {
@@ -12291,6 +12468,14 @@ button:focus {
     color: #48ba70;
   }
 
+  .lg\:btw-text-margarita {
+    color: #42aa95;
+  }
+
+  .lg\:btw-text-paradiso {
+    color: #2e7668;
+  }
+
   .lg\:btw-text-emerald {
     color: #4cce6f;
   }
@@ -12361,6 +12546,14 @@ button:focus {
 
   .lg\:hover\:btw-text-fern:hover {
     color: #48ba70;
+  }
+
+  .lg\:hover\:btw-text-margarita:hover {
+    color: #42aa95;
+  }
+
+  .lg\:hover\:btw-text-paradiso:hover {
+    color: #2e7668;
   }
 
   .lg\:hover\:btw-text-emerald:hover {
@@ -12816,6 +13009,14 @@ button:focus {
     background-color: #48ba70;
   }
 
+  .xl\:btw-bg-margarita {
+    background-color: #42aa95;
+  }
+
+  .xl\:btw-bg-paradiso {
+    background-color: #2e7668;
+  }
+
   .xl\:btw-bg-emerald {
     background-color: #4cce6f;
   }
@@ -12886,6 +13087,14 @@ button:focus {
 
   .xl\:hover\:btw-bg-fern:hover {
     background-color: #48ba70;
+  }
+
+  .xl\:hover\:btw-bg-margarita:hover {
+    background-color: #42aa95;
+  }
+
+  .xl\:hover\:btw-bg-paradiso:hover {
+    background-color: #2e7668;
   }
 
   .xl\:hover\:btw-bg-emerald:hover {
@@ -13024,6 +13233,14 @@ button:focus {
     border-color: #48ba70;
   }
 
+  .xl\:btw-border-margarita {
+    border-color: #42aa95;
+  }
+
+  .xl\:btw-border-paradiso {
+    border-color: #2e7668;
+  }
+
   .xl\:btw-border-emerald {
     border-color: #4cce6f;
   }
@@ -13094,6 +13311,14 @@ button:focus {
 
   .xl\:hover\:btw-border-fern:hover {
     border-color: #48ba70;
+  }
+
+  .xl\:hover\:btw-border-margarita:hover {
+    border-color: #42aa95;
+  }
+
+  .xl\:hover\:btw-border-paradiso:hover {
+    border-color: #2e7668;
   }
 
   .xl\:hover\:btw-border-emerald:hover {
@@ -15034,6 +15259,14 @@ button:focus {
     color: #48ba70;
   }
 
+  .xl\:btw-text-margarita {
+    color: #42aa95;
+  }
+
+  .xl\:btw-text-paradiso {
+    color: #2e7668;
+  }
+
   .xl\:btw-text-emerald {
     color: #4cce6f;
   }
@@ -15104,6 +15337,14 @@ button:focus {
 
   .xl\:hover\:btw-text-fern:hover {
     color: #48ba70;
+  }
+
+  .xl\:hover\:btw-text-margarita:hover {
+    color: #42aa95;
+  }
+
+  .xl\:hover\:btw-text-paradiso:hover {
+    color: #2e7668;
   }
 
   .xl\:hover\:btw-text-emerald:hover {

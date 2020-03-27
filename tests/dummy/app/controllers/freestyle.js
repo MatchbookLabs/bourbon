@@ -191,7 +191,7 @@ export default FreestyleController.extend(ModalMixin, {
     // this is reflected in the visual style/color section
     this.set('colorPalette', {
       'accent': {
-        'name': 'fern',
+        'name': 'margarita',
         'base': '#5CB675'
       },
       'accentHover': {
@@ -372,7 +372,7 @@ export default Ember.Component.extend({
   // ...
   colorPalette: {
     'accent': {
-      'name': 'fern',
+      'name': 'margarita',
       'base': '#5CB675'
     },
     'secondary': {

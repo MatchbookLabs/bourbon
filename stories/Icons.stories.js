@@ -25,9 +25,9 @@ storiesOf('icons and svgs', module)
     () => {
       return {
         template: hbs`
-        {{bourbon-svg--upgrade-badge size='large' color='fern'}}
+        {{bourbon-svg--upgrade-badge size='large' color='margarita'}}
         {{bourbon-svg--upgrade-badge}}
-        {{bourbon-svg--upgrade-badge size='small' color='fern'}}`
+        {{bourbon-svg--upgrade-badge size='small' color='margarita'}}`
       };
     },
     {
