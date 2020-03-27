@@ -6,5 +6,5 @@ export default Component.extend({
   layout,
   click() {
     this.get('closeModal')();
-  }
+  },
 });

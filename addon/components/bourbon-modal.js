@@ -4,29 +4,30 @@ import layout from '../templates/components/bourbon-modal';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
-
 export default Component.extend({
   modalService: service('modal'),
   classNames: ['BourbonModal-container'],
   classNameBindings: ['modalService.showModalState:btw-fixed'],
 
-  buttonOneClass: computed('modalService.buttonOneType', function() {
+  buttonOneClass: computed('modalService.buttonOneType', function () {
     return `BourbonButton--${this.get('modalService.buttonOneType')}`;
   }),
 
-  buttonTwoClass: computed('modalService.buttonTwoType', function() {
-    return `BourbonButton--${this.get(
-      'modalService.buttonTwoType'
-    )} btw-mr-3`;
+  buttonTwoClass: computed('modalService.buttonTwoType', function () {
+    return `BourbonButton--${this.get('modalService.buttonTwoType')} btw-mr-3`;
   }),
 
-  showCloseButton: computed('modalService.dismissable', 'modalService.notificationModal', function() {
-    if (this.get('modalService.notificationModal')) {
-      return !this.get('modalService.notificationModal');
-    } else if (this.get('modalService.dismissable')) {
-      return this.get('modalService.dismissable')
+  showCloseButton: computed(
+    'modalService.dismissable',
+    'modalService.notificationModal',
+    function () {
+      if (this.get('modalService.notificationModal')) {
+        return !this.get('modalService.notificationModal');
+      } else if (this.get('modalService.dismissable')) {
+        return this.get('modalService.dismissable');
+      }
     }
-  }),
+  ),
 
   init() {
     this._super(...arguments);
@@ -34,7 +35,7 @@ export default Component.extend({
     //  allow the user to escape the modal using the ESC key
     document.addEventListener(
       'keydown',
-      function(e) {
+      function (e) {
         if (
           this.get('modalService.showModalState') === true &&
           e.keyCode === 27 &&
@@ -99,6 +100,6 @@ export default Component.extend({
         this.get('modalService.copyButtonAction')();
       }
       this.get('modalService').closeBourbonModal();
-    }
-  }
+    },
+  },
 });

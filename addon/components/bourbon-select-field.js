@@ -12,7 +12,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
   classNameBindings: [
     'fullWidth:btw-block',
     'showList:BourbonSelectField--active',
-    'disabled:BourbonSelectField--disabled'
+    'disabled:BourbonSelectField--disabled',
   ],
   content: null,
   optionValuePath: null,
@@ -27,7 +27,10 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
   disabled: false,
 
   clickHandler(e) {
-    if (e.target !== document.activeElement || document.activeElement.textContent != this.get('label')) {
+    if (
+      e.target !== document.activeElement ||
+      document.activeElement.textContent != this.get('label')
+    ) {
       this.set('activeOption', null);
       this.set('showList', false);
     }
@@ -61,18 +64,18 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
       }
       this.set('activeOption', null);
       return value;
-    }
+    },
   }),
 
   action: null,
 
-  _sendAction: observer('selection', function() {
+  _sendAction: observer('selection', function () {
     if (typeof this.get('action') === 'function') {
       this.get('action')(this.get('selection'));
     }
   }),
 
-  _initSelection: observer('content', 'value', function() {
+  _initSelection: observer('content', 'value', function () {
     this.send('updateSelection');
   }),
 
@@ -99,6 +102,6 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
 
     mouseDown() {
       this.set('showList', !this.get('showList'));
-    }
-  }
+    },
+  },
 });

@@ -32,16 +32,18 @@ export default Mixin.create({
   },
 
   label: computed('selection', 'content', function () {
-    let checkValue = this.get('value')
+    let checkValue = this.get('value');
 
-    if (typeof checkValue === 'string' ||
-        typeof checkValue === 'number' ||
-        typeof checkValue === 'boolean' ) {
+    if (
+      typeof checkValue === 'string' ||
+      typeof checkValue === 'number' ||
+      typeof checkValue === 'boolean'
+    ) {
       checkValue = this.findValueObject(checkValue);
     }
 
     if (checkValue === null || checkValue === undefined) {
-      return this.get('prompt')
+      return this.get('prompt');
     }
 
     let path = this.get('_labelPath');
@@ -73,21 +75,21 @@ export default Mixin.create({
 
     if (path) {
       if (this.get('groupedContent')) {
-        let groupList = []
+        let groupList = [];
         for (var option of this.get('searchList')) {
-          groupList.push(...option.items)
+          groupList.push(...option.items);
         }
         if (groupList) {
-          return groupList.find(v => v[path] === value);
+          return groupList.find((v) => v[path] === value);
         }
       } else {
         if (this.get('content')) {
-          return this.get('content').find(v => v[path] === value);
+          return this.get('content').find((v) => v[path] === value);
         }
       }
     } else {
       if (this.get('content')) {
-        return this.get('content').find(v => v === value);
+        return this.get('content').find((v) => v === value);
       }
     }
   },
@@ -96,7 +98,9 @@ export default Mixin.create({
     let el = $(e.currentTarget);
 
     let list = el.find('.BourbonSelectField-menu');
-    let allOptions = el.find('.BourbonSelectField-menu .BourbonSelectField-option');
+    let allOptions = el.find(
+      '.BourbonSelectField-menu .BourbonSelectField-option'
+    );
     let numOptions = allOptions.length;
 
     if (e.keyCode === 40) {
@@ -108,18 +112,24 @@ export default Mixin.create({
 
       if (this.get('activeOption') === null) {
         this.set('activeOption', 0);
-      } else if (this.get('activeOption') >= 0 && this.get('activeOption') < numOptions - 1) {
+      } else if (
+        this.get('activeOption') >= 0 &&
+        this.get('activeOption') < numOptions - 1
+      ) {
         this.set('activeOption', this.get('activeOption') + 1);
       }
 
       this.selectOption(allOptions, list);
-    // e.keyCode 38 is for 'up arrow'
+      // e.keyCode 38 is for 'up arrow'
     } else if (e.keyCode === 38) {
       if (this.get('activeOption') === null) {
         return;
       }
 
-      if (this.get('activeOption') > 0 && this.get('activeOption') < numOptions) {
+      if (
+        this.get('activeOption') > 0 &&
+        this.get('activeOption') < numOptions
+      ) {
         if (this.get('activeOption') !== numOptions) {
           $(allOptions).removeClass('Bourbon--active');
         }
@@ -146,7 +156,7 @@ export default Mixin.create({
   },
 
   scrollList(item, list) {
-    let itemHeight = (this.get('activeOption')) * item.scrollHeight;
+    let itemHeight = this.get('activeOption') * item.scrollHeight;
     list.scrollTop(itemHeight);
-  }
+  },
 });

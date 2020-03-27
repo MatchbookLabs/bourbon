@@ -13,6 +13,10 @@ export default Mixin.create({
 
   willDestroyElement() {
     this._super(...arguments);
-    document.removeEventListener('click', this.get('clickOutsideElement'), false);
-  }
+    document.removeEventListener(
+      'click',
+      this.get('clickOutsideElement'),
+      false
+    );
+  },
 });
