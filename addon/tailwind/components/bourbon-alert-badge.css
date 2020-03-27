@@ -25,3 +25,16 @@
   line-height: 20px;
   padding-left: 12px;
 }
+
+/* margarita alert badge */
+.using-new-app .BourbonAlertBadge-container {
+  @apply .btw-border-margarita;
+}
+
+.using-new-app .BourbonAlertBadge-svg svg {
+  @apply .btw-text-margarita;
+}
+
+.using-new-app .BourbonAlertBadge-text {
+  @apply .btw-text-margarita;
+}

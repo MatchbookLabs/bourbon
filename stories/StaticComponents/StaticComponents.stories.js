@@ -20,6 +20,21 @@ storiesOf('static components', module)
     }
   )
   .add(
+    'margarita alert badge',
+    () => {
+      return {
+        template: hbs`
+        <div class="using-new-app">
+          {{bourbon-alert-badge message="This feature isn't available on your current plan." }}
+        </div>
+        `
+      };
+    },
+    {
+      notes: { markdown: alertBadge }
+    }
+  )
+  .add(
     'feature overview',
     () => {
       return {

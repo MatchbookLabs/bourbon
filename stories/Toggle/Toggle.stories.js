@@ -10,12 +10,12 @@ storiesOf("toggle", module)
       return {
         template: hbs`{{bourbon-toggle value=true action=onClick}}`,
         context: {
-          onClick: 'click',
+          onClick: "click"
         }
       };
     },
     {
-      notes: {markdown: toggle}
+      notes: { markdown: toggle }
     }
   )
   .add(
@@ -24,7 +24,41 @@ storiesOf("toggle", module)
       return {
         template: hbs`{{bourbon-toggle value=true action=onClick disabled=true}}`,
         context: {
-          onClick: 'click',
+          onClick: "click"
+        }
+      };
+    },
+    {
+      notes: { markdown: toggle }
+    }
+  )
+  .add(
+    "margarita toggle on",
+    () => {
+      return {
+        template: hbs`
+          <div class="using-new-app">
+            {{bourbon-toggle value=true action=onClick}}
+          </div>`,
+        context: {
+          onClick: "click"
+        }
+      };
+    },
+    {
+      notes: { markdown: toggle }
+    }
+  )
+  .add(
+    "margarita toggle on disabled",
+    () => {
+      return {
+        template: hbs`
+        <div class="using-new-app">
+          {{bourbon-toggle value=true action=onClick disabled=true}}
+        </div>`,
+        context: {
+          onClick: "click"
         }
       };
     },
@@ -38,7 +72,7 @@ storiesOf("toggle", module)
       return {
         template: hbs`{{bourbon-toggle value=false action=onClick}}`,
         context: {
-          onClick: 'click',
+          onClick: "click"
         }
       };
     },
@@ -52,7 +86,7 @@ storiesOf("toggle", module)
       return {
         template: hbs`{{bourbon-toggle value=false action=onClick disabled=true}}`,
         context: {
-          onClick: 'click',
+          onClick: "click"
         }
       };
     },

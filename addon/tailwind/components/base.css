@@ -3,7 +3,9 @@ making styling changes in the library */
 :root {
   --black: #000;
   --white: #FFF;
-  --fern: #5CB675;
+  --fern: #48BA70;
+  --margarita: #42AA95;
+  --paradiso: #2E7668;
   --emerald: #4CCE6F;
   --fruit-salad: #4CA465;
   --dodger-blue: #2E71FC;
@@ -17,7 +19,6 @@ making styling changes in the library */
   --mercury: #E9E9E9;
   --mine-shaft: #2D2D2D;
   --shade: rgba(0,0,0,0.5);
-
 }
 
 *:focus {
