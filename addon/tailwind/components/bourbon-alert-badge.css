@@ -4,7 +4,7 @@
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid;
-  @apply .btw-border-margarita;
+  @apply .btw-border-fern;
   border-radius: 121px;
   display: flex;
   justify-content: space-evenly;
@@ -14,14 +14,27 @@
 }
 
 .BourbonAlertBadge-svg svg {
-  @apply .btw-text-margarita;
+  @apply .btw-text-fern;
   @apply .btw-fill-current;
 }
 
 .BourbonAlertBadge-text {
-  @apply .btw-text-margarita;
+  @apply .btw-text-fern;
   font-family: Helvetica;
   font-size: 16px;
   line-height: 20px;
   padding-left: 12px;
+}
+
+/* margarita alert badge */
+.using-new-app .BourbonAlertBadge-container {
+  @apply .btw-border-margarita;
+}
+
+.using-new-app .BourbonAlertBadge-svg svg {
+  @apply .btw-text-margarita;
+}
+
+.using-new-app .BourbonAlertBadge-text {
+  @apply .btw-text-margarita;
 }

@@ -21,6 +21,25 @@ storiesOf('buttons', module)
     }
   )
   .add(
+    'margarita button',
+    () => {
+      return {
+        template: hbs`
+              <div class="BourbonGroupContainer btw-m-4 using-new-app">
+                {{bourbon-button class='BourbonButton--primary' title='Margarita button' action=onClick}}
+                {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
+              </div>
+              <div class="using-new-app">
+                {{bourbon-button class='BourbonButton--primary' title='Margarita full width button' action=onClick fullWidth=true}}
+              </div>`,
+        context: { onClick: "click" }
+      };
+    },
+    {
+      notes: { markdown: buttons }
+    }
+  )
+  .add(
     'secondary button',
     () => {
       return {
