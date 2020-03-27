@@ -27,7 +27,7 @@ storiesOf('icons and svgs', module)
         template: hbs`
         {{bourbon-svg--upgrade-badge size='large' color='margarita'}}
         {{bourbon-svg--upgrade-badge}}
-        {{bourbon-svg--upgrade-badge size='small' color='margarita'}}`
+        {{bourbon-svg--upgrade-badge size='small' color='margarita'}}`,
       };
     },
     {
@@ -38,7 +38,7 @@ storiesOf('icons and svgs', module)
     <ul>
     <li>size: options are 'small' 18px, 'medium' 24px, 'large' 36px (optional), default is medium</li>
     <li>color: default is black (optional)</li>
-    </ul>`
+    </ul>`,
     }
   )
   .add('messaging', () => {
