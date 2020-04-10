@@ -74,8 +74,8 @@
     "webpack": "^4.27.1"
   },
   "engines": {
-    "node": "^10.16.0",
-    "npm": "~6.4.1"
+    "node": "~13.10.0",
+    "yarn": "~1.22.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
