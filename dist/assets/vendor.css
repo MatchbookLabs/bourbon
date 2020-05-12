@@ -1108,26 +1108,6 @@ body {
   border-color: #e9e9e9;
 }
 
-.using-new-app .BourbonButton--secondary {
-  color: #116af0;
-  background-color: #fff;
-  border-color: #116af0;
-}
-
-.using-new-app .BourbonButton--secondary:hover {
-  background-color: #116af0;
-  border-color: #116af0;
-  color: #fff;
-}
-
-.using-new-app .BourbonButton--secondary:active,
-.using-new-app .BourbonButton--secondary:focus {
-  background-color: #116af0;
-  border-color: #116af0;
-  color: #fff;
-  outline: none;
-}
-
 .using-new-app .BourbonButton--large {
   height: 55px;
   min-width: 122px;
