@@ -1074,9 +1074,6 @@ body {
 /* margarita buttons */
 
 .using-new-app .BourbonButton {
-  color: #fff;
-  background-color: #116af0;
-  border-color: #116af0;
   font-weight: 500;
   padding: 6px 16px;
   line-height: 1.75;
@@ -1092,7 +1089,6 @@ body {
   color: #fff;
   background-color: #116af0;
   border-color: #116af0;
-  font-weight: 500;
 }
 
 .using-new-app .BourbonButton--primary:hover {
@@ -1116,7 +1112,6 @@ body {
   color: #116af0;
   background-color: #fff;
   border-color: #116af0;
-  font-weight: 500;
 }
 
 .using-new-app .BourbonButton--secondary:hover {
