@@ -190,26 +190,6 @@
   @apply .btw-border-mercury;
 }
 
-.using-new-app .BourbonButton--secondary {
-  @apply .btw-text-margarita;
-  @apply .btw-bg-white;
-  @apply .btw-border-margarita;
-}
-
-.using-new-app .BourbonButton--secondary:hover {
-  @apply .btw-bg-margarita;
-  @apply .btw-border-margarita;
-  @apply .btw-text-white;
-}
-
-.using-new-app .BourbonButton--secondary:active,
-.using-new-app .BourbonButton--secondary:focus {
-  @apply .btw-bg-margarita;
-  @apply .btw-border-margarita;
-  @apply .btw-text-white;
-  outline: none;
-}
-
 .using-new-app .BourbonButton--large {
   height: 55px;
   min-width: 122px;
