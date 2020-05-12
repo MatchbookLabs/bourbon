@@ -13,32 +13,14 @@ storiesOf('buttons', module)
                 {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
               </div>
               {{bourbon-button class='BourbonButton--primary' title='Primary full width button' action=onClick fullWidth=true}}`,
-        context: { onClick: 'click' }
+        context: { onClick: 'click' },
       };
     },
     {
-      notes: { markdown: buttons }
+      notes: { markdown: buttons },
     }
   )
-  .add(
-    'margarita button',
-    () => {
-      return {
-        template: hbs`
-              <div class="BourbonGroupContainer btw-m-4 using-new-app">
-                {{bourbon-button class='BourbonButton--primary' title='Margarita button' action=onClick}}
-                {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
-              </div>
-              <div class="using-new-app">
-                {{bourbon-button class='BourbonButton--primary' title='Margarita full width button' action=onClick fullWidth=true}}
-              </div>`,
-        context: { onClick: "click" }
-      };
-    },
-    {
-      notes: { markdown: buttons }
-    }
-  )
+
   .add(
     'secondary button',
     () => {
@@ -49,14 +31,51 @@ storiesOf('buttons', module)
                 {{bourbon-button title='Disabled' class='BourbonButton--secondary BourbonButton--disabled'}}
               </div>
               {{bourbon-button title='Secondary button' class='BourbonButton--secondary' action=onClick fullWidth=true}}`,
-        context: { onClick: 'click' }
+        context: { onClick: 'click' },
       };
     },
     {
-      notes: { markdown: buttons }
+      notes: { markdown: buttons },
     }
   )
-
+  .add(
+    'margarita primary button',
+    () => {
+      return {
+        template: hbs`
+              <div class="BourbonGroupContainer btw-m-4 using-new-app">
+                {{bourbon-button class='BourbonButton--primary' title='Margarita primary button' action=onClick}}
+                {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
+              </div>
+              <div class="using-new-app">
+                {{bourbon-button class='BourbonButton--primary' title='Margarita full width button' action=onClick fullWidth=true}}
+              </div>`,
+        context: { onClick: 'click' },
+      };
+    },
+    {
+      notes: { markdown: buttons },
+    }
+  )
+  .add(
+    'margarita secondary button',
+    () => {
+      return {
+        template: hbs`
+              <div class="BourbonGroupContainer btw-m-4 using-new-app">
+                {{bourbon-button class='BourbonButton--secondary' title='Margarita secondary button' action=onClick}}
+                {{bourbon-button title='Disabled' class='BourbonButton--secondary BourbonButton--disabled'}}
+              </div>
+              <div class="using-new-app">
+                {{bourbon-button class='BourbonButton--secondary' title='Margarita full width button' action=onClick fullWidth=true}}
+              </div>`,
+        context: { onClick: 'click' },
+      };
+    },
+    {
+      notes: { markdown: buttons },
+    }
+  )
   .add(
     'rounded button',
     () => {
@@ -69,11 +88,11 @@ storiesOf('buttons', module)
                 {{#bourbon-button class='BourbonButton--primary BourbonButton--rounded' action=onClick data-hint='press the button' fullWidth=true}}
                   Rounded primary button full width
                 {{/bourbon-button}}`,
-        context: { onClick: 'click' }
+        context: { onClick: 'click' },
       };
     },
     {
-      notes: { markdown: buttons }
+      notes: { markdown: buttons },
     }
   )
 
@@ -81,11 +100,11 @@ storiesOf('buttons', module)
     'delete button',
     () => {
       return {
-        template: hbs`{{bourbon-button class='BourbonButton--delete' title='delete button'}}`
+        template: hbs`{{bourbon-button class='BourbonButton--delete' title='delete button'}}`,
       };
     },
     {
-      notes: { markdown: buttons }
+      notes: { markdown: buttons },
     }
   )
 
@@ -93,10 +112,10 @@ storiesOf('buttons', module)
     'icon button',
     () => {
       return {
-        template: hbs`{{bourbon-button icon='edit-button'}}`
+        template: hbs`{{bourbon-button icon='edit-button'}}`,
       };
     },
     {
-      notes: { markdown: buttons }
+      notes: { markdown: buttons },
     }
   );

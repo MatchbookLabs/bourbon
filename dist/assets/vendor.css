@@ -802,7 +802,8 @@ making styling changes in the library */
   --black: #000;
   --white: #fff;
   --fern: #48ba70;
-  --margarita: #42aa95;
+  --margarita: #116af0;
+  --science-blue: #0a5fc7;
   --paradiso: #2e7668;
   --emerald: #4cce6f;
   --fruit-salad: #4ca465;
@@ -903,15 +904,15 @@ body {
 /* margarita alert badge */
 
 .using-new-app .BourbonAlertBadge-container {
-  border-color: #42aa95;
+  border-color: #116af0;
 }
 
 .using-new-app .BourbonAlertBadge-svg svg {
-  color: #42aa95;
+  color: #116af0;
 }
 
 .using-new-app .BourbonAlertBadge-text {
-  color: #42aa95;
+  color: #116af0;
 }
 
 .BourbonButton {
@@ -1072,10 +1073,10 @@ body {
 
 /* margarita buttons */
 
-.using-new-app .BourbonButton--primary {
+.using-new-app .BourbonButton {
   color: #fff;
-  background-color: #42aa95;
-  border-color: #42aa95;
+  background-color: #116af0;
+  border-color: #116af0;
   font-weight: 500;
   padding: 6px 16px;
   line-height: 1.75;
@@ -1087,15 +1088,22 @@ body {
   box-sizing: border-box;
 }
 
+.using-new-app .BourbonButton--primary {
+  color: #fff;
+  background-color: #116af0;
+  border-color: #116af0;
+  font-weight: 500;
+}
+
 .using-new-app .BourbonButton--primary:hover {
-  background-color: #2e7668;
-  border-color: #2e7668;
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
 }
 
 .using-new-app .BourbonButton--primary:active,
 .using-new-app .BourbonButton--primary:focus {
-  background-color: #2e7668;
-  border-color: #2e7668;
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
   outline: none;
 }
 
@@ -1104,11 +1112,32 @@ body {
   border-color: #e9e9e9;
 }
 
+.using-new-app .BourbonButton--secondary {
+  color: #116af0;
+  background-color: #fff;
+  border-color: #116af0;
+  font-weight: 500;
+}
+
+.using-new-app .BourbonButton--secondary:hover {
+  background-color: #116af0;
+  border-color: #116af0;
+  color: #fff;
+}
+
+.using-new-app .BourbonButton--secondary:active,
+.using-new-app .BourbonButton--secondary:focus {
+  background-color: #116af0;
+  border-color: #116af0;
+  color: #fff;
+  outline: none;
+}
+
 .using-new-app .BourbonButton--large {
   height: 55px;
   min-width: 122px;
-  border-color: #dcdcdc;
-  color: #42aa95;
+  border-color: #116af0;
+  color: #116af0;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
@@ -1118,10 +1147,10 @@ body {
 .using-new-app .BourbonButton--large:hover,
 .using-new-app .BourbonButton--large:focus,
  {
-  background-color: #42aa95;
-  border-color: #42aa95;
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
   color: #fff;
-  box-shadow: inset 0 0 0 1px var(--margarita);
+  box-shadow: inset 0 0 0 1px var(--science-blue);
   outline: none;
 }
 
@@ -1704,12 +1733,12 @@ input[type="search"].BourbonTextField {
 }
 
 .using-new-app .BourbonToggle.BourbonToggle--on svg rect {
-  fill: #42aa95 !important;
-  stroke: #42aa95 !important;
+  fill: #116af0 !important;
+  stroke: #116af0 !important;
 }
 
 .using-new-app .BourbonToggle.BourbonToggle--on svg circle:last-child {
-  stroke: #42aa95 !important;
+  stroke: #116af0 !important;
 }
 
 .BourbonTooltip {
@@ -1803,7 +1832,11 @@ input[type="search"].BourbonTextField {
 }
 
 .btw-bg-margarita {
-  background-color: #42aa95;
+  background-color: #116af0;
+}
+
+.btw-bg-science-blue {
+  background-color: #0a5fc7;
 }
 
 .btw-bg-paradiso {
@@ -1883,7 +1916,11 @@ input[type="search"].BourbonTextField {
 }
 
 .hover\:btw-bg-margarita:hover {
-  background-color: #42aa95;
+  background-color: #116af0;
+}
+
+.hover\:btw-bg-science-blue:hover {
+  background-color: #0a5fc7;
 }
 
 .hover\:btw-bg-paradiso:hover {
@@ -2027,7 +2064,11 @@ input[type="search"].BourbonTextField {
 }
 
 .btw-border-margarita {
-  border-color: #42aa95;
+  border-color: #116af0;
+}
+
+.btw-border-science-blue {
+  border-color: #0a5fc7;
 }
 
 .btw-border-paradiso {
@@ -2107,7 +2148,11 @@ input[type="search"].BourbonTextField {
 }
 
 .hover\:btw-border-margarita:hover {
-  border-color: #42aa95;
+  border-color: #116af0;
+}
+
+.hover\:btw-border-science-blue:hover {
+  border-color: #0a5fc7;
 }
 
 .hover\:btw-border-paradiso:hover {
@@ -4061,7 +4106,11 @@ input[type="search"].BourbonTextField {
 }
 
 .btw-text-margarita {
-  color: #42aa95;
+  color: #116af0;
+}
+
+.btw-text-science-blue {
+  color: #0a5fc7;
 }
 
 .btw-text-paradiso {
@@ -4141,7 +4190,11 @@ input[type="search"].BourbonTextField {
 }
 
 .hover\:btw-text-margarita:hover {
-  color: #42aa95;
+  color: #116af0;
+}
+
+.hover\:btw-text-science-blue:hover {
+  color: #0a5fc7;
 }
 
 .hover\:btw-text-paradiso:hover {
@@ -4715,7 +4768,11 @@ button:focus {
   }
 
   .sm\:btw-bg-margarita {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .sm\:btw-bg-science-blue {
+    background-color: #0a5fc7;
   }
 
   .sm\:btw-bg-paradiso {
@@ -4795,7 +4852,11 @@ button:focus {
   }
 
   .sm\:hover\:btw-bg-margarita:hover {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .sm\:hover\:btw-bg-science-blue:hover {
+    background-color: #0a5fc7;
   }
 
   .sm\:hover\:btw-bg-paradiso:hover {
@@ -4939,7 +5000,11 @@ button:focus {
   }
 
   .sm\:btw-border-margarita {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .sm\:btw-border-science-blue {
+    border-color: #0a5fc7;
   }
 
   .sm\:btw-border-paradiso {
@@ -5019,7 +5084,11 @@ button:focus {
   }
 
   .sm\:hover\:btw-border-margarita:hover {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .sm\:hover\:btw-border-science-blue:hover {
+    border-color: #0a5fc7;
   }
 
   .sm\:hover\:btw-border-paradiso:hover {
@@ -6965,7 +7034,11 @@ button:focus {
   }
 
   .sm\:btw-text-margarita {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .sm\:btw-text-science-blue {
+    color: #0a5fc7;
   }
 
   .sm\:btw-text-paradiso {
@@ -7045,7 +7118,11 @@ button:focus {
   }
 
   .sm\:hover\:btw-text-margarita:hover {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .sm\:hover\:btw-text-science-blue:hover {
+    color: #0a5fc7;
   }
 
   .sm\:hover\:btw-text-paradiso:hover {
@@ -7506,7 +7583,11 @@ button:focus {
   }
 
   .md\:btw-bg-margarita {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .md\:btw-bg-science-blue {
+    background-color: #0a5fc7;
   }
 
   .md\:btw-bg-paradiso {
@@ -7586,7 +7667,11 @@ button:focus {
   }
 
   .md\:hover\:btw-bg-margarita:hover {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .md\:hover\:btw-bg-science-blue:hover {
+    background-color: #0a5fc7;
   }
 
   .md\:hover\:btw-bg-paradiso:hover {
@@ -7730,7 +7815,11 @@ button:focus {
   }
 
   .md\:btw-border-margarita {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .md\:btw-border-science-blue {
+    border-color: #0a5fc7;
   }
 
   .md\:btw-border-paradiso {
@@ -7810,7 +7899,11 @@ button:focus {
   }
 
   .md\:hover\:btw-border-margarita:hover {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .md\:hover\:btw-border-science-blue:hover {
+    border-color: #0a5fc7;
   }
 
   .md\:hover\:btw-border-paradiso:hover {
@@ -9756,7 +9849,11 @@ button:focus {
   }
 
   .md\:btw-text-margarita {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .md\:btw-text-science-blue {
+    color: #0a5fc7;
   }
 
   .md\:btw-text-paradiso {
@@ -9836,7 +9933,11 @@ button:focus {
   }
 
   .md\:hover\:btw-text-margarita:hover {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .md\:hover\:btw-text-science-blue:hover {
+    color: #0a5fc7;
   }
 
   .md\:hover\:btw-text-paradiso:hover {
@@ -10297,7 +10398,11 @@ button:focus {
   }
 
   .lg\:btw-bg-margarita {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .lg\:btw-bg-science-blue {
+    background-color: #0a5fc7;
   }
 
   .lg\:btw-bg-paradiso {
@@ -10377,7 +10482,11 @@ button:focus {
   }
 
   .lg\:hover\:btw-bg-margarita:hover {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .lg\:hover\:btw-bg-science-blue:hover {
+    background-color: #0a5fc7;
   }
 
   .lg\:hover\:btw-bg-paradiso:hover {
@@ -10521,7 +10630,11 @@ button:focus {
   }
 
   .lg\:btw-border-margarita {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .lg\:btw-border-science-blue {
+    border-color: #0a5fc7;
   }
 
   .lg\:btw-border-paradiso {
@@ -10601,7 +10714,11 @@ button:focus {
   }
 
   .lg\:hover\:btw-border-margarita:hover {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .lg\:hover\:btw-border-science-blue:hover {
+    border-color: #0a5fc7;
   }
 
   .lg\:hover\:btw-border-paradiso:hover {
@@ -12547,7 +12664,11 @@ button:focus {
   }
 
   .lg\:btw-text-margarita {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .lg\:btw-text-science-blue {
+    color: #0a5fc7;
   }
 
   .lg\:btw-text-paradiso {
@@ -12627,7 +12748,11 @@ button:focus {
   }
 
   .lg\:hover\:btw-text-margarita:hover {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .lg\:hover\:btw-text-science-blue:hover {
+    color: #0a5fc7;
   }
 
   .lg\:hover\:btw-text-paradiso:hover {
@@ -13088,7 +13213,11 @@ button:focus {
   }
 
   .xl\:btw-bg-margarita {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .xl\:btw-bg-science-blue {
+    background-color: #0a5fc7;
   }
 
   .xl\:btw-bg-paradiso {
@@ -13168,7 +13297,11 @@ button:focus {
   }
 
   .xl\:hover\:btw-bg-margarita:hover {
-    background-color: #42aa95;
+    background-color: #116af0;
+  }
+
+  .xl\:hover\:btw-bg-science-blue:hover {
+    background-color: #0a5fc7;
   }
 
   .xl\:hover\:btw-bg-paradiso:hover {
@@ -13312,7 +13445,11 @@ button:focus {
   }
 
   .xl\:btw-border-margarita {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .xl\:btw-border-science-blue {
+    border-color: #0a5fc7;
   }
 
   .xl\:btw-border-paradiso {
@@ -13392,7 +13529,11 @@ button:focus {
   }
 
   .xl\:hover\:btw-border-margarita:hover {
-    border-color: #42aa95;
+    border-color: #116af0;
+  }
+
+  .xl\:hover\:btw-border-science-blue:hover {
+    border-color: #0a5fc7;
   }
 
   .xl\:hover\:btw-border-paradiso:hover {
@@ -15338,7 +15479,11 @@ button:focus {
   }
 
   .xl\:btw-text-margarita {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .xl\:btw-text-science-blue {
+    color: #0a5fc7;
   }
 
   .xl\:btw-text-paradiso {
@@ -15418,7 +15563,11 @@ button:focus {
   }
 
   .xl\:hover\:btw-text-margarita:hover {
-    color: #42aa95;
+    color: #116af0;
+  }
+
+  .xl\:hover\:btw-text-science-blue:hover {
+    color: #0a5fc7;
   }
 
   .xl\:hover\:btw-text-paradiso:hover {
