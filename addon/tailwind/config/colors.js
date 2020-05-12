@@ -20,7 +20,8 @@ export default {
   /* getfeedback colors */
 
   fern: '#48BA70',
-  margarita: '#42AA95',
+  margarita: '#116AF0',
+  'science-blue': '#0A5FC7',
   paradiso: '#2E7668',
   emerald: '#4CCE6F',
   'fruit-salad': '#4CA465',

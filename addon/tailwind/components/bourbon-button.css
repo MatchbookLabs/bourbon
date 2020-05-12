@@ -155,7 +155,7 @@
 }
 
 /* margarita buttons */
-.using-new-app .BourbonButton--primary {
+.using-new-app .BourbonButton {
   @apply .btw-text-white;
   @apply .btw-bg-margarita;
   @apply .btw-border-margarita;
@@ -170,15 +170,22 @@
   box-sizing: border-box;
 }
 
+.using-new-app .BourbonButton--primary {
+  @apply .btw-text-white;
+  @apply .btw-bg-margarita;
+  @apply .btw-border-margarita;
+  @apply .btw-font-medium;
+}
+
 .using-new-app .BourbonButton--primary:hover {
-  @apply .btw-bg-paradiso;
-  @apply .btw-border-paradiso;
+  @apply .btw-bg-science-blue;
+  @apply .btw-border-science-blue;
 }
 
 .using-new-app .BourbonButton--primary:active,
 .using-new-app .BourbonButton--primary:focus {
-  @apply .btw-bg-paradiso;
-  @apply .btw-border-paradiso;
+  @apply .btw-bg-science-blue;
+  @apply .btw-border-science-blue;
   outline: none;
 }
 
@@ -187,10 +194,31 @@
   @apply .btw-border-mercury;
 }
 
+.using-new-app .BourbonButton--secondary {
+  @apply .btw-text-margarita;
+  @apply .btw-bg-white;
+  @apply .btw-border-margarita;
+  @apply .btw-font-medium;
+}
+
+.using-new-app .BourbonButton--secondary:hover {
+  @apply .btw-bg-margarita;
+  @apply .btw-border-margarita;
+  @apply .btw-text-white;
+}
+
+.using-new-app .BourbonButton--secondary:active,
+.using-new-app .BourbonButton--secondary:focus {
+  @apply .btw-bg-margarita;
+  @apply .btw-border-margarita;
+  @apply .btw-text-white;
+  outline: none;
+}
+
 .using-new-app .BourbonButton--large {
   height: 55px;
   min-width: 122px;
-  @apply .btw-border-alto;
+  @apply .btw-border-margarita;
   @apply .btw-text-margarita;
   @apply .btw-bg-white;
   border-radius: 4px;
@@ -200,9 +228,9 @@
 .using-new-app .BourbonButton--large:active,
 .using-new-app .BourbonButton--large:hover,
 .using-new-app .BourbonButton--large:focus, {
-  @apply .btw-bg-margarita;
-  @apply .btw-border-margarita;
+  @apply .btw-bg-science-blue;
+  @apply .btw-border-science-blue;
   @apply .btw-text-white;
-  box-shadow: inset 0 0 0 1px var(--margarita);
+  box-shadow: inset 0 0 0 1px var(--science-blue);
   outline: none;
 }

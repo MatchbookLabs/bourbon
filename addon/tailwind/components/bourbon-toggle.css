@@ -1,8 +1,8 @@
 .using-new-app .BourbonToggle.BourbonToggle--on svg rect{
-  fill: #42AA95 !important;
-  stroke: #42AA95 !important;
+  fill: #116AF0 !important;
+  stroke: #116AF0 !important;
 }
 
 .using-new-app .BourbonToggle.BourbonToggle--on svg circle:last-child{
-  stroke: #42AA95 !important;
+  stroke: #116AF0 !important;
 }
