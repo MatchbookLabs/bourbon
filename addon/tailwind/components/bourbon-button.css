@@ -156,9 +156,6 @@
 
 /* margarita buttons */
 .using-new-app .BourbonButton {
-  @apply .btw-text-white;
-  @apply .btw-bg-margarita;
-  @apply .btw-border-margarita;
   @apply .btw-font-medium;
   padding: 6px 16px;
   line-height: 1.75;
@@ -174,7 +171,6 @@
   @apply .btw-text-white;
   @apply .btw-bg-margarita;
   @apply .btw-border-margarita;
-  @apply .btw-font-medium;
 }
 
 .using-new-app .BourbonButton--primary:hover {
@@ -198,7 +194,6 @@
   @apply .btw-text-margarita;
   @apply .btw-bg-white;
   @apply .btw-border-margarita;
-  @apply .btw-font-medium;
 }
 
 .using-new-app .BourbonButton--secondary:hover {
