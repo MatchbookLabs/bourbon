@@ -48,7 +48,7 @@ storiesOf('buttons', module)
                 {{bourbon-button title='Disabled' class='BourbonButton--primary BourbonButton--disabled'}}
               </div>
               <div class="using-new-app">
-                {{bourbon-button class='BourbonButton--primary' title='Margarita full width button' action=onClick fullWidth=true}}
+                {{bourbon-button class='BourbonButton--primary' title='Margarita full width primary button' action=onClick fullWidth=true}}
               </div>`,
         context: { onClick: 'click' },
       };
@@ -67,7 +67,7 @@ storiesOf('buttons', module)
                 {{bourbon-button title='Disabled' class='BourbonButton--secondary BourbonButton--disabled'}}
               </div>
               <div class="using-new-app">
-                {{bourbon-button class='BourbonButton--secondary' title='Margarita full width button' action=onClick fullWidth=true}}
+                {{bourbon-button class='BourbonButton--secondary' title='Margarita full width secondary button' action=onClick fullWidth=true}}
               </div>`,
         context: { onClick: 'click' },
       };
