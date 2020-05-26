@@ -15,6 +15,7 @@ export default Component.extend({
   ],
   tabindex: null,
   content: null,
+  labelFormatter: null,
   labelPath: null,
   valuePath: null,
   enabledPath: null,
@@ -31,8 +32,13 @@ export default Component.extend({
   }),
 
   label: computed('content', 'labelPath', function () {
-    let path = this.get('labelPath');
-    return path ? this.get(path) : this.get('content');
+    const path = this.get('labelPath');
+    const option = this.get('content');
+    const value = path ? this.get(path) : option;
+    // return value;
+    return this.labelFormatter && typeof this.labelFormatter === 'function'
+      ? this.labelFormatter(value, option)
+      : value;
   }),
 
   value: computed('content', 'valuePath', function () {

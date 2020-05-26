@@ -15,14 +15,14 @@
                 <div class="BourbonSelectField-optionGroupName">{{group.groupHeader}}</div>
               {{/if}}
               {{#each group.items as |option innerIndex|}}
-                {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" innerIndex outerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+                {{bourbon-select-field-option index=innerIndex tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" innerIndex outerIndex) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath labelFormatter=labelFormatter role="listitem"}}
               {{/each}}
             </div>
           {{/each}}
 
         {{else}}
           {{#each searchList as |option index|}}
-            {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath role="listitem"}}
+            {{bourbon-select-field-option index=index tagName="div" content=option selection=selection updateSelection=(action "updateSearchSelection" index) labelPath=optionLabelPath valuePath=optionValuePath enabledPath=optionEnabledPath labelFormatter=labelFormatter role="listitem"}}
           {{/each}}
         {{/if}}
       </div>

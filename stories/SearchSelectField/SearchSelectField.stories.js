@@ -1,7 +1,7 @@
-import { A } from "@ember/array";
-import hbs from "htmlbars-inline-precompile";
-import { storiesOf } from "@storybook/ember";
-import { action } from "@storybook/addon-actions";
+import { A } from '@ember/array';
+import hbs from 'htmlbars-inline-precompile';
+import { storiesOf } from '@storybook/ember';
+import { action } from '@storybook/addon-actions';
 import searchSelectField from './searchSelectField.md';
 import searchSelectFieldDisabled from './searchSelectFieldDisabled.md';
 
@@ -10,28 +10,37 @@ storiesOf('search select field', module)
     'array search select field',
     () => {
       return {
-        template: hbs`{{bourbon-search-select-field content=petsArray prompt="Select an animal..." value="Select an animal..."}}`,
+        template: hbs`{{bourbon-search-select-field labelFormatter=labelFormatter content=petObject prompt="Select an animal..." value="Select an animal..." optionLabelPath="content.label" optionValuePath="content.value"}}`,
         context: {
+          labelFormatter: (label, option) => {
+            let value = Ember.Handlebars.Utils.escapeExpression(option.value);
+            return Ember.String.htmlSafe(
+              `<span> ${label} (<strong>${value}</strong>)</span>`
+            );
+            // return Ember.HTMLBars.compile(
+            //   `<span>label  (<strong>${option.value}</strong>)</span>`
+            // );
+          },
           onClick: action('searchSelectFieldClick'),
-          petsArray: A([
-            'cats',
-            'dogs',
-            'rabbits',
-            'bears',
-            'beaver',
-            'moose',
-            'goose',
-            'deer',
-            'kitten',
-            'puppy',
-            'duck',
-            'capybara'
-          ])
-        }
+          petObject: A([
+            {
+              label: 'Chompsky ',
+              value: 'the only Brussels Griffon',
+            },
+            {
+              label: 'Memphis ',
+              value: 'the other Brussels Griffon',
+            },
+            {
+              label: 'Macho ',
+              value: 'Frenchie',
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -45,24 +54,24 @@ storiesOf('search select field', module)
             {
               label: 'Chompsky the only Brussels Griffon',
               value: 'the only Brussels Griffon',
-              enabled: false
+              enabled: false,
             },
             {
               label: 'Memphis the other Brussels Griffon',
               value: 'the other Brussels Griffon',
-              enabled: true
+              enabled: true,
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
               value: 'Frenchie',
-              enabled: false
-            }
-          ])
-        }
+              enabled: false,
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -74,44 +83,45 @@ storiesOf('search select field', module)
           onClick: action('searchSelectFieldClick'),
           petObject: A([
             {
-              groupHeader:  'pets',
+              groupHeader: 'pets',
               items: A([
                 {
                   label: 'Chompsky the only Brussels Griffon',
-                  value: 'the only Brussels Griffon'
+                  value: 'the only Brussels Griffon',
                 },
                 {
                   label: 'Memphis the other Brussels Griffon',
-                  value: 'the other Brussels Griffon'
+                  value: 'the other Brussels Griffon',
                 },
                 {
                   label: 'Macho the Frenchie who is so Frenchie',
-                  value: 'Frenchie'
-                }
-              ])},
+                  value: 'Frenchie',
+                },
+              ]),
+            },
             {
               groupHeader: 'fruits',
               items: A([
                 {
                   label: 'apple',
-                  value: 'apple'
+                  value: 'apple',
                 },
                 {
                   label: 'orange',
-                  value: 'orange'
+                  value: 'orange',
                 },
                 {
                   label: 'banana',
-                  value: 'banana'
-                }
-              ])
-            }
-          ])
-        }
+                  value: 'banana',
+                },
+              ]),
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -134,13 +144,13 @@ storiesOf('search select field', module)
             'puppy',
             'duck',
             'capybara',
-            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon'
-          ])
-        }
+            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -153,21 +163,21 @@ storiesOf('search select field', module)
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
             },
             {
               label: 'Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
-            }
-          ])
-        }
+              value: 'Frenchie',
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectFieldDisabled }
+      notes: { markdown: searchSelectFieldDisabled },
     }
-  )
+  );

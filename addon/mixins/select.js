@@ -49,14 +49,23 @@ export default Mixin.create({
     let path = this.get('_labelPath');
     if (path && isPresent(checkValue)) {
       if (typeof checkValue.get === 'function') {
+        // return this._formatLabel(checkValue.get(path)); // if Ember.Object
         return checkValue.get(path); // if Ember.Object
       } else {
+        // return this._formatLabel(checkValue[path]); // if JS object
         return checkValue[path]; // if JS object
       }
     } else {
+      // return this._formatLabel(checkValue);
       return checkValue;
     }
   }),
+
+  _formatLabel(value) {
+    this.labelFormatter && typeof this.labelFormatter === 'function'
+      ? this.labelFormatter(value)
+      : value;
+  },
 
   _valuePath: computed('optionValuePath', function () {
     if (this.get('optionValuePath') !== null) {

@@ -32,6 +32,7 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
   optionValuePath: null,
   optionLabelPath: null,
   optionEnabledPath: null,
+  labelFormatter: null,
   autofocus: null,
   readonly: null,
   disabled: false,
@@ -111,7 +112,10 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     } else if (typeof option.get === 'function') {
       return option.get('label').toLowerCase();
     } else {
-      return option.label.toLowerCase();
+      const labelPath = this.get('_labelPath');
+      return labelPath
+        ? option[labelPath].toLowerCase()
+        : option.label.toLowerCase();
     }
   },
 
