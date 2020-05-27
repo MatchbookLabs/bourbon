@@ -61,6 +61,13 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     }
   }),
 
+  _labelPath: computed('optionLabelPath', function () {
+    return (
+      this.get('optionLabelPath') &&
+      this.get('optionLabelPath').replace(/^content\.?/, '')
+    );
+  }),
+
   noResults: computed('searchList.[]', function () {
     if (this.get('groupedContent')) {
       return (
@@ -111,7 +118,9 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
     } else if (typeof option.get === 'function') {
       return option.get('label').toLowerCase();
     } else {
-      return option.label.toLowerCase();
+      return this._labelPath
+        ? option[this._labelPath].toLowerCase()
+        : option.label.toLowerCase();
     }
   },
 
@@ -158,7 +167,10 @@ export default Component.extend(SelectMixin, ClickHandlerMixin, {
             A([{ groupHeader: null, items: [{ label: 'No results found.' }] }])
           );
         } else if (this.get('optionLabelPath')) {
-          this.set('searchList', A([{ label: 'No results found.' }]));
+          this.set(
+            'searchList',
+            A([{ [this._labelPath]: 'No results found.' }])
+          );
         } else {
           this.set('searchList', A(['No results found.']));
         }

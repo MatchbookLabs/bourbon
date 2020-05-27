@@ -1,7 +1,7 @@
-import { A } from "@ember/array";
-import hbs from "htmlbars-inline-precompile";
-import { storiesOf } from "@storybook/ember";
-import { action } from "@storybook/addon-actions";
+import { A } from '@ember/array';
+import hbs from 'htmlbars-inline-precompile';
+import { storiesOf } from '@storybook/ember';
+import { action } from '@storybook/addon-actions';
 import searchSelectField from './searchSelectField.md';
 import searchSelectFieldDisabled from './searchSelectFieldDisabled.md';
 
@@ -25,44 +25,72 @@ storiesOf('search select field', module)
             'kitten',
             'puppy',
             'duck',
-            'capybara'
-          ])
-        }
+            'capybara',
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
     'object search select field',
     () => {
       return {
-        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" optionEnabledPath="content.enabled"  value=null}}`,
+        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionLabelPath="content.label" optionValuePath="content.value" value=null}}`,
         context: {
           onClick: action('searchSelectFieldClick'),
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
               value: 'the only Brussels Griffon',
-              enabled: false
             },
             {
               label: 'Memphis the other Brussels Griffon',
               value: 'the other Brussels Griffon',
-              enabled: true
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
               value: 'Frenchie',
-              enabled: false
-            }
-          ])
-        }
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
+    }
+  )
+  .add(
+    'object search select field, with custom `optionEnabledPath`, `optionLabelPath` and `optionValuePath`',
+    () => {
+      return {
+        template: hbs`{{bourbon-search-select-field content=petObject prompt="Select your favorite dog..." optionEnabledPath="content.enabled" optionLabelPath="content.anotherlabel" optionValuePath="content.anothervalue" value=null}}`,
+        context: {
+          onClick: action('searchSelectFieldClick'),
+          petObject: A([
+            {
+              anotherlabel: 'Chompsky the only Brussels Griffon',
+              anothervalue: 'the only Brussels Griffon',
+              enabled: false,
+            },
+            {
+              anotherlabel: 'Memphis the other Brussels Griffon',
+              anothervalue: 'the other Brussels Griffon',
+              enabled: true,
+            },
+            {
+              anotherlabel: 'Macho the Frenchie who is so Frenchie',
+              anothervalue: 'Frenchie',
+              enabled: false,
+            },
+          ]),
+        },
+      };
+    },
+    {
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -74,44 +102,45 @@ storiesOf('search select field', module)
           onClick: action('searchSelectFieldClick'),
           petObject: A([
             {
-              groupHeader:  'pets',
+              groupHeader: 'pets',
               items: A([
                 {
                   label: 'Chompsky the only Brussels Griffon',
-                  value: 'the only Brussels Griffon'
+                  value: 'the only Brussels Griffon',
                 },
                 {
                   label: 'Memphis the other Brussels Griffon',
-                  value: 'the other Brussels Griffon'
+                  value: 'the other Brussels Griffon',
                 },
                 {
                   label: 'Macho the Frenchie who is so Frenchie',
-                  value: 'Frenchie'
-                }
-              ])},
+                  value: 'Frenchie',
+                },
+              ]),
+            },
             {
               groupHeader: 'fruits',
               items: A([
                 {
                   label: 'apple',
-                  value: 'apple'
+                  value: 'apple',
                 },
                 {
                   label: 'orange',
-                  value: 'orange'
+                  value: 'orange',
                 },
                 {
                   label: 'banana',
-                  value: 'banana'
-                }
-              ])
-            }
-          ])
-        }
+                  value: 'banana',
+                },
+              ]),
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -134,13 +163,13 @@ storiesOf('search select field', module)
             'puppy',
             'duck',
             'capybara',
-            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon'
-          ])
-        }
+            'Chompsky the only Brussels Griffon Chompsky the only Brussels Griffon',
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectField }
+      notes: { markdown: searchSelectField },
     }
   )
   .add(
@@ -153,21 +182,21 @@ storiesOf('search select field', module)
           petObject: A([
             {
               label: 'Chompsky the only Brussels Griffon',
-              value: 'the only Brussels Griffon'
+              value: 'the only Brussels Griffon',
             },
             {
               label: 'Memphis the other Brussels Griffon',
-              value: 'the other Brussels Griffon'
+              value: 'the other Brussels Griffon',
             },
             {
               label: 'Macho the Frenchie who is so Frenchie',
-              value: 'Frenchie'
-            }
-          ])
-        }
+              value: 'Frenchie',
+            },
+          ]),
+        },
       };
     },
     {
-      notes: { markdown: searchSelectFieldDisabled }
+      notes: { markdown: searchSelectFieldDisabled },
     }
-  )
+  );
