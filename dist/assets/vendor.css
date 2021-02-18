@@ -826,10 +826,6 @@ making styling changes in the library */
   outline-color: var(--dodger-blue);
 }
 
-body {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-}
-
 .BourbonAccordionItem-body {
   display: none;
   padding: 25px 0;

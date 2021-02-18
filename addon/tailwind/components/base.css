@@ -27,7 +27,3 @@ making styling changes in the library */
   @apply .btw-border-dodger-blue;
   outline-color: var(--dodger-blue);
 }
-
-body {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-}
