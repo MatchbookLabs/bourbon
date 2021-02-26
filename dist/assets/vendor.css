@@ -912,15 +912,12 @@ making styling changes in the library */
 }
 
 .BourbonButton {
-  padding: 0 15px;
-  line-height: 17px;
-  text-shadow: 0 2px 4px 0 var(--shade);
   min-width: 85px;
   min-height: 32px;
   border-radius: .125rem;
   font-size: .875rem;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -928,6 +925,15 @@ making styling changes in the library */
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  padding: 6px 16px;
+  line-height: 1.75;
+  text-shadow: 0 2px 4px 0 var(--shade);
+  border-radius: 4px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: .875rem;
+  min-width: 64px;
+  box-sizing: border-box;
 }
 
 .BourbonButton-icon {
@@ -949,19 +955,19 @@ making styling changes in the library */
 
 .BourbonButton--primary {
   color: #fff;
-  background-color: #48ba70;
-  border-color: #48ba70;
+  background-color: #116af0;
+  border-color: #116af0;
 }
 
 .BourbonButton--primary:hover {
-  background-color: #4cce6f;
-  border-color: #4cce6f;
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
 }
 
 .BourbonButton--primary:active,
 .BourbonButton--primary:focus {
-  background-color: #4ca465;
-  border-color: #4ca465;
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
   outline: none;
 }
 
@@ -1036,8 +1042,8 @@ making styling changes in the library */
 .BourbonButton--large {
   height: 55px;
   min-width: 122px;
-  border-color: #dcdcdc;
-  color: #48ba70;
+  border-color: #116af0;
+  color: #116af0;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
@@ -1045,12 +1051,11 @@ making styling changes in the library */
 
 .BourbonButton--large:active,
 .BourbonButton--large:hover,
-.BourbonButton--large:focus,
- {
-  background-color: #48ba70;
-  border-color: #48ba70;
+.BourbonButton--large:focus {
+  background-color: #0a5fc7;
+  border-color: #0a5fc7;
   color: #fff;
-  box-shadow: inset 0 0 0 1px var(--fern);
+  box-shadow: inset 0 0 0 1px var(--science-blue);
   outline: none;
 }
 
@@ -1065,64 +1070,6 @@ making styling changes in the library */
 .BourbonButton--fullWidth {
   width: 100%;
   height: 45px;
-}
-
-/* margarita buttons */
-
-.using-new-app .BourbonButton {
-  font-weight: 500;
-  padding: 6px 16px;
-  line-height: 1.75;
-  border-radius: 4px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  font-size: .875rem;
-  min-width: 64px;
-  box-sizing: border-box;
-}
-
-.using-new-app .BourbonButton--primary {
-  color: #fff;
-  background-color: #116af0;
-  border-color: #116af0;
-}
-
-.using-new-app .BourbonButton--primary:hover {
-  background-color: #0a5fc7;
-  border-color: #0a5fc7;
-}
-
-.using-new-app .BourbonButton--primary:active,
-.using-new-app .BourbonButton--primary:focus {
-  background-color: #0a5fc7;
-  border-color: #0a5fc7;
-  outline: none;
-}
-
-.using-new-app .BourbonButton--primary.BourbonButton--disabled {
-  background-color: #e9e9e9;
-  border-color: #e9e9e9;
-}
-
-.using-new-app .BourbonButton--large {
-  height: 55px;
-  min-width: 122px;
-  border-color: #116af0;
-  color: #116af0;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .08);
-}
-
-.using-new-app .BourbonButton--large:active,
-.using-new-app .BourbonButton--large:hover,
-.using-new-app .BourbonButton--large:focus,
- {
-  background-color: #0a5fc7;
-  border-color: #0a5fc7;
-  color: #fff;
-  box-shadow: inset 0 0 0 1px var(--science-blue);
-  outline: none;
 }
 
 .BourbonDemoPrompt-container {
@@ -1703,13 +1650,13 @@ input[type="search"].BourbonTextField {
   visibility: visible;
 }
 
-.using-new-app .BourbonToggle.BourbonToggle--on svg rect {
-  fill: #116af0 !important;
-  stroke: #116af0 !important;
+.BourbonToggle.BourbonToggle--on svg rect {
+  fill: #116af0;
+  stroke: #116af0;
 }
 
-.using-new-app .BourbonToggle.BourbonToggle--on svg circle:last-child {
-  stroke: #116af0 !important;
+.BourbonToggle.BourbonToggle--on svg circle:last-child {
+  stroke: #116af0;
 }
 
 .BourbonTooltip {
