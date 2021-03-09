@@ -11,13 +11,13 @@
   vertical-align: middle;
 }
 
-.BourbonToggle-sizeSmall {
+.BourbonToggle--sizeSmall {
   width: 40px;
   height: 24px;
   padding: 7px;
 }
 
-.BourbonToggle-switchBase {
+.BourbonToggle--switchBase {
   padding: 9px;
   top: 0;
   left: 0;
@@ -46,48 +46,48 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.BourbonToggle--on .BourbonToggle-switchBase {
+.BourbonToggle--on .BourbonToggle--switchBase {
   transform: translateX(20px);
   color: #116AF0;
 }
 
-.BourbonToggleButton-label {
+.BourbonToggleButton--label {
   width: 100%;
   display: flex;
   align-items: inherit;
   justify-content: inherit;
 }
 
-.BourbonToggle--disabled .BourbonToggle-switchBase {
+.BourbonToggle--disabled .BourbonToggle--switchBase {
   color: #bdbdbd;
 }
 
-.BourbonToggle--on .BourbonToggle-switchBase + .BourbonToggle-track {
+.BourbonToggle--on .BourbonToggle--switchBase + .BourbonToggle--track {
   opacity: 0.5;
 }
 
-.BourbonToggle--disabled .BourbonToggle-switchBase + .BourbonToggle-track {
+.BourbonToggle--disabled .BourbonToggle--switchBase + .BourbonToggle--track {
   opacity: 0.12;
 }
 
-.BourbonToggle--on .BourbonToggle-switchBase + .BourbonToggle-track {
+.BourbonToggle--on .BourbonToggle--switchBase + .BourbonToggle--track {
   background-color: #116AF0;
 }
 
-.BourbonToggle--disabled .BourbonToggle-switchBase + .BourbonToggle-track {
+.BourbonToggle--disabled .BourbonToggle--switchBase + .BourbonToggle--track {
   background-color: #000;
 }
 
-.BourbonToggle-sizeSmall .BourbonToggle-thumb {
+.BourbonToggle--sizeSmall .BourbonToggle--thumb {
   width: 16px;
   height: 16px;
 }
 
-.BourbonToggle-sizeSmall .BourbonToggle-switchBase {
+.BourbonToggle--sizeSmall .BourbonToggle--switchBase {
   padding: 4px;
 }
 
-.BourbonToggle-sizeSmall.BourbonToggle--on .BourbonToggle-switchBase {
+.BourbonToggle--sizeSmall.BourbonToggle--on .BourbonToggle--switchBase {
   transform: translateX(16px);
 }
 
@@ -103,14 +103,14 @@
   z-index: 1;
   position: absolute;
 }
-.BourbonToggle-thumb {
+.BourbonToggle--thumb {
   width: 20px;
   height: 20px;
   box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
   border-radius: 50%;
   background-color: currentColor;
 }
-.BourbonToggle-track {
+.BourbonToggle--track {
   width: 100%;
   height: 100%;
   opacity: 0.38;

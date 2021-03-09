@@ -9,7 +9,7 @@ export default Component.extend({
   classNameBindings: [
     'disabled:BourbonToggle--disabled',
     'value:BourbonToggle--on',
-    'small:BourbonToggle-sizeSmall'
+    'small:BourbonToggle--sizeSmall'
   ],
   attributeBindings: ['label:aria-label'],
 
