@@ -91,7 +91,7 @@
   transform: translateX(16px);
 }
 
-.BourbonToggle-input {
+.BourbonToggle--input {
   left: -100%;
   width: 300%;
   top: 0;
