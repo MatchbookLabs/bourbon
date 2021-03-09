@@ -67,6 +67,40 @@ storiesOf("toggle", module)
     }
   )
   .add(
+    "small margarita toggle on",
+    () => {
+      return {
+        template: hbs`
+          <div class="using-new-app">
+            {{bourbon-toggle value=true action=onClick small=true}}
+          </div>`,
+        context: {
+          onClick: "click"
+        }
+      };
+    },
+    {
+      notes: { markdown: toggle }
+    }
+  )
+  .add(
+    "small margarita toggle on disabled",
+    () => {
+      return {
+        template: hbs`
+        <div class="using-new-app">
+          {{bourbon-toggle value=true action=onClick small=true disabled=true}}
+        </div>`,
+        context: {
+          onClick: "click"
+        }
+      };
+    },
+    {
+      notes: { markdown: toggle }
+    }
+  )
+  .add(
     "margarita toggle off",
     () => {
       return {

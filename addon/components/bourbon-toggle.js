@@ -5,10 +5,11 @@ import layout from '../templates/components/bourbon-toggle';
 export default Component.extend({
   layout,
   tagName: 'label',
-  classNames: ['BourbonToggle'],
+  classNames: ['BourbonToggle', 'BourbonToggle-root'],
   classNameBindings: [
     'disabled:BourbonToggle--disabled',
     'value:BourbonToggle--on',
+    'small:BourbonToggle-sizeSmall'
   ],
   attributeBindings: ['label:aria-label'],
 
@@ -16,6 +17,7 @@ export default Component.extend({
   value: null,
   disabled: false,
   action: null,
+  small: false,
 
   label: computed('value', 'disabled', function () {
     return `Toggle button ${
