@@ -5,7 +5,7 @@ import layout from '../templates/components/bourbon-toggle';
 export default Component.extend({
   layout,
   tagName: 'label',
-  classNames: ['BourbonToggle', 'BourbonToggle-root'],
+  classNames: ['BourbonToggle', 'BourbonToggle--root'],
   classNameBindings: [
     'disabled:BourbonToggle--disabled',
     'value:BourbonToggle--on',
