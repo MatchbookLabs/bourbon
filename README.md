@@ -8,7 +8,7 @@ Running Server
 ------------------------------------------------------------------------------
 In bourbon run the following commands
 * `ember serve`
-* `npm run storybook`
+* `yarn storybook`
 
 - a new tab will open up to `http://localhost:9001/`
 
@@ -45,14 +45,21 @@ Contributing
 
 ### Installation
 
+**Pre-requisites**
+* [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* `yarn global add ember-cli`
+* watchman - optional, see Ember CLI [Additional steps for Mac and Linux users](https://cli.emberjs.com/release/basic-use/#additionalstepsformacandlinuxusers)
+
+**Then...**
 * `git clone <repository-url>`
 * `cd bourbon`
-* `npm install`
+* `nvm use`
+* `yarn install`
 
 ### Linting
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* `yarn lint:js`
+* `yarn lint:js -- --fix`
 
 ### Running tests
 
