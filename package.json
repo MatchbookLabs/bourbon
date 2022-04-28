@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "babel-plugin-ember-modules-api-polyfill": "^2.6.0",
-    "ember-assign-polyfill": "^2.5.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-clipboard": "^0.9.0",
     "ember-cli-htmlbars": "^2.0.1",

@@ -1,0 +1,17 @@
+build:
+  image: registry.vox.dev/dockerhub/cimg/node:13.10
+  cache:
+    - key: yarn-packages
+      paths:
+        - .cache/yarn
+  stage: build
+  before_script:
+    # Install chrome due to image lacking the needed dependencies
+    - sudo apt-get -qq -y install wget
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    - echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    - sudo apt-get -y update
+    - sudo apt-get -y install google-chrome-stable
+  script:
+    - yarn install --cache-folder .cache/yarn
+    - yarn test
